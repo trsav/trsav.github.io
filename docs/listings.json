@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/gazza_agonistes/index.html",
+      "/posts/thatcher_review/index.html",
       "/posts/plotting_practice/index.html"
     ]
   }

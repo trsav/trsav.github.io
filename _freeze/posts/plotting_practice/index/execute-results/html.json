@@ -1,0 +1,11 @@
+{
+  "hash": "72fc6cbba70adbf661d1c89738f244bf",
+  "result": {
+    "markdown": "---\ntitle: \"Best Practices\"\nauthor: \"Tom Savage\"\ncategories: [visualisation]\nimage: \"image.jpg\"\nsubtitle: \"Visualisations & Plots\"\ndate: \"10/23/2023\"\nformat:\n  html:\n    grid:\n      margin-width: 350px         # <1>\n  pdf: default\nreference-location: margin        # <2>\ncitation-location: margin         # <2>\n---\n\nHere I will outline my personal preferences for best plotting practices. I will most likely update this as and when I make design choices across research.\n\n\n\nTo begin with we'll simulate some convergence data where we have 4 different benchmarks, each containing 8 separate repeat runs. \nLet's start by plotting this data in just about the _worst_ way, and slowly improve on this.\n\n\n\n::: {.cell execution_count=3}\n``` {.python .cell-code}\nplt.figure()\ncols = ['r','b','g','k']\nfor b in range(benchmarks):\n    for i in range(runs):\n        plt.plot(iterations,data[b,i,:],color=cols[b])\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-4-output-1.png){width=571 height=411}\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

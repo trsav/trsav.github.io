@@ -1,0 +1,10 @@
+{
+  "hash": "3367413d31e11b6cc960a7c3f8105ef7",
+  "result": {
+    "markdown": "---\ntitle: \"Best Practices\"\nauthor: \"Tom Savage\"\ncategories: [visualisation]\nimage: \"image.jpg\"\nsubtitle: \"Visualisations & Plots\"\ndate: \"10/23/2023\"\nformat:\n  html:\n    grid:\n      margin-width: 350px         # <1>\n  pdf: default\nreference-location: margin        # <2>\ncitation-location: margin         # <2>\n---\n\nHere I will outline my personal preferences for best plotting practices. I will most likely update this as and when I make design choices across research.\nFirst thing's first, we need to import some packages and generate some example data. \n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt \nimport numpy as np \nimport numpy.random as rnd\n```\n:::\n\n\nFor now I simulate some convergence data where I have 4 different benchmarks, each containing 8 separate repeat runs. \n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nit = 100; runs = 8; benchmarks = 4\nx = np.linspace(1,it,it)\ndata = []\nfor b in range(benchmarks):\n    y = []\n    for i in range(runs):\n        noise = [rnd.uniform(i,0)*(b+1) for i in reversed(range(it))]\n        y.append(noise - 50*((b+1))*np.log(x) + 50*(b+1)*np.log(it))\n    y = np.array(y)\n    data.append(y)\ndata = np.array(data) / 1200\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": []
+  }
+}
