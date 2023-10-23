@@ -1,0 +1,33 @@
+---
+title: "About Me"
+image: profile.png
+about:
+  template: trestles
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/savage_tom
+    - icon: none
+      text: Imperial College London
+      href: https://www.imperial.ac.uk/people/t.savage
+    - icon: none
+      text: The Alan Turing Institute
+      href: https://www.turing.ac.uk/people/enrichment-students/tom-savage
+    - icon: github
+      text: Github
+      href: https://github.com/trsav
+
+---
+
+I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). My interests include Bayesian optimisation, human-in-the-loop methods, cricket 🏏, and darts 🎯. 
+
+# Education 
+
+### Imperial College London
+- PhD in Process Systems Engineering | 2021 - Current
+
+### University of Cambridge
+- MPhil in Chemical Engineering & Biotechnology | 2020 - 2021
+
+### University of Manchester
+- BEng in Chemical Engineering | 2017 - 2020

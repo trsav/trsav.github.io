@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Tom Savage - Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/trsav
+      - icon: twitter
+        href: https://twitter.com/savage_tom
+format:
+  html:
+    theme: litera
+    css: styles.css
+
+
+

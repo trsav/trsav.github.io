@@ -1,0 +1,11 @@
+{
+  "hash": "a847c684fcb96bef560c943a4275de6a",
+  "result": {
+    "markdown": "---\ntitle: \"Plotting Best Practices\"\nauthor: \"Tom Savage\"\ncategories: [code]\nimage: \"image.jpg\"\n---\n\nThis is a post with executable code. Here\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nx = 4\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
