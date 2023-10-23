@@ -13,13 +13,16 @@ about:
     - icon: none
       text: The Alan Turing Institute
       href: https://www.turing.ac.uk/people/enrichment-students/tom-savage
+    - icon: none
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=1niiK1AAAAAJ&hl=en
     - icon: github
       text: Github
       href: https://github.com/trsav
 
 ---
 
-I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). My interests include Bayesian optimisation, human-in-the-loop methods, cricket 🏏, and darts 🎯. 
+I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). I have a background in Chemical Engineering and still enjoy teaching labs at Imperial College. My interests include Bayesian optimisation, human-in-the-loop machine learning, cricket 🏏, and darts 🎯. 
 
 # Education 
 
