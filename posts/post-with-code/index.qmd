@@ -1,8 +1,6 @@
 ---
 title: "Plotting Best Practices"
 author: "Tom Savage"
-categories: [code]
+categories: [visualisation]
 image: "image.jpg"
 ---
-
-Here is a test publish
