@@ -12,5 +12,12 @@
     "title": "Tom Savage - Blog",
     "section": "",
     "text": "Plotting Best Practices\n\n\n\n\n\n\n\nvisualisation\n\n\n\n\n\n\n\n\n\n\n\nTom Savage\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/plotting_practice/index.html",
+    "href": "posts/plotting_practice/index.html",
+    "title": "Plotting Best Practices",
+    "section": "",
+    "text": "Here I will outline my personal preferences for best plotting practices. I will most likely update this as and when I make design choices across research. First thing’s first, we need to import some packages and generate some example data.\n\nimport matplotlib.pyplot as plt \nimport jax.numpy as jnp # why not?\nimport numpy as np \nimport numpy.random as rnd\n\nFor now I simulate some convergence data where I have 4 different benchmarks, each containing 8 separate repeat runs.\n\nit = 100; runs = 8; benchmarks = 4\nx = np.linspace(1,it,it)\ndata = []\nfor b in range(benchmarks):\n    y = []\n    for i in range(runs):\n        noise = [rnd.uniform(i,0)*(b+1) for i in reversed(range(it))]\n        y.append(noise - 50*((b+1))*np.log(x) + 50*(b+1)*np.log(it))\n    y = np.array(y)\n    data.append(y)\ndata = np.array(data); data /= 1200\nc = ['r','b','g','y','k']\n\nfor b in range(benchmarks):\n    for i in range(runs):\n        plt.scatter(x,data[b,i,:],c = c[b])\nplt.show()"
   }
 ]

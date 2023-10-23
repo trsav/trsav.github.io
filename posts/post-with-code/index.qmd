@@ -1,6 +1,0 @@
----
-title: "Plotting Best Practices"
-author: "Tom Savage"
-categories: [visualisation]
-image: "image.jpg"
----
