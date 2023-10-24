@@ -1,1 +1,9 @@
-/* css styles */
+.callout-important{
+    background-color: rgb(255, 241, 241);
+    border: 3px solid rgb(255, 141, 141);
+}
+
+.callout-tip{
+    background-color: rgb(241, 255, 241);
+    border: 3px solid rgb(156, 255, 141);
+}

@@ -5,6 +5,7 @@ categories: [visualisation]
 image: "image.jpg"
 subtitle: "Visualisations & Plots"
 date: "10/23/2023"
+callout-appearance: minimal
 format:
   html:
     grid:
@@ -12,19 +13,31 @@ format:
   pdf: default
 reference-location: margin        # <2>
 citation-location: margin         # <2>
+jupyter: python3
 ---
+
+
+>"The First Bite Is With The Eyes." - Apicius, 1st Century Rome
+
+
 Here I will outline my personal preferences for best plotting practices. I will most likely update this as and when I make design choices across research.
 ```{python}
 #| echo: false
 import matplotlib.pyplot as plt 
 import numpy as np 
 import numpy.random as rnd
+plt.rcParams['text.usetex'] = True
 ``` 
-To begin with we'll simulate some convergence data where we have 4 different benchmarks, each containing 8 separate repeat runs. 
+
+::: {.callout-tip}
+**Always** use the LaTeX extension to render figures by including ```plt.rcParams['text.usetex'] = True'``` at the top of your script.
+:::
+
+To begin with we'll simulate some convergence data where we have 4 different benchmarks, each containing 16 separate repeat runs. 
 Let's start by plotting this data in just about the _worst_ way, and slowly improve on this.
 ```{python}
 #| echo: false 
-it = 100; runs = 8; benchmarks = 4
+it = 100; runs = 16; benchmarks = 4
 iterations = np.linspace(1,it,it)
 x = iterations
 data = []
@@ -39,9 +52,285 @@ data = np.array(data) / 1200
 ```
 ```{python}
 plt.figure()
+plt.title('This is a bad plot',fontsize=20)
 cols = ['r','b','g','k']
 for b in range(benchmarks):
     for i in range(runs):
         plt.plot(iterations,data[b,i,:],color=cols[b])
 plt.show()
 ```
+Now we will initialise our plot correctly using the object-oriented syntax which leads us to our first design rules:
+
+::: {.callout-tip}
+**Always** initialise a plot using the object-oriented interface `fig,ax = plt.subplots...`
+:::
+
+::: {.callout-important}
+**Never** initialise a plot using the pyplot interface `plt.figure...`
+:::
+We must also select a figure size appropriate for our need. **This will be the size of the final overall figure**. We can adjust the fontsize of the tick values and labels later, but _I would reccommend adjusting the size of the plot now to ensure that the text is legible_. I am going to pretend that this figure span my text, but don't want it to take up too much vertical space. I also want the ticks to be legible, so I will set the figure to be 7 by 3. Upon initialisation I will ensure the layout is constrained.
+```{python}
+fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
+```
+For the sake of completeness I will include this as a rule.
+
+::: {.callout-tip}
+**Always** adjust the figure size appropriately, ensuring it is the right dimensions for the context.
+:::
+Now we will draw our attention to plotting the data itself. **It is important to think about what message you want to convey to the reader**. Clearly providing each run for each benchmark is not useful. I will plot the mean and standard deviation of regret across each benchmark.
+```{python}
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b])
+plt.show()
+```
+Now we have decided what specifically to plot and all the information we wish to present is here we can work on making the plot more interpretable. 
+
+::: {.callout-tip}
+**Always** separate your data generation and plotting code. This will make it easier to adjust the plot later. Save data at generation (for example during optimisation) and then load it in for plotting.
+:::
+
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b])
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+```
+
+We should first add some axis labels as follows. Ensure the font size is large enough to be legible. You can use LaTeX within labels by using \$ \$ as standard, when doing so include an ```r``` in front of the string to ensure it gets parsed appropriately.
+
+::: {.callout-tip}
+**Always** choose a legible font size and text for axis labels, using LaTeX where appropriate.
+:::
+
+```{python}
+#| eval: false
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+plt.show()
+```
+Now we will focus on the ticks. Ticks are important because they enable the reader to interpret the _values_ of the data. It is important to consider what tick values are appropriate to display. For example in this case, I want to convey to the reader the differences in overall convergence characteristics between these methods. Therefore, it may not be necessary to display intermediate values. Likewise, I may wish to display more intermediate values for iterations. 
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b])
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+plt.show()
+```
+::: {.callout-tip}
+**Always** select appropriate tick values for your context, adjusting the fontsize as necessary.
+:::
+```{python}
+#| eval: false
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+```
+
+Now we are happy with the externals, we will focus back on the data itself. It is important to provide a legend to ensure the reader can interpret the data. Not everything has to have a label. In this case I want to convey which color corresponds to which benchmark, but I also need to convey what the error bars mean. In order not to distract from the plot, I will choose to omit this from the plot itself and instead include it in the caption. Including a label for the error bars does not contribute to the story and the message of the plot. 
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b])
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+ax.legend(frameon=False,fontsize=14)
+plt.show()
+```
+::: {.callout-tip}
+**Always** include labels for the relevant information, such as distinguishing between benchmarks. If the plot is too crowded [place the legend outside of the plot](https://matplotlib.org/stable/users/explain/axes/legend_guide.html).
+:::
+
+::: {.callout-important}
+**Never** overwhelm the reader with information and labels. Some information is fine to include within the caption, as the caption and the image are considered complimentary and dependent. 
+:::
+```{python}
+#| eval: false
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b])
+  
+ax.legend(frameon=False,fontsize=14)
+```
+You will notice that I have chosen *not* to include the frame on the caption. This makes the plot look cleaner and less cluttered.
+
+::: {.callout-tip}
+**Always** use the ```frameon=False``` option for legends.
+:::
+
+Now I'll outline a few important bits before moving onto the final adjustments. Firstly, when using  ```fill_between``` a faint outline is drawn which can make the plot look cluttered, I always like to remove this by setting ```linewidth=0```. Secondly, I always use and reccomend the ```tab:``` set of colours in matplotlib. Here is a list of examples that you can copy and paste.
+
+```{python}
+#| eval: false
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+```
+These colours are softer than the default colours and are more aesthetically pleasing. Let's make these changes.
+
+
+
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+ax.legend(frameon=False,fontsize=14)
+plt.show()
+```
+
+::: {.callout-tip}
+**Always** use the ```tab:``` set of colours and remove the linewidth of ```fill_between```.
+:::
+
+```{python}
+#| eval: false
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
+```
+We are now almost there. I now reccomend adjusting the axis limits to ensure that your data is placed appropriately. In this case, the regret values are fine but the iterations should start exactly at 0 and end at 100. 
+
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+ax.set_xlim([0,100])
+ax.legend(frameon=False,fontsize=14)
+plt.show()
+```
+
+::: {.callout-tip}
+**Always** adjust the axis limits appropriately. The x-axis particularly may be too large.
+:::
+
+```{python}
+#| eval: false
+ax.set_xlim([0,100])
+```
+
+Finally, it is important to consider whether a ```grid``` is appropriate. In this case I will for demonstration, but it may be distracting. I will adjust the transparency to make it less pronounced. 
+
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+ax.set_xlim([0,100])
+ax.grid(alpha=0.4)
+ax.legend(frameon=False,fontsize=14)
+plt.show()
+```
+
+::: {.callout-tip}
+**Always** consider using ```ax.grid()``` if the individual values of the data are important.
+:::
+
+```{python}
+#| eval: false
+ax.grid(alpha=0.4)
+```
+
+That is just about it for this plot. Always to remember to save figures as ```.svg``` or ```.pdf```. If you require a ```.png``` then use the ```dpi=``` option in ```fig.savefig``` to increase the resolution. 
+
+```{python}
+#| echo: false
+#| output: png
+fig,ax = plt.subplots(1,1,figsize=(7,3))
+labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
+cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
+for b in range(benchmarks):
+    mean = np.mean(data[b,:,:],axis=0)
+    std = np.std(data[b,:,:],axis=0)
+    ax.plot(iterations,mean,color=cols[b],label=labels[b])
+    ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
+ax.set_xlabel(r'Iteration, $\tau$',fontsize=18)
+ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
+x_ticks = [0,10,20,30,40,50,60,70,80,90,100]
+y_ticks = [0,0.5,1]
+ax.set_xticks(x_ticks,x_ticks,fontsize = 18)
+ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
+ax.set_xlim([0,100])
+ax.grid(alpha=0.4)
+ax.legend(frameon=False,fontsize=14)
+plt.savefig('figure.svg')
+```
+
+::: {.callout-tip}
+**Always** save your figure as ```.svg``` or ```.pdf```. 
+:::
+
+![Final SVG figure](figure.svg)
+
+Finally finally, [**READ THE DOCUMENTATION**](https://matplotlib.org/stable/).
