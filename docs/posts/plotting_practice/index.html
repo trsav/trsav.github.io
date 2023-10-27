@@ -9,7 +9,7 @@
 <meta name="author" content="Tom Savage">
 <meta name="dcterms.date" content="2023-10-23">
 
-<title>Tom Savage - Blog - Best Practices</title>
+<title>Tom Savage - Blog - Convergence Plots</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,8 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Best Practices</h1>
-            <p class="subtitle lead">Visualisations &amp; Plots</p>
+      <h1 class="title">Convergence Plots</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">visualisation</div>
               </div>
@@ -176,9 +175,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -186,8 +185,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>“The First Bite Is With The Eyes.” - Apicius, 1st Century Rome</p>
 </blockquote>
-<p>Here I will outline my personal preferences for best plotting practices. I will most likely update this as and when I make design choices across research.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Here I will outline my personal preferences for best convergence plotting practices using <a href="https://matplotlib.org">Matplotlib</a>.</p>
+<p>Let’s start by plotting some convergence data in just about the <em>worst</em> way, and slowly improve on this. It is my view that when LaTeX is available you should always use it.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -196,74 +197,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> use the LaTeX extension to render figures by including <code>plt.rcParams['text.usetex'] = True'</code> at the top of your script.</p>
 </div>
 </div>
-</div>
-<p>To begin with we’ll simulate some convergence data where we have 4 different benchmarks, each containing 16 separate repeat runs. Let’s start by plotting this data in just about the <em>worst</em> way, and slowly improve on this.</p>
+</div></div><p>Here I have simulated some convergence data where we have 4 different benchmarks, each containing 16 separate repeat runs.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'This is a bad plot'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'r'</span>,<span class="st">'b'</span>,<span class="st">'g'</span>,<span class="st">'k'</span>]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(runs):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        plt.plot(iterations,data[b,i,:],color<span class="op">=</span>cols[b])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-4-output-1.png" width="566" height="436"></p>
 </div>
 </div>
-<p>Now we will initialise our plot correctly using the object-oriented syntax which leads us to our first design rules:</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Using <code>plt.figure()</code> makes it harder to interact with the axis (even if you only have a single axis), making it more difficult to adjust the size and layout.</p>
+<p>Now we will initialise our plot correctly using the object-oriented syntax, sizing the figure appropriately for the given context. By constraining the layout we ensure that the figure fits within the given size.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Always</strong> initialise a plot using the object-oriented interface <code>fig,ax = plt.subplots...</code></p>
+<p><strong>Always</strong> initialise a plot using the object-oriented interface <code>fig,ax = plt.subplots...</code>, defining the figure size appropriately.</p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon">
+</div><div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Never</strong> initialise a plot using the pyplot interface <code>plt.figure...</code></p>
+<p><strong>Never</strong> initialise a plot using the pyplot interface <code>plt.figure...</code>.</p>
 </div>
 </div>
-</div>
-<p>We must also select a figure size appropriate for our need. <strong>This will be the size of the final overall figure</strong>. We can adjust the fontsize of the tick values and labels later, but <em>I would reccommend adjusting the size of the plot now to ensure that the text is legible</em>. I am going to pretend that this figure span my text, but don’t want it to take up too much vertical space. I also want the ticks to be legible, so I will set the figure to be 7 by 3. Upon initialisation I will ensure the layout is constrained.</p>
+</div></div>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-5-output-1.png" width="683" height="299"></p>
 </div>
 </div>
-<p>For the sake of completeness I will include this as a rule.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Now we will draw our attention to plotting the data itself. <strong>It is important to think about what message you want to convey to the reader</strong>. Clearly providing each run for each benchmark is not useful. I will plot the mean and standard deviation of regret across each benchmark. I will use a line plot to convey the mean and a shaded region to convey the standard deviation.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Always</strong> adjust the figure size appropriately, ensuring it is the right dimensions for the context.</p>
+<p><strong>Always</strong> ensure that the <code>linewidth=...</code> option is set appropriately, and more importantly <em>consistently</em>.</p>
 </div>
 </div>
-</div>
-<p>Now we will draw our attention to plotting the data itself. <strong>It is important to think about what message you want to convey to the reader</strong>. Clearly providing each run for each benchmark is not useful. I will plot the mean and standard deviation of regret across each benchmark.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b])</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div><div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b])</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-6-output-1.png" width="566" height="262"></p>
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="683" height="299"></p>
 </div>
 </div>
-<p>Now we have decided what specifically to plot and all the information we wish to present is here we can work on making the plot more interpretable.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -272,17 +264,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> separate your data generation and plotting code. This will make it easier to adjust the plot later. Save data at generation (for example during optimisation) and then load it in for plotting.</p>
 </div>
 </div>
-</div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>Text(0, 0.5, 'Regret, $r_\\tau$')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-7-output-2.png" width="593" height="289"></p>
-</div>
-</div>
+</div></div><p>Now we have decided what specifically to plot and all the information we wish to present is here we can work on making the plot more interpretable.</p>
 <p>We should first add some axis labels as follows. Ensure the font size is large enough to be legible. You can use LaTeX within labels by using $ $ as standard, when doing so include an <code>r</code> in front of the string to ensure it gets parsed appropriately.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -291,19 +276,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> choose a legible font size and text for axis labels, using LaTeX where appropriate.</p>
 </div>
 </div>
+</div></div><div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'Iteration, $\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'Regret, $r_\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'Iteration, $\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'Regret, $r_\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now we will focus on the ticks. Ticks are important because they enable the reader to interpret the <em>values</em> of the data. It is important to consider what tick values are appropriate to display. For example in this case, I want to convey to the reader the differences in overall convergence characteristics between these methods. Therefore, it may not be necessary to display intermediate values. Likewise, I may wish to display more intermediate values for iterations.</p>
-<div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="605" height="298"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="683" height="299"></p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Now we will focus on the ticks. Ticks are important because they enable the reader to interpret the <em>values</em> of the data.</p>
+<p>It is important to consider what tick values are appropriate to display. For example in this case, I want to convey to the reader the differences in overall convergence characteristics between these methods. Therefore, it may not be necessary to display intermediate regret values.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -312,20 +297,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> select appropriate tick values for your context, adjusting the fontsize as necessary.</p>
 </div>
 </div>
+</div></div><div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">100</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x_ticks,x_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(y_ticks,y_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">100</span>]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>]</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x_ticks,x_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(y_ticks,y_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now we are happy with the externals, we will focus back on the data itself. It is important to provide a legend to ensure the reader can interpret the data. Not everything has to have a label. In this case I want to convey which color corresponds to which benchmark, but I also need to convey what the error bars mean. In order not to distract from the plot, I will choose to omit this from the plot itself and instead include it in the caption. Including a label for the error bars does not contribute to the story and the message of the plot.</p>
-<div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-1.png" width="605" height="298"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="683" height="299"></p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Whilst it is important to provide a legend to ensure the reader can interpret the data, not everything has to have a label.</p>
+<p>In this case I want to convey which color corresponds to which benchmark, but I also need to convey what the error bars mean. In order not to distract from the plot, I will choose to omit this from the plot itself and instead include it in the caption.</p>
+<p>Including a label for the error bars does not contribute to the story and the message of the plot.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -334,8 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> include labels for the relevant information, such as distinguishing between benchmarks. If the plot is too crowded <a href="https://matplotlib.org/stable/users/explain/axes/legend_guide.html">place the legend outside of the plot</a>.</p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon">
+</div><div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -344,63 +330,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Never</strong> overwhelm the reader with information and labels. Some information is fine to include within the caption, as the caption and the image are considered complimentary and dependent.</p>
 </div>
 </div>
+</div></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="ss">f'Benchmark </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,benchmarks<span class="op">+</span><span class="dv">1</span>)]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b],label<span class="op">=</span>labels[b])</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="ss">f'Benchmark </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,benchmarks<span class="op">+</span><span class="dv">1</span>)]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b],label<span class="op">=</span>labels[b])</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="683" height="299"></p>
+</div>
 </div>
 <p>You will notice that I have chosen <em>not</em> to include the frame on the caption. This makes the plot look cleaner and less cluttered.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>For scatter plots the frame can help distinguish between the data and the legend, but for line plots it may not be necessary.</p>
+<p>When using <code>fill_between</code> a faint outline is drawn which can make the plot look cluttered, I always like to remove this by setting <code>linewidth=0</code>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Always</strong> use the <code>frameon=False</code> option for legends.</p>
+<p><strong>Always</strong> remove the linewidth of <code>fill_between</code> for a cleaner plot.</p>
 </div>
 </div>
-</div>
-<p>Now I’ll outline a few important bits before moving onto the final adjustments. Firstly, when using <code>fill_between</code> a faint outline is drawn which can make the plot look cluttered, I always like to remove this by setting <code>linewidth=0</code>. Secondly, I always use and reccomend the <code>tab:</code> set of colours in matplotlib. Here is a list of examples that you can copy and paste.</p>
+</div></div><p>I always use and reccomend the <code>tab:</code> set of colours in Matplotlib. <a href="https://www.tableau.com/blog/colors-upgrade-tableau-10-56782?cq_cmp=20663578515&amp;cq_net=x&amp;cq_plac=&amp;gad=1&amp;gclid=CjwKCAjwv-2pBhB-EiwAtsQZFASF7RdmIYty2ptKDi0fGPfaiCmmLLR_PkaBN_eQtTVl7eTnyKl_qhoCULYQAvD_BwE&amp;gclsrc=aw.ds">A number of people have put significant effort into choosing these</a> so you don’t have to. Here is a list of examples that you can copy and paste.</p>
+<p>These colours are softer than the default colours and are more aesthetically pleasing.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'tab:blue'</span>,<span class="st">'tab:orange'</span>,<span class="st">'tab:green'</span>,<span class="st">'tab:red'</span>,<span class="st">'tab:purple'</span>,<span class="st">'tab:brown'</span>,<span class="st">'tab:pink'</span>,<span class="st">'tab:gray'</span>,<span class="st">'tab:olive'</span>,<span class="st">'tab:cyan'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'tab:blue'</span>,<span class="st">'tab:orange'</span>,<span class="st">'tab:green'</span>,<span class="st">'tab:red'</span>,<span class="op">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'tab:purple'</span>,<span class="st">'tab:brown'</span>,<span class="st">'tab:pink'</span>,<span class="st">'tab:gray'</span>,<span class="st">'tab:olive'</span>,<span class="st">'tab:cyan'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b],label<span class="op">=</span>labels[b])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b],linewidth<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>These colours are softer than the default colours and are more aesthetically pleasing. Let’s make these changes.</p>
-<div class="cell" data-execution_count="13">
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-14-output-1.png" width="605" height="298"></p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Always</strong> use the <code>tab:</code> set of colours and remove the linewidth of <code>fill_between</code>.</p>
+<p><strong>Always</strong> use the <code>tab:</code> set of colours over the default colours.</p>
 </div>
 </div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'tab:blue'</span>,<span class="st">'tab:orange'</span>,<span class="st">'tab:green'</span>,<span class="st">'tab:red'</span>,<span class="st">'tab:purple'</span>,<span class="st">'tab:brown'</span>,<span class="st">'tab:pink'</span>,<span class="st">'tab:gray'</span>,<span class="st">'tab:olive'</span>,<span class="st">'tab:cyan'</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(iterations,mean,color<span class="op">=</span>cols[b],label<span class="op">=</span>labels[b])</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b],linewidth<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We are now almost there. I now reccomend adjusting the axis limits to ensure that your data is placed appropriately. In this case, the regret values are fine but the iterations should start exactly at 0 and end at 100.</p>
-<div class="cell" data-execution_count="15">
+</div></div><div class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-16-output-1.png" width="622" height="298"></p>
+<p><img src="index_files/figure-html/cell-14-output-1.png" width="683" height="299"></p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>Now we can adjust the axis limits to ensure that the data is placed appropriately. In this case, the regret values are fine but the iterations should start at 0 and end at 100.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">100</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -409,17 +398,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> adjust the axis limits appropriately. The x-axis particularly may be too large.</p>
 </div>
 </div>
+</div></div><div class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-16-output-1.png" width="683" height="299"></p>
 </div>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">100</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, it is important to consider whether a <code>grid</code> is appropriate. In this case I will for demonstration, but it may be distracting. I will adjust the transparency to make it less pronounced.</p>
-<div class="cell" data-execution_count="17">
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-18-output-1.png" width="622" height="298"></p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -428,17 +417,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> consider using <code>ax.grid()</code> if the individual values of the data are important.</p>
 </div>
 </div>
+</div></div><div class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="683" height="299"></p>
 </div>
+</div>
+<p>If you choose not to use a grid, then I always prefer if the right and top axis are removed, resulting in a cleaner plot.</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Always</strong> remove the right and top axis if you choose not to use a grid.</p>
+</div>
+</div>
+</div></div><div class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-20-output-1.png" width="683" height="299"></p>
+</div>
 </div>
 <p>That is just about it for this plot. Always to remember to save figures as <code>.svg</code> or <code>.pdf</code>. If you require a <code>.png</code> then use the <code>dpi=</code> option in <code>fig.savefig</code> to increase the resolution.</p>
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-20-output-1.png" width="622" height="298"></p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -447,14 +453,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> save your figure as <code>.svg</code> or <code>.pdf</code>.</p>
 </div>
 </div>
+</div></div><div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'results.svg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figure.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Final SVG figure</figcaption>
-</figure>
-</div>
-<p>Finally finally, <a href="https://matplotlib.org/stable/"><strong>READ THE DOCUMENTATION</strong></a>.</p>
+<p>Finally, <a href="https://matplotlib.org/stable/"><strong>read the documentation!</strong></a>.</p>
 
 
 
