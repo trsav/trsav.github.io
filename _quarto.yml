@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Tom Savage - Blog"
+  title: "ΤΡΣ"
   navbar:
     right:
       - about.qmd
