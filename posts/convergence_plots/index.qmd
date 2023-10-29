@@ -15,7 +15,7 @@ jupyter: python3
 ---
 
 
->"The First Bite Is With The Eyes." - Apicius, 1st Century Rome
+>The First Bite Is With The Eyes - Apicius, 1st Century Rome
 
 
 Here I will outline my personal preferences for best convergence plotting practices using [Matplotlib](https://matplotlib.org).

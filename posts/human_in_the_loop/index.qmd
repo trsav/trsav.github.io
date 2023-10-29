@@ -27,23 +27,13 @@ keywords:
 categories: [optimisation]
 # google-scholar: true
 citation: true
-
 bibliography: ref.bib
 toc: true
 format:
     html: default
 reference-location: margin
 citation-location: margin
-
 ---
-::: {.hidden}
-$$
-\DeclareMathOperator*{\argmax}{arg\,max}
-\usepackage{amsmath,amsfonts,amssymb,algorithm,algorithmic}
-$$
-:::
-
-
 
 ## Abstract {.unnumbered}
 
@@ -90,6 +80,12 @@ These methods are static and don't allow real-time expert input.
 
 We first maximise a given utility function $\mathcal{U}$ for a given dataset $\mathcal{D}_t:= \{(\mathbf{x}_i,y_i)\}_{i=1}^t$:
 
+:::{.hidden}
+$$
+\DeclareMathOperator*{\argmax}{arg\,max}
+\usepackage{amsmath,amsfonts,amssymb,algorithm,algorithmic}
+$$
+:::
 $$
    \mathbf{x}^* = \argmax_{x\in\mathcal{X}\subseteq\mathbb{R}^n} \; \mathcal{U}(x),
 $$ {#eq-standard-bo}

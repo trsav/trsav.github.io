@@ -202,12 +202,6 @@ div.csl-indent {
 
 
 
-<div class="hidden">
-<p><span class="math display">\[
-\DeclareMathOperator*{\argmax}{arg\,max}
-\usepackage{amsmath,amsfonts,amssymb,algorithm,algorithmic}
-\]</span></p>
-</div>
 <section id="abstract" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="abstract">Abstract</h2>
 <p>Domain experts often possess valuable physical insights that are overlooked in fully automated decision-making processes such as Bayesian optimisation. In this article we apply high-throughput (batch) Bayesian optimisation alongside anthropological decision theory to enable domain experts to influence the selection of optimal experiments. Our methodology exploits the hypothesis that humans are better at making discrete choices than continuous ones and enables experts to influence critical early decisions. At each iteration we solve an augmented multi-objective optimisation problem across a number of alternate solutions, maximising both the sum of their utility function values and the determinant of their covariance matrix, equivalent to their total variability. By taking the solution at the knee point of the Pareto front, we return a set of alternate solutions at each iteration that have both high utility values and are reasonably distinct, from which the expert selects one for evaluation. We demonstrate that even in the case of an uninformed practitioner, our algorithm recovers the regret of standard Bayesian optimisation.</p>
@@ -241,6 +235,12 @@ Kumar, A V, Arun, Santu Rana, Alistair Shilton, and Svetha Venkatesh. 2022. <spa
 <section id="method" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="method"><span class="header-section-number">3</span> Method</h2>
 <p>We first maximise a given utility function <span class="math inline">\(\mathcal{U}\)</span> for a given dataset <span class="math inline">\(\mathcal{D}_t:= \{(\mathbf{x}_i,y_i)\}_{i=1}^t\)</span>:</p>
+<div class="hidden">
+<p><span class="math display">\[
+\DeclareMathOperator*{\argmax}{arg\,max}
+\usepackage{amsmath,amsfonts,amssymb,algorithm,algorithmic}
+\]</span></p>
+</div>
 <p><span id="eq-standard-bo"><span class="math display">\[
    \mathbf{x}^* = \argmax_{x\in\mathcal{X}\subseteq\mathbb{R}^n} \; \mathcal{U}(x),
 \tag{1}\]</span></span></p>

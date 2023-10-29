@@ -1,12 +1,11 @@
 ---
-title: "Book Review"
+title: "Book Review - Killing Thatcher, Rory Carroll"
+subtitle: "Published in _The Felix_ October 2023"
 author: "Tom Savage"
 categories: [book review]
 date: "10/21/2023"
 image: "cover.jpg"
 ---
-
-**Killing Thatcher - Rory Carroll** Published in _The Felix_ October 2023
 
 Maggie’s potential assassin, ironically named Magee is presented as someone who can’t catch a break. He has a troubled relationship with his wife, is arrested countless times, and it goes without saying, didn’t kill Thatcher. 
 
