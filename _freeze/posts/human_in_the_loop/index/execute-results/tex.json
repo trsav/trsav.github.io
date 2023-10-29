@@ -1,0 +1,10 @@
+{
+  "hash": "3c649c31a723744a7953f0fb7d8d4c30",
+  "result": {
+    "markdown": "---\ntitle: Human-in-the-loop Bayesian Optimisation\nauthor: Tom Savage\ncategories:\n  - optimisation\ndate: 10/26/2023\ncallout-appearance: minimal\nreference-location: margin\ncitation-location: margin\nformat:\n  pdf: default\n  html:\n    self-contained: true\n---\n\n# Introduction\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": []
+  }
+}
