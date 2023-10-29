@@ -1,6 +1,7 @@
 ---
 title: "Book Review"
 author: "Tom Savage"
+date: "10/22/2023"
 categories: [book review]
 image: "gazza.jpg"
 ---

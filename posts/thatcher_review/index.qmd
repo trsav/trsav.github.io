@@ -2,6 +2,7 @@
 title: "Book Review"
 author: "Tom Savage"
 categories: [book review]
+date: "10/21/2023"
 image: "cover.jpg"
 ---
 

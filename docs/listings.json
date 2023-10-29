@@ -2,9 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/human_in_the_loop/index.html",
+      "/posts/convergence_plots/index.html",
       "/posts/gazza_agonistes/index.html",
-      "/posts/thatcher_review/index.html",
-      "/posts/plotting_practice/index.html"
+      "/posts/thatcher_review/index.html"
     ]
   }
 ]
