@@ -13,7 +13,7 @@ website:
         href: https://twitter.com/savage_tom
 format:
   html:
-    theme: litera
+    theme: simplex
     css: styles.css
 
 

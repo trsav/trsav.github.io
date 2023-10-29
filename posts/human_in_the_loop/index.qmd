@@ -26,7 +26,8 @@ keywords:
   - Batch
 categories: [optimisation]
 # google-scholar: true
-citation: true
+citation:
+  url: https://sav.phd/posts/human_in_the_loop/
 bibliography: ref.bib
 toc: true
 format:
