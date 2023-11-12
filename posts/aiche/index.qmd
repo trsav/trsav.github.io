@@ -31,7 +31,7 @@ Additive manufacturing has enabled the creation of reactors with non-traditional
 
 **TLDR;** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
 
-![A control reactor and our optimised designs alongside respective residence time distributions obtained via 3D printing and experimental validation.](results.webp)
+![A control reactor and our optimised designs alongside respective residence time distributions obtained via 3D printing and experimental validation.](results.webp){width=70%}
 
 
 [For the full read please take a look at the preprint!](https://arxiv.org/abs/2308.08841) [@savage]
@@ -119,7 +119,7 @@ In this talk I discussed the flows that we induced through the optimisation of p
 Early formation of Dean vortices induced in our optimal design
 :::
 
-![Summary slide for the presentation _Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations_ at AIChE 2023.](summary.webp)
+![Summary slide for the presentation _Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations_ at AIChE 2023.](summary.webp){width=70%}
 
 ---
 
