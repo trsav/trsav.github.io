@@ -15,7 +15,7 @@ bibliography: ref.bib
 ---
 
 ::: column-margin
-![](yhf.webp)
+![Yankee Hotel Foxtrot](yhf.webp)
 
 ![](selfie.webp)
 :::
