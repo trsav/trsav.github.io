@@ -15,9 +15,9 @@ bibliography: ref.bib
 ---
 
 ::: column-margin
-![_Yankee Hotel Foxtrot_ <a href="//en.wikipedia.org/wiki/File:Yankee_Hotel_Foxtrot_(Front_Cover).png" title="Fair use of copyrighted material in the context of Yankee Hotel Foxtrot">Fair use</a>](yhf.png)
+![_Yankee Hotel Foxtrot_ <a href="//en.wikipedia.org/wiki/File:Yankee_Hotel_Foxtrot_(Front_Cover).png" title="Fair use of copyrighted material in the context of Yankee Hotel Foxtrot">Fair use</a>](yhf.webp)
 
-![](selfie.jpeg)
+![](selfie.webp)
 :::
 
 This [AIChE](https://www.aiche.org/conferences/aiche-annual-meeting/2023) was in Orlando. However, due to a delay at US customs during a layover at Chicago O'Hare I was prescribed the unfortunate detour of an evening in downtown Chicago. I bregrudingly recreated the cover of one of my [favourite albums](https://en.wikipedia.org/wiki/Yankee_Hotel_Foxtrot) as well as ate deep dish pizza and the like... However after arriving in Orlando I presented three talks: 
@@ -30,7 +30,7 @@ Additive manufacturing has enabled the creation of reactors with non-traditional
 
 **TLDR;** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
 
-![A control reactor and our optimised designs alongside respective residence time distributions obtained via 3D printing and experimental validation.](results.png)
+![A control reactor and our optimised designs alongside respective residence time distributions obtained via 3D printing and experimental validation.](results.webp)
 
 
 [For the full read please take a look at the preprint!](https://arxiv.org/abs/2308.08841) [@savage]

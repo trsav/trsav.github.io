@@ -7,3 +7,10 @@
     background-color: rgb(241, 255, 241);
     border: 3px solid rgb(156, 255, 141);
 }
+
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
