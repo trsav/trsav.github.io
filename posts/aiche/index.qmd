@@ -15,7 +15,7 @@ bibliography: ref.bib
 ---
 
 ::: column-margin
-![_Yankee Hotel Foxtrot_ <a href="//en.wikipedia.org/wiki/File:Yankee_Hotel_Foxtrot_(Front_Cover).png" title="Fair use of copyrighted material in the context of Yankee Hotel Foxtrot">Fair use</a>](yhf.webp)
+![](yhf.webp)
 
 ![](selfie.webp)
 :::
