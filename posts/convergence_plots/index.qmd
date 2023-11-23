@@ -1,5 +1,5 @@
 ---
-title: "Convergence Plots"
+title: "CONVERGENCE PLOTS"
 author: "Tom Savage"
 categories: [visualisation]
 image: "figure.svg"

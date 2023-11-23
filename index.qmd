@@ -2,6 +2,7 @@
 title: ""
 listing:
   contents: posts
+  fields: [date,title,author]
   sort: "date desc"
   type: default
   categories: true

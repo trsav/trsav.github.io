@@ -1,5 +1,5 @@
 ---
-title: "Expert-guided Bayesian Optimisation for Human-in-the-loop Experimental Design of Known Systems"
+title: "EXPERT-GUIDED BAYESIAN OPTIMISATION FOR HUMAN-IN-THE-LOOP EXPERIMENTAL DESIGN OF KNOWN SYSTEMS"
 subtitle: "NeurIPS workshop on Modern Experimental Desisgn and Active Learning in the Real World"
 date: 2023-10-27
 crossref:

@@ -1,5 +1,6 @@
 ---
-title: "AIChE 2023 & Polar Gaussian Processes"
+# title: "AIChE 2023 & Polar Gaussian Processes"
+title: "AICHE 2023 & POLAR GAUSSIAN PROCESSES"
 author: "Tom Savage"
 categories: [conference,chemical engineering]
 image: "conf.webp"
@@ -7,6 +8,7 @@ date: "11/12/2023"
 callout-appearance: minimal
 format:
   html:
+    css: styles.css
     grid:
       margin-width: 350px         # <1>
 jupyter: python3
@@ -21,22 +23,43 @@ bibliography: ref.bib
 ![](selfie.webp)
 :::
 
-This [AIChE](https://www.aiche.org/conferences/aiche-annual-meeting/2023) was in Orlando. However, due to a delay at US customs during a layover at Chicago O'Hare I was prescribed the unfortunate detour of an evening in downtown Chicago. I begrudgingly recreated the cover of one of my [favourite albums](https://en.wikipedia.org/wiki/Yankee_Hotel_Foxtrot) as well as ate deep dish pizza and the like... However after arriving in Orlando I presented three talks: 
+This [AIChE](https://www.aiche.org/conferences/aiche-annual-meeting/2023) was in Orlando. However, due to a delay at US customs during a layover at Chicago O'Hare I was prescribed the unfortunate detour of an evening in downtown Chicago. 
 
-**A Data-Driven Framework for the Design of Reactor Simulations: Exploiting Multiple Continuous Fidelities** _Data Driven Optimisation_
+I begrudgingly recreated the cover of one of my [favourite albums](https://en.wikipedia.org/wiki/Yankee_Hotel_Foxtrot) as well as ate deep dish pizza and the like... However after arriving in Orlando I presented three talks: 
+
+::: {.line}
+:::
+&#8203;
+
+
+**A Data-Driven Framework for the Design of Reactor Simulations: Exploiting Multiple Continuous Fidelities**: _Data Driven Optimisation_
 
 In this talk I outlined the problem formulation and methodology for the optimisation of coiled-tube reactor geometry. 
-Additive manufacturing has enabled the creation of reactors with non-traditional geometries, so to take advantage of this we parameterise the wall and path of a coiled tube reactor and formulate a large, expensive derivative free/black box optimisation problem. Because the closed loop procedure of meshing and simulating a given geometry is so expensive we formulate it as a multi-fidelity Bayesian optimisation problem with two independent continuous fidelities.
 
+Additive manufacturing has enabled the creation of reactors with non-traditional geometries, so to take advantage of this we parameterise the wall and path of a coiled tube reactor and formulate a large, expensive derivative free/black box optimisation problem. 
 
-**TLDR;** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
+Because the closed loop procedure of meshing and simulating a given geometry is so expensive we formulate it as a multi-fidelity Bayesian optimisation problem with two independent continuous fidelities.
 
-![A control reactor and our optimised designs alongside respective residence time distributions obtained via 3D printing and experimental validation.](results.webp){width=70%}
+::: {.cleanbox}
+::: columns
+::: {.column width="5%"}
+:::
+::: {.column width="25%"}
+**TL;DR** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="60%"}
+![](results.webp)
+:::
+::: {.column width="5%"}
+:::
+:::
+:::
 
-
-[For the full read please take a look at the preprint!](https://arxiv.org/abs/2308.08841) [@savage]
-
+[For the full read take a look at the preprint.](https://arxiv.org/abs/2308.08841) [@savage]
 Thanks to my co-authors: Nausheen, who recently won the [IMechE Process Industries Division Most Distinguished Developing Career Achievement Prize](https://x.com/IMechE/status/1721527911012835747?s=20), and [Jonathan](https://www.ncl.ac.uk/engineering/staff/profile/jonathanmcdonough.html) who without which the 3D printing and validation wouldn't have been possible, as well as Prof Omar Matar and Dr Antonio del Rio Chanona.
+
 
 ::: column-margin
 ![Me presenting the talk. Spot the 3D printed reactor on the table.](me.webp)
@@ -45,7 +68,7 @@ Thanks to my co-authors: Nausheen, who recently won the [IMechE Process Industri
 <details>
 <summary>**Extra polar Gaussian process content and shoutout to GPJax**</summary>
 
-\ 
+&#8203;
 
 As part of this work I parameterised the walls of a coiled tube reactor using a series of polar Gaussian Processes, allowing me to shift and warp the wall whilst ensuring it remains closed and continuous (AKA no leaks!). As part of this I ended up [contributing to the open-source GPJax library](https://github.com/JaxGaussianProcesses/GPJax/pull/339) which has been my library of choice for Gaussian processes for the last year.
 
@@ -107,23 +130,27 @@ As we can see, samples from this Gaussian process are continuous in the polar do
 In the case of defining the cross-section, we choose to exactly interpolate between 6 equally spaced points. The resulting posterior mean function then defines the cross-section. 
 </details>
 
---- 
+::: {.line}
+:::
+&#8203;
 
-**Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations** _Data Science for Complex Fluids and Complex Flows_
+**Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations**: _Data Science for Complex Fluids and Complex Flows_
 
-In this talk I discussed the flows that we induced through the optimisation of plug-flow performance. Despite only specifying that we wanted the residence time distribution to be as tight and symmetric as possible, we found out that our optimised designs specifically induced Dean vortices at low Reynolds numbers. For the sake of brevity I will include the summary slide of the talk.
+In this talk I discussed the flows that we induced through the optimisation of plug-flow performance. 
+
+Despite only specifying that we wanted the residence time distribution to be as tight and symmetric as possible, we found out that our optimised designs specifically induced Dean vortices at low Reynolds numbers.
 
 ::: column-margin
 ![](dean_example.webp)
 ![](dean_example_2.webp)
-Early formation of Dean vortices induced in our optimal design
+Early formation of Dean vortices induced in our optimal design.
+:::
+::: {.cleanbox}
+![Summary slide for the presentation _Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations_ at AIChE 2023.](summary.webp){width=99%}
 :::
 
-![Summary slide for the presentation _Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations_ at AIChE 2023.](summary.webp){width=70%}
 
----
-
-- **Designing Robust Energy Policies for Low-Carbon Technology Adoption** _Design, Analysis, and Optimization of Sustainable Energy Systems and Supply Chains I_
+- **Designing Robust Energy Policies for Low-Carbon Technology Adoption**: _Design, Analysis, and Optimization of Sustainable Energy Systems and Supply Chains I_
 
 This talk was highlighting work completed with Dr Gbemi Olueye at the Imperial College Centre for Environmental Policy. 
 
@@ -136,10 +163,13 @@ Large scale uncertainties concerning 'the future' (which I differentiate from sm
 
 It's this experimentation that is enabled by the methodology that enables us to provide trade-off graphs to policy makers _as the solution itself_. Something that I argue should always be done for this class of problem, given the political mandate we as engineers and scientists do not have.
 
-[For a full overview, click here for the preprint!](https://doi.org/10.48550/arxiv.2304.10203) [@savage2]
+[For a full overview, click here for the preprint.](https://doi.org/10.48550/arxiv.2304.10203) [@savage2]
 
----
+::: {.line}
+:::
+&#8203;
 
 That is about it for Orlando. It was great to catch up with some old colleagues from Cambridge, and some new ones. See you next year in San Diego!
 
-![](all.webp)
+![](all.webp){width=100%}
+

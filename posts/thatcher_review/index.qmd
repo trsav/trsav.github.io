@@ -1,5 +1,5 @@
 ---
-title: "Book Review - Killing Thatcher, Rory Carroll"
+title: "BOOK REVIEW - KILLING THATCHER, RORY CARROLL"
 subtitle: "Published in _The Felix_ October 2023"
 author: "Tom Savage"
 categories: [book review]

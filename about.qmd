@@ -1,6 +1,9 @@
 ---
 title: "About Me"
 image: profile.png
+html:
+  theme: 
+    mainfont: "mono"
 about:
   template: trestles
   links:
