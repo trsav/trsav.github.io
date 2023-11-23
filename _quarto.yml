@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "ΤΡΣ"
+  title: "TRS"
   #title: "TRS"
   navbar:
     right:
