@@ -197,7 +197,7 @@ div.csl-indent {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -206,11 +206,11 @@ div.csl-indent {
 <h2 class="unnumbered anchored" data-anchor-id="abstract">Abstract</h2>
 <p>Domain experts often possess valuable physical insights that are overlooked in fully automated decision-making processes such as Bayesian optimisation. In this article we apply high-throughput (batch) Bayesian optimisation alongside anthropological decision theory to enable domain experts to influence the selection of optimal experiments. Our methodology exploits the hypothesis that humans are better at making discrete choices than continuous ones and enables experts to influence critical early decisions. At each iteration we solve an augmented multi-objective optimisation problem across a number of alternate solutions, maximising both the sum of their utility function values and the determinant of their covariance matrix, equivalent to their total variability. By taking the solution at the knee point of the Pareto front, we return a set of alternate solutions at each iteration that have both high utility values and are reasonably distinct, from which the expert selects one for evaluation. We demonstrate that even in the case of an uninformed practitioner, our algorithm recovers the regret of standard Bayesian optimisation.</p>
 </section>
-<section id="introduction" class="level2 page-columns page-full" data-number="1">
+<section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Bayesian optimisation has been successfully applied in a number of complex domains including engineering systems where derivatives are often not available, such as those that involve simulation or propriety software. By removing the human from decision-making processes in favour of maximising statistical quantities such as expected improvement, complex functions can be optimised in an efficient number of samples. However, these engineering systems are often engaged with by domain experts such as engineers or chemists, and as such the behaviour of the underlying function cannot be considered completely unknown a-priori. Therefore, there exists significant scope to take advantage of the benefits of Bayesian optimisation in optimising expensive derivative-free problems, whilst enabling domain experts to inform the decision-making process, putting the human back into the loop. By providing an optimal set of alternatives to an expert to select their desired evaluation, we ensure that any one choice presents information gain about the optimal solution. Simultaneously, we ensure the choices are distinct enough to avoid the human making an effective gradient calculation. Alternative solution information such as utility function value, predictive output distribution and visualisations are provided to the expert as a pseudo-likelihood. The decision-maker then effectively performs discrete Bayesian reasoning, internally conditioning the provided information with their own prior expertise and knowledge of the solutions provided. In addition to improved convergence (depending on the ability of the domain expert), our methodology enables improved interpretability in higher dimensions, as the decision-maker has the final say in what is evaluated. Our approach works with any utility function and NSGA-II <span class="citation" data-cites="Deb2002">(<a href="#ref-Deb2002" role="doc-biblioref">Deb et al. 2002</a>)</span> is applied for multi-objective optimisation, efficiently handling the non-convex utility-space.<br>
 <a href="#fig-overview">Figure&nbsp;1</a> demonstrates our methodology</p>
-<div class="no-row-height column-margin column-container"></div><div id="fig-overview" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="overview_figure.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Overview of our methodology, where an augmented batch Bayesian optimisation problem is solved using multi-objective optimisation, providing an expert with a set of alternate solutions.</figcaption>
@@ -218,20 +218,10 @@ div.csl-indent {
 </div>
 <p>By allowing an expert to influence the experimental design through a discrete decision step, we mitigate the expert needing to make continuous decisions throughout, and do not rely on an expert `prior’ of the global optimum that necessarily must be defined before optimisation. Approaches that rely on an expert-defined prior may need to redefine this at significant human-cost throughout optimisation in light of new information. Similarly, the expert has no influence over the actual solutions evaluated and the optimisation is merely weighted towards broad regions in solution-space.</p>
 </section>
-<section id="previous-work" class="level2 page-columns page-full" data-number="2">
+<section id="previous-work" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="previous-work"><span class="header-section-number">2</span> Previous Work</h2>
 <p><span class="citation" data-cites="Kanarik2023">(<a href="#ref-Kanarik2023" role="doc-biblioref">Kanarik et al. 2023</a>)</span> demonstrated that experts improve the initial convergence in Bayesian optimisation for semiconductor processes. However, this can be counterproductive in later stages. Algorithmic integration of expert knowledge has been explored <span class="citation" data-cites="Liu2022">Hvarfner et al. (<a href="#ref-hvarfner2022pibo" role="doc-biblioref">2022</a>)</span>. <span class="citation" data-cites="hvarfner2022pibo">(<a href="#ref-hvarfner2022pibo" role="doc-biblioref">Hvarfner et al. 2022</a>)</span> and <span class="citation" data-cites="Ramachandran2020">(<a href="#ref-Ramachandran2020" role="doc-biblioref">Ramachandran et al. 2020</a>)</span> use user-defined priors to weight the acquisition function, while <span class="citation" data-cites="Liu2022">(<a href="#ref-Liu2022" role="doc-biblioref">Liu 2022</a>)</span> diminishes this weight over time. These methods are static and don’t allow real-time expert input. <span class="citation" data-cites="BOMuse">(<a href="#ref-BOMuse" role="doc-biblioref">Gupta et al. 2023</a>)</span> allows continuous expert involvement, using a linear Gaussian process to approximate human intuition, achieving sub-linear regret bounds. <span class="citation" data-cites="av2022human">(<a href="#ref-av2022human" role="doc-biblioref">Kumar et al. 2022</a>)</span> and <span class="citation" data-cites="robot">(<a href="#ref-robot" role="doc-biblioref">Maus et al. 2022</a>)</span> present similar frameworks, offering alternative solutions for evaluation, with the expert making the final decision latterly in a molecular design setting.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-hvarfner2022pibo" class="csl-entry" role="listitem">
-Hvarfner, Carl, Danny Stoll, Artur Souza, Marius Lindauer, Frank Hutter, and Luigi Nardi. 2022. <span>“<span class="nocase"><span class="math inline">\(\pi\)</span>BO: Augmenting Acquisition Functions with User Beliefs for Bayesian Optimization</span>.”</span> <a href="https://arxiv.org/abs/2204.11051">https://arxiv.org/abs/2204.11051</a>.
-</div><div id="ref-Ramachandran2020" class="csl-entry" role="listitem">
-Ramachandran, Anil, Sunil Gupta, Santu Rana, Cheng Li, and Svetha Venkatesh. 2020. <span>“<span class="nocase">Incorporating expert prior in Bayesian optimisation via space warping</span>.”</span> <em>Knowl. Based Syst.</em> 195 (May): 105663. <a href="https://doi.org/10.1016/j.knosys.2020.105663">https://doi.org/10.1016/j.knosys.2020.105663</a>.
-</div><div id="ref-Liu2022" class="csl-entry" role="listitem">
-Liu, Peng. 2022. <span>“<span class="nocase">Human-in-the-loop Bayesian Optimization with No-Regret Guarantees</span>,”</span> October.
-</div><div id="ref-BOMuse" class="csl-entry" role="listitem">
-Gupta, Sunil, Alistair Shilton, Arun Kumar A, Shannon Ryan, Majid Abdolshah, Hung Le, Santu Rana, Julian Berk, Mahad Rashid, and Svetha Venkatesh. 2023. <span>“<span class="nocase">BO-Muse: A human expert and AI teaming framework for accelerated experimental design</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.2303.01684">https://doi.org/10.48550/ARXIV.2303.01684</a>.
-</div><div id="ref-av2022human" class="csl-entry" role="listitem">
-Kumar, A V, Arun, Santu Rana, Alistair Shilton, and Svetha Venkatesh. 2022. <span>“<span>Human-AI Collaborative Bayesian Optimisation</span>.”</span> <em>Advances in Neural Information Processing Systems</em> 35: 16233–45.
-</div></div></section>
+</section>
 <section id="method" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="method"><span class="header-section-number">3</span> Method</h2>
 <p>We first maximise a given utility function <span class="math inline">\(\mathcal{U}\)</span> for a given dataset <span class="math inline">\(\mathcal{D}_t:= \{(\mathbf{x}_i,y_i)\}_{i=1}^t\)</span>:</p>
@@ -281,7 +271,7 @@ The practitioner is then made to choose a solution to evaluate from this set of 
 </figure>
 </div>
 </section>
-<section id="computational-results-discussion" class="level2 page-columns page-full" data-number="4">
+<section id="computational-results-discussion" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="computational-results-discussion"><span class="header-section-number">4</span> Computational Results &amp; Discussion</h2>
 <p>To assess our approach, we benchmark it against standard Bayesian optimisation. In order to incorporate and assess human interaction in an automated manner, we hypothesise a number of different human behaviours. The ‘Expert’ practitioner represents an ideal, where the best solution (that is the one with the highest true objective value) is always selected. Equivalently, to test the performance of our approach under the influence of a practitioner with misaligned knowledge, we present an ‘Adversarial’ practitioner who consistently selects the solution with the lowest true objective value. In addition, we present a probabilistic practitioner, who selects the solution with the best true objective value with some probability. Finally, we present the behaviour of a ‘Trusting’ practitioner who selects the solution with the largest utility (as these values are presented), equivalent to standard Bayesian optimisation as this solution is obtained through standard single objective optimisation (<a href="#eq-standard-bo">Equation&nbsp;1</a>). In practice, the expert will condition the information provided with their prior beliefs. In our approach this includes information regarding the expected distribution of the objective of each solution, as well as the utility value of each solution. Whilst we cannot benchmark real human behaviour due to the random nature of the objective functions, and practical issues, the behaviours described summarise key aspects in order to generate useful insights into our approach, we leave this for future work. The human behaviours applied are summarised within <a href="#tbl-behav">Table&nbsp;1</a>.</p>
 <div id="tbl-behav" class="anchored">
@@ -319,9 +309,7 @@ The practitioner is then made to choose a solution to evaluate from this set of 
 </div>
 <p>We perform optimisation over 50 functions, each representing a sample from a Gaussian process prior with lengthscale 0.3 using the upper-confidence bound (UCB) utility function. <a href="#fig-res">Figure&nbsp;3</a> demonstrates the average and standard deviation of simple regret, and average regret (both defined within <span class="citation" data-cites="Garnett2023">Garnett (<a href="#ref-Garnett2023" role="doc-biblioref">2023</a>)</span>) for each human behaviour across 1D and 2D objective functions.<br>
 Results for 5D, and specific functions can be located within the Appendix.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-Garnett2023" class="csl-entry" role="listitem">
-Garnett, Roman. 2023. <em><span>Bayesian Optimization</span></em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781108348973">https://doi.org/10.1017/9781108348973</a>.
-</div></div><div id="fig-res" class="quarto-layout-panel">
+<div id="fig-res" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
@@ -347,17 +335,7 @@ Garnett, Roman. 2023. <em><span>Bayesian Optimization</span></em>. Cambridge Uni
 </figure>
 </div>
 <p>The expectation of average regret tends towards zero for all behaviours, indicating empirical convergence. Focusing on results from the set of 1D functions, an ‘Expert’ provides improved convergence than standard Bayesian optimisation (‘Trusting’) throughout all iterations, with benefits diminishing throughout the later stages, where the standard automated approach recovers the ‘Expert’ average regret value, confirming previous observations regarding the importance of human input throughout earlier iterations, and conversely diminishing importance of expert opinion during `fine-tuning’ <span class="citation" data-cites="Kanarik2023">Kanarik et al. (<a href="#ref-Kanarik2023" role="doc-biblioref">2023</a>)</span>. Improved convergence of simple regret occurs in cases where the practitioner selects the ‘best’ solution from a set 75%, 50%, and to a lesser extent 25% of the time out of 4 available choices, similarly reflected in trends across average regret. The results demonstrated in <a href="#fig-res">Figure&nbsp;3</a> indicate the potential for our approach to improve the convergence of Bayesian optimisation even in cases where the practitioner is correct about a decision only partially. When the expert makes a random selection (<span class="math inline">\(p(\text{Best}) = 0.25\)</span>, for 4 alternate solutions), standard Bayesian optimisation convergence is recovered, indicating the effectiveness of the choices presented by asking a practitioner to select between distinct solutions, each of which individually has a high utility value. This is reflected throughout 1D, 2D and 5D functions. Only in the case where the practitioner actively selects the worst solution (i.e.&nbsp;they are misaligned), is performance worse. In higher-dimensions an adversarial practitioner performs worse, as they are performing inefficient space-filling in an increasingly larger volume before good solutions are found.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-Kanarik2023" class="csl-entry" role="listitem">
-Kanarik, Keren J., Wojciech T. Osowiecki, Yu Lu, Dipongkar Talukder, Niklas Roschewsky, Sae Na Park, Mattan Kamon, David M. Fried, and Richard A. Gottscho. 2023. <span>“<span class="nocase">Human-machine collaboration for improving semiconductor process development</span>.”</span> <em>Nature</em> 616 (7958): 707–11. <a href="https://doi.org/10.1038/s41586-023-05773-7">https://doi.org/10.1038/s41586-023-05773-7</a>.
-</div><div id="ref-local_pen" class="csl-entry" role="listitem">
-González, Javier, Zhenwen Dai, Philipp Hennig, and Neil D. Lawrence. 2015. <span>“<span class="nocase">Batch Bayesian Optimization via Local Penalization</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.1505.08052">https://doi.org/10.48550/ARXIV.1505.08052</a>.
-</div><div id="ref-Bischl2014" class="csl-entry" role="listitem">
-Bischl, Bernd, Simon Wessing, Nadja Bauer, Klaus Friedrichs, and Claus Weihs. 2014. <span>“<span class="nocase"><span>MOI</span>-<span>MBO</span>: Multiobjective Infill for Parallel Model-Based Optimization</span>.”</span> In <em>Lecture Notes in Computer Science</em>, 173–86. Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-09584-4_17">https://doi.org/10.1007/978-3-319-09584-4_17</a>.
-</div><div id="ref-Habib2016" class="csl-entry" role="listitem">
-Habib, Ahsanul, Hemant Kumar Singh, and Tapabrata Ray. 2016. <span>“<span class="nocase">A multi-objective batch infill strategy for efficient global optimization</span>.”</span> In <em>2016 <span>IEEE</span> Congress on Evolutionary Computation (<span>CEC</span>)</em>. <span>IEEE</span>. <a href="https://doi.org/10.1109/cec.2016.7744341">https://doi.org/10.1109/cec.2016.7744341</a>.
-</div><div id="ref-robot" class="csl-entry" role="listitem">
-Maus, Natalie, Kaiwen Wu, David Eriksson, and Jacob Gardner. 2022. <span>“<span class="nocase">Discovering Many Diverse Solutions with Bayesian Optimization</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.2210.10953">https://doi.org/10.48550/ARXIV.2210.10953</a>.
-</div></div><p>The methodology we present may also be interpreted as an approach for high-throughput/batch Bayesian optimisation, with an additional preference for solutions that are well-distributed throughout the search space. Our intention for future work is to benchmark it against other existing batch Bayesian optimisation methodologies <span class="citation" data-cites="local_pen">González et al. (<a href="#ref-local_pen" role="doc-biblioref">2015</a>)</span>, including those with similar multi-objective formulations (<span class="citation" data-cites="Bischl2014">Bischl et al. (<a href="#ref-Bischl2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="Habib2016">Habib, Singh, and Ray (<a href="#ref-Habib2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="robot">Maus et al. (<a href="#ref-robot" role="doc-biblioref">2022</a>)</span>). We will also investigate to what extent large-language models can perform the selection step.</p>
+<p>The methodology we present may also be interpreted as an approach for high-throughput/batch Bayesian optimisation, with an additional preference for solutions that are well-distributed throughout the search space. Our intention for future work is to benchmark it against other existing batch Bayesian optimisation methodologies <span class="citation" data-cites="local_pen">González et al. (<a href="#ref-local_pen" role="doc-biblioref">2015</a>)</span>, including those with similar multi-objective formulations (<span class="citation" data-cites="Bischl2014">Bischl et al. (<a href="#ref-Bischl2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="Habib2016">Habib, Singh, and Ray (<a href="#ref-Habib2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="robot">Maus et al. (<a href="#ref-robot" role="doc-biblioref">2022</a>)</span>). We will also investigate to what extent large-language models can perform the selection step.</p>
 </section>
 <section id="appendix-a-algorithm" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix-a-algorithm">Appendix A (Algorithm)</h2>
@@ -366,14 +344,10 @@ Maus, Natalie, Kaiwen Wu, David Eriksson, and Jacob Gardner. 2022. <span>“<spa
 <p><span class="theorem-title"><strong>Algorithm 1 </strong></span><img src="algorithm.png" class="img-fluid" alt="Expert-Guided Bayesian Optimization"></p>
 </div>
 </section>
-<section id="appendix-b-optimisation-details" class="level2 unnumbered page-columns page-full">
+<section id="appendix-b-optimisation-details" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix-b-optimisation-details">Appendix B (Optimisation Details)</h2>
 <p>Throughout this paper we apply 4 alternative solutions at each iteration (one of which will be the optimum of the utility function). Throughout all optimisation problems we generate an initial sample of 4 experiments, distributed via a static Latin hypercube design-of-experiments. When training the Gaussian process that models the objective-space we perform a multi-start of 8 gradient-based optimisation runs using Adam with a learning rate of 1e-3 for 750 iterations to determine GP hyperparameters. To solve the multi-objective augmented optimisation problem, resulting in a Pareto set of sets of alternative solutions we run NSGA-II <span class="citation" data-cites="Deb2002">Deb et al. (<a href="#ref-Deb2002" role="doc-biblioref">2002</a>)</span> for 150 iterations, with a population size of 100, 30 offspring at each iteration, a 0.9 probability of crossover, and 20 mutations per iteration. To generate the single optimum of the acquisition function, we perform a multi-start of 36 gradient-based optimisation runs using L-BFGS-B <span class="citation" data-cites="zhu1997algorithm">Zhu et al. (<a href="#ref-zhu1997algorithm" role="doc-biblioref">1997</a>)</span> with a tolerance of 1e-12 and a maximum iterations of 500. For the 1D, 2D, and 5D expectations over functions stemming from samples of a Gaussian process prior (with lengthscale 0.3), the lower and upper bounds used are 0 and 10 respectively for each dimension. All other bounds for functions can be located at <a href="http://www.sfu.ca/~ssurjano/optimization.html">http://www.sfu.ca/~ssurjano/optimization.html</a></p>
-<div class="no-row-height column-margin column-container"><div id="ref-Deb2002" class="csl-entry" role="listitem">
-Deb, K., A. Pratap, S. Agarwal, and T. Meyarivan. 2002. <span>“<span class="nocase">A fast and elitist multiobjective genetic algorithm: <span>NSGA</span>-<span>II</span></span>.”</span> <em><span>IEEE</span> Transactions on Evolutionary Computation</em> 6 (2): 182–97. <a href="https://doi.org/10.1109/4235.996017">https://doi.org/10.1109/4235.996017</a>.
-</div><div id="ref-zhu1997algorithm" class="csl-entry" role="listitem">
-Zhu, Ciyou, Richard H Byrd, Peihuang Lu, and Jorge Nocedal. 1997. <span>“<span class="nocase">Algorithm 778: L-BFGS-B: Fortran subroutines for large-scale bound-constrained optimization</span>.”</span> <em>ACM Transactions on Mathematical Software (TOMS)</em> 23 (4): 550–60.
-</div></div></section>
+</section>
 <section id="appendix-c.-regret-plots" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix-c.-regret-plots">Appendix C. (Regret Plots)</h2>
 <div id="fig-5D" class="quarto-figure quarto-figure-center anchored">
@@ -459,7 +433,47 @@ Click to expand additional regret plots
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Bischl2014" class="csl-entry" role="listitem">
+Bischl, Bernd, Simon Wessing, Nadja Bauer, Klaus Friedrichs, and Claus Weihs. 2014. <span>“<span class="nocase"><span>MOI</span>-<span>MBO</span>: Multiobjective Infill for Parallel Model-Based Optimization</span>.”</span> In <em>Lecture Notes in Computer Science</em>, 173–86. Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-09584-4_17">https://doi.org/10.1007/978-3-319-09584-4_17</a>.
+</div>
+<div id="ref-Deb2002" class="csl-entry" role="listitem">
+Deb, K., A. Pratap, S. Agarwal, and T. Meyarivan. 2002. <span>“<span class="nocase">A fast and elitist multiobjective genetic algorithm: <span>NSGA</span>-<span>II</span></span>.”</span> <em><span>IEEE</span> Transactions on Evolutionary Computation</em> 6 (2): 182–97. <a href="https://doi.org/10.1109/4235.996017">https://doi.org/10.1109/4235.996017</a>.
+</div>
+<div id="ref-Garnett2023" class="csl-entry" role="listitem">
+Garnett, Roman. 2023. <em><span>Bayesian Optimization</span></em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781108348973">https://doi.org/10.1017/9781108348973</a>.
+</div>
+<div id="ref-local_pen" class="csl-entry" role="listitem">
+González, Javier, Zhenwen Dai, Philipp Hennig, and Neil D. Lawrence. 2015. <span>“<span class="nocase">Batch Bayesian Optimization via Local Penalization</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.1505.08052">https://doi.org/10.48550/ARXIV.1505.08052</a>.
+</div>
+<div id="ref-BOMuse" class="csl-entry" role="listitem">
+Gupta, Sunil, Alistair Shilton, Arun Kumar A, Shannon Ryan, Majid Abdolshah, Hung Le, Santu Rana, Julian Berk, Mahad Rashid, and Svetha Venkatesh. 2023. <span>“<span class="nocase">BO-Muse: A human expert and AI teaming framework for accelerated experimental design</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.2303.01684">https://doi.org/10.48550/ARXIV.2303.01684</a>.
+</div>
+<div id="ref-Habib2016" class="csl-entry" role="listitem">
+Habib, Ahsanul, Hemant Kumar Singh, and Tapabrata Ray. 2016. <span>“<span class="nocase">A multi-objective batch infill strategy for efficient global optimization</span>.”</span> In <em>2016 <span>IEEE</span> Congress on Evolutionary Computation (<span>CEC</span>)</em>. <span>IEEE</span>. <a href="https://doi.org/10.1109/cec.2016.7744341">https://doi.org/10.1109/cec.2016.7744341</a>.
+</div>
+<div id="ref-hvarfner2022pibo" class="csl-entry" role="listitem">
+Hvarfner, Carl, Danny Stoll, Artur Souza, Marius Lindauer, Frank Hutter, and Luigi Nardi. 2022. <span>“<span class="nocase"><span class="math inline">\(\pi\)</span>BO: Augmenting Acquisition Functions with User Beliefs for Bayesian Optimization</span>.”</span> <a href="https://arxiv.org/abs/2204.11051">https://arxiv.org/abs/2204.11051</a>.
+</div>
+<div id="ref-Kanarik2023" class="csl-entry" role="listitem">
+Kanarik, Keren J., Wojciech T. Osowiecki, Yu Lu, Dipongkar Talukder, Niklas Roschewsky, Sae Na Park, Mattan Kamon, David M. Fried, and Richard A. Gottscho. 2023. <span>“<span class="nocase">Human-machine collaboration for improving semiconductor process development</span>.”</span> <em>Nature</em> 616 (7958): 707–11. <a href="https://doi.org/10.1038/s41586-023-05773-7">https://doi.org/10.1038/s41586-023-05773-7</a>.
+</div>
+<div id="ref-av2022human" class="csl-entry" role="listitem">
+Kumar, A V, Arun, Santu Rana, Alistair Shilton, and Svetha Venkatesh. 2022. <span>“<span>Human-AI Collaborative Bayesian Optimisation</span>.”</span> <em>Advances in Neural Information Processing Systems</em> 35: 16233–45.
+</div>
+<div id="ref-Liu2022" class="csl-entry" role="listitem">
+Liu, Peng. 2022. <span>“<span class="nocase">Human-in-the-loop Bayesian Optimization with No-Regret Guarantees</span>,”</span> October.
+</div>
+<div id="ref-robot" class="csl-entry" role="listitem">
+Maus, Natalie, Kaiwen Wu, David Eriksson, and Jacob Gardner. 2022. <span>“<span class="nocase">Discovering Many Diverse Solutions with Bayesian Optimization</span>.”</span> <a href="https://doi.org/10.48550/ARXIV.2210.10953">https://doi.org/10.48550/ARXIV.2210.10953</a>.
+</div>
+<div id="ref-Ramachandran2020" class="csl-entry" role="listitem">
+Ramachandran, Anil, Sunil Gupta, Santu Rana, Cheng Li, and Svetha Venkatesh. 2020. <span>“<span class="nocase">Incorporating expert prior in Bayesian optimisation via space warping</span>.”</span> <em>Knowl. Based Syst.</em> 195 (May): 105663. <a href="https://doi.org/10.1016/j.knosys.2020.105663">https://doi.org/10.1016/j.knosys.2020.105663</a>.
+</div>
+<div id="ref-zhu1997algorithm" class="csl-entry" role="listitem">
+Zhu, Ciyou, Richard H Byrd, Peihuang Lu, and Jorge Nocedal. 1997. <span>“<span class="nocase">Algorithm 778: L-BFGS-B: Fortran subroutines for large-scale bound-constrained optimization</span>.”</span> <em>ACM Transactions on Mathematical Software (TOMS)</em> 23 (4): 550–60.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2023,
   author = {Savage, Tom and del Rio Chanona, Antonio},
   title = {EXPERT-GUIDED {BAYESIAN} {OPTIMISATION} {FOR}
     {HUMAN-IN-THE-LOOP} {EXPERIMENTAL} {DESIGN} {OF} {KNOWN} {SYSTEMS}},

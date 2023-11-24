@@ -32,8 +32,8 @@ bibliography: ref.bib
 toc: true
 format:
     html: default
-reference-location: margin
-citation-location: margin
+# reference-location: margin
+# citation-location: margin
 ---
 
 ## Abstract {.unnumbered}

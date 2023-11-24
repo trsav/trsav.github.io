@@ -24,6 +24,7 @@
     padding: 1em;
     border: 2px solid black;
     border-radius: 0px;
+    box-shadow: 5px 5px 0px grey;
   }
 
   .line {

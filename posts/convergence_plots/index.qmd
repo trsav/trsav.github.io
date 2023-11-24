@@ -5,17 +5,8 @@ categories: [visualisation]
 image: "figure.svg"
 date: "10/24/2023"
 callout-appearance: minimal
-format:
-  html:
-    grid:
-      margin-width: 350px         # <1>
-reference-location: margin        # <2>
-citation-location: margin         # <2>
 jupyter: python3
 ---
-
-
->The First Bite Is With The Eyes - Apicius, 1st Century Rome
 
 
 Here I will outline my personal preferences for best convergence plotting practices using [Matplotlib](https://matplotlib.org).
@@ -29,7 +20,7 @@ plt.rcParams['text.usetex'] = True
 
 Let's start by plotting some convergence data in just about the _worst_ way, and slowly improve on this. It is my view that when LaTeX is available you should always use it.
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** use the LaTeX extension to render figures by including ```plt.rcParams['text.usetex'] = True'``` at the top of your script.
 :::
 
@@ -65,11 +56,11 @@ Using `plt.figure()` makes it harder to interact with the axis (even if you only
 
 Now we will initialise our plot correctly using the object-oriented syntax, sizing the figure appropriately for the given context. By constraining the layout we ensure that the figure fits within the given size.
 
-::: {.callout-tip .column-margin    }
+::: {.cleanbox}
 **Always** initialise a plot using the object-oriented interface `fig,ax = plt.subplots...`, defining the figure size appropriately.
 :::
 
-::: {.callout-important .column-margin}
+::: {.cleanbox}
 **Never** initialise a plot using the pyplot interface `plt.figure...`.
 :::
 
@@ -80,7 +71,7 @@ fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 
 Now we will draw our attention to plotting the data itself. **It is important to think about what message you want to convey to the reader**. Clearly providing each run for each benchmark is not useful. I will plot the mean and standard deviation of regret across each benchmark. I will use a line plot to convey the mean and a shaded region to convey the standard deviation. 
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** ensure that the `linewidth=...` option is set appropriately, and more importantly _consistently_.
 :::
 
@@ -95,7 +86,7 @@ for b in range(benchmarks):
 plt.show()
 ```
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** separate your data generation and plotting code. This will make it easier to adjust the plot later. Save data at generation (for example during optimisation) and then load it in for plotting.
 :::
 
@@ -104,7 +95,7 @@ Now we have decided what specifically to plot and all the information we wish to
 
 We should first add some axis labels as follows. Ensure the font size is large enough to be legible. You can use LaTeX within labels by using \$ \$ as standard, when doing so include an ```r``` in front of the string to ensure it gets parsed appropriately.
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** choose a legible font size and text for axis labels, using LaTeX where appropriate.
 :::
 
@@ -133,7 +124,7 @@ Now we will focus on the ticks. Ticks are important because they enable the read
 
 It is important to consider what tick values are appropriate to display. For example in this case, I want to convey to the reader the differences in overall convergence characteristics between these methods. Therefore, it may not be necessary to display intermediate regret values.
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** select appropriate tick values for your context, adjusting the fontsize as necessary.
 :::
 ```{python}
@@ -169,11 +160,11 @@ In this case I want to convey which color corresponds to which benchmark, but I 
 
 Including a label for the error bars does not contribute to the story and the message of the plot. 
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** include labels for the relevant information, such as distinguishing between benchmarks. If the plot is too crowded [place the legend outside of the plot](https://matplotlib.org/stable/users/explain/axes/legend_guide.html).
 :::
 
-::: {.callout-important .column-margin}
+::: {.cleanbox}
 **Never** overwhelm the reader with information and labels. Some information is fine to include within the caption, as the caption and the image are considered complimentary and dependent. 
 :::
 
@@ -215,7 +206,7 @@ For scatter plots the frame can help distinguish between the data and the legend
 
 When using  ```fill_between``` a faint outline is drawn which can make the plot look cluttered, I always like to remove this by setting ```linewidth=0```. 
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** remove the linewidth of ```fill_between``` for a cleaner plot.
 :::
 
@@ -233,7 +224,7 @@ for b in range(benchmarks):
     ax.plot(iterations,mean,color=cols[b],label=labels[b])
     ax.fill_between(iterations,mean-std,mean+std,alpha=0.2,color=cols[b],linewidth=0)
 ```
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** use the ```tab:``` set of colours over the default colours.
 :::
 
@@ -267,7 +258,7 @@ Now we can adjust the axis limits to ensure that the data is placed appropriatel
 ax.set_xlim([0,100])
 ```
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** adjust the axis limits appropriately. The x-axis particularly may be too large.
 :::
 
@@ -301,7 +292,7 @@ Finally, it is important to consider whether a ```grid``` is appropriate. In thi
 ax.grid(alpha=0.4)
 ```
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** consider using ```ax.grid()``` if the individual values of the data are important.
 :::
 
@@ -336,7 +327,7 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ```
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** remove the right and top axis if you choose not to use a grid.
 :::
 
@@ -366,7 +357,7 @@ plt.show()
 
 That is just about it for this plot. Always to remember to save figures as ```.svg``` or ```.pdf```. If you require a ```.png``` then use the ```dpi=``` option in ```fig.savefig``` to increase the resolution. 
 
-::: {.callout-tip .column-margin}
+::: {.cleanbox}
 **Always** save your figure as ```.svg``` or ```.pdf```. 
 :::
 
