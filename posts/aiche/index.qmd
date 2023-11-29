@@ -44,13 +44,9 @@ Because the closed loop procedure of meshing and simulating a given geometry is 
 ::: columns
 ::: {.column width="5%"}
 :::
-::: {.column width="25%"}
-**TL;DR** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
-:::
-::: {.column width="5%"}
-:::
-::: {.column width="60%"}
+::: {.column width="90%"}
 ![](results.webp)
+**TL;DR** we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate _improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions._
 :::
 ::: {.column width="5%"}
 :::

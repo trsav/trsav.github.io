@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/electronic_life/index.html",
       "/posts/aiche/index.html",
       "/posts/human_in_the_loop/index.html",
       "/posts/convergence_plots/index.html",

@@ -1,0 +1,31 @@
+---
+title: "ELECTRONIC LIFE"
+subtitle: "LATE @ TATE BRITAIN"
+author: 
+ - name: "Tom Savage"
+ - name: "Sunil Manghani"
+ - name: "Ed d'Souza"
+categories: [visualisation,art]
+date: "11/29/2023"
+callout-appearance: minimal
+format:
+  html:
+    css: styles.css
+---
+
+::: {.cleanbox}
+**Electronic Life will be debuted at the [Late @ Tate Britain](https://www.tate.org.uk/whats-on/tate-britain/late-at-tate-britain) "FREEDOM FREQUENCIES".**
+
+
+_AI is the new disruptor._ 
+
+Come to the Taylor Digital Studio at 8pm to talk directly with _Electronic Life_ - a live AI entity who will respond to your thoughts and queries on new technology and art making.  
+
+And meet with young people from [Element](https://www.elementproject.org) who have been experimenting with, and challenging, creative AI tools. Through the generation of new texts, images, and music they have generated playful, lyrical, and often surreal motifs to express ideas about their lives. Their work will be presented throughout the evening by ‘Electronic Life’, which has been built from data captured throughout their creative making process.  
+
+Electronic Life was devised in collaboration between [Ed D’Souza](https://www.southampton.ac.uk/people/5x2phn/professor-ed-dsouza) and [Sunil Manghani](https://www.southampton.ac.uk/people/5x9xt9/professor-sunil-manghani) from Winchester School of Art, University of Southampton with members of Element, Tate Collective Producers, and [Tom Savage](https://sav.phd/about.html) at Alan Turing Institute. 
+
+Element produces creative projects with care-experiences young people who are often from marginalised and minoritised communities.
+:::
+
+
