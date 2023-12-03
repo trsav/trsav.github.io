@@ -41,7 +41,11 @@ These were scraped from the DALL-E online history providing an initial dataset f
 
 Whilst participants formed their ideas independently, they do not exist in isolation within _ELECTRONIC LIFE_. The pretrained [jina-embeddings-v2-base-en](https://huggingface.co/jinaai/jina-embeddings-v2-base-en) embedding model was used to embed the prompt data into vector space.
 
+$$\text{prompt} \xrightarrow{\text{Jina Embeddings}} x \in \mathbb{R}^{276}$$
+
 To visualise this collective consciousness of ideas from participants, [t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf) was used to map the high dimensional prompt vectors into a lower, two-dimensional space.
+
+$$x \in \mathbb{R}^{276} \xrightarrow{\text{t-SNE}} x \in \mathbb{R}^{2}$$
 
 ![](embedding_space.png){width=90% fig-align="center"}
 

@@ -172,7 +172,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Over the course of 8 weeks, participants from <a href="https://www.elementproject.org">Element</a> produced 2000 individual images on DALL-E, spanning a total of around 400 individual prompts.</p>
 <p>These were scraped from the DALL-E online history providing an initial dataset for <em>ELECTRONIC LIFE</em>, formed of the collective ideas of participants.</p>
 <p>Whilst participants formed their ideas independently, they do not exist in isolation within <em>ELECTRONIC LIFE</em>. The pretrained <a href="https://huggingface.co/jinaai/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a> embedding model was used to embed the prompt data into vector space.</p>
+<p><span class="math display">\[\text{prompt} \xrightarrow{\text{Jina Embeddings}} x \in \mathbb{R}^{276}\]</span></p>
 <p>To visualise this collective consciousness of ideas from participants, <a href="https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf">t-SNE</a> was used to map the high dimensional prompt vectors into a lower, two-dimensional space.</p>
+<p><span class="math display">\[x \in \mathbb{R}^{276} \xrightarrow{\text{t-SNE}} x \in \mathbb{R}^{2}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="embedding_space.png" class="img-fluid figure-img" style="width:90.0%"></p>
