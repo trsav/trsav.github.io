@@ -43,8 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -202,7 +200,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Simultaneously we obtain the image associated with the <strong>memory</strong>, another thread is created and the image model <a href="https://huggingface.co/SkunkworksAI/BakLLaVA-1">BakLLaVA</a> is prompted to describe the image within the dataset.</p></li>
 <li><p>Finally, the background function is weighted around the <strong>memory</strong> in the two-dimensional embedding space and all information returned using the <a href="https://pyttsx3.readthedocs.io/en/latest/">pyttsx3</a> text-to-speech library.</p></li>
 </ol>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="interaction.webm"></video></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><video src="interaction.webm" class="img-fluid" style="width:90.0%" controls=""><a href="interaction.webm">Video</a></video></p>
+</figure>
+</div>
 
 
 
@@ -441,7 +443,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
