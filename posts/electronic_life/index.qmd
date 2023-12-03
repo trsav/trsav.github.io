@@ -13,8 +13,13 @@ format:
     css: styles.css
 ---
 
+![](aud.webp){width=90% fig-align="center"}
+
 ::: {.cleanbox}
-**Electronic Life will be debuted at the [Late @ Tate Britain](https://www.tate.org.uk/whats-on/tate-britain/late-at-tate-britain) "FREEDOM FREQUENCIES".**
+
+
+
+**Electronic Life was debuted at the [Late @ Tate Britain](https://www.tate.org.uk/whats-on/tate-britain/late-at-tate-britain) "FREEDOM FREQUENCIES".**
 
 
 _AI is the new disruptor._ 
@@ -28,4 +33,41 @@ Electronic Life was devised in collaboration between [Ed D’Souza](https://www.
 Element produces creative projects with care-experiences young people who are often from marginalised and minoritised communities.
 :::
 
+**ELECTRONIC LIFE is a combination of over 2000 images and prompts, text embeddings, a large-language model, an image model, and a speech-to-text model all running locally on a MacBook (M2 Pro) not connected to the internet.**
+
+Over the course of 8 weeks, participants from [Element](https://www.elementproject.org) produced 2000 individual images on DALL-E, spanning a total of around 400 individual prompts. 
+
+These were scraped from the DALL-E online history providing an initial dataset for _ELECTRONIC LIFE_, formed of the collective ideas of participants.
+
+Whilst participants formed their ideas independently, they do not exist in isolation within _ELECTRONIC LIFE_. The pretrained [jina-embeddings-v2-base-en](https://huggingface.co/jinaai/jina-embeddings-v2-base-en) embedding model was used to embed the prompt data into vector space.
+
+To visualise this collective consciousness of ideas from participants, [t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf) was used to map the high dimensional prompt vectors into a lower, two-dimensional space.
+
+![](embedding_space.png){width=90% fig-align="center"}
+
+To explore this space visually, a parametric background function was specified. The function used is similar to a radial basis function, where each prompt 'weights' the space in a given location based on the distance to the evaluated location. By providing a set of ever-changing synthetic weights, the background function can be made to warp and shift around the embedded prompts. 
+
+This is implemented in [JAX](https://jax.readthedocs.io/en/latest/), enabling two important aspects.
+
+1. The ability to calculate and draw the background dyanmically and in real time with ```vmap```.
+2. Analytical derivatives through JAX's automatic differentiation.
+
+![](animation.gif){width=90% fig-align="center"}
+
+Using this differentiable background, weighted around the embedded prompts, a momentum-based gradient descent is performed, providing a way of exploring the common themes and ideas. The momemtum term encourages movement throughout the space, and the parametric background ensures that individual ideas are emphasised.
+
+Throughout the event, audience members are invited to interact with _ELECTRONIC LIFE_. A number of actions occur when an interaction is triggered. 
+
+1. The audience member speaks into a microphone and [OpenAI's Whisper](https://github.com/openai/whisper) model performs a speech-to-text conversion.
+
+2. The resulting text is embedded into the same space as the previously embedded prompts, and cosine similarity is used to return the 'nearest' prompt within the dataset, which we will call the **memory**.
+
+3. An LLM is prompted to relate the audience members comment with the **memory** within _ELECTRONIC LIFE_'s internal dataset. A thread is created and inference is performed using [Zephyr 7B-$\beta$](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta) via [llama.cpp](https://github.com/ggerganov/llama.cpp) to generate a response. 
+
+4. Simultaneously we obtain the image associated with the **memory**, another thread is created and the image model [BakLLaVA](https://huggingface.co/SkunkworksAI/BakLLaVA-1) is prompted to describe the image within the dataset.
+
+5. Finally, the background function is weighted around the **memory** in the two-dimensional embedding space and all information returned using the [pyttsx3](https://pyttsx3.readthedocs.io/en/latest/) text-to-speech library. 
+
+
+![](interaction.webm){width=90% fig-align="center"}
 
