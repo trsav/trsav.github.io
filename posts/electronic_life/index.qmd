@@ -73,3 +73,13 @@ Throughout the event, audience members are invited to interact with _ELECTRONIC 
 5. Finally, the background function is weighted around the **memory** in the two-dimensional embedding space and all information returned using the [pyttsx3](https://pyttsx3.readthedocs.io/en/latest/) text-to-speech library. 
 
 ![](interaction.mp4){width=90% fig-align="center"}
+
+::: {.line}
+:::
+&#8203;
+
+Electronic Life: devised by Ed D’Souza and Sunil Manghani from Winchester School of Art, University of Southampton with members of Element and Tom Savage at Alan Turing Institute, with support from Tate Learning Partnerships, Tate Collective Producers and Tate Young Peoples Programmes. Supported by University of Southampton.
+
+:::{.center}
+![](ati_logo.png){width=20%} ![](tate_logo.png){width=25%} ![](uos_logo.png){width=30%}
+:::
