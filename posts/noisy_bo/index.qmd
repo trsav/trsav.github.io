@@ -1,0 +1,350 @@
+---
+title: "BAYESIAN OPTIMISATION WITH NOISY MEASUREMENTS"
+subtitle: "A REVIEW"
+author: 
+ - name: "Tom Savage"
+categories: [optimisation, machine learning]
+date: "12/05/2023"
+callout-appearance: minimal
+format:
+  html:
+    css: styles.css
+bibliography: ref.bib
+---
+
+I have reworked some notes from @garnett_bayesoptbook_2023 regarding noisy-expected improvement. Please refer to the original text for a more detailed explanation.
+
+:::{.cleanbox}
+The assumptions that hold for the expected improvement utility function do not hold when measurements have noise. 
+
+We really want to find the point where the _signal_ is optimised [@Jones1998].
+
+How do you determine if a measurement is signal or noise?
+:::
+
+We begin by specifying an underlying objective function, which we consider unknown, shown in @fig-underlying. We have access to observations which we assume contain normally distributed noise. 
+
+```{python}
+#| echo: false
+import numpy as np 
+from jax import jit
+import time
+from scipy.optimize import minimize
+import torch
+import gpytorch
+import matplotlib.pyplot as plt 
+import matplotlib as mpl
+import warnings
+
+warnings.filterwarnings("ignore")
+# system font = Arial for text
+mpl.rcParams['font.sans-serif'] = "Arial"
+
+```
+```{python}
+#| code-fold: true
+#| code-summary: "Definition of underlying function..."
+def f(x):
+  return 2.4*np.sin(2.8*x) - ((x-3.5*np.pi) ** 2)/4 +  3.8*np.cos(1.7*x) - (x**2)/16 + np.random.normal(0,2)
+```
+```{python}
+#| echo: false
+#| label: fig-underlying
+#| fig-align: center
+#| fig-width: 50% 
+#| fig-cap: "The underlying noisy funtion to be maximised alongside example observations." 
+figsize = (8,2)
+fig,ax = plt.subplots(1,1,figsize=figsize)
+x = np.linspace(0,3*np.pi,100)
+y_mean  = 2.4*np.sin(2.8*x) - ((x-3.5*np.pi) ** 2)/4 +  3.8*np.cos(1.7*x) - (x**2)/16 
+y_upper = 2.4*np.sin(2.8*x) - ((x-3.5*np.pi) ** 2)/4 +  3.8*np.cos(1.7*x) - (x**2)/16 + 4
+y_lower = 2.4*np.sin(2.8*x) - ((x-3.5*np.pi) ** 2)/4 +  3.8*np.cos(1.7*x) - (x**2)/16 - 4
+samples = [f(x_i) for x_i in np.linspace(0,3*np.pi,70)]
+
+ax.plot(x,y_mean,c='k',lw=1,label='$\mu$')
+ax.fill_between(x,y_upper,y_lower,lw=0,alpha=0.1,color='k',label='$2\sigma$')
+ax.scatter(np.linspace(0,3*np.pi,70),samples,c='k',marker='+',s=70,lw=0.75,label='Samples')
+# right and top spines 
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.set_xticks([],[])
+ax.set_yticks([],[])
+ax.legend(frameon=False)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$f(x)$')
+plt.show()
+```
+
+We first begin by motivating the usual expected-improvement criteria. 
+We are looking to maximise the <span style="color:red;">expected</span> increase between the of the <span style="color:green;">maximum of the mean of the resulting Gaussian process after making an observation at $x$</span> and the <span style="color:blue;">maximum of the current Gaussian process</span> <span style="color:red;">over potential observations $y$</span> which are Gaussian distributed as a result of our $\mathcal{GP}$ model.
+$$\alpha_{EI}(x;\mathcal{D}) = {\color{red}\int} \left[{\color{green}\max \mu_{\mathcal{D}'}} - {\color{blue}\mu^*}\right]{\color{red}\mathcal{N}(y;\mu,s^2)\text{d}y}$$ {#eq-ei_noisy}
+
+By formulating the expression with respect to the improvement in the mean of the current and subsequent Gaussian process models, **we are expressing our interest in optimising the signal** and not the noise or values of specific observations.
+
+:::{.cleanbox}
+**Important:**
+Given a hypothetical observation $y$, the value of the mean of the resulting Gaussian process $\mu_{\mathcal{D}'}$ at given set of potential locations $\mathbf{x}'$ is 
+
+$$ \mu_{\mathcal{D}'} =  \mu_{\mathcal{D}} + \frac{K_\mathcal{D}(\mathbf{x}',x)}{s}\frac{y-\mu}{s},$$
+
+where $\mu$ and $s^2$ are the mean and standard deviation of the distribution of potential values $y$ could take. 
+:::
+
+When we express this distribution in terms of the standard normal distribution $z := \mathcal{N}(0,1)$, we have $y = \mu + sz$ and as a result
+
+$$ \mu_{\mathcal{D}'} =  \mu_{\mathcal{D}}(\mathbf{x}') + \frac{K_\mathcal{D}(\mathbf{x}',x)}{s}z.$$
+
+Putting this back into @eq-ei_noisy, we now only have to take the expectation over the standard normal distribution resulting in the following. 
+
+$$\alpha_{EI}(x,\mathcal{D}) = \int \max_{\mathbf{x}'} \left(\mu_{\mathcal{D}}(\mathbf{x}') + \frac{K_\mathcal{D}(\mathbf{x}',x)}{s}z \right)\phi(z)\;\text{d}z - \mu^*$${#eq-ei_noisy2}
+
+To begin with we will sample some initial data:
+
+```{python}
+# our initial dataset
+x_data = np.linspace(0,3*np.pi,24)
+y_data = np.array([f(x_i) for x_i in x_data])
+```
+
+```{python}
+#| echo: false
+x_data = torch.from_numpy(x_data)
+y_data = torch.from_numpy(y_data)
+```
+
+```{python}
+#| code-fold: true
+#| code-summary: "GP model definition and training..."
+class ExactGPModel(gpytorch.models.ExactGP):
+    def __init__(self, train_x, train_y, likelihood):
+        super(ExactGPModel, self).__init__(train_x, train_y, likelihood)
+        self.mean_module = gpytorch.means.ConstantMean()
+        self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.RBFKernel())
+    
+    def forward(self, x):
+        mean_x = self.mean_module(x)
+        covar_x = self.covar_module(x)
+        return gpytorch.distributions.MultivariateNormal(mean_x, covar_x)
+
+def build_GP(x,y,its):
+  likelihood = gpytorch.likelihoods.GaussianLikelihood()
+  model = ExactGPModel(x, y, likelihood)
+
+  model.train()
+  likelihood.train()
+
+  optimizer = torch.optim.Adam(model.parameters(), lr=0.1)  # Includes GaussianLikelihood parameters
+
+  mll = gpytorch.mlls.ExactMarginalLogLikelihood(likelihood, model)
+
+  for i in range(its):
+      optimizer.zero_grad()
+      output = model(x)
+      loss = -mll(output, y)
+      loss.backward()
+      optimizer.step()
+  return model,likelihood
+model,likelihood = build_GP(x_data,y_data,2000)
+GP = {'model':model,'likelihood':likelihood}
+```
+@fig-initial shows this data with an initial Gaussian process (importantly assuming in-exact observations).
+
+```{python}
+#| echo: false
+#| label: fig-initial
+#| fig-align: center
+#| fig-cap: "A Gaussian process fit to the initial dataset."
+def plot_model(ax,GP,x,y,in_loop=False):
+  model = GP['model']
+  likelihood = GP['likelihood']
+  model.eval()
+  likelihood.eval()
+  ax.set_xlabel(r'$x$')
+  ax.set_ylabel(r'$f(x)$')
+  ax.spines['right'].set_visible(False)
+  ax.spines['top'].set_visible(False)
+  ax.scatter(x,y,c='k',marker='+',s=70,lw=0.75,label='Data')
+  if in_loop != False:
+    ax.scatter(x[-1],y[-1],c='k',marker='o',s=60,lw=1.5,label='Latest Observation')
+    ax.set_title('Iteration: '+str(in_loop))
+
+  model.eval()
+  likelihood.eval()
+
+  with torch.no_grad(), gpytorch.settings.fast_pred_var():
+    test_x = torch.linspace(0, 3*np.pi, 300)
+    observed_pred = likelihood(model(test_x))
+  lower, upper = observed_pred.confidence_region()
+  ax.plot(test_x.numpy(), observed_pred.mean.numpy(), 'k', lw=1, label='GP')
+  ax.fill_between(test_x.numpy(), lower.numpy(), upper.numpy(), alpha=0.1, color='k',lw=0,label='$2\sigma$')
+  ax.set_xlim([0,3*np.pi])
+  if in_loop == False:
+    ax.legend(frameon=False)
+  return ax
+
+fig,ax = plt.subplots(1,1,figsize=figsize)
+ax = plot_model(ax,GP,x_data,y_data)
+plt.show();
+```
+
+Now we will naively construct @eq-ei_noisy2 using 40 samples from the standard normal distribution, and naively calculate an approximation to the inner maximisation by evaluating at 100 location throughout the space (which defines our vector $\mathbf{x}' \in\mathbb{R}^{100}$) and returning the max value from these. 
+
+```{python}
+def noisy_EI(x,GP):
+  model = GP['model']
+  likelihood = GP['likelihood']
+  N = torch.distributions.Normal(0,1)
+  predicted_output = likelihood(model(x))
+  mean = predicted_output.mean
+  var = predicted_output.variance
+  z_vals = torch.linspace(-2,2,40)
+  integral = 0 
+  for z in z_vals:
+    x_prime_vals = torch.linspace(0,3*np.pi,100).reshape(-1,1)    
+    new_mean_vals = model.mean_module(x_prime_vals)
+    new_cov_vals = ((model.covar_module(x_prime_vals,x)/var)*z.item())[:,0]
+    integral += torch.max(new_mean_vals + new_cov_vals)
+  integral /= 100
+  return -integral
+```
+
+Now if we plot this function alongside the time taken to evaluate the acquisition function at 100 locations.
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+def plot_aq(ax,GP,rec_time=False):
+  GP['model'].eval()
+  GP['likelihood'].eval()
+  n_eval = 100
+  x_vals = np.array(np.linspace(0,3*np.pi,n_eval).reshape(-1,1),dtype=np.float32)
+  s = time.time()
+  y_vals = [noisy_EI(x_val,GP) for x_val in torch.from_numpy(x_vals)]
+  e = time.time()
+  y_vals = np.array([y.detach().numpy() for y in y_vals],dtype=np.float32)
+  x_vals = np.array(x_vals,dtype=np.float32)[:,0]
+  ax.plot(x_vals,y_vals,c='k',lw=1)
+  ax.fill_between(x_vals,np.ones(n_eval)*np.min(y_vals),y_vals,alpha=0.1,color='k',lw=0)
+  ax.set_xlabel(r'$x$')
+  ax.set_ylabel(r'$\alpha_{EI}(x)$')
+  ax.set_xlim([0,3*np.pi])
+  ax.set_ylim([np.min(y_vals),np.max(y_vals)])
+  ax.spines['right'].set_visible(False)
+  ax.spines['top'].set_visible(False)
+  if rec_time:
+    print('TIME TAKEN: ',np.round(e-s,4),'s. AVERAGE TIME PER EVALUATION: ',np.round((e-s)/n_eval,4),'s')
+  ax.set_yticks([],[])
+  return ax
+
+fig,ax = plt.subplots(1,1,figsize=figsize)
+ax = plot_aq(ax,GP,rec_time=True)
+plt.show();
+```
+
+
+
+<!-- 
+:::{.cleanbox}
+**Gaining an intuition:** Let's create a number of example Gaussian process models and see what the acquisition function looks like for each. 
+
+1. Constant GP with a constant noise.
+```{python}
+#| echo: false
+#| fig-align: center
+x_lin = torch.linspace(0,3*np.pi,100,dtype=torch.float32)
+y_lin = torch.tensor(np.array([np.random.normal(0,0) for _ in range(100)]),dtype=torch.float32)
+model,likelihood = build_GP(x_lin,y_lin,100)
+GP = {'model':model,'likelihood':likelihood}
+fig,ax = plt.subplots(2,1,figsize=(figsize[0]*0.8,figsize[1]*2*0.8),sharex=True,constrained_layout=True)
+ax[0] = plot_model(ax[0],GP,[],[])
+ax[1] = plot_aq(ax[1],GP)
+ax[0].get_legend().remove()
+ax[0].set_yticks([],[])
+plt.show();
+```
+
+The acquisition function is maximised at the center of the domain, with an approximately linear decrease either side. 
+If we assume that $\mu_{\mathcal{D}}(x) = 0$ and $\sigma_{\mathcal{D}}(x) = 1$, the acquisition function reduces to 
+
+$$\alpha_{EI}(x,\mathcal{D}) = \int \max_{\mathbf{x}'} \left(K_{\mathcal{D}}(x,\mathbf{x}') z \right)\phi(z)\;\text{d}z,$$
+
+
+Which is effectively the average distance from the rest of the domain...???? EXPLAIN THIS BETTER...WHY?
+
+::: {.line}
+:::
+&#8203;
+
+::: -->
+
+
+
+
+:::{.cleanbox}
+**Important:** For a fixed set of 'improvement locations' $\mathbf{x}'$, the resulting posterior mean at each location can be interpreted as a 1D line as a function of $z$:
+
+$$\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}'$$
+
+Therefore finding the inner maximum new posterior mean as a function of $z$ can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given $z$, the maximum posterior mean across all of the locations in $\mathbf{{x}'}. The main idea is to remove the inner $\max$ operator and replace it with something more tractable.
+
+$$\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z$$
+
+Which is tractable for a piecewise linear upper envelope.
+:::
+
+For the sake of completeness we will set up and run a basic Bayesian optimisation loop, but I'll just use a naive implementation for now.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Gradient-based multi-start optimisation of utility function..."
+def aq_and_grad(x,GP):
+  x = np.array(x,dtype=np.float32)
+  x = torch.from_numpy(x.reshape(-1,1))
+  x = torch.tensor(x, requires_grad=True)
+  aq = noisy_EI(x,GP)
+  aq.backward()
+  f_val = aq.detach().numpy()
+  f_grad = x.grad.numpy()[0]
+  return (-f_val,-f_grad)
+
+def optimise_aq(GP):
+  x0_list = np.linspace(0,3*np.pi,16)
+  f_best = 1E10
+  x_best = None
+  for x0 in x0_list:
+    res = minimize(aq_and_grad, x0, method='L-BFGS-B', jac=True,
+                  bounds=((0,3*np.pi),),args=(GP), options={'maxiter': 100})
+    if res.fun < f_best:
+      f_best = res.fun
+      x_best = res.x
+
+  return x_best
+```
+
+
+Plotting every 5 iterations, for a total of 50 iterations. 
+
+```{python}
+#|fig-align: center
+#| layout-ncol: 2
+for iteration in range(50):
+  # train GP
+  model,likelihood = build_GP(x_data,y_data,2000)
+  GP = {'model':model,'likelihood':likelihood}
+  GP['model'].eval(); GP['likelihood'].eval()
+
+  # optimise acquisition function
+  x_best = optimise_aq(GP)
+  y_best = f(x_best)
+
+  # add to dataset
+  x_data = torch.cat((x_data,torch.tensor(x_best)))
+  y_data = torch.cat((y_data,torch.tensor(y_best)))
+
+  if (iteration) % 5 == 0:
+    fig,ax = plt.subplots(2,1,figsize=figsize,sharex=True)
+    ax[0] = plot_model(ax[0],GP,x_data,y_data,in_loop=iteration+1)
+    ax[1] = plot_aq(ax[1],GP)
+    plt.show()
+```

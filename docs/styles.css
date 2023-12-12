@@ -26,6 +26,25 @@
     border-radius: 0px;
     box-shadow: 5px 5px 0px grey;
   }
+  .codeblock {
+    margin: 1em 0;
+    padding: 0.1em;
+    border: 1px solid grey;
+    border-radius: 0px;
+    box-shadow: 5px 5px 0px grey;
+  }
+
+
+  .codeblock::after {
+    content: 'basilik c';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: black;
+    padding: 5px; /* Adjust as needed for spacing */
+  }
+
 
   .line {
     border-bottom: 2px solid black;

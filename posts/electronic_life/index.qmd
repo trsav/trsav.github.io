@@ -5,7 +5,7 @@ author:
  - name: "Tom Savage"
  - name: "Sunil Manghani"
  - name: "Ed D'Souza"
-categories: [visualisation,art]
+categories: [visualisation,art, machine learning]
 date: "11/29/2023"
 callout-appearance: minimal
 format:

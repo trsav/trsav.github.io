@@ -1,0 +1,11 @@
+{
+  "hash": "f9060fe6c1902de6ad05cce692c00614",
+  "result": {
+    "markdown": "---\ntitle: \"BASILISK RECIPES\"\nauthor: \n - name: \"Tom Savage\"\ncategories: [chemical engineering, fluid mechanics]\ndate: \"12/05/2023\"\ncallout-appearance: minimal\nformat:\n  html:\n    css: styles.css\n---\n\n:::{.cleanbox}\nThis post will consist of a number of recipes for setting up a number of basic [Basilisk](http://basilisk.fr) simulations, with a focus on 3D domains.\n\nWhile the documentation consists of a large number of detailed examples, I don't think there is enough effort placed to outline the 'building blocks'.\n:::\n\n\n\n```{c}\nint main() {\n  run();\n}\n```\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
