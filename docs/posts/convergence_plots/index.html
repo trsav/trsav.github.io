@@ -188,7 +188,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here I have simulated some convergence data where we have 4 different benchmarks, each containing 16 separate repeat runs.</p>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-4-output-1.png" width="566" height="436"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="566" height="436" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Using <code>plt.figure()</code> makes it harder to interact with the axis (even if you only have a single axis), making it more difficult to adjust the size and layout.</p>
@@ -202,7 +206,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-5-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now we will draw our attention to plotting the data itself. <strong>It is important to think about what message you want to convey to the reader</strong>. Clearly providing each run for each benchmark is not useful. I will plot the mean and standard deviation of regret across each benchmark. I will use a line plot to convey the mean and a shaded region to convey the standard deviation.</p>
@@ -218,7 +226,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-6-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cleanbox">
@@ -235,7 +247,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-8-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now we will focus on the ticks. Ticks are important because they enable the reader to interpret the <em>values</em> of the data.</p>
@@ -251,7 +267,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Whilst it is important to provide a legend to ensure the reader can interpret the data, not everything has to have a label.</p>
@@ -274,7 +294,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-12-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You will notice that I have chosen <em>not</em> to include the frame on the caption. This makes the plot look cleaner and less cluttered.</p>
@@ -299,7 +323,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-14-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-14-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now we can adjust the axis limits to ensure that the data is placed appropriately. In this case, the regret values are fine but the iterations should start at 0 and end at 100.</p>
@@ -311,7 +339,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-16-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-16-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Finally, it is important to consider whether a <code>grid</code> is appropriate. In this case I will for demonstration, but it may be distracting. I will adjust the transparency to make it less pronounced.</p>
@@ -323,7 +355,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-18-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>If you choose not to use a grid, then I always prefer if the right and top axis are removed, resulting in a cleaner plot.</p>
@@ -336,7 +372,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-20-output-1.png" width="683" height="299"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-20-output-1.png" width="683" height="299" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>That is just about it for this plot. Always to remember to save figures as <code>.svg</code> or <code>.pdf</code>. If you require a <code>.png</code> then use the <code>dpi=</code> option in <code>fig.savefig</code> to increase the resolution.</p>

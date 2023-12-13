@@ -44,13 +44,13 @@ Here I have simulated some convergence data where we have 4 different benchmarks
 
 ```{python}
 #| echo: false
+#| fig-align: center 
 plt.figure()
 plt.title('This is a bad plot',fontsize=20)
 cols = ['r','b','g','k']
 for b in range(benchmarks):
     for r in range(runs):
         plt.plot(iterations,data[b,r,:],color=cols[b])
-plt.show()
 ```
 Using `plt.figure()` makes it harder to interact with the axis (even if you only have a single axis), making it more difficult to adjust the size and layout.
 
@@ -65,6 +65,7 @@ Now we will initialise our plot correctly using the object-oriented syntax, sizi
 :::
 
 ```{python}
+#| fig-align: center
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 ```
 
@@ -77,6 +78,7 @@ Now we will draw our attention to plotting the data itself. **It is important to
 
 
 ```{python}
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 for b in range(benchmarks):
     mean = np.mean(data[b,:,:],axis=0)
@@ -109,6 +111,7 @@ ax.set_ylabel(r'Regret, $r_\tau$',fontsize=18)
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 for b in range(benchmarks):
     mean = np.mean(data[b,:,:],axis=0)
@@ -139,6 +142,7 @@ ax.set_yticks(y_ticks,y_ticks,fontsize = 18)
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 for b in range(benchmarks):
     mean = np.mean(data[b,:,:],axis=0)
@@ -183,6 +187,7 @@ ax.legend(frameon=False,fontsize=14)
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
 for b in range(benchmarks):
@@ -231,6 +236,7 @@ for b in range(benchmarks):
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
 cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
@@ -265,6 +271,7 @@ ax.set_xlim([0,100])
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
 cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
@@ -299,6 +306,7 @@ ax.grid(alpha=0.4)
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
 cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
@@ -334,6 +342,7 @@ ax.spines['top'].set_visible(False)
 ```{python}
 #| echo: false
 #| output: png
+#| fig-align: center 
 fig,ax = plt.subplots(1,1,figsize=(7,3),layout="constrained")
 labels = [f'Benchmark {b}' for b in range(1,benchmarks+1)]
 cols = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown','tab:pink','tab:gray','tab:olive','tab:cyan']
