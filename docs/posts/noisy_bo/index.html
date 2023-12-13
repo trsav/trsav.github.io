@@ -204,7 +204,7 @@ div.csl-indent {
 
 
 
-<p>I have reworked some notes from <span class="citation" data-cites="garnett_bayesoptbook_2023">(<a href="#ref-garnett_bayesoptbook_2023" role="doc-biblioref"><strong>garnett_bayesoptbook_2023?</strong></a>)</span> regarding noisy-expected improvement. Please refer to the original text for a more detailed explanation.</p>
+<p>I have reworked some notes from <span class="citation" data-cites="garnett_bayesoptbook_2023">(<a href="#ref-garnett_bayesoptbook_2023" role="doc-biblioref">Garnett 2023</a>)</span> regarding noisy-expected improvement. Please refer to the original text for a more detailed explanation.</p>
 <div class="cleanbox">
 <p>The assumptions that hold for the expected improvement utility function do not hold when measurements have noise.</p>
 <p>We really want to find the point where the <em>signal</em> is optimised <span class="citation" data-cites="Jones1998">(<a href="#ref-Jones1998" role="doc-biblioref">Jones, Schonlau, and Welch 1998</a>)</span>.</p>
@@ -242,7 +242,7 @@ div.csl-indent {
 <p>To begin with we will sample some initial data:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># our initial dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">24</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">8</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> np.array([f(x_i) <span class="cf">for</span> x_i <span class="kw">in</span> x_data])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="6">
@@ -314,7 +314,7 @@ div.csl-indent {
 <p>Now if we plot this function alongside the time taken to evaluate the acquisition function at 100 locations.</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
-<pre><code>TIME TAKEN:  0.9433 s. AVERAGE TIME PER EVALUATION:  0.0094 s</code></pre>
+<pre><code>NAIVE TIME TAKEN:  0.877 s. AVERAGE TIME PER EVALUATION:  0.0088 s</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -353,89 +353,312 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 ::: -->
 <div class="cleanbox">
 <p><strong>Important:</strong> For a fixed set of ‘improvement locations’ <span class="math inline">\(\mathbf{x}'\)</span>, the resulting posterior mean at each location can be interpreted as a 1D line as a function of <span class="math inline">\(z\)</span>:</p>
-<p><span class="math display">\[\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}'\]</span></p>
-<p>Therefore finding the inner maximum new posterior mean as a function of <span class="math inline">\(z\)</span> can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given <span class="math inline">\(z\)</span>, the maximum posterior mean across all of the locations in $. The main idea is to remove the inner <span class="math inline">\(\max\)</span> operator and replace it with something more tractable.</p>
-<p><span class="math display">\[\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z\]</span></p>
-<p>Which is tractable for a piecewise linear upper envelope.</p>
-</div>
-<p>For the sake of completeness we will set up and run a basic Bayesian optimisation loop, but I’ll just use a naive implementation for now.</p>
+<p><span id="eq-posterior_mean"><span class="math display">\[\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}' \tag{3}\]</span></span></p>
+<p>Therefore finding the inner maximum new posterior mean as a function of <span class="math inline">\(z\)</span> can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given <span class="math inline">\(z\)</span>, the maximum posterior mean across all of the locations in <span class="math inline">\(\mathbf{{x}'}\)</span>. The main idea is to remove the inner <span class="math inline">\(\max\)</span> operator and replace it with something more tractable enabling analytical integration.</p>
+<p><span class="math display">\[\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z \rightarrow \text{analytical solution}\]</span></p>
+<p>Which has an analytical solution for a piecewise linear upper envelope. To do so:</p>
 <div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="fl">0.2</span>,n)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-13-output-1.png" width="667" height="206"></p>
+</div>
+</div>
+<p>We will first get rid of any lines that are definitely dominated between -5 and 5 (the range of <span class="math inline">\(z\)</span> values we are interested in). I’m not going to explain this too much but it’s quite easy to derive this condition.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>l_store <span class="op">=</span> []<span class="op">;</span> u_store <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>zl <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span> zu <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> a[i]<span class="op">*</span>zl <span class="op">+</span> b[i]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> a[i]<span class="op">*</span>zu <span class="op">+</span> b[i]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    l_store.append(l)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    u_store.append(u)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>L_i <span class="op">=</span> np.argmax(l_store)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>U_i <span class="op">=</span> np.argmax(u_store)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>del_i <span class="op">=</span> []</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> l_store[i] <span class="op">&lt;</span> l_store[U_i] <span class="kw">and</span> u_store[i] <span class="op">&lt;</span> u_store[L_i]:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        del_i.append(i)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.delete(a,del_i)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.delete(b,del_i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we will sort the lines by gradient</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sorted_indices <span class="op">=</span> np.argsort(a)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> a[sorted_indices]<span class="op">;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> b[sorted_indices]<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-17-output-1.png" width="670" height="206"></p>
+</div>
+</div>
+<p>Then initialise the set of dominated lines (a and b values respectively), respective intervals, and the current largest <span class="math inline">\(z\)</span> on the envelope.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dom_a <span class="op">=</span> []</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dom_b <span class="op">=</span> []</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>interval_store <span class="op">=</span> []</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>envelope_z <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For each line in order of increasing gradient (here we start with the first line indexed at <span class="math inline">\(j=0\)</span>)</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">0</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Add the line to the set of dominating lines</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dom_a.append(a[j])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dom_b.append(b[j])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Calculate the <span class="math inline">\(z\)</span> intercept of the line with all lines of a larger gradient. As we only calculate this intersection with these remaining lines, the overall algorithm has <span class="math inline">\(\mathcal{O}(n\log n)\)</span> complexity.</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>z_intercept_store <span class="op">=</span> []</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    z_intercept <span class="op">=</span> (dom_b[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> b[i])<span class="op">/</span>(a[i] <span class="op">-</span> dom_a[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    z_intercept_store.append(z_intercept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-22-output-1.png" width="668" height="206" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The intercept with the lowest value of <span class="math inline">\(z\)</span> will be a potential vertex for the envelope, but we must check that there are no lines above it.</p>
+<p>To do so we calculate the <span class="math inline">\(\mu\)</span> value of each line at <span class="math inline">\(min({\mathbf{z})}\)</span>.</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mu_vals <span class="op">=</span> []</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>z_intercept <span class="op">=</span> np.<span class="bu">min</span>(z_intercept_store)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mu_intercept <span class="op">=</span> dom_a[<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>z_intercept <span class="op">+</span> dom_b[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    mu_vals.append(a[i]<span class="op">*</span>z_intercept <span class="op">+</span> b[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-24-output-1.png" width="668" height="206" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If the maximum value of <span class="math inline">\(\mu\)</span> is on the dominating line, and this value is larger than the current largest <span class="math inline">\(z\)</span> value in the envelope…then we know this must lie on the upper envelope. <em>Otherwise</em> forget about this dominating line by setting it’s definition to <code>None</code>.</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">abs</span>(mu_intercept<span class="op">-</span>np.<span class="bu">max</span>(mu_vals)) <span class="op">&lt;</span> <span class="fl">1e-5</span> <span class="kw">and</span> z_intercept <span class="op">&gt;</span> envelope_z:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  interval_store.append([envelope_z,z_intercept])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  envelope_z <span class="op">=</span> z_intercept</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  dom_a[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  dom_b[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  interval_store.append([<span class="va">None</span>,<span class="va">None</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can plot the interval we have just calculated.</p>
+<div class="cell" data-execution_count="25">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-26-output-1.png" width="668" height="206" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If we now repeat this procedure starting with the line with the next largest gradient we can search for next vertex on the upper envelope.</p>
+<div class="cell" data-execution_count="26">
 <details>
-<summary>Gradient-based multi-start optimisation of utility function…</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> aq_and_grad(x,GP):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> np.array(x,dtype<span class="op">=</span>np.float32)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> torch.from_numpy(x.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> torch.tensor(x, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  aq <span class="op">=</span> noisy_EI(x,GP)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  aq.backward()</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  f_val <span class="op">=</span> aq.detach().numpy()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  f_grad <span class="op">=</span> x.grad.numpy()[<span class="dv">0</span>]</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="op">-</span>f_val,<span class="op">-</span>f_grad)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimise_aq(GP):</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  x0_list <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">16</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  f_best <span class="op">=</span> <span class="fl">1E10</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x0 <span class="kw">in</span> x0_list:</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> minimize(aq_and_grad, x0, method<span class="op">=</span><span class="st">'L-BFGS-B'</span>, jac<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                  bounds<span class="op">=</span>((<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi),),args<span class="op">=</span>(GP), options<span class="op">=</span>{<span class="st">'maxiter'</span>: <span class="dv">100</span>})</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> res.fun <span class="op">&lt;</span> f_best:</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      f_best <span class="op">=</span> res.fun</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      x_best <span class="op">=</span> res.x</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x_best</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Full algorithm for calculating upper envelope of a set of lines…</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> upper_env(a,b):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  l_store <span class="op">=</span> []<span class="op">;</span> u_store <span class="op">=</span> []</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  zl <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span> zu <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>      l <span class="op">=</span> a[i]<span class="op">*</span>zl <span class="op">+</span> b[i]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>      u <span class="op">=</span> a[i]<span class="op">*</span>zu <span class="op">+</span> b[i]</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>      l_store.append(l)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      u_store.append(u)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  L_i <span class="op">=</span> np.argmax(l_store)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  U_i <span class="op">=</span> np.argmax(u_store)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  del_i <span class="op">=</span> []</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> l_store[i] <span class="op">&lt;</span> l_store[U_i] <span class="kw">and</span> u_store[i] <span class="op">&lt;</span> u_store[L_i]:</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>          del_i.append(i)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  a <span class="op">=</span> np.delete(a,del_i)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  b <span class="op">=</span> np.delete(b,del_i)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  n <span class="op">=</span> <span class="bu">len</span>(a)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  sorted_indices <span class="op">=</span> np.argsort(a)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  a <span class="op">=</span> a[sorted_indices]</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  b <span class="op">=</span> b[sorted_indices]</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  dom_a <span class="op">=</span> []</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  dom_b <span class="op">=</span> []</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  interval_store <span class="op">=</span> []</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  envelope_z <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    dom_a.append(a[j])</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    dom_b.append(b[j])</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    z_intercept_store <span class="op">=</span> []</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>        z_intercept <span class="op">=</span> (dom_b[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> b[i])<span class="op">/</span>(a[i] <span class="op">-</span> dom_a[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        z_intercept_store.append(z_intercept)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>    mu_vals <span class="op">=</span> []</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>      z_intercept <span class="op">=</span> np.<span class="bu">min</span>(z_intercept_store)</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>      interval_store.append([envelope_z,<span class="dv">5</span>])</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span> </span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>    mu_intercept <span class="op">=</span> dom_a[<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>z_intercept <span class="op">+</span> dom_b[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>        mu_vals.append(a[i]<span class="op">*</span>z_intercept <span class="op">+</span> b[i])</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(mu_intercept<span class="op">-</span>np.<span class="bu">max</span>(mu_vals)) <span class="op">&lt;</span> <span class="fl">1e-9</span> <span class="kw">and</span> z_intercept <span class="op">&gt;</span> envelope_z:</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>      interval_store.append([envelope_z,z_intercept])</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>      envelope_z <span class="op">=</span> z_intercept</span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>      dom_a[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>      dom_b[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>      interval_store.append([<span class="va">None</span>,<span class="va">None</span>])</span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>  del_store <span class="op">=</span> []</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dom_a)):</span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> dom_a[i] <span class="op">==</span> <span class="va">None</span>:</span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>          del_store.append(i)</span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>  dom_a <span class="op">=</span> np.delete(dom_a,del_store)</span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>  dom_b <span class="op">=</span> np.delete(dom_b,del_store)</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>  interval_store <span class="op">=</span> np.delete(interval_store,del_store,axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>  zl <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a>  zu <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a>  interval_store[interval_store <span class="op">&gt;</span> zu] <span class="op">=</span> zu</span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a>  interval_store[interval_store <span class="op">&lt;</span> zl] <span class="op">=</span> zl</span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> dom_a,dom_b,interval_store</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Plotting every 5 iterations, for a total of 50 iterations.</p>
+<div class="cell" data-execution_count="27">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-28-output-1.png" width="668" height="206" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The expected value over <span class="math inline">\(z\)</span> (integrating over potential experimental outputs) of this upper envelope (which we use inplace of the inner <span class="math inline">\(\max\)</span> operator), where <span class="math inline">\(z \sim \mathcal{N}(0,1)\)</span> is given by:</p>
+<p><span class="math display">\[
+\sum_i \int^{c_{i+1}}_{c_{i}}(a_iz+b_i)\phi(z) \; \text{d}z \rightarrow \sum_i b_i [\Phi (c_{i+1})-\Phi(c_i)] + a_i[\phi(c_i) - \phi(c_{i+1})]\]</span></p>
+<p>where <span class="math inline">\(\Phi\)</span> is the standard cumulative normal probability function, <span class="math inline">\(\phi\)</span> is the standard normal probability function, <span class="math inline">\(c\)</span> are the <span class="math inline">\(z\)</span> values of the upper envelope intervals, and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the gradient and intercept of upper envelope intervals corresponding to <a href="#eq-posterior_mean">Equation&nbsp;3</a>.</p>
+<p><em>Intuitively</em>, we are solving the expected improvement integral analytically for each line segement within the upper envelope of lines (which we use as it is equivalent to the inner <span class="math inline">\(\max\)</span> operator).</p>
+</div>
+<p>For the sake of completeness we will wrap this up into an acquisition function, and run a basic Bayesian optimisation loop</p>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> noisy_EI_lines(x,GP):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> torch.no_grad(), gpytorch.settings.fast_pred_var():</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> GP[<span class="st">'model'</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    likelihood <span class="op">=</span> GP[<span class="st">'likelihood'</span>]</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    model.<span class="bu">eval</span>()</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    likelihood.<span class="bu">eval</span>()</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    x_prime_vals <span class="op">=</span> torch.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">200</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    predicted_output <span class="op">=</span> likelihood(model(x))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> predicted_output.mean.item()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    var <span class="op">=</span> predicted_output.variance.item()</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> []</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> likelihood(model(x_prime_vals)).mean.numpy()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x_prime <span class="kw">in</span> x_prime_vals.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>):</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      conc_x <span class="op">=</span> torch.cat((x,x_prime))</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      covar <span class="op">=</span> likelihood(model(conc_x)).covariance_matrix</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      a.append((covar[<span class="dv">0</span>,<span class="dv">1</span>]<span class="op">/</span>var).item())</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    dom_a,dom_b,interval_store <span class="op">=</span> upper_env(np.array(a),np.array(b))</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> torch.distributions.Normal(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(interval_store)):</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>      c_i <span class="op">=</span> torch.tensor(interval_store[i,<span class="dv">0</span>])</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>      c_i1 <span class="op">=</span> torch.tensor(interval_store[i,<span class="dv">1</span>])</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      <span class="bu">sum</span> <span class="op">+=</span> dom_b[i]<span class="op">*</span>(N.cdf(c_i1) <span class="op">-</span> N.cdf(c_i)) <span class="op">+</span> dom_a[i]<span class="op">*</span>(np.exp(N.log_prob(c_i)) <span class="op">-</span> np.exp(N.log_prob(c_i1)))</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">sum</span>.item()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="cell-output cell-output-stdout">
+<pre><code>NAIVE TIME TAKEN:  0.8452 s. AVERAGE TIME PER EVALUATION:  0.0085 s
+UPPER ENVELOPE TIME TAKEN:  4.6748 s. AVERAGE TIME PER EVALUATION:  0.0467 s</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-30-output-2.png" width="757" height="374" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<details>
+<summary>Gradient-based multi-start optimisation of utility function…</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> aq_and_grad(x,GP):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> torch.tensor(x)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  f_val <span class="op">=</span> noisy_EI_lines(x,GP)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span>f_val</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimise_aq(GP):</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  x0_list <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">16</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  f_best <span class="op">=</span> <span class="fl">1E10</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x0 <span class="kw">in</span> x0_list:</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> minimize(aq_and_grad, x0, bounds<span class="op">=</span>((<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi),),args<span class="op">=</span>(GP), options<span class="op">=</span>{<span class="st">'maxiter'</span>: <span class="dv">100</span>})</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> res.fun <span class="op">&lt;</span> f_best:</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      f_best <span class="op">=</span> res.fun</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>      x_best <span class="op">=</span> res.x</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x_best</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Plotting the first 8 iterations.</p>
 <div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># train GP</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  model,likelihood <span class="op">=</span> build_GP(x_data,y_data,<span class="dv">2000</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  GP <span class="op">=</span> {<span class="st">'model'</span>:model,<span class="st">'likelihood'</span>:likelihood}</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  GP[<span class="st">'model'</span>].<span class="bu">eval</span>()<span class="op">;</span> GP[<span class="st">'likelihood'</span>].<span class="bu">eval</span>()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># optimise acquisition function</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> optimise_aq(GP)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  y_best <span class="op">=</span> f(x_best)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add to dataset</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  x_data <span class="op">=</span> torch.cat((x_data,torch.tensor(x_best)))</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  y_data <span class="op">=</span> torch.cat((y_data,torch.tensor(y_best)))</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (iteration) <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    fig,ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>,figsize<span class="op">=</span>figsize,sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>] <span class="op">=</span> plot_model(ax[<span class="dv">0</span>],GP,x_data,y_data,in_loop<span class="op">=</span>iteration<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>] <span class="op">=</span> plot_aq(ax[<span class="dv">1</span>],GP)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># train GP</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  model,likelihood <span class="op">=</span> build_GP(x_data,y_data,<span class="dv">2000</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  GP <span class="op">=</span> {<span class="st">'model'</span>:model,<span class="st">'likelihood'</span>:likelihood}</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  GP[<span class="st">'model'</span>].<span class="bu">eval</span>()<span class="op">;</span> GP[<span class="st">'likelihood'</span>].<span class="bu">eval</span>()</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># optimise acquisition function</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> optimise_aq(GP)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  y_best <span class="op">=</span> f(x_best)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add to dataset</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  x_data <span class="op">=</span> torch.cat((x_data,torch.tensor(x_best)))</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  y_data <span class="op">=</span> torch.cat((y_data,torch.tensor(y_best)))</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  fig,ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>,figsize<span class="op">=</span>figsize,sharex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>] <span class="op">=</span> plot_model(ax[<span class="dv">0</span>],GP,x_data,y_data,in_loop<span class="op">=</span>iteration)</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>] <span class="op">=</span> plot_aq_lines(ax[<span class="dv">1</span>],GP)</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-execution_count="31">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-3.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-4.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-2.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
@@ -444,30 +667,14 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-5.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-3.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-6.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-7.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-8.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-4.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
@@ -476,14 +683,30 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-9.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-5.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-10.png" class="img-fluid figure-img" width="666"></p>
+<p><img src="index_files/figure-html/cell-32-output-6.png" class="img-fluid figure-img" width="666"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-32-output-7.png" class="img-fluid figure-img" width="666"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-32-output-8.png" class="img-fluid figure-img" width="666"></p>
 </figure>
 </div>
 </div>
@@ -495,6 +718,9 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-garnett_bayesoptbook_2023" class="csl-entry" role="listitem">
+Garnett, Roman. 2023. <span>“<span>Bayesian Optimization</span>.”</span> Cambridge University Press. <a href="https://bayesoptbook.com">https://bayesoptbook.com</a>.
+</div>
 <div id="ref-Jones1998" class="csl-entry" role="listitem">
 Jones, Donald R., Matthias Schonlau, and William J. Welch. 1998. <em>Journal of Global Optimization</em> 13 (4): 455–92. <a href="https://doi.org/10.1023/a:1008306431147">https://doi.org/10.1023/a:1008306431147</a>.
 </div>

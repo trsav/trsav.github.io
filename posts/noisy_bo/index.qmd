@@ -12,7 +12,7 @@ format:
 bibliography: ref.bib
 ---
 
-I have reworked some notes from @garnett_bayesoptbook_2023 regarding noisy-expected improvement. Please refer to the original text for a more detailed explanation.
+I have reworked some notes from [@garnett_bayesoptbook_2023] regarding noisy-expected improvement. Please refer to the original text for a more detailed explanation.
 
 :::{.cleanbox}
 The assumptions that hold for the expected improvement utility function do not hold when measurements have noise. 
@@ -102,7 +102,7 @@ To begin with we will sample some initial data:
 
 ```{python}
 # our initial dataset
-x_data = np.linspace(0,3*np.pi,24)
+x_data = np.random.uniform(0,3*np.pi,8)
 y_data = np.array([f(x_i) for x_i in x_data])
 ```
 
@@ -233,7 +233,7 @@ def plot_aq(ax,GP,rec_time=False):
   ax.spines['right'].set_visible(False)
   ax.spines['top'].set_visible(False)
   if rec_time:
-    print('TIME TAKEN: ',np.round(e-s,4),'s. AVERAGE TIME PER EVALUATION: ',np.round((e-s)/n_eval,4),'s')
+    print('NAIVE TIME TAKEN: ',np.round(e-s,4),'s. AVERAGE TIME PER EVALUATION: ',np.round((e-s)/n_eval,4),'s')
   ax.set_yticks([],[])
   return ax
 
@@ -284,37 +284,410 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 :::{.cleanbox}
 **Important:** For a fixed set of 'improvement locations' $\mathbf{x}'$, the resulting posterior mean at each location can be interpreted as a 1D line as a function of $z$:
 
-$$\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}'$$
+$$\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}'$${#eq-posterior_mean}
 
-Therefore finding the inner maximum new posterior mean as a function of $z$ can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given $z$, the maximum posterior mean across all of the locations in $\mathbf{{x}'}. The main idea is to remove the inner $\max$ operator and replace it with something more tractable.
+Therefore finding the inner maximum new posterior mean as a function of $z$ can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given $z$, the maximum posterior mean across all of the locations in $\mathbf{{x}'}$. The main idea is to remove the inner $\max$ operator and replace it with something more tractable enabling analytical integration.
 
-$$\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z$$
+$$\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z \rightarrow \text{analytical solution}$$
 
-Which is tractable for a piecewise linear upper envelope.
+Which has an analytical solution for a piecewise linear upper envelope. To do so:
+
+```{python}
+n = 100
+a = np.random.uniform(0,0.2,n)
+b = np.random.uniform(-10,10,n)
+```
+```{python}
+#| echo: false
+z = np.linspace(-5,5,2)
+fig,ax = plt.subplots(1,1,figsize=figsize)
+for i in range(n):
+  ax.plot(z,a[i]*z+b[i],c='k',lw=1,alpha=0.3)
+ax.set_xlabel('$z$')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.set_ylabel(r'''$\mu_{\mathcal{D}'}(z)$''')
+plt.show();
+```
+
+We will first get rid of any lines that are definitely dominated between -5 and 5 (the range of $z$ values we are interested in). I'm not going to explain this too much but it's quite easy to derive this condition.
+
+```{python}
+l_store = []; u_store = []
+zl = -5; zu = 5
+for i in range(len(a)):
+    l = a[i]*zl + b[i]
+    u = a[i]*zu + b[i]
+    l_store.append(l)
+    u_store.append(u)
+
+L_i = np.argmax(l_store)
+U_i = np.argmax(u_store)
+
+del_i = []
+for i in range(len(a)):
+    if l_store[i] < l_store[U_i] and u_store[i] < u_store[L_i]:
+        del_i.append(i)
+
+a = np.delete(a,del_i)
+b = np.delete(b,del_i)
+```
+
+Now we will sort the lines by gradient 
+```{python}
+sorted_indices = np.argsort(a)
+a = a[sorted_indices]; 
+b = b[sorted_indices]; 
+```
+
+```{python}
+#| echo: false
+n = len(a)
+a_og = a.copy()
+b_og = b.copy()
+```
+
+
+```{python}
+#| echo: false
+z = np.linspace(-5,5,2)
+fig,ax = plt.subplots(1,1,figsize=figsize)
+# cols for each line 
+cols = np.linspace(0,1,n)
+
+for i in range(n):
+  im = ax.plot(z,a[i]*z+b[i],c=plt.cm.Spectral(cols[i]),lw=2)
+ax.set_xlabel('$z$')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.set_ylabel(r'''$\mu_{\mathcal{D}'}(z)$''')
+plt.show();
+```
+
+Then initialise the set of dominated lines (a and b values respectively), respective intervals, and the current largest $z$ on the envelope.
+```{python}
+dom_a = []
+dom_b = []
+interval_store = []
+envelope_z = -5
+```
+
+For each line in order of increasing gradient (here we start with the first line indexed at $j=0$)
+```{python}
+j = 0 
+```
+
+Add the line to the set of dominating lines 
+```{python}
+dom_a.append(a[j])
+dom_b.append(b[j])
+```
+
+Calculate the $z$ intercept of the line with all lines of a larger gradient. As we only calculate this intersection with these remaining lines, the overall algorithm has $\mathcal{O}(n\log n)$ complexity. 
+```{python}
+z_intercept_store = []
+for i in range(j+1,n):
+    z_intercept = (dom_b[-1] - b[i])/(a[i] - dom_a[-1])
+    z_intercept_store.append(z_intercept)
+```
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+fig,ax = plt.subplots(1,1,figsize=figsize)
+
+# xl = min(-5,np.min(z_intercept_store))
+# xu = max(5,np.max(z_intercept_store))
+# zl = np.min(z_intercept_store)
+# zu = np.max(z_intercept_store)
+ax.plot([zl,zu],[dom_a[-1]*zl + dom_b[-1],dom_a[-1]*zu + dom_b[-1]],color='black',lw=3)
+for i in range(n):
+    ax.plot([zl,zu],[a[i]*zl + b[i],a[i]*zu + b[i]],color=plt.cm.Spectral(cols[i]))
+
+for i in range(len(z_intercept_store)):
+    z_i = z_intercept_store[i]
+    ax.scatter(z_i,dom_a[-1]*z_i + dom_b[-1],color='w',edgecolor='k',s=30,lw=0.5,zorder=3, label=r'$\mu$ intercepts' if i == 0 else None)
+ax.legend(frameon=False)
+ax.set_xlabel('$z$')
+ax.set_ylabel('$\mu$')
+ax.set_xlim([-5,5])
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False);
+```
+
+The intercept with the lowest value of $z$ will be a potential vertex for the envelope, but we must check that there are no lines above it. 
+
+To do so we calculate the $\mu$ value of each line at $min({\mathbf{z})}$.
+
+
+```{python}
+mu_vals = []
+z_intercept = np.min(z_intercept_store)
+mu_intercept = dom_a[-1]*z_intercept + dom_b[-1]
+
+for i in range(j+1,n):
+    mu_vals.append(a[i]*z_intercept + b[i])
+```
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+fig,ax = plt.subplots(1,1,figsize=figsize)
+
+# xl = min(-5,np.min(z_intercept_store))
+# xu = max(5,np.max(z_intercept_store))
+ax.plot([zl,zu],[dom_a[-1]*zl + dom_b[-1],dom_a[-1]*zu + dom_b[-1]],color='black',lw=3)
+for i in range(n):
+    ax.plot([zl,zu],[a[i]*zl + b[i],a[i]*zu + b[i]],color=plt.cm.Spectral(cols[i]))
+for i in range(len(mu_vals)):
+    ax.scatter(z_intercept,mu_vals[i],color='black',lw=0.5,edgecolor='w',s=30,zorder=3,label=r'$z$ intercepts' if i == 0 else None)
+for i in range(len(z_intercept_store)):
+    z_i = z_intercept_store[i]
+    ax.scatter(z_i,dom_a[-1]*z_i + dom_b[-1],color='w',edgecolor='k',s=30,lw=0.5,zorder=3, label=r'$\mu$ intercepts' if i == 0 else None)
+ax.legend(frameon=False)
+ax.set_xlabel('$z$')
+ax.set_xlim([-5,5])
+ax.set_ylabel('$\mu$')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False);
+```
+
+If the maximum value of $\mu$ is on the dominating line, and this value is larger than the current largest $z$ value in the envelope...then we know this must lie on the upper envelope. _Otherwise_ forget about this dominating line by setting it's definition to ```None```.
+
+```{python}
+if abs(mu_intercept-np.max(mu_vals)) < 1e-5 and z_intercept > envelope_z:
+  interval_store.append([envelope_z,z_intercept])
+  envelope_z = z_intercept
+else:
+  dom_a[-1] = None
+  dom_b[-1] = None
+  interval_store.append([None,None])
+```
+
+Now we can plot the interval we have just calculated.
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+fig,ax = plt.subplots(1,1,figsize=figsize)
+
+interval_store = np.array(interval_store)
+zl = interval_store[0,0]
+zu = interval_store[0,1]
+# zl = np.min(z_intercept_store)
+# zu = np.max(z_intercept_store)
+ax.plot([zl,zu],[dom_a[-1]*zl + dom_b[-1],dom_a[-1]*zu + dom_b[-1]],color='black',lw=4,alpha=1,ls='dashed',label='Upper Envelope')
+zl = -5; zu = 5
+for i in range(n):
+    ax.plot([zl,zu],[a[i]*zl + b[i],a[i]*zu + b[i]],color=plt.cm.Spectral(cols[i]))
+ax.set_xlabel('$z$')
+ax.set_ylabel('$\mu$')
+ax.legend(frameon=False)
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False);
+```
+
+If we now repeat this procedure starting with the line with the next largest gradient we can search for next vertex on the upper envelope. 
+
+```{python}
+#| code-fold: true
+#| code-summary: "Full algorithm for calculating upper envelope of a set of lines..."
+
+def upper_env(a,b):
+
+  l_store = []; u_store = []
+  zl = -5; zu = 5
+  for i in range(len(a)):
+      l = a[i]*zl + b[i]
+      u = a[i]*zu + b[i]
+      l_store.append(l)
+      u_store.append(u)
+
+  L_i = np.argmax(l_store)
+  U_i = np.argmax(u_store)
+
+  del_i = []
+  for i in range(len(a)):
+      if l_store[i] < l_store[U_i] and u_store[i] < u_store[L_i]:
+          del_i.append(i)
+
+  a = np.delete(a,del_i)
+  b = np.delete(b,del_i)
+  n = len(a)
+
+  sorted_indices = np.argsort(a)
+  a = a[sorted_indices]
+  b = b[sorted_indices]
+
+  dom_a = []
+  dom_b = []
+  interval_store = []
+  envelope_z = -5
+
+  for j in range(n):
+    dom_a.append(a[j])
+    dom_b.append(b[j])
+
+    z_intercept_store = []
+    for i in range(j+1,n):
+        z_intercept = (dom_b[-1] - b[i])/(a[i] - dom_a[-1])
+        z_intercept_store.append(z_intercept)
+
+    mu_vals = []
+    try:
+      z_intercept = np.min(z_intercept_store)
+    except:
+      interval_store.append([envelope_z,5])
+      break 
+    mu_intercept = dom_a[-1]*z_intercept + dom_b[-1]
+    for i in range(j+1,n):
+        mu_vals.append(a[i]*z_intercept + b[i])
+
+    if abs(mu_intercept-np.max(mu_vals)) < 1e-9 and z_intercept > envelope_z:
+      interval_store.append([envelope_z,z_intercept])
+      envelope_z = z_intercept
+    else:
+      dom_a[-1] = None
+      dom_b[-1] = None
+      interval_store.append([None,None])
+
+  del_store = []
+  for i in range(len(dom_a)):
+      if dom_a[i] == None:
+          del_store.append(i)
+
+  dom_a = np.delete(dom_a,del_store)
+  dom_b = np.delete(dom_b,del_store)
+  interval_store = np.delete(interval_store,del_store,axis=0)
+
+  zl = -5
+  zu = 5
+
+  interval_store[interval_store > zu] = zu
+  interval_store[interval_store < zl] = zl
+
+  return dom_a,dom_b,interval_store
+```
+
+```{python}
+#| echo: false
+#| fig-align: center
+dom_a,dom_b,interval_store = upper_env(a_og,b_og)
+zl = -5
+zu = 5
+fig,ax = plt.subplots(1,1,figsize=figsize)
+for i in range(n):
+    ax.plot([zl,zu],[a[i]*zl + b[i],a[i]*zu + b[i]],color=plt.cm.Spectral(cols[i]))
+for i in range(len(dom_a)):
+    zl = interval_store[i,0]
+    zu = interval_store[i,1]
+    ax.plot([zl,zu],np.array([dom_a[i]*zl + dom_b[i],dom_a[i]*zu + dom_b[i]]),color='black',lw=4,alpha=1,ls='dashed',label='Upper Envelope' if i == 0 else None)
+ax.set_xlim([-5,5])
+ax.set_xlabel('$z$')
+ax.set_ylabel('$\mu$')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False);
+ax.legend(frameon=False);
+```
+
+The expected value over $z$ (integrating over potential experimental outputs) of this upper envelope (which we use inplace of the inner $\max$ operator), where $z \sim \mathcal{N}(0,1)$ is given by:
+
+$$
+\sum_i \int^{c_{i+1}}_{c_{i}}(a_iz+b_i)\phi(z) \; \text{d}z \rightarrow \sum_i b_i [\Phi (c_{i+1})-\Phi(c_i)] + a_i[\phi(c_i) - \phi(c_{i+1})]$$
+
+where $\Phi$ is the standard cumulative normal probability function, $\phi$ is the standard normal probability function, $c$ are the $z$ values of the upper envelope intervals, and $a$ and $b$ are the gradient and intercept of upper envelope intervals corresponding to @eq-posterior_mean.
+
+_Intuitively_, we are solving the expected improvement integral analytically for each line segement within the upper envelope of lines (which we use as it is equivalent to the inner $\max$ operator). 
+
 :::
 
-For the sake of completeness we will set up and run a basic Bayesian optimisation loop, but I'll just use a naive implementation for now.
+For the sake of completeness we will wrap this up into an acquisition function, and run a basic Bayesian optimisation loop
+
+```{python}
+def noisy_EI_lines(x,GP):
+  with torch.no_grad(), gpytorch.settings.fast_pred_var():
+    model = GP['model']
+    likelihood = GP['likelihood']
+    model.eval()
+    likelihood.eval()
+    x_prime_vals = torch.linspace(0,3*np.pi,200)
+    predicted_output = likelihood(model(x))
+    mean = predicted_output.mean.item()
+    var = predicted_output.variance.item()
+    a = []
+    b = likelihood(model(x_prime_vals)).mean.numpy()
+    for x_prime in x_prime_vals.reshape(-1,1):
+      conc_x = torch.cat((x,x_prime))
+      covar = likelihood(model(conc_x)).covariance_matrix
+      a.append((covar[0,1]/var).item())
+    dom_a,dom_b,interval_store = upper_env(np.array(a),np.array(b))
+    N = torch.distributions.Normal(0,1)
+    sum = 0
+    for i in range(len(interval_store)):
+      c_i = torch.tensor(interval_store[i,0])
+      c_i1 = torch.tensor(interval_store[i,1])
+      sum += dom_b[i]*(N.cdf(c_i1) - N.cdf(c_i)) + dom_a[i]*(np.exp(N.log_prob(c_i)) - np.exp(N.log_prob(c_i1)))
+  return sum.item()
+```
+
+```{python}
+#| echo: false
+#| fig-align: center
+model,likelihood = build_GP(x_data,y_data,2000)
+GP = {'model':model,'likelihood':likelihood}
+
+def plot_aq_lines(ax,GP,rec_time=False):
+  GP['model'].eval()
+  GP['likelihood'].eval()
+  n_eval = 100
+  x_vals = np.array(np.linspace(0,3*np.pi,n_eval).reshape(-1,1),dtype=np.float32)
+  s = time.time()
+  y_vals = [noisy_EI_lines(x_val,GP) for x_val in torch.from_numpy(x_vals)]
+  e = time.time()
+  y_vals = np.array(y_vals,dtype=np.float32)
+  x_vals = np.array(x_vals,dtype=np.float32)[:,0]
+  ax.plot(x_vals,y_vals,c='k',lw=1)
+  ax.fill_between(x_vals,np.ones(n_eval)*np.min(y_vals),y_vals,alpha=0.1,color='k',lw=0)
+  ax.set_xlabel(r'$x$')
+  ax.set_ylabel(r'$\alpha_{EI}(x)$')
+  ax.set_xlim([0,3*np.pi])
+  ax.set_ylim([np.min(y_vals),np.max(y_vals)])
+  ax.spines['right'].set_visible(False)
+  ax.spines['top'].set_visible(False)
+  if rec_time:
+    print('UPPER ENVELOPE TIME TAKEN: ',np.round(e-s,4),'s. AVERAGE TIME PER EVALUATION: ',np.round((e-s)/n_eval,4),'s')
+  ax.set_yticks([],[])
+  return ax
+
+fig,ax = plt.subplots(2,1,figsize= (figsize[0],figsize[1]*2),sharex=True,constrained_layout=True)
+ax[0] = plot_aq(ax[0],GP,rec_time=True)
+ax[1] = plot_aq_lines(ax[1],GP,rec_time=True)
+ax[0].set_title('Naive Implementation')
+ax[1].set_title('Analytical Upper Envelope')
+fig.tight_layout()
+plt.show();
+
+```
+
+
 
 ```{python}
 #| code-fold: true
 #| code-summary: "Gradient-based multi-start optimisation of utility function..."
 def aq_and_grad(x,GP):
-  x = np.array(x,dtype=np.float32)
-  x = torch.from_numpy(x.reshape(-1,1))
-  x = torch.tensor(x, requires_grad=True)
-  aq = noisy_EI(x,GP)
-  aq.backward()
-  f_val = aq.detach().numpy()
-  f_grad = x.grad.numpy()[0]
-  return (-f_val,-f_grad)
+  x = torch.tensor(x)
+  f_val = noisy_EI_lines(x,GP)
+  return -f_val
 
 def optimise_aq(GP):
   x0_list = np.linspace(0,3*np.pi,16)
   f_best = 1E10
   x_best = None
   for x0 in x0_list:
-    res = minimize(aq_and_grad, x0, method='L-BFGS-B', jac=True,
-                  bounds=((0,3*np.pi),),args=(GP), options={'maxiter': 100})
+    res = minimize(aq_and_grad, x0, bounds=((0,3*np.pi),),args=(GP), options={'maxiter': 100})
     if res.fun < f_best:
       f_best = res.fun
       x_best = res.x
@@ -323,12 +696,12 @@ def optimise_aq(GP):
 ```
 
 
-Plotting every 5 iterations, for a total of 50 iterations. 
+Plotting the first 8 iterations.
 
 ```{python}
 #|fig-align: center
 #| layout-ncol: 2
-for iteration in range(50):
+for iteration in range(8):
   # train GP
   model,likelihood = build_GP(x_data,y_data,2000)
   GP = {'model':model,'likelihood':likelihood}
@@ -342,9 +715,8 @@ for iteration in range(50):
   x_data = torch.cat((x_data,torch.tensor(x_best)))
   y_data = torch.cat((y_data,torch.tensor(y_best)))
 
-  if (iteration) % 5 == 0:
-    fig,ax = plt.subplots(2,1,figsize=figsize,sharex=True)
-    ax[0] = plot_model(ax[0],GP,x_data,y_data,in_loop=iteration+1)
-    ax[1] = plot_aq(ax[1],GP)
-    plt.show()
+  fig,ax = plt.subplots(2,1,figsize=figsize,sharex=True)
+  ax[0] = plot_model(ax[0],GP,x_data,y_data,in_loop=iteration)
+  ax[1] = plot_aq_lines(ax[1],GP)
+  plt.show()
 ```
