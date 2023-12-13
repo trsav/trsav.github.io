@@ -102,7 +102,7 @@ To begin with we will sample some initial data:
 
 ```{python}
 # our initial dataset
-x_data = np.random.uniform(0,3*np.pi,8)
+x_data = np.random.uniform(0,3*np.pi,4)
 y_data = np.array([f(x_i) for x_i in x_data])
 ```
 

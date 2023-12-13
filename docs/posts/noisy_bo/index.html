@@ -242,7 +242,7 @@ div.csl-indent {
 <p>To begin with we will sample some initial data:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># our initial dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">8</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">4</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> np.array([f(x_i) <span class="cf">for</span> x_i <span class="kw">in</span> x_data])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="6">
@@ -314,7 +314,7 @@ div.csl-indent {
 <p>Now if we plot this function alongside the time taken to evaluate the acquisition function at 100 locations.</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
-<pre><code>NAIVE TIME TAKEN:  0.877 s. AVERAGE TIME PER EVALUATION:  0.0088 s</code></pre>
+<pre><code>NAIVE TIME TAKEN:  0.9121 s. AVERAGE TIME PER EVALUATION:  0.0091 s</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -426,7 +426,7 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-22-output-1.png" width="668" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-22-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -445,7 +445,7 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-24-output-1.png" width="668" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-24-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -465,7 +465,7 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-26-output-1.png" width="668" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-26-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -554,7 +554,7 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-28-output-1.png" width="668" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-28-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -594,8 +594,8 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 </div>
 <div class="cell" data-execution_count="29">
 <div class="cell-output cell-output-stdout">
-<pre><code>NAIVE TIME TAKEN:  0.8452 s. AVERAGE TIME PER EVALUATION:  0.0085 s
-UPPER ENVELOPE TIME TAKEN:  4.6748 s. AVERAGE TIME PER EVALUATION:  0.0467 s</code></pre>
+<pre><code>NAIVE TIME TAKEN:  0.8465 s. AVERAGE TIME PER EVALUATION:  0.0085 s
+UPPER ENVELOPE TIME TAKEN:  4.6759 s. AVERAGE TIME PER EVALUATION:  0.0468 s</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
