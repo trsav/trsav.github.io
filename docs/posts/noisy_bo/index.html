@@ -242,7 +242,7 @@ div.csl-indent {
 <p>To begin with we will sample some initial data:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># our initial dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">4</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">8</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> np.array([f(x_i) <span class="cf">for</span> x_i <span class="kw">in</span> x_data])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="6">
@@ -295,26 +295,26 @@ div.csl-indent {
 <p>Now we will naively construct <a href="#eq-ei_noisy2">Equation&nbsp;2</a> using 40 samples from the standard normal distribution, and naively calculate an approximation to the inner maximisation by evaluating at 100 location throughout the space (which defines our vector <span class="math inline">\(\mathbf{x}' \in\mathbb{R}^{100}\)</span>) and returning the max value from these.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> noisy_EI(x,GP):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  model <span class="op">=</span> GP[<span class="st">'model'</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  likelihood <span class="op">=</span> GP[<span class="st">'likelihood'</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  model <span class="op">=</span> GP[<span class="st">'model'</span>]<span class="op">;</span> model.<span class="bu">eval</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  likelihood <span class="op">=</span> GP[<span class="st">'likelihood'</span>]<span class="op">;</span> likelihood.<span class="bu">eval</span>()</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  N <span class="op">=</span> torch.distributions.Normal(<span class="dv">0</span>,<span class="dv">1</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  predicted_output <span class="op">=</span> likelihood(model(x))</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  mean <span class="op">=</span> predicted_output.mean</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  var <span class="op">=</span> predicted_output.variance</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  z_vals <span class="op">=</span> torch.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">40</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  integral <span class="op">=</span> <span class="dv">0</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> z <span class="kw">in</span> z_vals:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    x_prime_vals <span class="op">=</span> torch.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">100</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)    </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    new_mean_vals <span class="op">=</span> model.mean_module(x_prime_vals)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    new_cov_vals <span class="op">=</span> ((model.covar_module(x_prime_vals,x)<span class="op">/</span>var)<span class="op">*</span>z.item())[:,<span class="dv">0</span>]</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    integral <span class="op">+=</span> torch.<span class="bu">max</span>(new_mean_vals <span class="op">+</span> new_cov_vals)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  integral <span class="op">/=</span> <span class="dv">100</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span>integral</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  x_prime_vals <span class="op">=</span> torch.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">100</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)    </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  mu_vals <span class="op">=</span> likelihood(model(x_prime_vals)).mean</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  cov_vals <span class="op">=</span> model.covar_module(x_prime_vals,x)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  integral <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  samples <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  z_vals <span class="op">=</span> N.sample((samples,<span class="dv">1</span>))[:,<span class="dv">0</span>]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> z <span class="kw">in</span> z_vals:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    integral <span class="op">+=</span> torch.<span class="bu">max</span>(mu_vals <span class="op">+</span> (cov_vals<span class="op">*</span>z)[:,<span class="dv">0</span>]) </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> integral <span class="op">/</span> samples</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now if we plot this function alongside the time taken to evaluate the acquisition function at 100 locations.</p>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
-<pre><code>NAIVE TIME TAKEN:  0.9121 s. AVERAGE TIME PER EVALUATION:  0.0091 s</code></pre>
+<pre><code>NAIVE TIME TAKEN:  26.5347 s. AVERAGE TIME PER EVALUATION:  0.2653 s</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -324,51 +324,24 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<!-- 
-:::{.cleanbox}
-**Gaining an intuition:** Let's create a number of example Gaussian process models and see what the acquisition function looks like for each. 
-
-1. Constant GP with a constant noise.
-
-::: {.cell execution_count=10}
-
-::: {.cell-output .cell-output-display}
-![](index_files/figure-html/cell-11-output-1.png){width=626 height=318 fig-align='center'}
-:::
-:::
-
-
-The acquisition function is maximised at the center of the domain, with an approximately linear decrease either side. 
-If we assume that $\mu_{\mathcal{D}}(x) = 0$ and $\sigma_{\mathcal{D}}(x) = 1$, the acquisition function reduces to 
-
-$$\alpha_{EI}(x,\mathcal{D}) = \int \max_{\mathbf{x}'} \left(K_{\mathcal{D}}(x,\mathbf{x}') z \right)\phi(z)\;\text{d}z,$$
-
-
-Which is effectively the average distance from the rest of the domain...???? EXPLAIN THIS BETTER...WHY?
-
-::: {.line}
-:::
-&#8203;
-
-::: -->
 <div class="cleanbox">
 <p><strong>Important:</strong> For a fixed set of ‘improvement locations’ <span class="math inline">\(\mathbf{x}'\)</span>, the resulting posterior mean at each location can be interpreted as a 1D line as a function of <span class="math inline">\(z\)</span>:</p>
 <p><span id="eq-posterior_mean"><span class="math display">\[\mu_{\mathcal{D}'}(z|x') = \mu_{\mathcal{D}}(x') + \frac{K_{\mathcal{D}}(x',x)}{s}z \quad \forall x'\in \mathbf{x}' \tag{3}\]</span></span></p>
 <p>Therefore finding the inner maximum new posterior mean as a function of <span class="math inline">\(z\)</span> can be translated to calculating the upper envelope of a set of lines. This upper envelope represents for a given <span class="math inline">\(z\)</span>, the maximum posterior mean across all of the locations in <span class="math inline">\(\mathbf{{x}'}\)</span>. The main idea is to remove the inner <span class="math inline">\(\max\)</span> operator and replace it with something more tractable enabling analytical integration.</p>
 <p><span class="math display">\[\int \max \left[\text{lines} (z)\right] \phi(z) \;\text{d}z \rightarrow \int \text{upper envelope} (z) \phi(z) \;\text{d}z \rightarrow \text{analytical solution}\]</span></p>
 <p>Which has an analytical solution for a piecewise linear upper envelope. To do so:</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="fl">0.2</span>,n)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-13-output-1.png" width="667" height="206"></p>
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="667" height="206"></p>
 </div>
 </div>
 <p>We will first get rid of any lines that are definitely dominated between -5 and 5 (the range of <span class="math inline">\(z\)</span> values we are interested in). I’m not going to explain this too much but it’s quite easy to derive this condition.</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>l_store <span class="op">=</span> []<span class="op">;</span> u_store <span class="op">=</span> []</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>zl <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span> zu <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
@@ -389,51 +362,51 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.delete(b,del_i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we will sort the lines by gradient</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sorted_indices <span class="op">=</span> np.argsort(a)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> a[sorted_indices]<span class="op">;</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> b[sorted_indices]<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-17-output-1.png" width="670" height="206"></p>
+<p><img src="index_files/figure-html/cell-16-output-1.png" width="670" height="206"></p>
 </div>
 </div>
 <p>Then initialise the set of dominated lines (a and b values respectively), respective intervals, and the current largest <span class="math inline">\(z\)</span> on the envelope.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dom_a <span class="op">=</span> []</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dom_b <span class="op">=</span> []</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>interval_store <span class="op">=</span> []</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>envelope_z <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For each line in order of increasing gradient (here we start with the first line indexed at <span class="math inline">\(j=0\)</span>)</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">0</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Add the line to the set of dominating lines</p>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dom_a.append(a[j])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dom_b.append(b[j])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Calculate the <span class="math inline">\(z\)</span> intercept of the line with all lines of a larger gradient. As we only calculate this intersection with these remaining lines, the overall algorithm has <span class="math inline">\(\mathcal{O}(n\log n)\)</span> complexity.</p>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>z_intercept_store <span class="op">=</span> []</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    z_intercept <span class="op">=</span> (dom_b[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> b[i])<span class="op">/</span>(a[i] <span class="op">-</span> dom_a[<span class="op">-</span><span class="dv">1</span>])</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    z_intercept_store.append(z_intercept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-22-output-1.png" width="667" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-21-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The intercept with the lowest value of <span class="math inline">\(z\)</span> will be a potential vertex for the envelope, but we must check that there are no lines above it.</p>
 <p>To do so we calculate the <span class="math inline">\(\mu\)</span> value of each line at <span class="math inline">\(min({\mathbf{z})}\)</span>.</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mu_vals <span class="op">=</span> []</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>z_intercept <span class="op">=</span> np.<span class="bu">min</span>(z_intercept_store)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mu_intercept <span class="op">=</span> dom_a[<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>z_intercept <span class="op">+</span> dom_b[<span class="op">-</span><span class="dv">1</span>]</span>
@@ -441,17 +414,17 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(j<span class="op">+</span><span class="dv">1</span>,n):</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    mu_vals.append(a[i]<span class="op">*</span>z_intercept <span class="op">+</span> b[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-24-output-1.png" width="667" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-23-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>If the maximum value of <span class="math inline">\(\mu\)</span> is on the dominating line, and this value is larger than the current largest <span class="math inline">\(z\)</span> value in the envelope…then we know this must lie on the upper envelope. <em>Otherwise</em> forget about this dominating line by setting it’s definition to <code>None</code>.</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">abs</span>(mu_intercept<span class="op">-</span>np.<span class="bu">max</span>(mu_vals)) <span class="op">&lt;</span> <span class="fl">1e-5</span> <span class="kw">and</span> z_intercept <span class="op">&gt;</span> envelope_z:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  interval_store.append([envelope_z,z_intercept])</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  envelope_z <span class="op">=</span> z_intercept</span>
@@ -461,17 +434,17 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  interval_store.append([<span class="va">None</span>,<span class="va">None</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can plot the interval we have just calculated.</p>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-26-output-1.png" width="667" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-25-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>If we now repeat this procedure starting with the line with the next largest gradient we can search for next vertex on the upper envelope.</p>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="25">
 <details>
 <summary>Full algorithm for calculating upper envelope of a set of lines…</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> upper_env(a,b):</span>
@@ -550,11 +523,11 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> dom_a,dom_b,interval_store</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-28-output-1.png" width="667" height="206" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-27-output-1.png" width="667" height="206" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -566,7 +539,7 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <p><em>Intuitively</em>, we are solving the expected improvement integral analytically for each line segement within the upper envelope of lines (which we use as it is equivalent to the inner <span class="math inline">\(\max\)</span> operator).</p>
 </div>
 <p>For the sake of completeness we will wrap this up into an acquisition function, and run a basic Bayesian optimisation loop</p>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> noisy_EI_lines(x,GP):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> torch.no_grad(), gpytorch.settings.fast_pred_var():</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> GP[<span class="st">'model'</span>]</span>
@@ -592,124 +565,16 @@ Which is effectively the average distance from the rest of the domain...???? EXP
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      <span class="bu">sum</span> <span class="op">+=</span> dom_b[i]<span class="op">*</span>(N.cdf(c_i1) <span class="op">-</span> N.cdf(c_i)) <span class="op">+</span> dom_a[i]<span class="op">*</span>(np.exp(N.log_prob(c_i)) <span class="op">-</span> np.exp(N.log_prob(c_i1)))</span>
 <span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">sum</span>.item()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="28">
 <div class="cell-output cell-output-stdout">
-<pre><code>NAIVE TIME TAKEN:  0.8465 s. AVERAGE TIME PER EVALUATION:  0.0085 s
-UPPER ENVELOPE TIME TAKEN:  4.6759 s. AVERAGE TIME PER EVALUATION:  0.0468 s</code></pre>
+<pre><code>NAIVE TIME TAKEN:  26.0427 s. AVERAGE TIME PER EVALUATION:  0.2604 s
+UPPER ENVELOPE TIME TAKEN:  4.6367 s. AVERAGE TIME PER EVALUATION:  0.0464 s</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-30-output-2.png" width="757" height="374" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-29-output-2.png" width="757" height="374" class="figure-img"></p>
 </figure>
-</div>
-</div>
-</div>
-<div class="cell" data-execution_count="30">
-<details>
-<summary>Gradient-based multi-start optimisation of utility function…</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> aq_and_grad(x,GP):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> torch.tensor(x)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  f_val <span class="op">=</span> noisy_EI_lines(x,GP)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span>f_val</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimise_aq(GP):</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  x0_list <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi,<span class="dv">16</span>)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  f_best <span class="op">=</span> <span class="fl">1E10</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x0 <span class="kw">in</span> x0_list:</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> minimize(aq_and_grad, x0, bounds<span class="op">=</span>((<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>np.pi),),args<span class="op">=</span>(GP), options<span class="op">=</span>{<span class="st">'maxiter'</span>: <span class="dv">100</span>})</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> res.fun <span class="op">&lt;</span> f_best:</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      f_best <span class="op">=</span> res.fun</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>      x_best <span class="op">=</span> res.x</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x_best</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Plotting the first 8 iterations.</p>
-<div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># train GP</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  model,likelihood <span class="op">=</span> build_GP(x_data,y_data,<span class="dv">2000</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  GP <span class="op">=</span> {<span class="st">'model'</span>:model,<span class="st">'likelihood'</span>:likelihood}</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  GP[<span class="st">'model'</span>].<span class="bu">eval</span>()<span class="op">;</span> GP[<span class="st">'likelihood'</span>].<span class="bu">eval</span>()</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># optimise acquisition function</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  x_best <span class="op">=</span> optimise_aq(GP)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  y_best <span class="op">=</span> f(x_best)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add to dataset</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  x_data <span class="op">=</span> torch.cat((x_data,torch.tensor(x_best)))</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  y_data <span class="op">=</span> torch.cat((y_data,torch.tensor(y_best)))</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  fig,ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>,figsize<span class="op">=</span>figsize,sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>] <span class="op">=</span> plot_model(ax[<span class="dv">0</span>],GP,x_data,y_data,in_loop<span class="op">=</span>iteration)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>] <span class="op">=</span> plot_aq_lines(ax[<span class="dv">1</span>],GP)</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-execution_count="31">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-2.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-3.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-4.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-5.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-6.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-7.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-32-output-8.png" class="img-fluid figure-img" width="666"></p>
-</figure>
-</div>
-</div>
 </div>
 </div>
 </div>
