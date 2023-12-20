@@ -3,7 +3,7 @@ title: "BOOK REVIEW - GAZZA AGONISTES, IAN HAMILTON"
 subtitle: "Published in _The Felix_ October 2023"
 author: "Tom Savage"
 date: "10/22/2023"
-categories: [book review]
+categories: [books]
 image: "gazza.jpg"
 html: 
     self-contained: true

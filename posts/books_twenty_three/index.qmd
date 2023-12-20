@@ -12,6 +12,7 @@ html:
 
 :::{.cleanbox}
 - 1000 Years of Joys and Sorrows - _Ai Weiwei_ 
+- Lucky Kunst - _Gregor Muir_
 - The Restless Republic - _Anna Keay_ 
 - Gazza Agonistes - _Ian Hamilton_ ([REVIEW](https://sav.phd/posts/gazza_agonistes/))
 - Athens - _Bruce Clark_ 
