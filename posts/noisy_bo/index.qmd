@@ -1,6 +1,6 @@
 ---
 title: "BAYESIAN OPTIMISATION WITH NOISY MEASUREMENTS"
-subtitle: "A REVIEW"
+subtitle: "A review"
 author: 
  - name: "Tom Savage"
 categories: [optimisation, machine learning]

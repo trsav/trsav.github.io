@@ -1,6 +1,6 @@
 ---
 title: "ELECTRONIC LIFE"
-subtitle: "LATE @ TATE BRITAIN"
+subtitle: "Late @ Tate Britain"
 author: 
  - name: "Tom Savage"
  - name: "Sunil Manghani"

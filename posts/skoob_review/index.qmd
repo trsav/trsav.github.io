@@ -1,0 +1,25 @@
+---
+title: "BOOKSHOP REVIEW - SKOOB, BLOOMSBURY"
+subtitle: "Published in _The Felix_ January 2024"
+author: "Tom Savage"
+categories: [books]
+date: "07/01/2024"
+html: 
+    self-contained: true
+    grid: 
+    margin-width: 450px
+---
+
+[Skoob](https://skoob.com) is a second-hand bookshop that has been operating since 1979 at locations throughout London, before moving to the Grade II listed Brunswick Centre in Bloomsbury in 2007. Skoob has generous opening hours of 10:30am – 7:30pm (apart from on Sundays) and is open 7 days a week.  
+
+Outside, the shop maintains an unremarkable glass and concrete look. It is engulfed by a modernist concrete development and flanked by a big Waitrose. However, walking downstairs from the discrete entrance you are greeted by a rich burgundy floor surrounding a bespoke Skoob logo mosaic. Looking up, there are books everywhere. Where there is a flat wall, there is a bookshelf. Often, books are stacked horizontally in what normally would serve as breathing room between rows, with those on lower shelves spilling out onto the floor. The utilitarian shelves seem to bear the weight of the Brunswick Centre above. The aisles of Waitrose seem a world away.  
+
+::: column-margin
+![Skoob, taken December 2023](skoob.webp)
+:::
+
+The shop is laid out like a large old key. Turning left, the central spine branches off into a series of small nooks, some with a single chair, some without. The only sound is a light hum emitted from the foil insulated air conditioning pipe that runs along the low ceiling and through the top shelves, forcing books horizontally to make way for the fixture. Operationally, this ensures that Skoob is a completely unnoticeable temperature and volume. Alongside the complete lack of natural light, time stands still. Turning right, the circular bow of the key contains the small staff area and till with shelves that loop around encircling the custodians. Categories of books in Skoob are broad and largely academic. A successful trip would be to come with a given a period, place, or politic in mind
+
+
+
+Skoob forces you to bend and stretch to find worthwhile books (a lot of which are not). The small spaces and full-length shelves, no two of which are the same, make it a physical challenge akin to a marathon as opposed to a sprint, making the task all the more rewarding. Upon purchase, and after travelling back upstairs you are thrust back into a more organised, less interesting world. Whilst Skoob could reasonably be described as chaotic and quite hard work, it is the perfect environment to discover something completely new. 

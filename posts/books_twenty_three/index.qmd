@@ -1,6 +1,6 @@
 ---
 title: "2023 BOOKS"
-subtitle: "A LIST"
+subtitle: "A list"
 author: "Tom Savage"
 categories: [books]
 date: "12/16/2023"
