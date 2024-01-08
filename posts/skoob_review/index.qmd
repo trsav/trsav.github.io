@@ -3,7 +3,7 @@ title: "BOOKSHOP REVIEW - SKOOB, BLOOMSBURY"
 subtitle: "Published in _The Felix_ January 2024"
 author: "Tom Savage"
 categories: [books]
-date: "07/01/2024"
+date: "01/07/2024"
 html: 
     self-contained: true
     grid: 
@@ -19,7 +19,6 @@ Outside, the shop maintains an unremarkable glass and concrete look. It is engul
 :::
 
 The shop is laid out like a large old key. Turning left, the central spine branches off into a series of small nooks, some with a single chair, some without. The only sound is a light hum emitted from the foil insulated air conditioning pipe that runs along the low ceiling and through the top shelves, forcing books horizontally to make way for the fixture. Operationally, this ensures that Skoob is a completely unnoticeable temperature and volume. Alongside the complete lack of natural light, time stands still. Turning right, the circular bow of the key contains the small staff area and till with shelves that loop around encircling the custodians. Categories of books in Skoob are broad and largely academic. A successful trip would be to come with a given a period, place, or politic in mind
-
 
 
 Skoob forces you to bend and stretch to find worthwhile books (a lot of which are not). The small spaces and full-length shelves, no two of which are the same, make it a physical challenge akin to a marathon as opposed to a sprint, making the task all the more rewarding. Upon purchase, and after travelling back upstairs you are thrust back into a more organised, less interesting world. Whilst Skoob could reasonably be described as chaotic and quite hard work, it is the perfect environment to discover something completely new. 
