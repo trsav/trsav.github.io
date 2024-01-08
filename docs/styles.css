@@ -55,9 +55,11 @@
     margin: 0.5em 0;
     padding: 0em;
     border-bottom: 1px dashed grey;
+    
     /* border-radius: 0px;
     box-shadow: 3px 3px 0px grey; */
   }
+
 
   span[class="navbar-title"] {
     font-size: 1em;
@@ -70,7 +72,9 @@
   }
   
   h5[class="quarto-listing-category-title"] {
-    margin: 1em 0;
+    margin: 0.5em 0;
+    font-weight: normal !important;
+    font-size: 1em !important;
   }
 
   main[class="content quarto-banner-title-block column-page-left"]{
@@ -82,21 +86,38 @@
     box-shadow: 3px 3px 0px darkgrey;
   }
 
+
   a[class="about-link"] {
-    border: 1px solid black;
-    box-shadow: 3px 3px 0px grey;
+    border: 1px solid grey !important;
+    box-shadow: 3px 3px 0px darkgrey;
     border-radius: 0px !important;
   }
 
-  /* make this smaller */
   h3[class="no-anchor listing-title"] {
     font-size: 1em;
     font-weight: normal;
     color: black;
   }
 
+  h3[class="no-anchor listing-title"]:hover{
+    color: blue;
+    /* underline */
+    text-decoration: underline;
+  }
   div[class="category"]{
-  font-size: 0.8em !important;
+  font-size: 0.75em !important;
+    margin: 0.5em 0;
+    padding: 0.2em;
+    border: 1px solid grey;
+    border-radius: 0px !important;
+    box-shadow: 3px 3px 0px darkgrey;
+    color: black;
+
+  
+}
+
+div[class="category"]:hover{
+background-color: rgb(255, 207, 34);
 }
 
 nav[class="navbar navbar-expand-lg navbar-dark "]{
@@ -110,4 +131,8 @@ div[class="quarto-category"] {
     border-radius: 0px !important;
     box-shadow: 3px 3px 0px darkgrey;
     color: black;
+}
+
+div[class="about-contents"] {
+  border-left-color: grey !important;
 }

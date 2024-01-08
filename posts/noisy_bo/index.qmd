@@ -3,7 +3,7 @@ title: "Bayesian Optimisation with Noisy Measurements"
 subtitle: "A review"
 author: 
  - name: "Tom Savage"
-categories: [optimisation, machine learning]
+categories: [Optimisation, Machine Learning]
 date: "12/05/2023"
 callout-appearance: minimal
 format:

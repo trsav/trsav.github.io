@@ -24,7 +24,7 @@ keywords:
   - Expert Guided
   - Human-In-The-Loop
   - Batch
-categories: [optimisation]
+categories: [Optimisation, Machine Learning]
 # google-scholar: true
 citation:
   url: https://sav.phd/posts/human_in_the_loop/

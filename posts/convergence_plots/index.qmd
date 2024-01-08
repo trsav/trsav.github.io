@@ -1,7 +1,7 @@
 ---
 title: "Convergence Plots"
 author: "Tom Savage"
-categories: [visualisation]
+categories: [Visualisation]
 image: "figure.svg"
 date: "10/24/2023"
 callout-appearance: minimal

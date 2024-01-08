@@ -24,16 +24,16 @@ about:
       href: https://github.com/trsav
 
 ---
-
+:::{.cleanbox}
 I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). I have a background in Chemical Engineering and still enjoy teaching labs at Imperial College. My interests include Bayesian optimisation, human-in-the-loop machine learning, cricket 🏏, and darts 🎯. 
+:::
 
-# Education 
 
-### Imperial College London
+**Imperial College London**
 - PhD in Process Systems Engineering | 2021 - Current
 
-### University of Cambridge
+**University of Cambridge**
 - MPhil in Chemical Engineering & Biotechnology | 2020 - 2021
 
-### University of Manchester
+**University of Manchester**
 - BEng in Chemical Engineering | 2017 - 2020

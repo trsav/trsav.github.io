@@ -2,7 +2,7 @@
 title: "Skoob, Bloomsbury - Bookshop Review"
 subtitle: "Published in _The Felix_ January 2024"
 author: "Tom Savage"
-categories: [books]
+categories: [Books]
 date: "01/07/2024"
 html: 
     self-contained: true
