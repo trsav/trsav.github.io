@@ -1,5 +1,5 @@
 ---
-title: "ELECTRONIC LIFE"
+title: "Electronic Life"
 subtitle: "Late @ Tate Britain"
 author: 
  - name: "Tom Savage"

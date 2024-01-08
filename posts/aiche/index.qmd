@@ -1,6 +1,6 @@
 ---
 # title: "AIChE 2023 & Polar Gaussian Processes"
-title: "AICHE 2023 & POLAR GAUSSIAN PROCESSES"
+title: "AIChE 2023 & Polar Gaussian Processes"
 author: "Tom Savage"
 categories: [conference,chemical engineering]
 image: "conf.webp"

@@ -1,5 +1,5 @@
 ---
-title: "2023 BOOKS"
+title: "2023 Books"
 subtitle: "A list"
 author: "Tom Savage"
 categories: [books]

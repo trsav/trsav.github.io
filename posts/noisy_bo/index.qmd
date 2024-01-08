@@ -1,5 +1,5 @@
 ---
-title: "BAYESIAN OPTIMISATION WITH NOISY MEASUREMENTS"
+title: "Bayesian Optimisation with Noisy Measurements"
 subtitle: "A review"
 author: 
  - name: "Tom Savage"
