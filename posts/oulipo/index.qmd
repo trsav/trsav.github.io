@@ -5,7 +5,6 @@ author: "Tom Savage"
 categories: [Art, Machine learning]
 toc: true
 toc-location: body
-
 format:
     pdf: default
     html: 
@@ -39,7 +38,7 @@ In describing the combinatorial nature of _Cent Mille Milliards de Poemes_, Berg
 Verses act equivalently to neural network layers, and phrases correspond to discrete nodes... could we be seeing the early sparks of the use of neural networks for language modelling[The modern use of neural networks to model language can _probably_ be attributed to [Bengio et. al, 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf), 42 years later.]{.aside}? 
 Of course what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera... but it is interesting to consider the thematic similarities of complexity, structure, and distillation (or lack thereof) of language that both members of Oulipo and machine learning researchers have successfully applied.
 
-Given that a modern day large language model such as [GPT-4](https://openai.com/research/gpt-4) may reasonably be described as a very large set of well defined mathematical rules, specified to predict subsequent tokens, can this ever become a valid form of Oulipo practice resulting in a new structure for language to follow? In addition, multi-model models can now see and hear as well as read. [According to David Chalmers](https://nips.cc/media/neurips-2022/Slides/55867.pdf) these additional senses may result in fish-level consciousness in the next ten years. Consciousness aside, at the very least LLMs will _appear_ smarter than a human by then. What are the implications for in Potential Literature when a language structure can think for itself?
+Given that a modern day large language model such as [GPT-4](https://openai.com/research/gpt-4) may reasonably be described as a very large set of well defined mathematical rules, specified to predict subsequent tokens, can this ever become a valid form of Oulipo practice resulting in a new structure for language to follow? In addition, multi-model models can now see and hear as well as read. [According to David Chalmers](https://nips.cc/media/neurips-2022/Slides/55867.pdf) these additional senses may result in fish-level consciousness in the next ten years. Consciousness aside, at the very least LLMs will _appear_ smarter than a human by then. What are the implications for Potential Literature when a language structure can think for itself?
 
 Unlike the output from an LLM, a haiku can be instantly recognised and verified as coming from the 5-7-5 syllabic writing structure. When the writing structure itself is visible in the output, the focus can be turned purely to what Berge refers to as the _clinamen_. It is here that the meaning is gained. 
 
