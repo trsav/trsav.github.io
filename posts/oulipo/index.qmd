@@ -2,7 +2,7 @@
 title: "The Potential Literature Horseshoe"
 subtitle: "The First Large Language Model or: Has Machine Learning Solved Oulipo?"
 author: "Tom Savage"
-categories: [Art, Machine learning]
+categories: [Art, Machine Learning]
 toc: true
 toc-location: body
 format:
@@ -61,7 +61,4 @@ As Italo Calvino wrote in late 1967, in a remarkable foreshadowing [@motte1998ou
 
 Calvino I'm sure would argue that we have the alignment of LLMs set up wrong to produce true literature, and how would Raymond Queneau respond to the combinatorial possibilities of large-language models?
 _Cent Mille Milliards de Poemes_ can be seen as analogous to a partially trained neural network _itself_, as a mathematical object. There is beauty in the disorder of the relationship between tokens, and the rules that can be combined to produce language. However as soon as an output is produced and the combinatorics collapses, like a phantom, the structure is obscured and the meaning disappears. 
-
-
-
 
