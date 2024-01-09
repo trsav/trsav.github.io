@@ -1,28 +1,21 @@
 ---
 title: "The Potential Literature Horseshoe"
-subtitle: "The First Large Language Model and, Has Machine Learning Solved Oulipo?"
+subtitle: "The First Large Language Model or: Has Machine Learning Solved Oulipo?"
 author: "Tom Savage"
 categories: [Art, Machine learning]
+toc: true
+toc-location: body
+
+format:
+    pdf: default
+    html: 
+      grid: 
+        margin-width: 350px
 date: "01/09/2024"
-format: 
-  pdf: 
-    documentclass: scrartcl
 fig-cap-location: margin
 citation-location: margin
-footnotes-hover: true
 bibliography: index.bib
-
 ---
-<!-- [Main Source](https://monoskop.org/images/a/a4/Motte_Warren_F_ed_Oulipo_A_Primer_of_Potential_Literature.pdf)
- -->
-
-<!-- Outline of Oulipo 
-Examples 
-The first language model
-Where to LLMs fit in Oulipo 
-Chinese Room Diversion
-LLM questions and answer 
-Reveal all... and help using LLMs. -->
 
 
 ![Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons.](logo.png){width=50%}
@@ -57,7 +50,7 @@ The difference between LLMs and well-established language structures such as a h
 :::
 
 Herein lies a paradox for the use of language models directly in producing creative outputs, as a structure of language itself. A language model is trained to produce text that is indistinguishable from text within its training distribution.
-However, as soon as it achieves this task and text becomes indistinguishable, the underlying language structure that has generated it becomes obscured, and the impact is lost. Would a haiku be a haiku if you couldn't tell immediately tell it's structure?
+However, as soon as it achieves this task and text becomes indistinguishable, the underlying language structure that has generated it becomes obscured, and the impact is lost. Would a haiku be a haiku if you couldn't immediately infer its underlying structure?
 
 To answer the question posted in the title: _Has Machine Learning Solved Oulipo?_ The answer, is no. The beauty of Potential Literature is that by enforcing constraints and defining new structures to language, we not only place the emphasis purely on the meaning, but also enable the reader to interpret language in new ways via a sense of disorder. As a set of rules and constraints, an LLM obscures its underlying structure in a bid to 'seem human', the resulting structure is lost. 
 
