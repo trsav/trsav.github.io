@@ -4,6 +4,7 @@ project:
 
 website:
   title: "TRS"
+  favicon: favicon.ico
   #title: "TRS"
   navbar:
     right:
