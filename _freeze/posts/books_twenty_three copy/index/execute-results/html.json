@@ -1,0 +1,14 @@
+{
+  "hash": "66b4493b224a5c7d687b293359098891",
+  "result": {
+    "markdown": "---\ntitle: \"2023 Books\"\nsubtitle: \"A list\"\nauthor: \"Tom Savage\"\ncategories: [Books]\ndate: \"23/12/2024\"\nhtml: \n    self-contained: true\n    grid: \n    margin-width: 450px\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\nimport numpy.random as rnd\nimport numpy as np \nn = np.array(['asdfdsfd','bsdfsdf','csdfdsf'])\nchoice = rnd.choice(n)\nprint(choice)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nbsdfsdf\n```\n:::\n:::\n\n\nHello this is me using a python var called bsdfsdf",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
