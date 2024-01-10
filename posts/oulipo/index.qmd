@@ -78,5 +78,5 @@ As Italo Calvino wrote in late 1967, in a remarkable foreshadowing [@motte1998ou
 
 Calvino, I'm sure would argue, that we have the alignment of LLMs all wrong to ${produce[Math.floor(Math.random() * produce.length)]} _truly_ novel literature, and how would Raymond Queneau respond to the combinatorial possibilities of large-language models?
 
-_Cent Mille Milliards de Poemes_ can be seen as analogous to a partially trained neural network _itself_, as a mathematical object. There is beauty in the disorder of the relationship between tokens, and the rules that can be combined to ${produce[Math.floor(Math.random() * produce.length)]} language. However as soon as an output is produced and the combinatorics collapses, the ${structure[Math.floor(Math.random() * structure.length)]} is obscured and rules impossible to infer, and like a phantom the meaning disappears. 
+_Cent Mille Milliards de Poemes_ can be seen as analogous to a partially trained neural network _itself_, as a mathematical object. There is beauty in the disorder of the relationship between tokens, and the rules that can be combined to ${produce[Math.floor(Math.random() * produce.length)]} language. However as soon as an output is produced and the combinatorics collapses, the ${structure[Math.floor(Math.random() * structure.length)]} is obscured, and like a phantom the meaning disappears. 
 
