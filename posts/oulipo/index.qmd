@@ -42,7 +42,7 @@ writers = ['writers','linguists','proponents','members'];
 
 
 ::: {.cleanbox}
-If you refresh this page, the article will be randomised. There are  $3.5 \times 10^{15}$ potential combinations, approximately One Hundred Thousand Billion.
+If you refresh this page, the article will be randomised. There are  $2.66 \times 10^{19}$ potential combinations, approximately Twenty Billion Billion articles. _Vingt Milliards de Milliards_.
 :::
 
 
