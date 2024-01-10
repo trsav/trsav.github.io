@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.1708557"
-     inkscape:cx="336.50602"
-     inkscape:cy="497.92642"
+     inkscape:zoom="0.61758745"
+     inkscape:cx="394.27614"
+     inkscape:cy="710.8305"
      inkscape:window-width="1792"
      inkscape:window-height="951"
      inkscape:window-x="0"
@@ -70,6 +70,114 @@
          d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
          id="path3-8" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-80" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-4-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-8-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-4-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-8-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-3-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-80-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-4-2-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-8-4-4" />
+    </marker>
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -77,90 +185,351 @@
      id="layer1">
     <path
        style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
-       d="M 68.240731,93.818392 V 175.94265"
+       d="m 103.20356,81.82279 v 82.12426"
        id="path1"
-       inkscape:export-filename="dep.png"
+       inkscape:export-filename="dep3.png"
        inkscape:export-xdpi="150"
        inkscape:export-ydpi="150" />
     <path
        style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-4)"
-       d="M 68.062809,94.402635 H 150.18707"
+       d="M 103.38148,82.407033 H 21.257223"
        id="path1-9" />
     <path
        style="fill:none;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
-       d="m 85.451125,161.59961 c 0,0 0.215524,-45.7336 27.481415,-45.69811 31.53213,0.041 28.27244,46.04961 28.27244,46.04961"
+       d="m 85.993166,149.60401 c 0,0 -0.215524,-45.7336 -27.481415,-45.69811 -31.53213,0.041 -28.27244,46.04961 -28.27244,46.04961"
        id="path2"
        sodipodi:nodetypes="csc" />
     <text
        xml:space="preserve"
        style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
-       x="72.989708"
-       y="166.31709"
+       x="66.991905"
+       y="155.60674"
        id="text2"><tspan
          sodipodi:role="line"
          id="tspan2"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="72.989708"
-         y="166.31709">'Standard'</tspan><tspan
+         x="66.991905"
+         y="155.60674">'Standard'</tspan><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="72.989708"
-         y="172.49071"
+         x="66.991905"
+         y="161.78035"
          id="tspan3"> Language</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
-       x="84.214722"
-       y="105.11003"
+       x="29.806095"
+       y="92.686012"
        id="text2-5"><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="84.214722"
-         y="105.11003"
+         x="29.806095"
+         y="92.686012"
          id="tspan3-9">Traditional Oulipo:</tspan><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="84.214722"
-         y="111.28365"
+         x="29.806095"
+         y="98.859627"
          id="tspan5">N+7 Rule, Univocalism</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
-       x="87.974327"
-       y="90.46627"
+       x="42.990818"
+       y="78.470665"
        id="text2-5-5"><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="87.974327"
-         y="90.46627"
+         x="42.990818"
+         y="78.470665"
          id="tspan5-9">Rule complexity</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
-       x="136.95721"
-       y="168.86774"
+       x="31.567286"
+       y="156.0153"
        id="text2-8"><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="136.95721"
-         y="168.86774"
+         x="31.567286"
+         y="156.0153"
          id="tspan3-4">LLM-Generated</tspan><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="136.95721"
-         y="175.04135"
+         x="31.567286"
+         y="162.18892"
          id="tspan4">Text</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
-       x="-157.87346"
-       y="62.109924"
+       x="94.822121"
+       y="-108.15286"
        id="text2-9"
-       transform="rotate(-90)"><tspan
+       transform="rotate(90)"><tspan
          sodipodi:role="line"
          style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-157.87346"
-         y="62.109924"
-         id="tspan3-5">Sense of disorder</tspan></text>
+         x="94.822121"
+         y="-108.15286"
+         id="tspan3-5">Sense of Order</tspan></text>
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-3)"
+       d="M 15.765315,281.77726 V 199.653"
+       id="path1-3"
+       inkscape:export-filename="dep2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-4-2)"
+       d="M 15.587395,281.19302 H 97.711658"
+       id="path1-9-9" />
+    <path
+       style="fill:none;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       d="m 84.499074,216.56653 c 0,0 -0.21553,45.7336 -27.48142,45.69811 -31.532138,-0.041 -28.272448,-46.04961 -28.272448,-46.04961"
+       id="path2-0"
+       sodipodi:nodetypes="csc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="20.621767"
+       y="206.68742"
+       id="text2-52"><tspan
+         sodipodi:role="line"
+         id="tspan2-2"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="20.621767"
+         y="206.68742">'Standard'</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="20.621767"
+         y="212.86104"
+         id="tspan3-7"> Language</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="27.991037"
+       y="269.29211"
+       id="text2-5-3"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="27.991037"
+         y="269.29211"
+         id="tspan3-9-7">Traditional Oulipo:</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="27.991037"
+         y="275.46573"
+         id="tspan5-90">N+7 Rule, Univocalism</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="33.464275"
+       y="287.20782"
+       id="text2-5-5-2"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="33.464275"
+         y="287.20782"
+         id="tspan5-9-3">Rule complexity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="82.875618"
+       y="207.95284"
+       id="text2-8-9"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="82.875618"
+         y="207.95284"
+         id="tspan3-4-9">LLM-Generated</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="82.875618"
+         y="214.12645"
+         id="tspan4-7">Text</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="218.57904"
+       y="-5.877646"
+       id="text2-9-0"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="218.57904"
+         y="-5.877646"
+         id="tspan3-5-3">Sense of Order</tspan></text>
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#000000;stroke-width:0.8;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-3-5)"
+       d="M 117.00569,282.84527 V 200.72101"
+       id="path1-3-6"
+       inkscape:export-filename="dep4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#000000;stroke-width:0.8;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-4-2-5)"
+       d="m 116.82777,282.26103 h 82.12426"
+       id="path1-9-9-5" />
+    <path
+       style="fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:0.8;stroke-dasharray:none;stroke-opacity:1"
+       d="m 185.73945,217.63454 c 0,0 -0.21553,45.7336 -27.48142,45.69811 -31.53214,-0.041 -28.27245,-46.04961 -28.27245,-46.04961"
+       id="path2-0-9"
+       sodipodi:nodetypes="csc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       x="121.86214"
+       y="207.75542"
+       id="text2-52-5"><tspan
+         sodipodi:role="line"
+         id="tspan2-2-4"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="121.86214"
+         y="207.75542">'Standard'</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="121.86214"
+         y="213.92903"
+         id="tspan3-7-9"> Language</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       x="129.23141"
+       y="270.36014"
+       id="text2-5-3-1"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="129.23141"
+         y="270.36014"
+         id="tspan3-9-7-7">Traditional Oulipo:</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="129.23141"
+         y="276.53375"
+         id="tspan5-90-5">N+7 Rule, Univocalism</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       x="134.70465"
+       y="288.27585"
+       id="text2-5-5-2-5"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="134.70465"
+         y="288.27585"
+         id="tspan5-9-3-4">Rule complexity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       x="184.116"
+       y="209.02083"
+       id="text2-8-9-1"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="184.116"
+         y="209.02083"
+         id="tspan3-4-9-8">LLM-Generated</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="184.116"
+         y="215.19444"
+         id="tspan4-7-8">Text</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       x="219.21861"
+       y="-110.11692"
+       id="text2-9-0-3"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#696969;fill-opacity:1;stroke:none;stroke-width:1;stroke-opacity:1"
+         x="219.21861"
+         y="-110.11692"
+         id="tspan3-5-3-5">Sense of Order</tspan></text>
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-8)"
+       d="M 124.61563,80.988955 V 163.11322"
+       id="path1-38"
+       inkscape:export-filename="dep.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#191919;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy-4-4)"
+       d="m 124.43771,81.573195 h 82.12426"
+       id="path1-9-4" />
+    <path
+       style="fill:none;fill-opacity:0.569948;stroke:#939393;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       d="m 141.82602,148.77018 c 0,0 0.21553,-45.7336 27.48142,-45.69811 31.53213,0.041 28.27244,46.04961 28.27244,46.04961"
+       id="path2-8"
+       sodipodi:nodetypes="csc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="130.64984"
+       y="154.34448"
+       id="text2-0"><tspan
+         sodipodi:role="line"
+         id="tspan2-4"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="130.64984"
+         y="154.34448">'Standard'</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="130.64984"
+         y="160.5181"
+         id="tspan3-6"> Language</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="131.16451"
+       y="91.85218"
+       id="text2-5-0"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="131.16451"
+         y="91.85218"
+         id="tspan3-9-3">Traditional Oulipo:</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="131.16451"
+         y="98.025795"
+         id="tspan5-2">N+7 Rule, Univocalism</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="144.34923"
+       y="77.636826"
+       id="text2-5-5-6"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="144.34923"
+         y="77.636826"
+         id="tspan5-9-9">Rule complexity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="193.76054"
+       y="154.75305"
+       id="text2-8-4"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="193.76054"
+         y="154.75305"
+         id="tspan3-4-1">LLM-Generated</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="193.76054"
+         y="160.92667"
+         id="tspan4-3">Text</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;font-family:'Berkeley Mono';-inkscape-font-specification:'Berkeley Mono';fill:none;fill-opacity:0.569948;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       x="95.70195"
+       y="-118.25902"
+       id="text2-9-7"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="95.70195"
+         y="-118.25902"
+         id="tspan3-5-8">Sense of Order</tspan></text>
   </g>
 </svg>
