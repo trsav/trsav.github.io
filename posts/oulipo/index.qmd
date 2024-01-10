@@ -33,7 +33,26 @@ writers = ['writers','linguists','proponents','members'];
 If you refresh this page, the article will be randomised. There are  $3.5 \times 10^{15}$ potential combinations, approximately One Hundred Thousand Billion.
 :::
 
-![Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons.](logo.png){width=50%}
+
+```{ojs}
+//| echo: false
+rnd = Math.floor(Math.random() * 2)
+s_string = {
+  if (rnd === 0) {
+    return html`<img src="logo.png" title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)">`
+  }
+  else {
+    return html`<img src="other_logo.png" title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)">`
+  }
+}
+```
+
+:::{.column-margin}
+Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+:::
+::: {.center}
+${s_string}
+:::
 
 Ouvroir de Littérature Potentielle or _Oulipo_ has been ${defines[Math.floor(Math.random() * defines.length)]} as "the search for new structures, which may be used by writers in any way they see fit" [@motte1998oulipo,p2-3]. 
 For millennia, authors have been guided by language constraints resulting in ${defines[Math.floor(Math.random() * defines.length)]} ${structure[Math.floor(Math.random() * structure.length)]}s; From the alliterative verse of the ${books[Math.floor(Math.random() * books.length)]}, to the syllabic rigidity of Japanese haikus. By formalising a number of individual vocations, the original Oulipo ${writers[Math.floor(Math.random() * writers.length)]} in the early 1960s were embarking on the revitalisation of ${language[Math.floor(Math.random() * language.length)]} generation in search of discovering something deeper, sound familiar?
