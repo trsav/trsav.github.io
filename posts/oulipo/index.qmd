@@ -12,6 +12,8 @@ resources:
 - dep3.png
 - nn.png
 - nn2.png
+- oulipo.jpeg
+- raymond.jpeg
 toc-location: body
 format:
     # pdf: default
@@ -42,7 +44,7 @@ writers = ['writers','linguists','proponents','members'];
 
 
 ::: {.cleanbox}
-If you refresh this page, the article will be randomised. There are  $2.66 \times 10^{19}$ potential combinations, approximately Twenty Billion Billion articles. _Vingt Milliards de Milliards_.
+If you refresh this page, the article will be randomised. There are  $2.66 \times 10^{19}$ potential combinations of images and text, resulting in approximately Twenty Billion Billion articles, equivalent to the number of insects on earth. _Vingt Milliards de Milliards_.
 :::
 
 
@@ -121,6 +123,26 @@ ${nn_string}
 
 Verses act equivalently to neural network layers, and phrases correspond to discrete nodes... could we be seeing the early sparks of the use of neural networks for language modelling?^[The modern use of neural networks to model language can _probably_ be attributed to [Bengio et. al, 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf), 42 years later.]
 Of course, what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera... but it is interesting to consider the thematic similarities of complexity, ${structure[Math.floor(Math.random() * structure.length)]}, and distillation (or lack thereof) of ${language[Math.floor(Math.random() * language.length)]} that both members of Oulipo and machine learning researchers have successfully applied.
+
+```{ojs}
+//| echo: false
+rnd_gp = Math.floor(Math.random() * 2)
+gp_string = {
+  if (rnd === 0) {
+    return [html`<img src="oulipo.jpeg" width=60%>`,html`<em>Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. <a href="https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/">Source</a>.</em>`]
+  }
+  else {
+    return [html`<img src="raymond.jpeg" width=60%>`,html`<em>Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.<a href="https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin">Source</a>.</em>`]
+  }
+}
+```
+
+::: {.center}
+${gp_string[0]}
+:::
+${gp_string[1]}
+
+
 
 Given that a modern day large language model such as [GPT-4](https://openai.com/research/gpt-4) ${may[Math.floor(Math.random() * may.length)]} reasonably be described as a very large set of well ${defines[Math.floor(Math.random() * defines.length)]} mathematical rules, could this ever ${produce[Math.floor(Math.random() * produce.length)]} a valid literary ${structure[Math.floor(Math.random() * structure.length)]}? How are LLMs distinct from more basic rules such as S+7? In addition, multi-model models can now see and hear as well as read. [According to David Chalmers](https://nips.cc/media/neurips-2022/Slides/55867.pdf) these additional senses ${may[Math.floor(Math.random() * may.length)]} result in fish-level consciousness in the next ten years. Consciousness aside, at the very least LLMs will _appear_ smarter than a human by then. What are the implications for Potential Literature when a set of rules and resulting ${structure[Math.floor(Math.random() * structure.length)]} can think for itself?
 
