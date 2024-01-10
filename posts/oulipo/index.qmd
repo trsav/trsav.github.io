@@ -30,7 +30,7 @@ writers = ['writers','linguists','proponents','members'];
 
 
 ::: {.cleanbox}
-If you refresh this page, the article will be randomised. There are  $3.5 \times 10^{13}$ potential combinations, approximately One Hundred Thousand Billion.
+If you refresh this page, the article will be randomised. There are  $3.5 \times 10^{15}$ potential combinations, approximately One Hundred Thousand Billion.
 :::
 
 ![Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons.](logo.png){width=50%}
