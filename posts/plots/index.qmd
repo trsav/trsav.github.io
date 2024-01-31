@@ -1,0 +1,351 @@
+---
+title: "Scatter Plots"
+author: "Tom Savage"
+categories: [Visualisation]
+image: "figure.svg"
+date: "01/31/2024"
+callout-appearance: minimal
+jupyter: python3
+---
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt 
+import numpy as np 
+import numpy.random as rnd
+plt.rcParams['text.usetex'] = True
+```
+
+Here I will outline my personal preferences for best plotting practices for 2D scatter plots using [Matplotlib](https://matplotlib.org). I will be initialising the plot as demonstrated in my [previous post](https://sav.phd/posts/convergence_plots/).
+
+To start with I will simulate a thousand data points that may have come from a dimensionality reduction technique such as [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). 
+
+```{python}
+#| echo: false 
+n = 1000;
+mean = np.random.uniform(-1,1,2);
+cov = np.diag(np.random.uniform(-1,1,2));
+X = np.random.multivariate_normal(mean,cov,n) 
+X += np.random.binomial(10,0.5,(n,2))
+X[:,0] += 40*np.sin(0.2*np.linspace(0,np.pi*2,n))
+X[:,1] += 5*np.cos(np.linspace(0,np.pi*4,n))
+for i in range(5):
+    X = np.concatenate((X,np.random.multivariate_normal([np.random.uniform(0,40),np.random.uniform(0,8)],[[np.random.uniform(0,4),0],[0,np.random.uniform(0,4)]],200)),axis=0)
+```
+
+This is as simple and basic as a plot can be in Matplotlib.
+```{python}
+#| fig-align: center
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1]);
+```
+
+First of all we need to size and scale the plot appropriately. 
+
+By default, **the aspect-ratio of the axis will not be equal**. If the axis have similar units or meaning this can provide misleading interpretation of the data. We will fix this first.
+
+:::{.cleanbox}
+**Always** set the aspect ratio to be equal if both quantities are comparable in meaning and magnitude using ```ax.set_aspect('equal')```
+:::
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1]);
+ax.set_aspect('equal')
+```
+
+We will now add appropriate labels, with a legible fontsize to our axis, using LaTeX where appropriate.
+
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.set_xlabel('$x_1$',fontsize=20)
+ax.set_ylabel('$x_2$',fontsize=20)
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1]);
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+```
+
+With so many data points, adding some opacity can help the reader interpret the density. Note that reducting the opacity affects the fill and the edge of each point differently. 
+
+At this point I will set the color to black, considering we have no separable classes (yet).
+
+:::{.cleanbox}
+**Always** consider removing the edge of each scatter-point if decreasing the opacity to make the plot look cleaner.
+:::
+
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.scatter(X[:,0],X[:,1],color='k',linewidth=0,alpha=0.2);
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "With edges"
+#|   - "**Without** edges"
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',alpha=0.2);
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',linewidth=0,alpha=0.2);
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+```
+
+Alternatively, the marker size may be changed to a smaller value and the opacity set to 1. This provides a less clear image of the **distribution** of points, but a clearer view of the specific locations of data.
+
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.scatter(X[:,0],X[:,1],color='k',s=3);
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',s=3);
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+```
+
+Despite these plots containing the same data, they are visually different and tell different stories to the reader. As always...
+
+:::{.cleanbox}
+It is important to consider what message you wish to convey, and how visual elements such as opacity, and marker size support this message.
+:::
+
+
+If the specific location of data is critically important, the '+' symbol may be used. When scaling up the size of this marker appropriately, make sure to reduce the linewidth to ensure that the symbol isn't too thick.
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.scatter(X[:,0],X[:,1],color='k',s=50,linewidth=0.75,marker='+');
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Standard Linewidth"
+#|   - "Reduced Linewidth"
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',s=50,marker='+');
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',s=50,linewidth=0.75,marker='+');
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+
+```
+
+
+It may be helpful in this situation to ensure the grid is turned on, but remember to ensure it is **behind** other elements by using `ax.set_axisbelow(True)`. 
+
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.grid(alpha=0.5)
+ax.set_axisbelow(True)
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+ax.scatter(X[:,0],X[:,1],color='k',s=50,linewidth=0.75,marker='+');
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+```
+
+
+What if we have different classes that we want to highlight? For now I will plot these clusters in the `tab:` colour pallette. 
+
+```{python}
+#| fig-align: center 
+#| eval: false 
+for i in range(6):
+    X = clusters[i]
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=0.75,linewidth=0);
+```
+
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+clusters = [X[:1000,:]]
+s = 200
+clusters += [X[int(i*s)+1000:1000+int((i+1)*s),:] for i in range(5)]
+for i in range(6):
+    X = clusters[i]
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=0.75,linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+plt.show()
+```
+
+However, we now need to label our clusters. Adding a legend inside the plot will make it cluttered. 
+
+Therefore we can add the legend outside the plot itself, on the right, above or below. 
+
+Because there are a reasonable number of labels, I will place the legend just above the plot in a single row, ensuring that the rounded frame is turned off. 
+```{python}
+#| fig-align: center 
+#| eval: false 
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+```
+
+```{python}
+#| fig-align: center 
+#| echo: false
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=0.75,linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+```
+
+How to make the plot accessible to people who have colour-blindness? We may use different markers...
+
+```{python}
+#| fig-align: center 
+#| echo: false
+markers = ['o','v','+','*','D']
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=0.75,marker=markers[i],c='k',linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+```
+
+However clearly the plot becomes illegible. I think in the scenario where colours are not desired (or their use should be minimised) the best option is to use multiple subplots, and opacity as follows:
+
+
+```{python}
+#| fig-align: center 
+#| echo: false
+#| layout-ncol: 2
+#| layout-nrow: 2
+markers = ['o','v','+','*','D']
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    if i == 0:
+        alpha = 0.75
+    else: 
+        alpha = 0.1
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=alpha,c='k',linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    if i == 1:
+        alpha = 0.75
+    else: 
+        alpha = 0.1
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=alpha,c='k',linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    if i == 2:
+        alpha = 0.75
+    else: 
+        alpha = 0.1
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=alpha,c='k',linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+
+
+fig,ax = plt.subplots(1,1)
+for i in range(5):
+    X = clusters[i]
+    if i == 3:
+        alpha = 0.75
+    else: 
+        alpha = 0.1
+    ax.scatter(X[:,0],X[:,1],s=20,alpha=alpha,c='k',linewidth=0,label='Cluster '+str(i+1));
+ax.set_axisbelow(True)
+ax.grid(alpha=0.5)
+ax.set_aspect('equal');
+ax.set_xlabel('$x_1$',fontsize=20);
+ax.set_ylabel('$x_2$',fontsize=20);
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15),
+          ncol=5,frameon=False)
+plt.show()
+```
+
+Whilst we have increased the overall number of plots, this is an accessible alternative to using colours, and follows [Edward Tufte's philosophy of Small Multiples](https://en.wikipedia.org/wiki/Small_multiple).
