@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/trajectory_plots/index.html",
       "/posts/plots/index.html",
       "/posts/oulipo/index.html",
       "/posts/skoob_review/index.html",
