@@ -1,0 +1,57 @@
+---
+title: "The Machine Learning Reformation"
+subtitle: "What the late middle ages can teach us about the future of AI"
+author: "Tom Savage"
+categories: [machine learning, religion, art]
+date: "02/03/2024"
+html: 
+    self-contained: true
+    grid: 
+    margin-width: 450px
+bibliography: ref.bib
+citation-location: margin
+---
+
+
+Attending mass was a mandatory requirement in medieval England and formed a central foundation for many aspects of parish life.
+The highlight of mass was the elevation of the host, physically transformed into the body of Christ. 
+This act could only be performed by the parish priest and was consumed only by those priviledged few within the chancel [@CTCIME2021].
+
+![Medieval Mass <a href="https://www.newliturgicalmovement.org/2023/05/the-mass-is-faith-and-faith-is-mass.html">Source</a> ](mass.webp){width=50%}
+
+Observing the genuine body of Christ was of the utmost importance for the laity. However, physical (chancel screens) and mental (understanding Latin) barriers stood between them and the clergy. 
+In time, groups such as the [Lollards](https://en.wikipedia.org/wiki/Lollardy), lead by John Wycliffe rejected transubstantiation and its importance, setting the course for the democratisation of Christianity in England. However, these barriers served as a reminder of the heirarchy the Catholic Church had created, until the reformation in 1547.
+
+Sam Altman, Elon Musk, and many others continue to insist that artificial general intelligence (AGI) will be achieved in the next few years. 
+If and when AGI is announced, divisions will open up, Microsoft will contractually lose access to OpenAI's latest models [@mic], there will be calls of heresy and false prophets, and the accompanying video will almost certainly be presented by someone on an unfathomable compensation package.
+
+:::{.center}
+![](sam.png){width=50%}
+:::
+
+There will be those, armed with heavily quantized open-source LLMs running locally on Macbooks, akin to Gutenberg Bibles, that will insist that AGI is not real. 
+AGI was never the goal for the majority of people. AI has the ability to change the way that engineers, writers, and artists work, and the democratisation of open-source LLMs, serves to benefit the lives of everyone^[With enough compute] equally.
+
+The current power struggles within machine learning are fought on inherently Christian lines. From the French Yann 'John Calvin' LeCun's open-source ideology and scepticism in the real presence of AGI, to Sam Altman's claim to primacy and inevitable monopoly on the transubstantiation of a super-_us_. 
+
+A key assumption is that if AGI occurs, it will be useful. This will be the nail in the coffin that will seal the fate of the Macbook Lollards in the end. But what happens if it is not? 
+
+::: column-margin
+![An Oak Tree - Michael Craig-Martin <a href="https://www.michaelcraigmartin.co.uk/artworks/11-an-oak-tree/">Source</a> ](ot.webp)
+:::
+
+In more recent years Michael Craig-Martin affirmed the medieval world view of transubstantiation with [_An Oak Tree_](https://www.michaelcraigmartin.co.uk/artworks/11-an-oak-tree/). Capturing the sense of belief that was felt by medieval Christians by enforcing that a glass of water placed high on a glass shelf was in fact a genuine oak tree. To believe that that glass of water is an oak tree, is to make a leap of faith. 
+
+As Tom Holland [@DOM] would point out, we have made, and continue to make these leaps of faith on a daily basis. The concept of human rights for example is one that we simply choose to believe, in the view that it will make the world a better place^[Itself a goal that we deem somewhat important.].
+
+_An Oak Tree_ invites us to take this leap, and embrace it, unapologetically confronting us with its presence. Despite January 1st being an arbitrary day, it _feels_ like a new beginning because we all collectively _believe_ it's a new beginning. 
+
+:::{.center}
+![](laptop.jpg){width=60%}
+:::
+
+As AI approaches levels of human intelligence, some will choose to make the leap of faith and some will not. We should relish and enjoy the spectacle of AGI, as medieval parishioners would have done at mass every Sunday.
+
+However, we must not lose sight of the ability of machine learning to change our lives in more tangible ways. 
+
+_It will not be an AI that replaces your job, but someone with the ability to **use** AI._
