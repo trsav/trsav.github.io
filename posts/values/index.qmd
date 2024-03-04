@@ -44,7 +44,7 @@ With so many factors to take into account such as architecture, dataset, and fin
 ![Google Gemini's response, as of Feb 25 2024. [Source](https://twitter.com/anothercohen/status/1761838292989886581/photo/2)](gemini.png){width=100%}
 
 
-People have recently blamed Google's corporate culture for a series of questionable large-langauge model and image generation failures, generating enormous amounts of cut-through. 
+People have recently blamed Google's corporate culture for a series of questionable large-language model and image generation failures, generating enormous amounts of cut-through. 
 One could argue that it was ultimately the Western Christian values of equality and respect imposed by those that designed the system that resulted in an overly biased model. In this case I would argue that Gemini was projecting a radically Christian world-view, demonstrating respect for those that unquestionably do not deserve it, and nuance in judgements that only the most stoic entity would consider remotely balanced.^[[The individual failure of the model can be put down to bad fine tuning](https://twitter.com/SaysSimonson/status/1762834953249685863), but the content emerges pre-fine-tuning and what is intended to emerge post-fine-tuning must be taken into account.]
 In this case, the model and its outputs are fundamentally tied to those that create it. 
 
@@ -57,7 +57,7 @@ What would a language model imbued with Islamic values provide?
 :::
 
 Western Christian values allow for a level of flexibility when confronted with the prospect of super-human machine intelligence. 
-The act of bringing 'something' into existance is broadly acceptable within this framework (and [sometimes encouraged](https://sav.phd/posts/transubstantiation/)).
+The act of bringing 'something' into existence is broadly acceptable within this framework (and [sometimes encouraged](https://sav.phd/posts/transubstantiation/)).
 The questions that preoccupy most people with this worldview are ones of artificial-general-intelligence rights.
 Can a machine be concious? Is it morally acceptable to turn off a concious machine?
 How do we treat an AGI? 
