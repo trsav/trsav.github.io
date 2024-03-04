@@ -1,5 +1,5 @@
 ---
-title: "GenAI and the Inescapable & Neverending Race for Values"
+title: "GenAI & the Inescapable, Neverending Race for Values"
 subtitle: "AI is not like a box of chocolates."
 author: "Tom Savage"
 categories: [Travel, Machine Learning, Religion]
