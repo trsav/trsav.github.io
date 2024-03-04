@@ -36,7 +36,7 @@ This post never quite recovers the highs of the introduction, so please feel fre
 :::
 
 With the large amount of resources required to train state-of-the-art models, teams of researchers have courted the tech establishment in order to gain access to large amounts of computational power. 
-The stakes are supposedly high; a well-trained machine learning model such in language, cyber security, or image generation may serve as a powerful tool to flood social media with undetectable posts aligned with a given set of values, infiltrate computer networks, or aid in obtaining technological advancements or scientific discovery. 
+The stakes are supposedly high; a well-trained model in language or image generation may serve as a powerful tool to flood social media with undetectable posts aligned with a given set of values, infiltrate computer networks, or aid in obtaining technological advancements or scientific discovery. 
 It is therefore no surprise that alongside those with business interests at heart, there are nation-states wishing to develop state-of-the-art machine learning models. 
 
 With so many factors to take into account such as architecture, dataset, and fine-tuning method, the system boundaries when creating machine learning models are necessarily drawn wider than the model itself, encompassing the team, organisation, financial backers, and their values and interests. 
