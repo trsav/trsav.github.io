@@ -49,7 +49,8 @@ One could argue that it was ultimately the Western Christian values of equality 
 In this case, the model and its outputs are fundamentally tied to those that create it. 
 
 As traditionally Islamic nation states with large amounts of resource such as the [UAE](https://falconllm.tii.ae) and [Saudi Arabia](https://sdaia.gov.sa/en/MediaCenter/News/Pages/NewsDetails.aspx?NewsID=248) seek to develop their own machine learning models, it is not a stretch to assume that machine learning models and Islamic values will inevitably cross paths as state actors seek to gain from the benefits of AI. 
-With this in mind, how do Islamic values map onto the existential threat of AI?What would a language model imbued with Islamic values provide? 
+With this in mind, how do Islamic values map onto the existential threat of AI?
+What would a language model imbued with Islamic values provide? 
 
 :::{.column-margin}
 **Slight diversion follows**
