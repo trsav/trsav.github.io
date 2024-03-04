@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/values/index.html",
       "/posts/transubstantiation/index.html",
       "/posts/trajectory_plots/index.html",
       "/posts/plots/index.html",

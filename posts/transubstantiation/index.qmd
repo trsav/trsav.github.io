@@ -12,7 +12,6 @@ bibliography: ref.bib
 citation-location: margin
 ---
 
-
 Attending mass was a mandatory requirement in medieval England and formed a central foundation for many aspects of parish life.
 The highlight of mass was the elevation of the host, physically transformed into the body of Christ. 
 This act could only be performed by the parish priest and was consumed only by those priviledged few within the chancel [@CTCIME2021].
