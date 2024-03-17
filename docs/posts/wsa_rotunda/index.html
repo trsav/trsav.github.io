@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage">
-<meta name="dcterms.date" content="2024-03-04">
+<meta name="author" content="Tom Savage, Studio 3015">
+<meta name="dcterms.date" content="2024-03-14">
 
-<title>TRS - Generative Models as Mirrors and Idols; From Istanbul</title>
+<title>TRS - Generative Lab Identities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -109,14 +110,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Generative Models as Mirrors and Idols; From Istanbul</h1>
-            <p class="subtitle lead">The Inescapable, Neverending Race for Values</p>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Travel</div>
-                <div class="quarto-category">Machine Learning</div>
-                <div class="quarto-category">Religion</div>
-              </div>
-                  </div>
+      <h1 class="title">Generative Lab Identities</h1>
+            <p class="subtitle lead">For Winchester School of Art</p>
+                      </div>
   </div>
     
   
@@ -125,14 +121,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Tom Savage </p>
+               <p>Tom Savage, Studio 3015 </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 4, 2024</p>
+        <p class="date">March 14, 2024</p>
       </div>
     </div>
     
@@ -152,44 +148,164 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="page-columns page-full"><p>1600 years ago, as Emperor of Rome and patron of Constantinople where he is buried, Theodosius II oversaw the central theological questions in the wake of the Council of Nicea and doctrine of Trinity: did Christ have distinct human and divine aspects? Was the human form of Christ the same form as the rest of us? Alongside a university to aid in answering these questions, and the city walls, Theodosius commissioned the construction of a vast cistern to provide fresh water for the city’s inhabitants and palaces<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Pretentious opening but please indulge me because later on it goes downhill and I end up using the phrases ‘world-view’ and ‘cut-through’.</p></li></div></div>
-<div class="page-columns page-full"><p>It is in a glass-bound spotlit coffee shop above this cistern that I write this post<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, complete with visitors centre and free WiFi<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Below me, 32 nine-meter high marble columns support myself and others, our coffees, my bottle of water. We are mercilessly paying homage to Theodosious’ original intentions to provide refreshment here - what once served a purpose continues to do so under a different context. Theodosius’ grave is now lost, most likely beneath the Fatih Mosque where Islamic minorets now anchor the heavens to the city and vice versa. The Christian pasts of the Romans and Byzantines have coalesced with the more recent history of the Ottoman empire, places like this a constant reminder of the slow march of time which seems to have begun earlier and progressed faster here than in any other city.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Not all of it obviously.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;Please pretend I’m still there for the entirety of the following, otherwise it doesn’t work.</p></li></div></div>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<div class="cleanbox">
+<p>This post details a consulting/research project for the <a href="https://wsarotunda.soton.ac.uk">Winchester School of Art (WSA)</a> digital Rotunda platform, alongside <a href="https://www.studio3015.co.uk/projects/">Studio 3015</a>. If you have a similar project or concept, feel free to contact me at tom.savage(at)hotmail.com</p>
+</div>
+<section id="task" class="level3">
+<h3 class="anchored" data-anchor-id="task">Task</h3>
+<p>The goal with this project is to enable existing research lab identities to change in response to specific media such as text and images. Through the use of generative AI, the identity for each lab becomes dynamic, changing based on contextual information.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="1-logo.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="2-logo.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="3-logo.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="4-logo.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="defining-the-designs" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="defining-the-designs">Defining the Designs</h3>
+<div class="page-columns page-full"><p>To achieve this I began by recreating these existing identities using the <a href="https://github.com/mathandy/svgpathtools/tree/master">svgpathtools</a> package, enabling me to change the forms via Python<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;By doing so I not only have the ability to programmatically change the form of a logo, but I also obtain the SVG for ‘free’ which can be used within WSA graphics.</p></li></div></div>
+<p>Aspects of a given logo are then parameterised in the following ways:</p>
+<ol type="1">
+<li>Individual ‘shapes’ are allowed to grow and shrink, enabling either a more solid unified form, or a more distributed representation.</li>
+<li>Individual ‘shapes’ are switched from circles to squares, enabling a more digital and less connected form.</li>
+</ol>
+<div class="center">
+<p><img src="logo_grid.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+<p>These provide a representation of how physically distributed a project is, and how interdisciplinary a project is respectively. Through parameterisation, each lab’s identity is allowed to respond to inputs, but in a controlled and deliberate way, maintaining the overall form and identity.</p>
+</section>
+<section id="inferring-parameters" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="inferring-parameters">Inferring Parameters</h3>
+<p>To infer the parameters representing the physical distribution, and interdisciplinary nature of a project we prompt an LLM with both a description and image.</p>
+<p>The information flow is as follows:</p>
+<p><img src="information.png" class="img-fluid"></p>
+<div class="page-columns page-full"><p>Some prompt engineering is performed to ensure that JSON is consistently returned<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and reliable explanations for why the parameters have been chosen. As part of this I include examples of lab descriptions and respective parameters within the prompt as context and to provide examples of outputs. When applying image data, the image is first described, and then in a separate call, the description applied to inform the logo.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;In tests successful 97-99% of the time, failing when the parameter explanation overflows.</p></li></div></div>
+<div class="page-columns page-full"><p>Each sentiment and subsequent parameter is prompted separately due to the low-cost and fast LLM inference<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, to ensure that forgetting or context-shift doesn’t occur.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;See below.</p></li></div></div>
+</section>
+<section id="llm-inference" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="llm-inference">LLM Inference</h3>
+<div class="page-columns page-full"><p>LLM inference is performed on <a href="https://www.anthropic.com/news/claude-3-haiku">Anthropic’s Claude 3 Haiku</a>. I find it is extremely low cost, fast, and it’s performance is enough to infer the sentiment of the project descriptions. Despite it’s speed and cost, it is surprisingly effective at accurately describing images<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Example follows…</p></li></div></div>
+<div class="cleanbox">
+<p><strong>UTC</strong>: 2024-03-14T11:50:31Z</p>
+<p><strong>Model Name</strong>: claude-3-haiku-20240307</p>
+<p><strong>Prompt</strong>: Describe this image.</p>
+<p><strong>Image</strong>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="cistern.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Theodosius Cistern, Taken Februrary 2024</figcaption>
+<p><img src="lab-image.png" class="img-fluid figure-img" style="width:50.0%"></p>
 </figure>
 </div>
-</div></div><p>Istanbul as it is now, is a city with a complex relationship between Christianity, Islam, and the secular. The Hagia Sofia, a Christian church for 1000 years, an Islamic mosque for 500, and most recently a Museum for 85, is now a Mosque again. As Turkey undergoes broad desecularisation under Erdogan, it seems only appropriate that in a city that has seen so much religious change, I shamelessly engage in mapping the state and future of machine learning onto past and present religious divides (<a href="https://sav.phd/posts/transubstantiation/">as I have previously done</a>).</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>This post never quite recovers the highs of the introduction, so please feel free to stop here. <a href="https://sav.phd">Click here to return to homepage</a>.</p>
-</div></div><p>With the large amount of resources required to train state-of-the-art models, teams of researchers have courted the tech establishment in order to gain access to large amounts of computational power. The stakes are supposedly high; a well-trained model in language or image generation may serve as a powerful tool to flood social media with undetectable posts aligned with a given set of values, infiltrate computer networks, or aid in obtaining technological advancements or scientific discovery. It is therefore no surprise that alongside those with business interests at heart, there are nation-states wishing to develop state-of-the-art machine learning models.</p>
-<p>With so many factors to take into account such as architecture, dataset, and fine-tuning method, the system boundaries when creating machine learning models are necessarily drawn wider than the model itself, encompassing the team, organisation, financial backers, and their values and interests.</p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="gemini.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption margin-caption">Google Gemini’s response, as of Feb 25 2024. <a href="https://twitter.com/anothercohen/status/1761838292989886581/photo/2">Source</a></figcaption>
-</figure>
+<p><strong>Output</strong>: <em>This image shows various electronic and technical equipment. There is a device that appears to be a test instrument or measurement tool, with knobs and displays. Next to it is a device that looks like a portable audio player or recorder. On the table in front of these devices is a document or diagram labeled “Code in Line / Rehabilitation Hand-Night”, which seems to be some kind of technical or engineering schematic. There is also a red tool or instrument that appears to be used for testing or working with the equipment.</em></p>
+<p><strong>Input Tokens</strong>: 795 ($0.25/1000000 tokens)</p>
+<p><strong>Output Tokens</strong>: 108 ($1.25/1000000 tokens)</p>
+<p><strong>Total Cost</strong>: $0.00033375 (0.03¢)</p>
+<p><strong>Time</strong>: 3.12 (s)</p>
 </div>
-<div class="page-columns page-full"><p>People have recently blamed Google’s corporate culture for a series of questionable large-language model and image generation failures, generating enormous amounts of cut-through. One could argue that it was ultimately the Western Christian values of equality and respect imposed by those that designed the system that resulted in an overly biased model. In this case I would argue that Gemini was projecting a radically Christian world-view, demonstrating respect for those that unquestionably do not deserve it, and nuance in judgements that only the most stoic entity would consider remotely balanced.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> In this case, the model and its outputs are fundamentally tied to those that create it.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;<a href="https://twitter.com/SaysSimonson/status/1762834953249685863">The individual failure of the model can be put down to bad fine tuning</a>, but the content emerges pre-fine-tuning and what is intended to emerge post-fine-tuning must be taken into account.</p></li></div></div>
-<p>As traditionally Islamic nation states with large amounts of resource such as the <a href="https://falconllm.tii.ae">UAE</a> and <a href="https://sdaia.gov.sa/en/MediaCenter/News/Pages/NewsDetails.aspx?NewsID=248">Saudi Arabia</a> seek to develop their own machine learning models, it is not a stretch to assume that machine learning models and Islamic values will inevitably cross paths as state actors seek to gain from the benefits of AI. With this in mind, how do Islamic values map onto the existential threat of AI? What would a language model imbued with Islamic values provide?</p>
+</section>
+<section id="creating-an-interface" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="creating-an-interface">Creating an Interface</h3>
+<div class="page-columns page-full"><p>The goal of the interface for the generative lab identity inference is to make it as simple as possible for those with a non-technical background to use, on any device<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Including Winchester School of Art teaching and administrative staff, and students</p></li></div></div>
+<p>To do so, I packaged the Python implementation into a Flask app with a basic password-protected front-end. The application is then hosted on Heroku, a cloud-based platform.</p>
+<div class="page-columns page-full"><p>This exposes the application on the web for anyone to use, protects against the LLM API credits being used by the public<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, and removes the need to install or interact with code.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Assuming the password remains a secret to those with access</p></li></div></div>
+<div class="center">
+<p><img src="app.png" class="img-fluid"></p>
+</div>
+<p>The user is prompted to provide a project title, description, project visual, and the lab itself. This information is then used as previously described to produce an independent lab logo, with explanation.</p>
+</section>
+<section id="creating-a-loading-image" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="creating-a-loading-image">Creating a Loading Image</h3>
+<p>In order to design a visually interesting graphic for the front end, I decided to fine-tine a diffusion model. To begin with I created a new 3D model of <em>The Rotunda</em> in AutoCAD.</p>
+<div class="center">
+<p><img src="above.png" class="img-fluid" style="width:25.0%"> <img src="side.png" class="img-fluid" style="width:25.0%"></p>
+</div>
+<p>Using this 3D model I created a number of synthetic images of the building, combining these with an existing dataset of real photographs.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/below sketchy wireframe.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/black and white photograph.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/close outside image.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/close up render.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/dark line wireframe.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/dark orthographic render.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/mirrored render.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/outside image.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/photograph.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/render.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/sketchy wireframe.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/upside down photograph.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/white render.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/wide outside image.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/wireframe.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="datasets/rotunda_data/metallic render.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>This dataset of approximately 40 images was then used to fine-tuned a Stable Diffusion model<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> using <em>textual inversion</em> to learn the concept of <em>The Rotunda</em>.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;Locally on my M2 Pro Macbook over the course of 3 days.</p></li></div></div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="diffusion_output.gif" class="img-fluid" style="width:90.0%"></p>
+</div><div class="column" style="width:60%;">
+<p>This custom token is then used to perform inference (or generation in the context of generative AI) to generate novel representations and views of the building.<br></p>
+<p>These representations (in the form of a GIF) provide a sense of the technology involved within the lab logo generation tool, this GIF is also displayed whilst inference is being performed in the background.</p>
+</div>
+</div>
+<div class="page-columns page-full"><p>The images, whilst individually imperfect, collectively result in a coherent representation.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Likely the most unnecessarily complex login/loading GIF ever produced.</p></li></div></div>
+<div class="cleanbox">
+<p>The full application is as follows:</p>
+<div class="center">
+<p><img src="full_example.gif" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p><strong>Slight diversion follows</strong></p>
-</div></div><p>Western Christian values allow for a level of flexibility when confronted with the prospect of super-human machine intelligence. The act of bringing ‘something’ into existence is broadly acceptable within this framework (and <a href="https://sav.phd/posts/transubstantiation/">sometimes encouraged</a>). The questions that preoccupy most people with this worldview are ones of artificial-general-intelligence rights. Can a machine be concious? Is it morally acceptable to turn off a concious machine? How do we treat an AGI?</p>
-<div class="page-columns page-full"><p>However, from an Islamic perspective this initial act of creation strikes a more existential tone when the complimentary values of Tahwid<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and Shirk<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> are considered. There are two key conflicting arguments concerning the pursuit of human-surpassing intellect.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Tawhid is the indivisible unification concept of monotheism in Islam. <a href="https://en.wikipedia.org/wiki/Tawhid">Source</a></p></li><li id="fn6"><p><sup>6</sup>&nbsp;To attribute divinity to anything or anyone else, is shirk – an unpardonable sin according to the Qur’an.</p></li></div></div>
-<div class="page-columns page-full"><p>The first perspective is that AGI may help to uncover the secrets of the universe, or provide new ways of interpreting the Qu’ran. Through the use of artificial intelligence, one has become closer to God. This perspective is one that Arabic scholars under the Abbasid Caliphate took when they provided the groundwork for modern mathematics and the number system we use today. In contrast to this viewpoint, an overreliance on super-human machine intelligence (should this be achieved, this seems reasonable) may be interpreted as an idolatrous act of Shirk. Though future rulings may reasonably put this balance down to the data itself that a model is trained on<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. There is a delicate balance between science, art and discovery, and religion that continues to be repeated throughout the Abrahamic religions and will be repeated as machine learning gains human-surpassing abilities.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;How should existing religions face the prospect of a model trained on other religious texts?</p></li></div></div>
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p><strong>Diversion ends.</strong></p>
-</div></div><p>Any machine learning model produced by a nation-state with a given ideology may be deliberately or unconciously imbued with these values, just as models produced in the West enforce our set of values. As the uncompromising mirror of generative AI allows us to confront our worldview, we must not be surprised when opposing worldviews instanciate in generative models around the world.</p>
-<div class="page-columns page-full"><p>Where I am in Istanbul<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> is a physical reminder of the neverending race to maintain a set of values within a community, or enforce a set of values on those without them. As a city it has ultimately benefited, layers of history have resulted in a <em>broadly interesting place to visit</em>.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Stated as fact assuming previous instructions were followed.</p></li><li id="fn9"><p><sup>9</sup>&nbsp;Five word summary for the billboard.</p></li></div></div>
-<div class="page-columns page-full"><p>Generative AI now provides a new battleground to enforce a value set in an a way altogether different from any that have come before. It is actually harder to <em>not</em> engage with this as Google has found out. From an organisational perspective, which dominates public-facing machine learning for now<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, companies must ensure their values are well defined, clear and consistent<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. If not they will emerge regardless, which might not be such a bad thing for the rest of us.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;As opposed to nation-states</p></li><li id="fn11"><p><sup>11</sup>&nbsp;With all the authority of a final-year PhD student in a machine learning-adjacent field.</p></li></div></div>
-
-
+</section>
 
 
 </main> <!-- /main -->

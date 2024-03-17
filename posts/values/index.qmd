@@ -20,7 +20,7 @@ Alongside a university to aid in answering these questions, and the city walls, 
 It is in a glass-bound spotlit coffee shop above this cistern that I write this post^[Not all of it obviously.], complete with visitors centre and free WiFi^[Please pretend I'm still there for the entirety of the following, otherwise it doesn't work.].
 Below me, 32 nine-meter high marble columns support myself and others, our coffees, my bottle of water. 
 We are mercilessly paying homage to Theodosious' original intentions to provide refreshment here - what once served a purpose continues to do so under a different context.
-Now, Theodosius' grave is now lost, most likely beneath the Fatih Mosque where Islamic minorets now anchor the heavens to the city and vice versa.
+Theodosius' grave is now lost, most likely beneath the Fatih Mosque where Islamic minorets now anchor the heavens to the city and vice versa.
 The Christian pasts of the Romans and Byzantines have coalesced with the more recent history of the Ottoman empire, places like this a constant reminder of the slow march of time which seems to have begun earlier and progressed faster here than in any other city. 
 
 ::: column-margin
@@ -80,7 +80,7 @@ Any machine learning model produced by a nation-state with a given ideology may 
 As the uncompromising mirror of generative AI allows us to confront our worldview, we must not be surprised when opposing worldviews instanciate in generative models around the world.
 
 Where I am in Istanbul^[Stated as fact assuming previous instructions were followed.] is a physical reminder of the neverending race to maintain a set of values within a community, or enforce a set of values on those without them. 
-As a city it has ultimately benefited, layers of history have resulted in a place  _broadly interesting place to visit_.^[Five word summary for the billboard.] 
+As a city it has ultimately benefited, layers of history have resulted in a  _broadly interesting place to visit_.^[Five word summary for the billboard.] 
 
 Generative AI now provides a new battleground to enforce a value set in an a way altogether different from any that have come before. It is actually harder to _not_ engage with this as Google has found out.
 From an organisational perspective, which dominates public-facing machine learning for now^[As opposed to nation-states], companies must ensure their values are well defined, clear and consistent^[With all the authority of a final-year PhD student in a machine learning-adjacent field.]. If not they will emerge regardless, which might not be such a bad thing for the rest of us.
