@@ -20,9 +20,18 @@ execute:
 This post details a consulting/research project for the [Winchester School of Art (WSA)](https://wsarotunda.soton.ac.uk) digital Rotunda platform, alongside [Studio 3015](https://www.studio3015.co.uk/projects/). If you have a similar project or concept, feel free to contact me at tom.savage(at)hotmail.com
 :::
 
-### Task
+### Context
 
-The Rotunda platform at the Winchester School of Art is largely digital, therefore contraints around static logo design can be relaxed.
+[The Rotunda](https://wsarotunda.soton.ac.uk) at the Winchester School of Art is a largely digital platform for research and events to be organised and presented. 
+
+Given the nature of the platform, contraints around static design and identity can be relaxed.
+
+:::{#fig-rotunda}
+![](wsa_rotunda.png)
+
+The WSA Rotunda Research Platform.
+:::
+
 The goal of this project was to enable existing research lab identities to change in response to specific media such as text and images. 
 Through the use of generative AI, the visual identity for each lab becomes dynamic, responding and changing based on contextual information around specific projects.
 
@@ -37,14 +46,13 @@ Through the use of generative AI, the visual identity for each lab becomes dynam
 ![](4-logo.png)
 
 Existing designs for the E-Textile, Global Smart, Data Image, and Social Practice labs.
-
 :::
 
 ### From Manual to Digital 
 
 I began by recreating the existing logos for each lab in an automated manner.
 To achieve this I used the [svgpathtools](https://github.com/mathandy/svgpathtools/tree/master) library, enabling me to change the forms via Python^[By doing so I not only have the ability to programmatically change the form of a logo, but I also obtain the SVG for 'free' which can be used within WSA graphics.]. 
-Therefore, each logo is subsequently defined by a series of coordinates stored within a dictionary, enabling easy addition of new labs or modification of existing designs.
+Each logo is then subsequently defined by a series of coordinates stored within a dictionary, enabling easy addition of new labs or modification of existing designs.
 
 For example, here is the complete specification of the E-textile lab design.
 
@@ -114,7 +122,11 @@ To infer the parameters representing the physical distribution, and interdiscipl
 
 The information flow is as follows:
 
+:::{#fig-information}
 ![](information.png)
+
+The information flow of project description, images, and parameters eventually leading to a given logo.
+:::
 
 Some prompt engineering is performed to ensure that JSON is consistently returned^[In tests successful 97-99% of the time, failing when the parameter explanation overflows.], and reliable explanations for why the parameters have been chosen. As part of this I include examples of lab descriptions and respective parameters within the prompt as context and to provide examples of outputs. When applying image data, the image is first described, and then in a separate call, the description applied to inform the logo.
 
