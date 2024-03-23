@@ -281,5 +281,7 @@ The final procedure looks like this,
 
 And corresponding output:
 
-![](wsa-res.png)
+:::{.center}
+![](wsa-res.png){width=70%}
+:::
 
