@@ -113,7 +113,34 @@ It was decided that these two parameters should provide a representation of how 
 
 By parameterising the existing designs in this way, each lab's identity is allowed to respond to contextual information around projects, but in a controlled and deliberate way, maintaining the overall form and identity.
 
-In addition, depending on the use the colour of each design may be changed according to a specified pallette.
+### Colour
+
+The colour of each identity with respect to the project is also inferred based on the content. 
+The colour is allowed to change based on the following content characteristics:
+
+1. Technical content
+2. Philosophical content
+3. Emotional content
+4. Cultural content
+
+The 'amount' of each descriptor is obtained by prompting an LLM, and the respective values converted to an individual cyan, magenta, yellow, and black value, resulting in a single CMYK colour. 
+
+:::{.cleanbox .code-overflow-wrap}
+**Example:**
+
+:::{txt}
+
+CONTENT SCORE: {'technical': '65', 'philosophical': '10', 'emotional': '15', 'cultural': '20'}
+
+COLOUR EXPLANATION: The text primarily focuses on describing the technical capabilities and facilities of the WSA E-Textile Innovation Lab, including equipment for textile design, manufacturing, and e-textile development. It also mentions the lab's mission of creating innovative and sustainable e-textiles, which has a philosophical aspect. The emotional and cultural content is relatively low, as the text is mainly informative about the lab's operations.
+
+CMYK: [0.636, 0.114, 0.155, 0.196]
+:::
+
+:::{.center}
+![](logo_col.png){width=40%}
+:::
+:::
 
 
 ### Inferring Parameters
@@ -246,10 +273,13 @@ These representations (in the form of a GIF) provide a sense of the technology i
 
 The images, whilst individually imperfect, collectively result in a coherent representation.^[Likely the most unnecessarily complex login/loading GIF ever produced.]
 
-:::{.cleanbox}
-The full application is as follows:
+The final procedure looks like this, 
 
 :::{.center}
 ![](full_example.gif){width=100%}
 :::
-:::
+
+And corresponding output:
+
+![](wsa-res.png)
+

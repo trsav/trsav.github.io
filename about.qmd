@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-image: profile.png
+image: tate.jpg
 html:
   theme: 
     mainfont: "mono"
@@ -42,3 +42,4 @@ I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/peopl
 **University of Manchester**
 - BEng in Chemical Engineering | 2017 - 2020
 
+![](profile.png)

@@ -279,7 +279,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>It was decided that these two parameters should provide a representation of how <strong>physically distributed a project</strong> is, as well how <strong>interdisciplinary</strong> a project is respectively.</p>
 <p>By parameterising the existing designs in this way, each lab’s identity is allowed to respond to contextual information around projects, but in a controlled and deliberate way, maintaining the overall form and identity.</p>
-<p>In addition, depending on the use the colour of each design may be changed according to a specified pallette.</p>
+</section>
+<section id="colour" class="level3">
+<h3 class="anchored" data-anchor-id="colour">Colour</h3>
+<p>The colour of each identity with respect to the project is also inferred based on the content. The colour is allowed to change based on the following content characteristics:</p>
+<ol type="1">
+<li>Technical content</li>
+<li>Philosophical content</li>
+<li>Emotional content</li>
+<li>Cultural content</li>
+</ol>
+<p>The ‘amount’ of each descriptor is obtained by prompting an LLM, and the respective values converted to an individual cyan, magenta, yellow, and black value, resulting in a single CMYK colour.</p>
+<div class="cleanbox code-overflow-wrap">
+<p><strong>Example:</strong></p>
+<div class="{txt}">
+<p>CONTENT SCORE: {‘technical’: ‘65’, ‘philosophical’: ‘10’, ‘emotional’: ‘15’, ‘cultural’: ‘20’}</p>
+<p>COLOUR EXPLANATION: The text primarily focuses on describing the technical capabilities and facilities of the WSA E-Textile Innovation Lab, including equipment for textile design, manufacturing, and e-textile development. It also mentions the lab’s mission of creating innovative and sustainable e-textiles, which has a philosophical aspect. The emotional and cultural content is relatively low, as the text is mainly informative about the lab’s operations.</p>
+<p>CMYK: [0.636, 0.114, 0.155, 0.196]</p>
+</div>
+<div class="center">
+<p><img src="logo_col.png" class="img-fluid" style="width:40.0%"></p>
+</div>
+</div>
 </section>
 <section id="inferring-parameters" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="inferring-parameters">Inferring Parameters</h3>
@@ -395,12 +416,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="page-columns page-full"><p>The images, whilst individually imperfect, collectively result in a coherent representation.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Likely the most unnecessarily complex login/loading GIF ever produced.</p></li></div></div>
-<div class="cleanbox">
-<p>The full application is as follows:</p>
+<p>The final procedure looks like this,</p>
 <div class="center">
 <p><img src="full_example.gif" class="img-fluid" style="width:100.0%"></p>
 </div>
-</div>
+<p>And corresponding output:</p>
+<p><img src="wsa-res.png" class="img-fluid"></p>
 
 
 </section>
