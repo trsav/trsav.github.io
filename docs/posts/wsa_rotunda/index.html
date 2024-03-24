@@ -187,15 +187,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="context" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="context">Context</h3>
-<p><a href="https://wsarotunda.soton.ac.uk">The Rotunda</a> at the Winchester School of Art is a largely digital platform for research and events to be organised and presented.</p>
-<p>Given the nature of the platform, contraints around static design and identity can be relaxed.</p>
+<p><a href="https://wsarotunda.soton.ac.uk">The Rotunda</a> at the Winchester School of Art is a largely digital platform for organizing and presenting research and events. Given the digital nature of the platform, constraints around static design and identity can be relaxed.</p>
 <div id="fig-rotunda" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="wsa_rotunda.png" class="img-fluid figure-img"></p>
+<p><img src="wsa_rotunda.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption margin-caption">Figure&nbsp;1: The WSA Rotunda Research Platform.</figcaption>
 </figure>
 </div>
-<p>The goal of this project was to enable existing research lab identities to change in response to specific media such as text and images. Through the use of generative AI, the visual identity for each lab becomes dynamic, responding and changing based on contextual information around specific projects.</p>
+<p>The goal of this project was to enable existing research lab identities to change dynamically in response to specific media such as text and images related to individual projects. Through the use of generative AI, the visual identity for each lab becomes responsive, adapting based on contextual information around specific initiatives.</p>
 <div id="fig-existing" class="quarto-layout-panel">
 <p></p><figcaption>Figure&nbsp;2: Existing designs for the E-Textile, Global Smart, Data Image, and Social Practice labs.</figcaption><p></p>
 <figure class="figure">
@@ -216,9 +215,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="from-manual-to-digital" class="level3 page-columns page-full">
+<section id="from-manual-to-digital" class="level3">
 <h3 class="anchored" data-anchor-id="from-manual-to-digital">From Manual to Digital</h3>
-<div class="page-columns page-full"><p>I began by recreating the existing logos for each lab in an automated manner. To achieve this I used the <a href="https://github.com/mathandy/svgpathtools/tree/master">svgpathtools</a> library, enabling me to change the forms via Python<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Each logo is then subsequently defined by a series of coordinates stored within a dictionary, enabling easy addition of new labs or modification of existing designs.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;By doing so I not only have the ability to programmatically change the form of a logo, but I also obtain the SVG for ‘free’ which can be used within WSA graphics.</p></li></div></div>
+<p>The project began by recreating the existing logos for each lab in an automated manner using the <a href="https://github.com/mathandy/svgpathtools/tree/master">svgpathtools</a> library. This enabled programmatic modification of the logo forms via Python, while also obtaining SVG files by design which can be used within WSA graphics. Each logo is subsequently defined by a series of coordinates stored within a dictionary, enabling easy addition of new labs or modification of existing designs.</p>
 <p>For example, here is the complete specification of the E-textile lab design.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>logos[<span class="st">"e-textiles"</span>] <span class="op">=</span> {}</span>
@@ -239,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    [(<span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>), (<span class="dv">5</span>, <span class="dv">2</span>)]</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To construct a given logo I use this information alongside svgpath tools to build up the representation in Python.</p>
+<p>To construct a given logo I used this information alongside svgpath tools to build up the representation in Python.</p>
 <div id="fig-build" class="quarto-layout-panel">
 <p></p><figcaption>Figure&nbsp;3: The process of creating a logo computationally from the dictionary that defines it.</figcaption><p></p>
 <figure class="figure">
@@ -262,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </figure>
 </div>
-<p>Given this level of control and automation over the space of general designs, I turned to thinking about how the logo should change in response to context. After some experimenting we settled on the following two ways:</p>
+<p>Given this level of control and automation over the general design space, the next step was determining how the logos should change in response to context. After some experimentation, two key ways were identified:</p>
 <ol type="1">
 <li>Individual ‘shapes’ are allowed to grow and shrink, enabling either a more solid unified form, or a more distributed representation.</li>
 <li>Individual ‘shapes’ are switched from circles to squares, enabling a more digital and less connected form.</li>
@@ -278,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>It was decided that these two parameters should provide a representation of how <strong>physically distributed a project</strong> is, as well how <strong>interdisciplinary</strong> a project is respectively.</p>
-<p>By parameterising the existing designs in this way, each lab’s identity is allowed to respond to contextual information around projects, but in a controlled and deliberate way, maintaining the overall form and identity.</p>
+<p>These two parameters were chosen to represent how physically distributed a project is, as well as how interdisciplinary it is. By parameterizing the existing designs in this way, each lab’s identity can respond to contextual information around projects, while maintaining the overall form and identity in a controlled manner.</p>
 </section>
 <section id="colour" class="level3">
 <h3 class="anchored" data-anchor-id="colour">Colour</h3>
@@ -289,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Emotional content</li>
 <li>Cultural content</li>
 </ol>
-<p>The ‘amount’ of each descriptor is obtained by prompting an LLM, and the respective values converted to an individual cyan, magenta, yellow, and black value, resulting in a single CMYK colour.</p>
+<p>The ‘amount’ of each descriptor is obtained by prompting a large-language model, and the respective values converted to individual cyan, magenta, yellow, and black values, resulting in a single CMYK colour.</p>
 <div class="cleanbox code-overflow-wrap">
 <p><strong>Example:</strong></p>
 <div class="{txt}">
@@ -304,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="inferring-parameters" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="inferring-parameters">Inferring Parameters</h3>
-<p>To infer the parameters representing the physical distribution, and interdisciplinary nature of a project I prompt an LLM with both a description and image.</p>
+<p>To infer the parameters representing the physical distribution and interdisciplinary nature of a project, an LLM is prompted with both a description and image.</p>
 <p>The information flow is as follows:</p>
 <div id="fig-information" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -312,12 +311,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption class="figure-caption margin-caption">Figure&nbsp;5: The information flow of project description, images, and parameters eventually leading to a given logo.</figcaption>
 </figure>
 </div>
-<div class="page-columns page-full"><p>Some prompt engineering is performed to ensure that JSON is consistently returned<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and reliable explanations for why the parameters have been chosen. As part of this I include examples of lab descriptions and respective parameters within the prompt as context and to provide examples of outputs. When applying image data, the image is first described, and then in a separate call, the description applied to inform the logo.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;In tests successful 97-99% of the time, failing when the parameter explanation overflows.</p></li></div></div>
-<div class="page-columns page-full"><p>Each sentiment and subsequent parameter is prompted separately due to recent advances in low-cost, fast LLM inference<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, to ensure that forgetting or context-shift doesn’t occur.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;See below.</p></li></div></div>
+<p>Some prompt engineering is performed to ensure that JSON is consistently returned and reliable explanations for the chosen parameters are provided. This includes providing examples of lab descriptions and respective parameters within the prompt as context. When applying image data, the image is first described, and then in a separate call, the description is used to inform the logo.</p>
+<p>Each sentiment and subsequent parameter is prompted separately due to recent advances in low-cost, fast LLM inference to ensure that forgetting or context-shift doesn’t occur.</p>
 </section>
-<section id="llm-inference" class="level3 page-columns page-full">
+<section id="llm-inference" class="level3">
 <h3 class="anchored" data-anchor-id="llm-inference">LLM Inference</h3>
-<div class="page-columns page-full"><p>LLM inference is performed on <a href="https://www.anthropic.com/news/claude-3-haiku">Anthropic’s Claude 3 Haiku</a>. I find it is extremely low cost, fast, and it’s performance is enough to infer the sentiment of the project descriptions. Despite it’s speed and cost, it is surprisingly effective at accurately describing images<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Example follows…</p></li></div></div>
+<p>LLM inference is performed on <a href="https://www.anthropic.com/news/claude-3-haiku">Anthropic’s Claude 3 Haiku</a>. It was found to be extremely low cost, fast, and its performance is sufficient to accurately infer the sentiment of project descriptions and images.</p>
 <div class="cleanbox">
 <p><strong>UTC</strong>: 2024-03-14T11:50:31Z</p>
 <p><strong>Model Name</strong>: claude-3-haiku-20240307</p>
@@ -335,23 +334,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Time</strong>: 3.12 (s)</p>
 </div>
 </section>
-<section id="creating-an-interface" class="level3 page-columns page-full">
+<section id="creating-an-interface" class="level3">
 <h3 class="anchored" data-anchor-id="creating-an-interface">Creating an Interface</h3>
-<div class="page-columns page-full"><p>The goal of the interface for the generative lab identity inference is to make it as simple as possible for those with a non-technical background to use, on any device<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Including Winchester School of Art teaching and administrative staff, and students</p></li></div></div>
-<p>To do so, I packaged the Python implementation into a Flask app with a basic password-protected front-end. The application is then hosted on Heroku, a cloud-based platform.</p>
-<div class="page-columns page-full"><p>This exposes the application on the web for anyone to use, protects against the LLM API credits being used by the public<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, and removes the need to install or interact with code.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Assuming the password remains a secret to those with access</p></li></div></div>
+<p>The goal of the interface for the generative lab identity inference was to make it as simple as possible for those with a non-technical background to use, on any device, including Winchester School of Art teaching and administrative staff, and students.</p>
+<p>To achieve this, the Python implementation was packaged into a Flask app with a basic password-protected front-end. The application is then hosted on Heroku, a cloud-based platform. This exposes the application on the web for anyone to use, protects against the LLM API credits being used by the public, and removes the need to install or interact with code.</p>
+<p>The user is prompted to provide a project title, description, project visual, and the lab itself. This information is then used as previously described to produce an independent lab logo, with explanation.</p>
 <div class="center">
 <p><img src="app.png" class="img-fluid"></p>
 </div>
 <p>The user is prompted to provide a project title, description, project visual, and the lab itself. This information is then used as previously described to produce an independent lab logo, with explanation.</p>
 </section>
-<section id="creating-a-loading-image" class="level3 page-columns page-full">
+<section id="creating-a-loading-image" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-loading-image">Creating a Loading Image</h3>
-<p>In order to design a visually interesting graphic for the front end, I decided to fine-tine a diffusion model. To begin with I created a new 3D model of <em>The Rotunda</em> in AutoCAD.</p>
+<p>In order to design a visually interesting graphic for the front end, an image diffusion model was fine-tined. To begin with a new 3D model of <em>The Rotunda</em> was created in AutoCAD.</p>
 <div class="center">
 <p><img src="above.png" class="img-fluid" style="width:25.0%"> <img src="side.png" class="img-fluid" style="width:25.0%"></p>
 </div>
-<p>Using this 3D model I created a number of synthetic images of the building, combining these with an existing dataset of real photographs.</p>
+<p>Using this 3D model a number of synthetic images of the building were created and combinined with an existing dataset of real photographs.</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 12.5%;justify-content: center;">
@@ -406,26 +405,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>This dataset of approximately 40 images was then used to fine-tuned a Stable Diffusion model<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> using <em>textual inversion</em> to learn the concept of <em>The Rotunda</em>.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;Locally on my M2 Pro Macbook over the course of 3 days.</p></li></div></div>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img src="diffusion_output.gif" class="img-fluid" style="width:90.0%"></p>
-</div><div class="column" style="width:60%;">
+<p>This dataset of approximately 40 images was then used to fine-tuned a Stable Diffusion model using <em>textual inversion</em> to learn the concept of <em>The Rotunda</em>.</p>
 <p>This custom token is then used to perform inference (or generation in the context of generative AI) to generate novel representations and views of the building.<br></p>
-<p>These representations (in the form of a GIF) provide a sense of the technology involved within the lab logo generation tool, this GIF is also displayed whilst inference is being performed in the background.</p>
-</div>
-</div>
-<div class="page-columns page-full"><p>The images, whilst individually imperfect, collectively result in a coherent representation.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Likely the most unnecessarily complex login/loading GIF ever produced.</p></li></div></div>
-<p>The final procedure looks like this,</p>
 <div class="center">
-<p><img src="full_example.gif" class="img-fluid" style="width:100.0%"></p>
+<p><img src="diffusion_output.gif" class="img-fluid" style="width:40.0%"></p>
 </div>
-<p>And corresponding output:</p>
-<p><img src="wsa-res.png" class="img-fluid"></p>
+<p>These representations (in the form of a GIF) provide a sense of the technology involved within the lab logo generation tool, this GIF is also displayed whilst inference is being performed in the background.</p>
+<p>The images, whilst individually imperfect, collectively result in a coherent representation.</p>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<!-- The final procedure looks like this, 
+
+:::{.center}
+![](full_example.gif){width=100%}
+:::
+
+And corresponding output: -->
+<p>An example final output for a given project within the E-Textiles lab is as follows:</p>
+<div class="center">
+<p><img src="wsa-res.png" class="img-fluid" style="width:70.0%"></p>
+</div>
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
