@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-image: tate.jpg
+image: profile.png
 html:
   theme: 
     mainfont: "mono"
