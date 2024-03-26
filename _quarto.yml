@@ -5,14 +5,19 @@ project:
 website:
   title: "TRS"
   favicon: favicon.ico
-  #title: "TRS"
   navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/trsav
-      - icon: twitter
-        href: https://twitter.com/savage_tom
+    style: "docked"
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "About Me"
+        file: about.qmd
+    search: true
+    tools:
+    - icon: github
+      href: https://github.com/trsav
+    - icon: twitter
+      href: https://twitter.com/savage_tom
 format:
   html:
     theme:
@@ -21,6 +26,11 @@ format:
     backgroundcolor: "#ffffff"
     fontcolor: "#000000"
     linestretch: 1.3
+    grid:
+      sidebar-width: 300px
+      margin-width: 300px
+      gutter-width: 20px
+      # body-width: 600px
 
     css: styles.css
 
