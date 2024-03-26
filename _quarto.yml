@@ -6,18 +6,13 @@ website:
   title: "TRS"
   favicon: favicon.ico
   navbar:
-    style: "docked"
+    collapse: false
     left:
       - text: "Home"
         file: index.qmd
       - text: "About Me"
         file: about.qmd
     search: true
-    tools:
-    - icon: github
-      href: https://github.com/trsav
-    - icon: twitter
-      href: https://twitter.com/savage_tom
 format:
   html:
     theme:
