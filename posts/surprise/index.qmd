@@ -1,5 +1,5 @@
 ---
-title: "Outsmarted: *stares at reader*"
+title: "Outsmarted: *Stares at Reader*"
 subtitle: "Unintended Anthropomorphism in LLMs"
 author: ["Tom Savage"]
 categories: [Machine Learning, Art]
