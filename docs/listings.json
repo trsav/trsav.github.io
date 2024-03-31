@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/surprise/index.html",
       "/posts/for_ai/index.html",
       "/posts/wsa_rotunda/index.html",
       "/posts/values/index.html",
-      "/posts/surprise/index.html",
       "/posts/transubstantiation/index.html",
       "/posts/trajectory_plots/index.html",
       "/posts/plots/index.html",

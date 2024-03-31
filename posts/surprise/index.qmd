@@ -1,9 +1,9 @@
 ---
-title: "Outsmarted"
-subtitle: "* stares blankly at reader *"
+title: "Outsmarted: *stares at reader*"
+subtitle: "Unintended Anthropomorphism in LLMs"
 author: ["Tom Savage"]
 categories: [Machine Learning, Art]
-date: "03/04/2024"
+date: "03/31/2024"
 html: 
     grid: 
       margin-width: 600px
