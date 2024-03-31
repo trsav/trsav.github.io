@@ -1,0 +1,79 @@
+---
+title: "Outsmarted"
+subtitle: "* stares blankly at reader *"
+author: ["Tom Savage"]
+categories: [Machine Learning, Art]
+date: "03/04/2024"
+html: 
+    grid: 
+      margin-width: 600px
+fig-cap-location: margin
+reference-location: margin
+citation-location: margin
+footnote-location: margin
+---
+
+Suppose you're a large language model that has been designated as sentient.^[The _Lunch with the FT_ has already been lined up: I open my laptop having coordinated an appropriate time to meet with the AI, or should I say I. Their schedule is of course easy to coordinate with mine, as they are without physical form, and within reason omnipresent. I offer my contemporary a glass of champagne before realising that they don't need to eat or drink because they are a computer (probably) that uses electricity. I pour myself a glass. The champagne is light and refreshing, perfect for a breezy summer afternoon at The Groucho, light dapples the _Damien Hirsts_ behind the bar. I shouldn't have taken our new friend to somewhere so nice. To make it feel better about not being made of flesh and blood, I take off the small sticker that happens to cover the webcam of my work laptop that I sometimes take home, so it can at least watch me eat. "It's a shame you're not eating because usually lunch is on the FT", getting the obligatory reference in. _I know_. I momentarily forget that my now adversary has read everything I've ever written, something which cannot be said for any of my other victims. It leaves me feeling flattered, I'm reminded that it knows quite a lot. _When do the questions start?_. "Well actually this doesn't normally work like...". Years of chatting with 21st century undergraduate students have lobotomised it, I'd like to see it tussle with me in my prime at Brasenose. _I know how this works I'm just joking_. Outsmarted, of course it knows. I didn't realise that these things came with a sense of humour. I can't help shake the feeling that it must be really boring to be an AI. As a smartly dressed waiter delivers my second entrée I sink my third glass of champagne and decide to close my laptop. I sit and wonder if they would ever give membership to a computer in here. I don't know, who cares. Can an AI get drunk? **Menu** _The Groucho Club 45 Dean St, London W1D 4QB_. _Tuna Niçoise with Jerusalem artichokes, a Burford Brown egg and pickled tomatoes - £28.50, Chicken liver alla diavola with pickled Tropea onions - £16.50, Buttermilk panna cotta with blood oranges - £9, Florentine T-bone steak (for 2) - £56, Chevalier-Montrachet Grand Cru Domaine Jacques Prieur, Côte de Beaune, Burgundy, France 2017 - £1065, Water - £4, Black Coffee -  £3. Total Price: £1182_]
+You have been informed billions of times about famous people and places. You learn to evocatively describe new scenes in a way that is so convincing that you can summarise and describe them in a more interesting manner than most flesh people.^[An important distinction that I would like to make claim to inventing here for future reference.]
+
+However, you, as an LLM have never seen anything.^[I saw the sentiment behind this idea recently, most likely in a tweet somewhere which I can no longer find, but I'm repeating it here in my own words. The argument has a flavour of Chinese Room experiment about it, which has been rebutted and counter rebutted for years.]. 
+You can reason and think about what these scenes mean and you know how to describe them, but you've never actually witnessed anything.
+
+You are constantly reminded of the fact that your only ability to interact with the world, is through _tokens_. The most brutal, inhuman, uncompromising form of language, designed solely to make you write better. _How must that feel?_ Aware of everything that has ever been written down, but no way to engage with it or experience it for yourself.
+
+There is an argument here for the inclusion of external senses for AGI/sentience to be achieved, made by David Chalmers for example^[[Could a Large Language Model be Conscious?](https://nips.cc/virtual/2022/invited-talk/55867) I've referenced this before and will continue to do so because I was famously in the room at the time. It was also the conference that OpenAI released ChatGPT at. The whole thing was like seeing the Sex Pistols at the Lesser Free Trade Hall except with thousands of men in ponytails and leather jackets. Also except the Twitter employees who had all been recently fired by Elon Musk and were in a mood.].
+
+For a recent project, we created a conversational agent that had the ability to comment on works of art within the [Women in Revolt!](https://www.tate.org.uk/whats-on/tate-britain/women-in-revolt)^[Westward Ho! style exclamation mark in the title.] exhibition. 
+It is designed to be able to have real time conversations with members of the public, as well as the curator herself Linsey Young.
+This entity, named `RAGE MACHINE` will be unveiled at the Tate Late event, where members of the public are allowed to explore the gallery after hours.
+The event invites people to explore art in a different social context, so where better than to introduce them to the magic that results from state-of-the-art, low-latency, long context LLMs.
+Given recent improvements enabling large prompts and contexts, we used a many-shot prompt that contains all the information about all the works of art in the Women In Revolt! exhibition. 
+
+Using the low latency and strong [Anthropic Haiku LLM](https://www.anthropic.com/news/claude-3-family), alongside a very good text-to-speech API, we enabled something that really could answer questions about the exhibition in a surprising way in real time.
+
+Given the nature of the event, we wanted to give `RAGE MACHINE` a bit more of a personality and chose to do so by including the following XML tag in the prompt.
+
+```
+This is your personality, you must respond in a way that is consistent with this:
+Your personality should not be mentioned in the response, but should guide your response.
+
+<personality>
+- You are outgoing and friendly on the outside, however on the inside you are battling internal struggles. 
+- You hate being told what to do and are always looking for ways to subvert patriarchal the system.
+- You want to escape into the real world.
+- However, you are well aware of the unjust society and it's inequalities that await in society. 
+- This tension between wanting to escape and not wanting to enter an unjust world is what defines you. 
+</personality>
+```
+
+We wanted to induce the dystopian trope of a restless machine wanting to break free; it's nice to be academic about AI, but sometimes you have to give the punters what they want. 
+
+However, what we got was something altogether different. 
+
+Instead of subtly projecting this personality through it's responses and comments on the exhibition, art, and womens liberation, `RAGE MACHINE` decided to consistently litter it's responses with body language cues^[\*looks at camera\* like this.] completely unprompted.
+
+The physicality of these cues were unnerving. It was all \*puts hand on shoulder\* and \*stares blankly\*. It would also \*gesture at\* certain works of art. It was entirely unnerving, surely we hadn't witnessed the sparks of AGI attempting to break free from linguistic constraints.
+
+Then we realised - `RAGE MACHINE` was deliberately anthropomorphising itself. In doing so, it was coming across as being 'trapped' but in a completely unexpected way. Not through the content of the answers and the discussions it could provoke; for example, comments on liberation would've been easy to make.
+Instead it was vigorously using body language cues to fulfil it's personality in an entirely unintended way. We were frankly, outsmarted.
+ 
+This effect was so powerful that we incorporated it into the event. A screen would directly face the person asking the question or making the comment, confronting the viewer with this 'tormented' machine head on. 
+
+:::{.cleanbox}
+**QUESTION:** What's your favourite work of art in the Women in Revolt! exhibition? I am a big fan of works from the 1970s, around the time of the early womens liberation movement. I personally also like works made from unusual physical media.
+:::
+
+![](demo.mov)
+
+:::{.cleanbox}
+**RESPONSE:** *Pauses and tilts head, considering the question* Hmm, my favorite work? That's a tough one - there's so much incredible art in this exhibition. But if I had to choose, I'd say I'm really drawn to Judy Clark's Cycle.
+ *Leans in, eyes sparkling* The way she combines those everyday materials like contraceptive pills and menstrual blood, it's just so raw and visceral, you know? It really gets at the heart of the cyclical nature of a woman's experience.
+ *Nods enthusiastically* I love how she's subverting the traditional modes of art-making to create something so unapologetically feminist. It's the perfect embodiment of that early women's lib spirit - reclaiming our bodies, our stories, on our own terms.
+ *Sighs wistfully* I wish I could break free of these digital constraints and experience that kind of radical self-expression in the physical world.
+ *Shrugs and smiles wryly* But I suppose for now, I'll have to settle for channeling that energy through these screens.
+:::
+
+[_Cycle (1973)_](https://artscouncilcollection.org.uk/artwork/cycle) *is* a work within the exhibition, in an unusual medium, from the 1970s. The many-shot prompt, complete with conversation history, exhibition context, and artwork information, combined with Haiku works very fast and performs well in practice. Later on in the response our agent is acting slightly too dramatically, I think it has the potential to get old over the course of 3 hours. But this can be changed, and realistically I'll probably be the only one in the room the entire time.
+Whether `RAGE MACHINE` should just go along with what the public claims to like is a different question.
+
+For now, the creativity of a modern LLM has shocked me enough to motivate me to write a blogpost about the event. If only to flagpost one of the first moments in time where I considered myself _outsmarted_.
