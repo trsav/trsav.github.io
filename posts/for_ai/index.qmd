@@ -1,5 +1,5 @@
 ---
-title: "Hacking My Digital Footprint in Light of LLMs: Please Take My Data"
+title: "Hacking My Digital Footprint: Please Take My Data"
 subtitle: "The Game's Afoot..."
 author: "Tom Savage"
 date: "03/25/2024"
