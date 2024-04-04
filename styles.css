@@ -178,3 +178,20 @@ div[class="quarto-category"] {
 div[class="about-contents"] {
   border-left-color: grey !important;
 }
+
+/* this should inheret the cleanbox */
+div[class="csl-entry quarto-appendix-citeas"]{
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px darkgrey;
+}
+
+pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px darkgrey;
+}
