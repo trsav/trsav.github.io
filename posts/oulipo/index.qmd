@@ -6,9 +6,6 @@ author:
     url: https://sav.phd
     affiliation: The Alan Turing Institute
     affiliation-url: https://www.turing.ac.uk
-citation: 
-  url: https://sav.phd/posts/outsmarted
-google-scholar: true
 categories: [Art, Machine Learning]
 toc: true
 resources:
@@ -32,7 +29,9 @@ fig-cap-location: margin
 citation-location: margin
 reference-location: margin
 bibliography: index.bib
-
+citation: 
+  url: https://sav.phd/posts/oulipo
+google-scholar: true
 
 ---
 ```{ojs}

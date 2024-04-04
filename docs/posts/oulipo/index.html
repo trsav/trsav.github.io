@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tom Savage">
+<meta name="dcterms.date" content="2024-01-09">
 
-<title>TRS – index</title>
+<title>TRS - The Potential Literature Horseshoe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -101,6 +122,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
+<meta name="citation_title" content="The Potential Literature Horseshoe">
+<meta name="citation_author" content="Tom Savage">
+<meta name="citation_publication_date" content="2024-01-09">
+<meta name="citation_cover_date" content="2024-01-09">
+<meta name="citation_year" content="2024">
+<meta name="citation_online_date" content="2024-01-09">
+<meta name="citation_fulltext_html_url" content="https://sav.phd/posts/oulipo">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Oulipo: A primer of potential literature;,citation_author=W. F. Motte;,citation_publication_date=1998;,citation_cover_date=1998;,citation_year=1998;,citation_isbn=9781564781871;,citation_series_title=Dalkey archive paperbacks;">
 </head>
 
 <body class="nav-fixed">
@@ -131,28 +161,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Potential Literature Horseshoe</h1>
+            <p class="subtitle lead">The First Large Language Model or: Has Machine Learning Solved Oulipo?</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Art</div>
+                <div class="quarto-category">Machine Learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://sav.phd">Tom Savage</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.turing.ac.uk">
+              The Alan Turing Institute
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 9, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
+
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="40" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>defines <span class="op">=</span> [<span class="st">'defined'</span><span class="op">,</span> <span class="st">'specified'</span>]<span class="op">;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>structure <span class="op">=</span> [<span class="st">'structure'</span><span class="op">,</span><span class="st">'form'</span><span class="op">,</span><span class="st">'composition'</span>]</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>may <span class="op">=</span> [<span class="st">'may'</span><span class="op">,</span><span class="st">'could'</span><span class="op">,</span><span class="st">'might'</span><span class="op">,</span><span class="st">'may well'</span>]</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>language <span class="op">=</span> [<span class="st">'language'</span><span class="op">,</span><span class="st">'literature'</span><span class="op">,</span><span class="st">'text'</span><span class="op">,</span><span class="st">'writing'</span>]<span class="op">;</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>books <span class="op">=</span> [<span class="st">'3000 year old Beowolf'</span><span class="op">,</span><span class="st">'600 year old Sir Gawain and the Green Knight'</span>]<span class="op">;</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>purely <span class="op">=</span> [<span class="st">'purely'</span><span class="op">,</span><span class="st">'solely'</span>]</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>millennia <span class="op">=</span> [<span class="st">'millennia'</span><span class="op">,</span><span class="st">'hundreds of years'</span><span class="op">,</span><span class="st">'thousands of years'</span><span class="op">,</span><span class="st">'centuries'</span>]</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>produce <span class="op">=</span> [<span class="st">'produce'</span><span class="op">,</span><span class="st">'construct'</span><span class="op">,</span><span class="st">'create'</span>]</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>techniques <span class="op">=</span> [<span class="st">'techniques'</span><span class="op">,</span><span class="st">'methods'</span>]</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>writers <span class="op">=</span> [<span class="st">'writers'</span><span class="op">,</span><span class="st">'linguists'</span><span class="op">,</span><span class="st">'proponents'</span><span class="op">,</span><span class="st">'members'</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="39" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>defines <span class="op">=</span> [<span class="st">'defined'</span><span class="op">,</span> <span class="st">'specified'</span>]<span class="op">;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>structure <span class="op">=</span> [<span class="st">'structure'</span><span class="op">,</span><span class="st">'form'</span><span class="op">,</span><span class="st">'composition'</span>]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>may <span class="op">=</span> [<span class="st">'may'</span><span class="op">,</span><span class="st">'could'</span><span class="op">,</span><span class="st">'might'</span><span class="op">,</span><span class="st">'may well'</span>]</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>language <span class="op">=</span> [<span class="st">'language'</span><span class="op">,</span><span class="st">'literature'</span><span class="op">,</span><span class="st">'text'</span><span class="op">,</span><span class="st">'writing'</span>]<span class="op">;</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>books <span class="op">=</span> [<span class="st">'3000 year old Beowolf'</span><span class="op">,</span><span class="st">'600 year old Sir Gawain and the Green Knight'</span>]<span class="op">;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>purely <span class="op">=</span> [<span class="st">'purely'</span><span class="op">,</span><span class="st">'solely'</span>]</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>millennia <span class="op">=</span> [<span class="st">'millennia'</span><span class="op">,</span><span class="st">'hundreds of years'</span><span class="op">,</span><span class="st">'thousands of years'</span><span class="op">,</span><span class="st">'centuries'</span>]</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>produce <span class="op">=</span> [<span class="st">'produce'</span><span class="op">,</span><span class="st">'construct'</span><span class="op">,</span><span class="st">'create'</span>]</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>techniques <span class="op">=</span> [<span class="st">'techniques'</span><span class="op">,</span><span class="st">'methods'</span>]</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>writers <span class="op">=</span> [<span class="st">'writers'</span><span class="op">,</span><span class="st">'linguists'</span><span class="op">,</span><span class="st">'proponents'</span><span class="op">,</span><span class="st">'members'</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -228,15 +300,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you refresh this page, the article will be randomised. There are <span class="math inline">\(2.66 \times 10^{19}\)</span> potential combinations of images and text, resulting in approximately Twenty Billion Billion articles, equivalent to the number of insects on earth. <em>Vingt Milliards de Milliards</em>.</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="61" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 60;"><span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>rnd <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>s_string <span class="op">=</span> {</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="logo.png" width=70% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="other_logo.png" width=60% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="60" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 59;"><span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>rnd <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>s_string <span class="op">=</span> {</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="logo.png" width=70% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="other_logo.png" width=60% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -258,26 +330,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Basile Morin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></p>
-</div></div><p>Ouvroir de Littérature Potentielle or <em>Oulipo</em> has been <span><span id="ojs-element-id-8"></span></span> as “the search for new structures, which may be used by writers in any way they see fit” <span class="citation" data-cites="motte1998oulipo">[@motte1998oulipo,p2-3]</span>. For <span><span id="ojs-element-id-9"></span>,</span> authors have been guided by language constraints resulting in <span><span id="ojs-element-id-10"></span></span> <span><span id="ojs-element-id-11"></span>s;</span> From the alliterative verse of the <span><span id="ojs-element-id-12"></span>,</span> to the syllabic rigidity of Japanese haikus. By formalising a number of individual vocations, the original Oulipo <span><span id="ojs-element-id-13"></span></span> in the early 1960s were embarking on the revitalisation of <span><span id="ojs-element-id-14"></span></span> generation in search of discovering something deeper, sound familiar?</p>
+</div></div><p>Ouvroir de Littérature Potentielle or <em>Oulipo</em> has been <span><span id="ojs-element-id-8"></span></span> as “the search for new structures, which may be used by writers in any way they see fit” <span class="citation" data-cites="motte1998oulipo">(<a href="#ref-motte1998oulipo" role="doc-biblioref">Motte 1998, p2–3</a>)</span>. For <span><span id="ojs-element-id-9"></span>,</span> authors have been guided by language constraints resulting in <span><span id="ojs-element-id-10"></span></span> <span><span id="ojs-element-id-11"></span>s;</span> From the alliterative verse of the <span><span id="ojs-element-id-12"></span>,</span> to the syllabic rigidity of Japanese haikus. By formalising a number of individual vocations, the original Oulipo <span><span id="ojs-element-id-13"></span></span> in the early 1960s were embarking on the revitalisation of <span><span id="ojs-element-id-14"></span></span> generation in search of discovering something deeper, sound familiar?</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="85" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>rndl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>l_string <span class="op">=</span> {</span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>o_string <span class="op">=</span> {</span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="84" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 83;"><span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>rndl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>l_string <span class="op">=</span> {</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>o_string <span class="op">=</span> {</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -300,21 +372,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>In order to define/identify new <span><span id="ojs-element-id-15"></span>s,</span> <span><span id="ojs-element-id-16"></span></span> in France turned to automated transformation <span><span id="ojs-element-id-17"></span>.</span> These often instantiated as rules or constraints, such as <span><span id="ojs-element-id-2"></span>,</span> <span><span id="ojs-element-id-3"></span>,</span> or <a href="https://en.wikipedia.org/wiki/Eunoia_(book)">only using a single vowel letter</a>. As the originators of Oulipo explored ways to manipulate language and text in search of new <span><span id="ojs-element-id-18"></span>s,</span> they turned to mathematics for inspiration, thus leading to the final vocation; the transposition of mathematics to words. Naturally the extension was made to computers, and the combinatorial nature of <span><span id="ojs-element-id-19"></span></span> generation was quickly highlighted, as mathematician Claude Berge writes <span class="citation" data-cites="motte1998oulipo">[@motte1998oulipo,p152]</span> :</p>
-<blockquote class="blockquote">
-<p>[…] we believe, that the aid of a computer, far from <em>replacing</em> the creative act of the artist, permits the latter rather to liberate himself from the combinatory search, allowing him also the best chance of concentrating on this “clinamen”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which, alone, can make of the text a true work of art.</p>
+<p>In order to define/identify new <span><span id="ojs-element-id-15"></span>s,</span> <span><span id="ojs-element-id-16"></span></span> in France turned to automated transformation <span><span id="ojs-element-id-17"></span>.</span> These often instantiated as rules or constraints, such as <span><span id="ojs-element-id-2"></span>,</span> <span><span id="ojs-element-id-3"></span>,</span> or <a href="https://en.wikipedia.org/wiki/Eunoia_(book)">only using a single vowel letter</a>. As the originators of Oulipo explored ways to manipulate language and text in search of new <span><span id="ojs-element-id-18"></span>s,</span> they turned to mathematics for inspiration, thus leading to the final vocation; the transposition of mathematics to words. Naturally the extension was made to computers, and the combinatorial nature of <span><span id="ojs-element-id-19"></span></span> generation was quickly highlighted, as mathematician Claude Berge writes <span class="citation" data-cites="motte1998oulipo">(<a href="#ref-motte1998oulipo" role="doc-biblioref">Motte 1998, p152</a>)</span> :</p>
+<div class="no-row-height column-margin column-container"></div><blockquote class="blockquote page-columns page-full">
+<div class="page-columns page-full"><p>[…] we believe, that the aid of a computer, far from <em>replacing</em> the creative act of the artist, permits the latter rather to liberate himself from the combinatory search, allowing him also the best chance of concentrating on this “clinamen”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which, alone, can make of the text a true work of art.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Clinamen (/klaɪˈneɪmən/;) is the Latin name Lucretius gave to the unpredictable swerve of atoms, in order to defend the atomistic doctrine of Epicurus. […] it has come more generally to mean an inclination or a bias. <a href="https://en.wikipedia.org/wiki/Clinamen">Source</a></p></li></div></div>
 </blockquote>
 <p>In applying <em>combinatory literature</em>, Oulipo <span><span id="ojs-element-id-20"></span>,</span> most notably Raymond Queneau in his 1961 work <em>Cent Mille Milliards de Poemes</em> (Hundred Thousand Billion Poems), have highlighted the impossible complexity of language. Elegantly embracing this complexity, Queneau simply presents the complete set of lines within a sonnet in the form of cut out strips, any combination of which <span><span id="ojs-element-id-21"></span></span> be constructed by the reader. In describing the combinatorial nature of <em>Cent Mille Milliards de Poemes</em>, Berge presents the following figure…</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="117" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 116;"><span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>rnd_nn <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>nn_string <span class="op">=</span> {</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="nn.png" width=70%&gt;`</span></span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="nn2.png" width=100%&gt;`</span></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="116" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 115;"><span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>rnd_nn <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>nn_string <span class="op">=</span> {</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="nn.png" width=70%&gt;`</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="nn2.png" width=100%&gt;`</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-4-1" data-nodetype="declaration">
@@ -333,17 +405,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <p><span><span id="ojs-element-id-4"></span></span></p>
 </div>
-<p>Verses act equivalently to neural network layers, and phrases correspond to discrete nodes… could we be seeing the early sparks of the use of neural networks for language modelling?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Of course, what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera… but it is interesting to consider the thematic similarities of complexity, <span><span id="ojs-element-id-22"></span>,</span> and distillation (or lack thereof) of <span><span id="ojs-element-id-23"></span></span> that both members of Oulipo and machine learning researchers have successfully applied.</p>
+<div class="page-columns page-full"><p>Verses act equivalently to neural network layers, and phrases correspond to discrete nodes… could we be seeing the early sparks of the use of neural networks for language modelling?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Of course, what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera… but it is interesting to consider the thematic similarities of complexity, <span><span id="ojs-element-id-22"></span>,</span> and distillation (or lack thereof) of <span><span id="ojs-element-id-23"></span></span> that both members of Oulipo and machine learning researchers have successfully applied.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The modern use of neural networks to model language can <em>probably</em> be attributed to <a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al, 2003</a>, 42 years later.</p></li></div></div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="137" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 136;"><span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>rnd_gp <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>gp_string <span class="op">=</span> {</span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="fu">html</span><span class="vs">`&lt;img src="oulipo.jpeg" width=60%&gt;`</span><span class="op">,</span><span class="fu">html</span><span class="vs">`&lt;em&gt;Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. &lt;a href="https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="fu">html</span><span class="vs">`&lt;img src="raymond.jpeg" width=60%&gt;`</span><span class="op">,</span><span class="fu">html</span><span class="vs">`&lt;em&gt;Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.&lt;a href="https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="136" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 135;"><span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>rnd_gp <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>gp_string <span class="op">=</span> {</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="fu">html</span><span class="vs">`&lt;img src="oulipo.jpeg" width=60%&gt;`</span><span class="op">,</span><span class="fu">html</span><span class="vs">`&lt;em&gt;Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. &lt;a href="https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="fu">html</span><span class="vs">`&lt;img src="raymond.jpeg" width=60%&gt;`</span><span class="op">,</span><span class="fu">html</span><span class="vs">`&lt;em&gt;Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.&lt;a href="https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -365,20 +437,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span><span id="ojs-element-id-6"></span></span></p>
 <p>Given that a modern day large language model such as <a href="https://openai.com/research/gpt-4">GPT-4</a> <span><span id="ojs-element-id-24"></span></span> reasonably be described as a very large set of well <span><span id="ojs-element-id-25"></span></span> mathematical rules, could this ever <span><span id="ojs-element-id-26"></span></span> a valid literary <span><span id="ojs-element-id-27"></span>?</span> How are LLMs distinct from more basic rules such as S+7? In addition, multi-model models can now see and hear as well as read. <a href="https://nips.cc/media/neurips-2022/Slides/55867.pdf">According to David Chalmers</a> these additional senses <span><span id="ojs-element-id-28"></span></span> result in fish-level consciousness in the next ten years. Consciousness aside, at the very least LLMs will <em>appear</em> smarter than a human by then. What are the implications for Potential Literature when a set of rules and resulting <span><span id="ojs-element-id-29"></span></span> can think for itself?</p>
 <p>Unlike the output from an LLM, a haiku can be instantly recognised and verified as coming from its defining 5-7-5 syllabic writing <span><span id="ojs-element-id-30"></span>.</span> When the <span><span id="ojs-element-id-31"></span></span> itself is visible in the output, the focus is turned <span><span id="ojs-element-id-32"></span></span> to what Berge refers to as the <em>clinamen</em>. It is here that the meaning is gained.</p>
-<p>The difference between LLMs and a well-established language <span><span id="ojs-element-id-33"></span></span> such as a haiku is one of complexity, and the <span><span id="ojs-element-id-34"></span></span> that results. By extending a series of basic transformations and rules towards LLMs, a horseshoe effect is achieved. The sheer quantity of rules within an LLM reflects a <em>removal</em> of linguistic constraints, order is returned from chaos, and the resulting underlying <span><span id="ojs-element-id-35"></span></span> is obscured.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="page-columns page-full"><p>The difference between LLMs and a well-established language <span><span id="ojs-element-id-33"></span></span> such as a haiku is one of complexity, and the <span><span id="ojs-element-id-34"></span></span> that results. By extending a series of basic transformations and rules towards LLMs, a horseshoe effect is achieved. The sheer quantity of rules within an LLM reflects a <em>removal</em> of linguistic constraints, order is returned from chaos, and the resulting underlying <span><span id="ojs-element-id-35"></span></span> is obscured.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Though for now (Jan 2024) LLMs produce hallucinations, incorrect facts and statements which in turn partially disclose the underlying structure of the neural network.</p></li></div></div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="163" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 162;"><span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>rnd_d <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">3</span>)</span>
-<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>dep_string <span class="op">=</span> {</span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep.png" width=60%"&gt;`</span></span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">1</span>) {</span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep2.png" width=60%&gt;`</span></span>
-<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">2</span>) {</span>
-<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep3.png" width=60%&gt;`</span></span>
-<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="162" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>rnd_d <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">3</span>)</span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>dep_string <span class="op">=</span> {</span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep.png" width=60%"&gt;`</span></span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">1</span>) {</span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep2.png" width=60%&gt;`</span></span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (rnd_d <span class="op">===</span> <span class="dv">2</span>) {</span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;img src="dep3.png" width=60%&gt;`</span></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="declaration">
@@ -397,11 +469,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <p><span><span id="ojs-element-id-7"></span></span></p>
 </div>
-<p>Herein lies a paradox for the use of language models as a direct tool for creativity, as a platform for a distinct linguistic structure. A language model is trained to <span><span id="ojs-element-id-36"></span></span> text that is indistinguishable from the text within its training distribution. However, as soon as it achieves this task, the underlying structure becomes obscured as complete ‘order’ is achieved, and the impact is lost. The relationship between the rules and their resulting linguistic <span><span id="ojs-element-id-37"></span></span> is distinctly one-way, it is <em>nearly</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> impossible to reason whether the content has been generated from a neural network, yet alone infer the parameters, or even recognise the architecture. Would a haiku still be a haiku if you couldn’t immediately infer its syllabic structure?</p>
+<div class="page-columns page-full"><p>Herein lies a paradox for the use of language models as a direct tool for creativity, as a platform for a distinct linguistic structure. A language model is trained to <span><span id="ojs-element-id-36"></span></span> text that is indistinguishable from the text within its training distribution. However, as soon as it achieves this task, the underlying structure becomes obscured as complete ‘order’ is achieved, and the impact is lost. The relationship between the rules and their resulting linguistic <span><span id="ojs-element-id-37"></span></span> is distinctly one-way, it is <em>nearly</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> impossible to reason whether the content has been generated from a neural network, yet alone infer the parameters, or even recognise the architecture. Would a haiku still be a haiku if you couldn’t immediately infer its syllabic structure?</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This <em>nearly</em> contains a level of nuance, as identifying whether an output has been generated by an LLM is an open research area (See <a href="https://arxiv.org/abs/2306.04634"><em>On the Reliability of Watermarks for Large Language Models</em></a> and <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>). However, the point remains. To the average reader, without the use of cryptographic tools, modern LLM output (as of Jan 2024) remains practically indistinguishable from human-level text.</p></li></div></div>
 <p>To answer the question posted in the title: <em>Has Machine Learning Solved Oulipo?</em> The answer, is no. The beauty of Potential Literature is that by enforcing literary constraints and therefore defining new <span><span id="ojs-element-id-38"></span>s,</span> we not only place the emphasis <span><span id="ojs-element-id-39"></span></span> on the meaning, but also enable the reader to interpret <span><span id="ojs-element-id-40"></span></span> in new ways through a sense of disorder. As a set of rules and constraints, an LLM succeeding in its objective only serves to obscure the resulting linguistic structure in a bid to ‘seem human’, regaining order from chaos.</p>
 <p>It is clear that these two vocations in the field of Potential Literature: defining rules and constraints for <span><span id="ojs-element-id-41"></span>,</span> as well as identifying new language structures, are inherently linked. However, these two objectives conflict when rule set is as flexible as it is within an LLM.</p>
-<p>As Italo Calvino wrote in late 1967, in a remarkable foreshadowing <span class="citation" data-cites="motte1998oulipo">[@motte1998oulipo, Cybernetics and Ghosts (1967) p13-14]</span>:</p>
-<blockquote class="blockquote">
+<p>As Italo Calvino wrote in late 1967, in a remarkable foreshadowing <span class="citation" data-cites="motte1998oulipo">(<a href="#ref-motte1998oulipo" role="doc-biblioref">Motte 1998</a>, Cybernetics and Ghosts (1967) p13-14)</span>:</p>
+<div class="no-row-height column-margin column-container"><div id="ref-motte1998oulipo" class="csl-entry" role="listitem">
+Motte, W. F. 1998. <em>Oulipo: A Primer of Potential Literature</em>. Dalkey Archive Paperbacks. Dalkey Archive Press.
+</div></div><blockquote class="blockquote">
 <p>The true literature machine will be one that itself feels the need to produce disorder, as a reaction against its preceding production of order: a machine that will produce avant-garde work to free its circuits when they are choked by too long a production of classicism. […]. To gratify critics who look for similarities between things literary and things historical, sociological, or economic, the machine could correlate its changes of style to the variations in certain statistical indices of production, or income, or military expenditure, or the distribution of decision-making powers. <strong>That indeed will be the literature that corresponds perfectly to a theoretical hypothesis: it will, at last, be <em>the</em> literature.</strong></p>
 </blockquote>
 <p>Calvino, I’m sure would argue, that we have the alignment of LLMs all wrong to <span><span id="ojs-element-id-42"></span></span> <em>truly</em> novel literature, and how would Raymond Queneau respond to the combinatorial possibilities of large-language models?</p>
@@ -501,15 +575,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </script>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<ol>
-<li id="fn1"><p>Clinamen (/klaɪˈneɪmən/;) is the Latin name Lucretius gave to the unpredictable swerve of atoms, in order to defend the atomistic doctrine of Epicurus. […] it has come more generally to mean an inclination or a bias. <a href="https://en.wikipedia.org/wiki/Clinamen">Source</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>The modern use of neural networks to model language can <em>probably</em> be attributed to <a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al, 2003</a>, 42 years later.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Though for now (Jan 2024) LLMs produce hallucinations, incorrect facts and statements which in turn partially disclose the underlying structure of the neural network.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>This <em>nearly</em> contains a level of nuance, as identifying whether an output has been generated by an LLM is an open research area (See <a href="https://arxiv.org/abs/2306.04634"><em>On the Reliability of Watermarks for Large Language Models</em></a> and <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>). However, the point remains. To the average reader, without the use of cryptographic tools, modern LLM output (as of Jan 2024) remains practically indistinguishable from human-level text.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2024,
+  author = {Savage, Tom},
+  title = {The {Potential} {Literature} {Horseshoe}},
+  date = {2024-01-09},
+  url = {https://sav.phd/posts/oulipo},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-savage2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Savage, Tom. 2024. <span>“The Potential Literature Horseshoe.”</span>
+January 9, 2024. <a href="https://sav.phd/posts/oulipo">https://sav.phd/posts/oulipo</a>.
+</div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
 {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"defines = ['defined', 'specified'];\nstructure = ['structure','form','composition']\nmay = ['may','could','might','may well']\nlanguage = ['language','literature','text','writing'];\nbooks = ['3000 year old Beowolf','600 year old Sir Gawain and the Green Knight'];\npurely = ['purely','solely']\nmillennia = ['millennia','hundreds of years','thousands of years','centuries']\nproduce = ['produce','construct','create']\ntechniques = ['techniques','methods']\nwriters = ['writers','linguists','proponents','members'];\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"rnd = Math.floor(Math.random() * 2)\ns_string = {\n  if (rnd === 0) {\n    return html`<img src=\"logo.png\" width=70% title=\"Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)\">`\n  }\n  else {\n    return html`<img src=\"other_logo.png\" width=60% title=\"Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)\">`\n  }\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"rndl = Math.floor(Math.random() * 2)\nl_string = {\n  if (rnd === 0) {\n    return html`<a href=\"https://en.wikipedia.org/wiki/A_Void\">not using the letter e</a>`\n  }\n  else {\n    return html`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`\n  }\n}\n\no_string = {\n  if (rnd === 0) {\n    return html`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`\n  }\n  else {\n    return html`<a href=\"https://en.wikipedia.org/wiki/A_Void\">not using the letter e</a>`\n  }\n}\n\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"rnd_nn = Math.floor(Math.random() * 2)\nnn_string = {\n  if (rnd === 0) {\n    return html`<img src=\"nn.png\" width=70%>`\n  }\n  else {\n    return html`<img src=\"nn2.png\" width=100%>`\n  }\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"rnd_gp = Math.floor(Math.random() * 2)\ngp_string = {\n  if (rnd === 0) {\n    return [html`<img src=\"oulipo.jpeg\" width=60%>`,html`<em>Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. <a href=\"https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/\">Source</a>.</em>`]\n  }\n  else {\n    return [html`<img src=\"raymond.jpeg\" width=60%>`,html`<em>Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.<a href=\"https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin\">Source</a>.</em>`]\n  }\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"rnd_d = Math.floor(Math.random() * 3)\ndep_string = {\n  if (rnd_d === 0) {\n    return html`<img src=\"dep.png\" width=60%\">`\n  }\n  else if (rnd_d === 1) {\n    return html`<img src=\"dep2.png\" width=60%>`\n  }\n  else if (rnd_d === 2) {\n    return html`<img src=\"dep3.png\" width=60%>`\n  }\n}\n"}]}
 </script>
