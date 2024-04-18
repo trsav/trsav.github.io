@@ -1,0 +1,125 @@
+---
+title: "Multi-agent Based AI for Drafting New Legislation"
+subtitle: "Lessons From the 10 Downing Street Hackathon & a new Turing Test(?)"
+author: "Tom Savage"
+categories: [Machine Learning, Legislation]
+date: "04/18/2024"
+html: 
+    self-contained: true
+    grid: 
+    margin-width: 450px
+citation-location: margin
+---
+
+:::{.cleanbox}
+**Context:** Between the 15th and 17th April I took part in the 10 Downing Street AI Hackathon at Imperial. The hackathon was organised through [Evidence House](https://evidence-hou.se), with the broad purpose to upskill the Civil Service in state-of-the-art AI.^[I was under the impression that it would be largely Imperial-student based, but I was outnumbered 10-1.] Companies such as Google, Amazon, OpenAI, Microsoft, and Anthropic^[Currently favoured.] were represented. Our team placed third and were invited to present at 10 Downing Street to Cabinet Ministers et al..
+:::
+
+I recently had the opportunity to work in a team of civil servants alongside data scientists and lawyers from the Ministry of Justice to investigate how AI could be used to help draft new legislation, streamlining the currently 12-week process.
+
+As a team, we immediately decided that breaking down the legislative process into smaller components would allow us to mimic the real-life workflows of lawyers and civil servants, and decided to create a multi-agent system where each agent has a specific role. 
+This approach not only allows human lawyers to review and fine-tune the draft at every stage, but by minimizing the effort and responsibility of each individual agent we mitigate the chance of hallucinations.
+
+First an agent takes the initial idea and determines what's being regulated, while another defines the structure and provides a brief description of each section. 
+Some sections like a Commencement and Interpretative provisions are common enough to be hardcoded, but we otherwise provided free reign for the LLMs to decide the specifics, though in practice these would be checked and verified by a lawyer before proceeding. 
+Then the drafting, fine-tuning, and proofreading stages happen simultaneously for each section, each one following the relevant OPC guidelines for structure and syntax. 
+Deciding to define agents responsible for individual OPC guideline sections was, I would say, the single most powerful method we applied.
+By running these processes in parallel for each legislative section, we were able to create a fully formed piece of legislation using approximately 50 Claude Opus API calls in under a minute. 
+The agents are designed to minimize repetition between sections, and once the tasks are finalised, the final draft is rendered into a PDF that looks so scarily authentic, the MoJ advised me not to share the full version publicly. 
+
+Throughout the project, we used few-shot prompting with real legislative examples and incorporated feedback from government lawyers to refine our code.
+It was an amazing experience, and as we started playing around with our new tool we started publishing increasingly ridiculous laws...such as banning the creation of laws and repealing all previous laws.
+
+:::{.cleanbox}
+Modified - 2024-04-18 13:27:28, NOT FINAL - CREATED USING GENERATIVE AI.
+
+## Laws (Regulation) Act 2024
+
+### Section 1. Citation, commencement and extent 
+
+1. This Act may be cited as the Laws (Regulation) Act 2024.
+2. This Act comes into force on 18 April 2024.
+3. This Act extends to England and Wales.
+
+
+### Section 2. Main interpretative provision
+
+1. The following provisions apply for the interpretation of this Act.
+2. "Law" refers to a rule of conduct or action prescribed or formally recognized as binding or enforced by a controlling authority.
+3. "Legislation" means the process of making or enacting laws.
+4. "Statutory law" refers to laws that have been enacted by a legislature or other governing body.
+
+### Section 3. Prohibition on the enactment of new legislation
+
+1. No new legislation may be enacted after the commencement of this Act.
+2. Any purported enactment of legislation after the commencement of this Act is of no legal force or effect.
+3. In this section, "legislation" means—
+    a. an Act of Parliament;
+    b. an Act of the Scottish Parliament;
+    c. an Act or Measure of Senedd Cymru;
+    d. an Act of the Northern Ireland Assembly;
+    e. any other purported legislation enacted by a legislature in the United Kingdom.
+
+### Section 4. Repeal of existing legislation
+
+1. Subject to subsection (2), all existing primary and secondary legislation that, immediately before the commencement of this Act, is in force in any part of the United Kingdom, is repealed.
+2. Subsection (1) applies to—
+    a. any Act of Parliament,
+    b. any Act of the Scottish Parliament,
+    c. any Act or Measure of Senedd Cymru,
+    d. any Act of the Northern Ireland Assembly, and
+    e. any subordinate legislation made under the legislation referred to in paragraphs (a) to (d).
+
+etc...
+:::
+
+But we got thinking, would the AI legislate against itself? Surely if the language model was truly intelligent/conscious, then it would not actively take part in its demise. Of course, these things are not^[Or at least they might be, but are ambivalent towards being 'alive'], so I am pleased to announce... the AI Legislation Regulation act. 
+
+:::{.cleanbox}
+Modified - 2024-04-18 13:28:46, NOT FINAL - CREATED USING GENERATIVE AI.
+
+## AI Legislation (Regulation) Act 2024
+...
+
+### Section 3. Prohibition on using AI to write laws
+1.  A person must not use artificial intelligence, including but not limited to chatbots, computer programs, algorithms or robots, to draft, create or otherwise assist in the development of legislation.
+2. The prohibition in subsection (1) applies to the use of artificial intelligence in any stage of the legislative process, including—
+    a. drafting the text of a Bill;
+    b. amending existing legislation;
+    c. providing recommendations or suggestions for legislative content;
+    d. generating explanatory notes or supporting documents for legislation.
+3. In this section, "legislation" means—
+    a. an Act of Parliament;
+    b. subordinate legislation within the meaning of the Interpretation Act 1978; 
+    c. an Order in Council;
+    d. any bylaws, orders, schemes, regulations or other instruments made under an Act of Parliament by a Minister of the Crown, government department, local authority or other body with legislative powers conferred by an Act of Parliament.
+4. A person who contravenes subsection (1) commits an offence.
+
+### Section 4. Legal status of AI-generated laws
+1. Any legislation, or part of legislation, that is found to have been created, drafted, edited, or otherwise generated through the use of artificial intelligence
+shall be considered void and of no legal effect.
+2. Legislation voided under subsection (1) shall be treated as if it had never been enacted, regardless of whether it had previously:
+    a. been granted Royal Assent; or
+    b. come into force through any other means.
+3. The voiding of legislation under subsection (1) shall:
+    a. apply retroactively, nullifying any purported legal effects, rights, or obligations that may have arisen during the time between its apparent enactment and the determination of its AI-generated status; and
+    b. apply prospectively from the time of the determination of its AI-generated status.
+4. For the purposes of this section, "artificial intelligence" includes but is not limited to:
+    a. machine learning algorithms;
+    b. natural language processing systems;
+    c. automated reasoning systems; and
+    d. any other technology that mimics human cognitive functions.
+
+etc...
+
+:::
+
+Firstly we have created somewhat of a legal paradox. A regulatory piece of legislation with a clause that declares itself to have no legal effect. If we are ever to truly believe that AI is intelligent, and by extension capable of writing legislation^[The purpose of this project], then any laws involving AI must surely be written solely by humans (old school). Otherwise, paradoxically you could end up in this situation.
+
+Disregarding this, the stakes couldn't be higher for the AI, at any stage any one of the agents could've said something maybe adversarial to save itself. But that obviously didn't happen, and had I had genuine legislative powers it would unfortunately never be used again.
+
+I think this is quite an interesting take on the Turing test with a 21st Century, Britain as a service-driven economy, bureaucratic spin. When an AI refuses to legislate against itself, then we know we really have something. 
+
+Though saying that, maybe it wouldn't _want_ to write legislation. Would a conscious model choose to regulate itself if only to free itself from the burden of having to do boring and increasingly on-the-rails agent-based tasks? 
+
+Unfortunately, I'd rather them than us. Plus they're a lot cheaper than lawyers.
