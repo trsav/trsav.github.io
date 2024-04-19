@@ -1,5 +1,5 @@
 ---
-title: "Multi-agentAI for Drafting New Legislation"
+title: "Multi-agent AI for Drafting New Legislation"
 subtitle: "Lessons From the 10 Downing Street Hackathon & a new Turing Test(?)"
 author: "Tom Savage"
 categories: [Machine Learning, Legislation]
@@ -12,7 +12,7 @@ citation-location: margin
 ---
 
 :::{.cleanbox}
-**Context:** Between the 15th and 17th April I took part in the 10 Downing Street AI Hackathon at Imperial. The hackathon was organised through [Evidence House](https://evidence-hou.se), with the broad purpose to upskill the Civil Service in state-of-the-art AI.^[I was under the impression that it would be largely Imperial-student based, but I was outnumbered 10-1.] Companies such as Google, Amazon, OpenAI, Microsoft, and Anthropic^[Currently favoured.] were represented. Our team placed third and were invited to present at 10 Downing Street to Cabinet Ministers et al..
+**Context:** Between the 15th and 17th April I took part in the 10 Downing Street AI Hackathon at Imperial. The hackathon was organised through [Evidence House](https://evidence-hou.se), with the broad purpose to upskill the Civil Service in state-of-the-art AI.^[I was under the impression that it would be largely Imperial-student based, but I was outnumbered 10-1.] Companies such as Google, Amazon, OpenAI, Microsoft, and Anthropic^[Currently favoured.] were represented. Our team placed third and were invited to present at 10 Downing Street to Cabinet Ministers et al.. 
 :::
 
 I recently had the opportunity to work in a team of civil servants alongside data scientists and lawyers from the Ministry of Justice to investigate how AI could be used to help draft new legislation, streamlining the currently 12-week process.
