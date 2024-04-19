@@ -1,5 +1,5 @@
 ---
-title: "Multi-agent Based AI for Drafting New Legislation"
+title: "Multi-agentAI for Drafting New Legislation"
 subtitle: "Lessons From the 10 Downing Street Hackathon & a new Turing Test(?)"
 author: "Tom Savage"
 categories: [Machine Learning, Legislation]
@@ -20,15 +20,16 @@ I recently had the opportunity to work in a team of civil servants alongside dat
 As a team, we immediately decided that breaking down the legislative process into smaller components would allow us to mimic the real-life workflows of lawyers and civil servants, and decided to create a multi-agent system where each agent has a specific role. 
 This approach not only allows human lawyers to review and fine-tune the draft at every stage, but by minimizing the effort and responsibility of each individual agent we mitigate the chance of hallucinations.
 
-First an agent takes the initial idea and determines what's being regulated, while another defines the structure and provides a brief description of each section. 
+First, an agent takes the initial idea and determines what's being regulated, while another defines the structure and provides a brief description of each section. 
 Some sections like a Commencement and Interpretative provisions are common enough to be hardcoded, but we otherwise provided free reign for the LLMs to decide the specifics, though in practice these would be checked and verified by a lawyer before proceeding. 
 Then the drafting, fine-tuning, and proofreading stages happen simultaneously for each section, each one following the relevant OPC guidelines for structure and syntax. 
 Deciding to define agents responsible for individual OPC guideline sections was, I would say, the single most powerful method we applied.
 By running these processes in parallel for each legislative section, we were able to create a fully formed piece of legislation using approximately 50 Claude Opus API calls in under a minute. 
-The agents are designed to minimize repetition between sections, and once the tasks are finalised, the final draft is rendered into a PDF that looks so scarily authentic, the MoJ advised me not to share the full version publicly. 
+The agents are designed to minimize repetition between sections, and once the tasks are finalised, the final draft is rendered into a PDF that looks authentic enough for the MoJ to request that I didn't share the full version publicly. 
 
-Throughout the project, we used few-shot prompting with real legislative examples and incorporated feedback from government lawyers to refine our code.
-It was an amazing experience, and as we started playing around with our new tool we started publishing increasingly ridiculous laws...such as banning the creation of laws and repealing all previous laws.
+Throughout the project, we used few-shot prompting with real legislative examples and incorporated feedback from government lawyers to refine the outputs of our code.
+
+It was an amazing experience and as we started playing around with our new tool, we started publishing increasingly ridiculous laws...such as banning the creation of laws and repealing all previous laws.
 
 :::{.cleanbox}
 Modified - 2024-04-18 13:27:28, NOT FINAL - CREATED USING GENERATIVE AI.

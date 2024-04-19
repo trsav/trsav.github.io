@@ -9,7 +9,7 @@
 <meta name="author" content="Tom Savage">
 <meta name="dcterms.date" content="2024-04-18">
 
-<title>TRS - Multi-agent Based AI for Drafting New Legislation</title>
+<title>TRS - Multi-agentAI for Drafting New Legislation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Multi-agent Based AI for Drafting New Legislation</h1>
+      <h1 class="title">Multi-agentAI for Drafting New Legislation</h1>
             <p class="subtitle lead">Lessons From the 10 Downing Street Hackathon &amp; a new Turing Test(?)</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Machine Learning</div>
@@ -139,12 +139,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="cleanbox">
-<p><strong>Context:</strong> Between the 15th and 17th April I took part in the 10 Downing Street AI Hackathon at Imperial. The hackathon was organised through <a href="https://evidence-hou.se">Evidence House</a>, with the broad purpose to upskill the Civil Service in state-of-the-art AI.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Companies such as Google, Amazon, OpenAI, Microsoft, and Anthropic<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> were represented. Our team placed third and was invited to present at 10 Downing Street to Cabinet Ministers et al..</p>
+<p><strong>Context:</strong> Between the 15th and 17th April I took part in the 10 Downing Street AI Hackathon at Imperial. The hackathon was organised through <a href="https://evidence-hou.se">Evidence House</a>, with the broad purpose to upskill the Civil Service in state-of-the-art AI.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Companies such as Google, Amazon, OpenAI, Microsoft, and Anthropic<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> were represented. Our team placed third and were invited to present at 10 Downing Street to Cabinet Ministers et al..</p>
 </div>
 <p>I recently had the opportunity to work in a team of civil servants alongside data scientists and lawyers from the Ministry of Justice to investigate how AI could be used to help draft new legislation, streamlining the currently 12-week process.</p>
 <p>As a team, we immediately decided that breaking down the legislative process into smaller components would allow us to mimic the real-life workflows of lawyers and civil servants, and decided to create a multi-agent system where each agent has a specific role. This approach not only allows human lawyers to review and fine-tune the draft at every stage, but by minimizing the effort and responsibility of each individual agent we mitigate the chance of hallucinations.</p>
-<p>First an agent takes the initial idea and determines what’s being regulated, while another defines the structure and provides a brief description of each section. Some sections like a Commencement and Interpretative provisions are common enough to be hardcoded, but we otherwise provided free reign for the LLMs to decide the specifics, though in practice these would be checked and verified by a lawyer before proceeding. Then the drafting, fine-tuning, and proofreading stages happen simultaneously for each section, each one following the relevant OPC guidelines for structure and syntax. Deciding to define agents responsible for individual OPC guideline sections was, I would say, the single most powerful method we applied. By running these processes in parallel for each legislative section, we were able to create a fully formed piece of legislation using approximately 50 Claude Opus API calls in under a minute. The agents are designed to minimize repetition between sections, and once the tasks are finalised, the final draft is rendered into a PDF that looks so scarily authentic, the MoJ advised me not to share the full version publicly.</p>
-<p>Throughout the project, we used few-shot prompting with real legislative examples and incorporated feedback from government lawyers to refine our code. It was an amazing experience, and as we started playing around with our new tool we started publishing increasingly ridiculous laws…such as banning the creation of laws and repealing all previous laws.</p>
+<p>First, an agent takes the initial idea and determines what’s being regulated, while another defines the structure and provides a brief description of each section. Some sections like a Commencement and Interpretative provisions are common enough to be hardcoded, but we otherwise provided free reign for the LLMs to decide the specifics, though in practice these would be checked and verified by a lawyer before proceeding. Then the drafting, fine-tuning, and proofreading stages happen simultaneously for each section, each one following the relevant OPC guidelines for structure and syntax. Deciding to define agents responsible for individual OPC guideline sections was, I would say, the single most powerful method we applied. By running these processes in parallel for each legislative section, we were able to create a fully formed piece of legislation using approximately 50 Claude Opus API calls in under a minute. The agents are designed to minimize repetition between sections, and once the tasks are finalised, the final draft is rendered into a PDF that looks authentic enough for the MoJ to request that I didn’t share the full version publicly.</p>
+<p>Throughout the project, we used few-shot prompting with real legislative examples and incorporated feedback from government lawyers to refine the outputs of our code.</p>
+<p>It was an amazing experience and as we started playing around with our new tool, we started publishing increasingly ridiculous laws…such as banning the creation of laws and repealing all previous laws.</p>
 <div class="cleanbox">
 <p>Modified - 2024-04-18 13:27:28, NOT FINAL - CREATED USING GENERATIVE AI.</p>
 <section id="laws-regulation-act-2024" class="level2">
