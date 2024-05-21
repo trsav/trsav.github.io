@@ -4,6 +4,9 @@ subtitle: "The Game's Afoot..."
 author: "Tom Savage"
 date: "03/25/2024"
 categories: [Machine Learning]
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

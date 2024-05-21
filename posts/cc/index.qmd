@@ -3,6 +3,9 @@ title: "CC Challenge Verification"
 subtitle: "Let him cook?"
 author: "Tom Savage"
 date: "05/06/2024"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

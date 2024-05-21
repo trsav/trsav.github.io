@@ -7,6 +7,9 @@ author:
     affiliation: The Alan Turing Institute
     affiliation-url: https://www.turing.ac.uk
 categories: [Art, Machine Learning]
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 toc: true
 resources:
 - logo.png

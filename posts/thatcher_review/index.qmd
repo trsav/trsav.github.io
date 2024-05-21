@@ -5,6 +5,9 @@ author: "Tom Savage"
 categories: [Books]
 date: "10/21/2023"
 image: "cover.jpg"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

@@ -6,6 +6,9 @@ categories: [Conference,Chemical Engineering]
 image: "conf.webp"
 date: "11/12/2023"
 callout-appearance: minimal
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 format:
   html:
     css: styles.css

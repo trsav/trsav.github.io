@@ -8,6 +8,9 @@ author:
 categories: [Visualisation,Art, Machine Learning]
 date: "11/29/2023"
 callout-appearance: minimal
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 format:
   html:
     css: styles.css

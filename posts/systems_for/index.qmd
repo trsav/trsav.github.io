@@ -6,6 +6,9 @@ author:
   - name: "Studio 3015"
 categories: [Machine Learning, Art, Visualisation]
 date: "04/22/2024"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

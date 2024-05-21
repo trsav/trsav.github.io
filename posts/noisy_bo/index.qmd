@@ -6,6 +6,9 @@ author:
 categories: [Optimisation, Machine Learning]
 date: "12/05/2023"
 callout-appearance: minimal
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 format:
   html:
     css: styles.css

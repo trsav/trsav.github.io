@@ -4,6 +4,9 @@ subtitle: "A list"
 author: "Tom Savage"
 categories: [Books]
 date: "12/16/2023"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

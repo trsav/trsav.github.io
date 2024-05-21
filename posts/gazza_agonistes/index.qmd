@@ -5,6 +5,9 @@ author: "Tom Savage"
 date: "10/22/2023"
 categories: [Books]
 image: "gazza.jpg"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     self-contained: true
     grid: 

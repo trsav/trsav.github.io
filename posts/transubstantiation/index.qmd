@@ -10,6 +10,9 @@ html:
     margin-width: 450px
 bibliography: ref.bib
 citation-location: margin
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 ---
 
 Attending mass was a mandatory requirement in medieval England and formed a central foundation for many aspects of parish life.

@@ -8,6 +8,9 @@ author:
     affiliation-url: https://www.turing.ac.uk
 categories: [Machine Learning, Art]
 date: "03/31/2024"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 html: 
     grid: 
       margin-width: 600px

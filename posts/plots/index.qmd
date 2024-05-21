@@ -6,6 +6,9 @@ image: "figure.svg"
 date: "01/31/2024"
 callout-appearance: minimal
 jupyter: python3
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
 ---
 
 ```{python}
