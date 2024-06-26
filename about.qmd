@@ -25,7 +25,7 @@ about:
 
 ---
 :::{.cleanbox}
-I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). I have a background in Chemical Engineering and still enjoy teaching labs at Imperial College. Alongside my work in process systems engineering, I am affiliated with [Winchester School of Art](https://www.southampton.ac.uk/about/faculties-schools-departments/winchester-school-of-art) [producing installations with the Tate](https://www.tate.org.uk/whats-on/tate-britain/late-at-tate-britain) on the intersection between AI and art. My interests include Bayesian optimisation, human-in-the-loop machine learning, cricket 🏏, and darts 🎯. 
+I am a [PhD student at Imperial College London](https://www.imperial.ac.uk/people/t.savage) & former [2023 Enrichment student at the Alan Turing Institute](https://www.turing.ac.uk/people/enrichment-students/tom-savage). I have a background in Chemical Engineering and still enjoy teaching labs at Imperial College. Alongside my work in process systems engineering, I am affiliated with [Winchester School of Art](https://www.southampton.ac.uk/about/faculties-schools-departments/winchester-school-of-art) [producing installations with the Tate](https://www.tate.org.uk/whats-on/tate-britain/late-at-tate-britain) on the intersection between AI and art. My interests include Bayesian optimisation, human-in-the-loop machine learning, cricket 🏏, and darts 🎯. 
 :::
 
 

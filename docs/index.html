@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TRS -</title>
+<title>TRS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -92,8 +99,35 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -101,25 +135,25 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">TRS</span>
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-          <div class="quarto-navbar-tools ms-auto">
+          <div class="quarto-navbar-tools">
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -141,21 +175,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1714950000000" data-listing-file-modified-sort="1716302646504" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1714950000000" data-listing-file-modified-sort="1719392830427" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49">
 <div class="body">
-<a href="./posts/cc/index.html">
 <h3 class="no-anchor listing-title">
-CC Challenge Verification
+<a href="./posts/cc/index.html" class="no-external">CC Challenge Verification</a>
 </h3>
 <div class="listing-subtitle">
-Let him cook?
+<a href="./posts/cc/index.html" class="no-external">Let him cook?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/cc/index.html">
+<a href="./posts/cc/index.html" class="no-external">
 <div class="listing-date">
 May 6, 2024
 </div>
@@ -165,19 +198,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Machine Learning,Art,Visualisation" data-listing-date-sort="1713740400000" data-listing-file-modified-sort="1716302729358" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="1" data-categories="Machine Learning,Art,Visualisation" data-listing-date-sort="1713740400000" data-listing-file-modified-sort="1719392830470" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="823">
 <div class="body">
-<a href="./posts/systems_for/index.html">
 <h3 class="no-anchor listing-title">
-Systems for… Collaboration
+<a href="./posts/systems_for/index.html" class="no-external">Systems for… Collaboration</a>
 </h3>
 <div class="listing-subtitle">
-Human-AI Collaboration for the WSA Final Year Graphic Design Degree Show
+<a href="./posts/systems_for/index.html" class="no-external">Human-AI Collaboration for the WSA Final Year Graphic Design Degree Show</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/systems_for/index.html">
+<a href="./posts/systems_for/index.html" class="no-external">
 <div class="listing-date">
 Apr 22, 2024
 </div>
@@ -187,19 +218,17 @@ Tom Savage, Studio 3015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Machine Learning,Legislation" data-listing-date-sort="1713394800000" data-listing-file-modified-sort="1716302704450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="2" data-categories="Machine Learning,Legislation" data-listing-date-sort="1713394800000" data-listing-file-modified-sort="1719392830457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1377">
 <div class="body">
-<a href="./posts/legislation/index.html">
 <h3 class="no-anchor listing-title">
-Multi-agent AI for Drafting New Legislation
+<a href="./posts/legislation/index.html" class="no-external">Multi-agent AI for Drafting New Legislation</a>
 </h3>
 <div class="listing-subtitle">
-Lessons From the 10 Downing Street Hackathon &amp; a new Turing Test(?)
+<a href="./posts/legislation/index.html" class="no-external">Lessons From the 10 Downing Street Hackathon &amp; a new Turing Test(?)</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/legislation/index.html">
+<a href="./posts/legislation/index.html" class="no-external">
 <div class="listing-date">
 Apr 18, 2024
 </div>
@@ -209,19 +238,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Machine Learning,Art" data-listing-date-sort="1711843200000" data-listing-file-modified-sort="1716302717354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="3" data-categories="Machine Learning,Art" data-listing-date-sort="1711843200000" data-listing-file-modified-sort="1719392830465" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1670">
 <div class="body">
-<a href="./posts/outsmarted/index.html">
 <h3 class="no-anchor listing-title">
-Outsmarted: <em>Stares at Reader</em>
+<a href="./posts/outsmarted/index.html" class="no-external">Outsmarted: <em>Stares at Reader</em></a>
 </h3>
 <div class="listing-subtitle">
-Unintended Anthropomorphism in LLMs
+<a href="./posts/outsmarted/index.html" class="no-external">Unintended Anthropomorphism in LLMs</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/outsmarted/index.html">
+<a href="./posts/outsmarted/index.html" class="no-external">
 <div class="listing-date">
 Mar 31, 2024
 </div>
@@ -231,19 +258,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Machine Learning" data-listing-date-sort="1711324800000" data-listing-file-modified-sort="1716302689083" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="107">
+<div class="quarto-post image-right" data-index="4" data-categories="Machine Learning" data-listing-date-sort="1711324800000" data-listing-file-modified-sort="1719392830442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="107" data-listing-word-count-sort="21267">
 <div class="body">
-<a href="./posts/for_ai/index.html">
 <h3 class="no-anchor listing-title">
-Hacking My Digital Footprint: Please Take My Data
+<a href="./posts/for_ai/index.html" class="no-external">Hacking My Digital Footprint: Please Take My Data</a>
 </h3>
 <div class="listing-subtitle">
-The Game’s Afoot…
+<a href="./posts/for_ai/index.html" class="no-external">The Game’s Afoot…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/for_ai/index.html">
+<a href="./posts/for_ai/index.html" class="no-external">
 <div class="listing-date">
 Mar 25, 2024
 </div>
@@ -253,19 +278,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1710374400000" data-listing-file-modified-sort="1716302860949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1710374400000" data-listing-file-modified-sort="1719392830501" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1285">
 <div class="body">
-<a href="./posts/wsa_rotunda/index.html">
 <h3 class="no-anchor listing-title">
-Context-Aware Generative Lab Identities for Winchester School of Art
+<a href="./posts/wsa_rotunda/index.html" class="no-external">Context-Aware Generative Lab Identities for Winchester School of Art</a>
 </h3>
 <div class="listing-subtitle">
-<em>The art of life lies in a constant readjustment to our surroundings.</em> - Kakuzō Okakura
+<a href="./posts/wsa_rotunda/index.html" class="no-external"><em>The art of life lies in a constant readjustment to our surroundings.</em> - Kakuzō Okakura</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/wsa_rotunda/index.html">
+<a href="./posts/wsa_rotunda/index.html" class="no-external">
 <div class="listing-date">
 Mar 14, 2024
 </div>
@@ -275,19 +298,17 @@ Tom Savage, Studio 3015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Travel,Machine Learning,Religion" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1716302789624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="6" data-categories="Travel,Machine Learning,Religion" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1719392830475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1229">
 <div class="body">
-<a href="./posts/values/index.html">
 <h3 class="no-anchor listing-title">
-Generative Models as Mirrors and Idols; From Istanbul
+<a href="./posts/values/index.html" class="no-external">Generative Models as Mirrors and Idols; From Istanbul</a>
 </h3>
 <div class="listing-subtitle">
-The Inescapable, Neverending Race for Values
+<a href="./posts/values/index.html" class="no-external">The Inescapable, Neverending Race for Values</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/values/index.html">
+<a href="./posts/values/index.html" class="no-external">
 <div class="listing-date">
 Mar 4, 2024
 </div>
@@ -297,19 +318,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Machine Learning,Religion,Art" data-listing-date-sort="1706918400000" data-listing-file-modified-sort="1716302875912" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="7" data-categories="Machine Learning,Religion,Art" data-listing-date-sort="1706918400000" data-listing-file-modified-sort="1719392830473" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="597">
 <div class="body">
-<a href="./posts/transubstantiation/index.html">
 <h3 class="no-anchor listing-title">
-The Machine Learning Reformation
+<a href="./posts/transubstantiation/index.html" class="no-external">The Machine Learning Reformation</a>
 </h3>
 <div class="listing-subtitle">
-What the late middle ages can teach us about the future of AI
+<a href="./posts/transubstantiation/index.html" class="no-external">What the late middle ages can teach us about the future of AI</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/transubstantiation/index.html">
+<a href="./posts/transubstantiation/index.html" class="no-external">
 <div class="listing-date">
 Feb 3, 2024
 </div>
@@ -319,19 +338,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Visualisation" data-listing-date-sort="1706659200000" data-listing-file-modified-sort="1716302785821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="8" data-categories="Visualisation" data-listing-date-sort="1706659200000" data-listing-file-modified-sort="1719392830473" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="753">
 <div class="body">
-<a href="./posts/trajectory_plots/index.html">
 <h3 class="no-anchor listing-title">
-Optimisation Trajectory Plots
+<a href="./posts/trajectory_plots/index.html" class="no-external">Optimisation Trajectory Plots</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/trajectory_plots/index.html" class="no-external"></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/trajectory_plots/index.html">
+<a href="./posts/trajectory_plots/index.html" class="no-external">
 <div class="listing-date">
 Jan 31, 2024
 </div>
@@ -341,19 +358,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Visualisation" data-listing-date-sort="1706659200000" data-listing-file-modified-sort="1716302721018" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="9" data-categories="Visualisation" data-listing-date-sort="1706659200000" data-listing-file-modified-sort="1719392830466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1047">
 <div class="body">
-<a href="./posts/plots/index.html">
 <h3 class="no-anchor listing-title">
-Scatter Plots
+<a href="./posts/plots/index.html" class="no-external">Scatter Plots</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/plots/index.html" class="no-external"></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/plots/index.html">
+<a href="./posts/plots/index.html" class="no-external">
 <div class="listing-date">
 Jan 31, 2024
 </div>
@@ -363,19 +378,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Art,Machine Learning" data-listing-date-sort="1704758400000" data-listing-file-modified-sort="1716302713608" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="10" data-categories="Art,Machine Learning" data-listing-date-sort="1704758400000" data-listing-file-modified-sort="1719392830458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1700">
 <div class="body">
-<a href="./posts/oulipo/index.html">
 <h3 class="no-anchor listing-title">
-The Potential Literature Horseshoe
+<a href="./posts/oulipo/index.html" class="no-external">The Potential Literature Horseshoe</a>
 </h3>
 <div class="listing-subtitle">
-The First Large Language Model or: Has Machine Learning Solved Oulipo?
+<a href="./posts/oulipo/index.html" class="no-external">The First Large Language Model or: Has Machine Learning Solved Oulipo?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/oulipo/index.html">
+<a href="./posts/oulipo/index.html" class="no-external">
 <div class="listing-date">
 Jan 9, 2024
 </div>
@@ -385,19 +398,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Books" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1716302725352" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="11" data-categories="Books" data-listing-date-sort="1704585600000" data-listing-file-modified-sort="1719392830466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="389">
 <div class="body">
-<a href="./posts/skoob_review/index.html">
 <h3 class="no-anchor listing-title">
-Skoob, Bloomsbury - Bookshop Review
+<a href="./posts/skoob_review/index.html" class="no-external">Skoob, Bloomsbury - Bookshop Review</a>
 </h3>
 <div class="listing-subtitle">
-Published in <em>The Felix</em> January 2024
+<a href="./posts/skoob_review/index.html" class="no-external">Published in <em>The Felix</em> January 2024</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/skoob_review/index.html">
+<a href="./posts/skoob_review/index.html" class="no-external">
 <div class="listing-date">
 Jan 7, 2024
 </div>
@@ -407,19 +418,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Books" data-listing-date-sort="1702684800000" data-listing-file-modified-sort="1716302672909" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="12" data-categories="Books" data-listing-date-sort="1702684800000" data-listing-file-modified-sort="1719392830427" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="106">
 <div class="body">
-<a href="./posts/books_twenty_three/index.html">
 <h3 class="no-anchor listing-title">
-2023 Books
+<a href="./posts/books_twenty_three/index.html" class="no-external">2023 Books</a>
 </h3>
 <div class="listing-subtitle">
-A list
+<a href="./posts/books_twenty_three/index.html" class="no-external">A list</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/books_twenty_three/index.html">
+<a href="./posts/books_twenty_three/index.html" class="no-external">
 <div class="listing-date">
 Dec 16, 2023
 </div>
@@ -429,19 +438,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Optimisation,Machine Learning" data-listing-date-sort="1701734400000" data-listing-file-modified-sort="1716302708799" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="quarto-post image-right" data-index="13" data-categories="Optimisation,Machine Learning" data-listing-date-sort="1701734400000" data-listing-file-modified-sort="1719392830458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2477">
 <div class="body">
-<a href="./posts/noisy_bo/index.html">
 <h3 class="no-anchor listing-title">
-Bayesian Optimisation with Noisy Measurements
+<a href="./posts/noisy_bo/index.html" class="no-external">Bayesian Optimisation with Noisy Measurements</a>
 </h3>
 <div class="listing-subtitle">
-A review
+<a href="./posts/noisy_bo/index.html" class="no-external">A review</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/noisy_bo/index.html">
+<a href="./posts/noisy_bo/index.html" class="no-external">
 <div class="listing-date">
 Dec 5, 2023
 </div>
@@ -451,19 +458,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Visualisation,Art,Machine Learning" data-listing-date-sort="1701216000000" data-listing-file-modified-sort="1716302683397" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="14" data-categories="Visualisation,Art,Machine Learning" data-listing-date-sort="1701216000000" data-listing-file-modified-sort="1719392830433" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="650">
 <div class="body">
-<a href="./posts/electronic_life/index.html">
 <h3 class="no-anchor listing-title">
-Electronic Life
+<a href="./posts/electronic_life/index.html" class="no-external">Electronic Life</a>
 </h3>
 <div class="listing-subtitle">
-Late @ Tate Britain
+<a href="./posts/electronic_life/index.html" class="no-external">Late @ Tate Britain</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/electronic_life/index.html">
+<a href="./posts/electronic_life/index.html" class="no-external">
 <div class="listing-date">
 Nov 29, 2023
 </div>
@@ -473,19 +478,17 @@ Tom Savage, Sunil Manghani, Ed D’Souza
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Conference,Chemical Engineering" data-listing-date-sort="1699747200000" data-listing-file-modified-sort="1716302666198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="15" data-categories="Conference,Chemical Engineering" data-listing-date-sort="1699747200000" data-listing-file-modified-sort="1719392830424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="973">
 <div class="body">
-<a href="./posts/aiche/index.html">
 <h3 class="no-anchor listing-title">
-AIChE 2023 &amp; Polar Gaussian Processes
+<a href="./posts/aiche/index.html" class="no-external">AIChE 2023 &amp; Polar Gaussian Processes</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/aiche/index.html" class="no-external"></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/aiche/index.html">
+<a href="./posts/aiche/index.html" class="no-external">
 <div class="listing-date">
 Nov 12, 2023
 </div>
@@ -495,19 +498,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Optimisation,Machine Learning" data-listing-date-sort="1698361200000" data-listing-file-modified-sort="1716302699286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="16" data-categories="Optimisation,Machine Learning" data-listing-date-sort="1698361200000" data-listing-file-modified-sort="1719392830444" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2293">
 <div class="body">
-<a href="./posts/human_in_the_loop/index.html">
 <h3 class="no-anchor listing-title">
-Expert-Guided Bayesian Optimisation for Human-in-the-loop Experimental Design of Known Systems
+<a href="./posts/human_in_the_loop/index.html" class="no-external">Expert-Guided Bayesian Optimisation for Human-in-the-loop Experimental Design of Known Systems</a>
 </h3>
 <div class="listing-subtitle">
-NeurIPS workshop on Modern Experimental Desisgn and Active Learning in the Real World
+<a href="./posts/human_in_the_loop/index.html" class="no-external">NeurIPS workshop on Modern Experimental Desisgn and Active Learning in the Real World</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/human_in_the_loop/index.html">
+<a href="./posts/human_in_the_loop/index.html" class="no-external">
 <div class="listing-date">
 Oct 27, 2023
 </div>
@@ -517,19 +518,17 @@ Tom Savage, Antonio del Rio Chanona
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="Visualisation" data-listing-date-sort="1698102000000" data-listing-file-modified-sort="1716302677977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="17" data-categories="Visualisation" data-listing-date-sort="1698102000000" data-listing-file-modified-sort="1719392830427" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1480">
 <div class="body">
-<a href="./posts/convergence_plots/index.html">
 <h3 class="no-anchor listing-title">
-Convergence Plots
+<a href="./posts/convergence_plots/index.html" class="no-external">Convergence Plots</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/convergence_plots/index.html" class="no-external"></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/convergence_plots/index.html">
+<a href="./posts/convergence_plots/index.html" class="no-external">
 <div class="listing-date">
 Oct 24, 2023
 </div>
@@ -539,19 +538,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="Books" data-listing-date-sort="1697929200000" data-listing-file-modified-sort="1716302692914" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="18" data-categories="Books" data-listing-date-sort="1697929200000" data-listing-file-modified-sort="1719392830443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="581">
 <div class="body">
-<a href="./posts/gazza_agonistes/index.html">
 <h3 class="no-anchor listing-title">
-Gazza Agonisties, Ian Hamilton - Review
+<a href="./posts/gazza_agonistes/index.html" class="no-external">Gazza Agonisties, Ian Hamilton - Review</a>
 </h3>
 <div class="listing-subtitle">
-Published in <em>The Felix</em> October 2023
+<a href="./posts/gazza_agonistes/index.html" class="no-external">Published in <em>The Felix</em> October 2023</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/gazza_agonistes/index.html">
+<a href="./posts/gazza_agonistes/index.html" class="no-external">
 <div class="listing-date">
 Oct 22, 2023
 </div>
@@ -561,19 +558,17 @@ Tom Savage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="Books" data-listing-date-sort="1697842800000" data-listing-file-modified-sort="1716302733036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="19" data-categories="Books" data-listing-date-sort="1697842800000" data-listing-file-modified-sort="1719392830472" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="466">
 <div class="body">
-<a href="./posts/thatcher_review/index.html">
 <h3 class="no-anchor listing-title">
-Killing Thatcher, Rory Carroll - Review
+<a href="./posts/thatcher_review/index.html" class="no-external">Killing Thatcher, Rory Carroll - Review</a>
 </h3>
 <div class="listing-subtitle">
-Published in <em>The Felix</em> October 2023
+<a href="./posts/thatcher_review/index.html" class="no-external">Published in <em>The Felix</em> October 2023</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/thatcher_review/index.html">
+<a href="./posts/thatcher_review/index.html" class="no-external">
 <div class="listing-date">
 Oct 21, 2023
 </div>
@@ -623,18 +618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -666,11 +650,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -680,8 +703,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -693,7 +725,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -737,6 +892,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -762,6 +918,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -822,6 +1004,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

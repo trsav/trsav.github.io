@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,7 +11,7 @@
 <meta name="dcterms.date" content="2023-10-27">
 <meta name="keywords" content="Bayesian Optimisation, Expert Guided, Human-In-The-Loop, Batch">
 
-<title>TRS - Expert-Guided Bayesian Optimisation for Human-in-the-loop Experimental Design of Known Systems</title>
+<title>Expert-Guided Bayesian Optimisation for Human-in-the-loop Experimental Design of Known Systems – TRS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -28,6 +28,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -69,7 +70,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,14 +85,42 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -93,25 +128,25 @@ div.csl-indent {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TRS</span>
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
 </ul>
-          <div class="quarto-navbar-tools ms-auto">
+          <div class="quarto-navbar-tools">
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -135,9 +170,9 @@ div.csl-indent {
     <div class="quarto-title-meta-heading">Affiliations</div>
     
       <div class="quarto-title-meta-contents">
-      <p class="author">Tom Savage <a href="https://orcid.org/0000-0001-8715-8369" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+      <p class="author">Tom Savage <a href="mailto:t.savage@imperial.ac.uk" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0001-8715-8369" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
               <a href="www.imperial.ac.uk/people/t.savage">
               Imperial College London
@@ -149,10 +184,12 @@ div.csl-indent {
               </a>
             </p>
         </div>
-        <div class="quarto-title-meta-contents">
+      <div class="quarto-title-meta-contents">
       <p class="author">Antonio del Rio Chanona </p>
     </div>
-      </div>
+    <div class="quarto-title-meta-contents">
+        </div>
+    </div>
 
   <div class="quarto-title-meta">
 
@@ -167,6 +204,13 @@ div.csl-indent {
       
     </div>
     
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>Bayesian Optimisation, Expert Guided, Human-In-The-Loop, Batch</p>
+    </div>
+  </div>
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
@@ -193,6 +237,7 @@ div.csl-indent {
 
 
 
+
 <section id="abstract" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="abstract">Abstract</h2>
 <p>Domain experts often possess valuable physical insights that are overlooked in fully automated decision-making processes such as Bayesian optimisation. In this article we apply high-throughput (batch) Bayesian optimisation alongside anthropological decision theory to enable domain experts to influence the selection of optimal experiments. Our methodology exploits the hypothesis that humans are better at making discrete choices than continuous ones and enables experts to influence critical early decisions. At each iteration we solve an augmented multi-objective optimisation problem across a number of alternate solutions, maximising both the sum of their utility function values and the determinant of their covariance matrix, equivalent to their total variability. By taking the solution at the knee point of the Pareto front, we return a set of alternate solutions at each iteration that have both high utility values and are reasonably distinct, from which the expert selects one for evaluation. We demonstrate that even in the case of an uninformed practitioner, our algorithm recovers the regret of standard Bayesian optimisation.</p>
@@ -200,11 +245,15 @@ div.csl-indent {
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Bayesian optimisation has been successfully applied in a number of complex domains including engineering systems where derivatives are often not available, such as those that involve simulation or propriety software. By removing the human from decision-making processes in favour of maximising statistical quantities such as expected improvement, complex functions can be optimised in an efficient number of samples. However, these engineering systems are often engaged with by domain experts such as engineers or chemists, and as such the behaviour of the underlying function cannot be considered completely unknown a-priori. Therefore, there exists significant scope to take advantage of the benefits of Bayesian optimisation in optimising expensive derivative-free problems, whilst enabling domain experts to inform the decision-making process, putting the human back into the loop. By providing an optimal set of alternatives to an expert to select their desired evaluation, we ensure that any one choice presents information gain about the optimal solution. Simultaneously, we ensure the choices are distinct enough to avoid the human making an effective gradient calculation. Alternative solution information such as utility function value, predictive output distribution and visualisations are provided to the expert as a pseudo-likelihood. The decision-maker then effectively performs discrete Bayesian reasoning, internally conditioning the provided information with their own prior expertise and knowledge of the solutions provided. In addition to improved convergence (depending on the ability of the domain expert), our methodology enables improved interpretability in higher dimensions, as the decision-maker has the final say in what is evaluated. Our approach works with any utility function and NSGA-II <span class="citation" data-cites="Deb2002">(<a href="#ref-Deb2002" role="doc-biblioref">Deb et al. 2002</a>)</span> is applied for multi-objective optimisation, efficiently handling the non-convex utility-space.<br>
-<a href="#fig-overview">Figure&nbsp;1</a> demonstrates our methodology</p>
-<div id="fig-overview" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overview_figure.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Overview of our methodology, where an augmented batch Bayesian optimisation problem is solved using multi-objective optimisation, providing an expert with a set of alternate solutions.</figcaption>
+<a href="#fig-overview" class="quarto-xref">Figure&nbsp;1</a> demonstrates our methodology</p>
+<div id="fig-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overview_figure.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Overview of our methodology, where an augmented batch Bayesian optimisation problem is solved using multi-objective optimisation, providing an expert with a set of alternate solutions.
+</figcaption>
 </figure>
 </div>
 <p>By allowing an expert to influence the experimental design through a discrete decision step, we mitigate the expert needing to make continuous decisions throughout, and do not rely on an expert `prior’ of the global optimum that necessarily must be defined before optimisation. Approaches that rely on an expert-defined prior may need to redefine this at significant human-cost throughout optimisation in light of new information. Similarly, the expert has no influence over the actual solutions evaluated and the optimisation is merely weighted towards broad regions in solution-space.</p>
@@ -235,39 +284,55 @@ K_{\mathbf{X}_{\text{aug}}} &amp;= [k(\mathbf{X}_{\text{aug},i},\mathbf{X}_{\tex
     [\mathbf{X}^*_1,\dots,\mathbf{X}^*_m] = \max_{\mathbf{X}} \; \left(\hat{\mathcal{U}}(\mathbf{X};\mathcal{D}_t),\hat{\mathcal{S}}(\mathbf{X},\mathbf{x}^*)\right),
 \end{align}\]</span> resulting in a set of <span class="math inline">\(m\)</span> solutions along the Pareto front of both objectives. From this we define <span class="math inline">\(\mathbf{X}^*_{k}\)</span> as the solution at knee-point of the Pareto front. The <span class="math inline">\(p-1\)</span> solutions contained within <span class="math inline">\(\mathbf{X}^*_k\)</span> optimally trade off the sum of their utility values, with their variability. This ensures that when provided to an expert, alongside <span class="math inline">\(\mathbf{x}^*\)</span>, any individual solution will have high expected information gain, and the solutions themselves will be distinct enough to ensure the expert isn’t made to make an effective gradient calculation.<br>
 The practitioner is then made to choose a solution to evaluate from this set of alternatives. To do so, they are provided with information such as the utility value of each solution, expected output distributions (obtained from the Gaussian process), and information regarding previous solutions that they may wish to draw upon. In doing so, the practitioner effectively performs an internal discrete Bayesian reasoning, conditioning previous prior information and expert opinion with the mathematical quantities provided to make an informed decision. Our algorithm can be located within the Appendix.</p>
-<p><a href="#fig-behav">Figure&nbsp;2</a> demonstrates the intended behaviour of our approach. We present a one-dimensional case study, optimising a function obtained through sampling a Gaussian process prior, specified by a Matern 5/2 kernel with lengthscale <span class="math inline">\(l=0.5\)</span>. In this case study we provide 3 alternatives to an expert, who’s choice we select randomly. We provide details of optimisation methods and hyper-parameters within the Appendix.</p>
+<p><a href="#fig-behav" class="quarto-xref">Figure&nbsp;2</a> demonstrates the intended behaviour of our approach. We present a one-dimensional case study, optimising a function obtained through sampling a Gaussian process prior, specified by a Matern 5/2 kernel with lengthscale <span class="math inline">\(l=0.5\)</span>. In this case study we provide 3 alternatives to an expert, who’s choice we select randomly. We provide details of optimisation methods and hyper-parameters within the Appendix.</p>
 <div id="fig-behav" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-util" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="utility.png" class="img-fluid figure-img" data-ref-parent="fig-behav"></p>
-<figcaption class="figure-caption">(a) The objective function and utility function after 6 function evaluations. The 3 alternative solutions that maximise the solution distance can be seen in red, whilst the black solutions denote those contained within the knee-solution of the high-throughput multi-objective problem. The yellow optimal solution is included alongside these two alternatives to an expert. In this case choice 4 is selected randomly from the 3 alternatives and the optimum.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-behav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-behav" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-util" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-util-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="utility.png" class="img-fluid figure-img" data-ref-parent="fig-behav">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-util-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) The objective function and utility function after 6 function evaluations. The 3 alternative solutions that maximise the solution distance can be seen in red, whilst the black solutions denote those contained within the knee-solution of the high-throughput multi-objective problem. The yellow optimal solution is included alongside these two alternatives to an expert. In this case choice 4 is selected randomly from the 3 alternatives and the optimum.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-choices" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="choices.png" class="img-fluid figure-img" data-ref-parent="fig-behav"></p>
-<figcaption class="figure-caption">(b) The information provided to the expert regarding the three alternative solutions. In this case choice 1 and choice 3 have relatively similar utility values and predicted output distributions to choice 4 (the optimal of the acquisition function). The expert is then allowed to distinguish between these similar solutions in a way the computer cannot through their prior domain knowledge. By conditioning their prior information on the given values, the expert is effectively performing internal Bayesian reasoning.</figcaption>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-behav" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-choices" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-choices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="choices.png" class="img-fluid figure-img" data-ref-parent="fig-behav">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-choices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) The information provided to the expert regarding the three alternative solutions. In this case choice 1 and choice 3 have relatively similar utility values and predicted output distributions to choice 4 (the optimal of the acquisition function). The expert is then allowed to distinguish between these similar solutions in a way the computer cannot through their prior domain knowledge. By conditioning their prior information on the given values, the expert is effectively performing internal Bayesian reasoning.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: A standard iteration of our approach on a one-dimensional case-study.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-behav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A standard iteration of our approach on a one-dimensional case-study.
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="computational-results-discussion" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="computational-results-discussion"><span class="header-section-number">4</span> Computational Results &amp; Discussion</h2>
-<p>To assess our approach, we benchmark it against standard Bayesian optimisation. In order to incorporate and assess human interaction in an automated manner, we hypothesise a number of different human behaviours. The ‘Expert’ practitioner represents an ideal, where the best solution (that is the one with the highest true objective value) is always selected. Equivalently, to test the performance of our approach under the influence of a practitioner with misaligned knowledge, we present an ‘Adversarial’ practitioner who consistently selects the solution with the lowest true objective value. In addition, we present a probabilistic practitioner, who selects the solution with the best true objective value with some probability. Finally, we present the behaviour of a ‘Trusting’ practitioner who selects the solution with the largest utility (as these values are presented), equivalent to standard Bayesian optimisation as this solution is obtained through standard single objective optimisation (<a href="#eq-standard-bo">Equation&nbsp;1</a>). In practice, the expert will condition the information provided with their prior beliefs. In our approach this includes information regarding the expected distribution of the objective of each solution, as well as the utility value of each solution. Whilst we cannot benchmark real human behaviour due to the random nature of the objective functions, and practical issues, the behaviours described summarise key aspects in order to generate useful insights into our approach, we leave this for future work. The human behaviours applied are summarised within <a href="#tbl-behav">Table&nbsp;1</a>.</p>
-<div id="tbl-behav" class="anchored">
-<table class="table">
-<caption>Table&nbsp;1: Human Behaviours Applied for Benchmarking</caption>
+<p>To assess our approach, we benchmark it against standard Bayesian optimisation. In order to incorporate and assess human interaction in an automated manner, we hypothesise a number of different human behaviours. The ‘Expert’ practitioner represents an ideal, where the best solution (that is the one with the highest true objective value) is always selected. Equivalently, to test the performance of our approach under the influence of a practitioner with misaligned knowledge, we present an ‘Adversarial’ practitioner who consistently selects the solution with the lowest true objective value. In addition, we present a probabilistic practitioner, who selects the solution with the best true objective value with some probability. Finally, we present the behaviour of a ‘Trusting’ practitioner who selects the solution with the largest utility (as these values are presented), equivalent to standard Bayesian optimisation as this solution is obtained through standard single objective optimisation (<a href="#eq-standard-bo" class="quarto-xref">Equation&nbsp;1</a>). In practice, the expert will condition the information provided with their prior beliefs. In our approach this includes information regarding the expected distribution of the objective of each solution, as well as the utility value of each solution. Whilst we cannot benchmark real human behaviour due to the random nature of the objective functions, and practical issues, the behaviours described summarise key aspects in order to generate useful insights into our approach, we leave this for future work. The human behaviours applied are summarised within <a href="#tbl-behav" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-behav" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-behav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Human Behaviours Applied for Benchmarking
+</figcaption>
+<div aria-describedby="tbl-behav-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -298,41 +363,61 @@ The practitioner is then made to choose a solution to evaluate from this set of 
 </tbody>
 </table>
 </div>
-<p>We perform optimisation over 50 functions, each representing a sample from a Gaussian process prior with lengthscale 0.3 using the upper-confidence bound (UCB) utility function. <a href="#fig-res">Figure&nbsp;3</a> demonstrates the average and standard deviation of simple regret, and average regret (both defined within <span class="citation" data-cites="Garnett2023">Garnett (<a href="#ref-Garnett2023" role="doc-biblioref">2023</a>)</span>) for each human behaviour across 1D and 2D objective functions.<br>
+</figure>
+</div>
+<p>We perform optimisation over 50 functions, each representing a sample from a Gaussian process prior with lengthscale 0.3 using the upper-confidence bound (UCB) utility function. <a href="#fig-res" class="quarto-xref">Figure&nbsp;3</a> demonstrates the average and standard deviation of simple regret, and average regret (both defined within <span class="citation" data-cites="Garnett2023">Garnett (<a href="#ref-Garnett2023" role="doc-biblioref">2023</a>)</span>) for each human behaviour across 1D and 2D objective functions.<br>
 Results for 5D, and specific functions can be located within the Appendix.</p>
 <div id="fig-res" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-1D" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_aq_UCB_d_1.png" class="img-fluid figure-img" data-ref-parent="fig-res"></p>
-<figcaption class="figure-caption">(a) Average regret quantities over 1D objective functions.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-res" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-1D" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-1D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_aq_UCB_d_1.png" class="img-fluid figure-img" data-ref-parent="fig-res">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-1D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Average regret quantities over 1D objective functions.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-2D" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_aq_UCB_d_2.png" class="img-fluid figure-img" data-ref-parent="fig-res"></p>
-<figcaption class="figure-caption">(b) Average regret quantities over 2D objective functions.</figcaption>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-res" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-2D" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-2D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_aq_UCB_d_2.png" class="img-fluid figure-img" data-ref-parent="fig-res">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-2D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Average regret quantities over 2D objective functions.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Regret expectation over 50 functions, <span class="math inline">\(f \sim \mathcal{GP}(\mu \equiv 0, K_M (d,\nu = 0.3))\)</span> where <span class="math inline">\(K_M\)</span> is the Mat'ern 5/2 kernel function. 4 alternate choices are presented to the practitioner, and the utility function <span class="math inline">\(\mathcal{U}(x)\)</span> used is the upper-confidence bound.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Regret expectation over 50 functions, <span class="math inline">\(f \sim \mathcal{GP}(\mu \equiv 0, K_M (d,\nu = 0.3))\)</span> where <span class="math inline">\(K_M\)</span> is the Mat'ern 5/2 kernel function. 4 alternate choices are presented to the practitioner, and the utility function <span class="math inline">\(\mathcal{U}(x)\)</span> used is the upper-confidence bound.
+</figcaption>
 </figure>
 </div>
-<p>The expectation of average regret tends towards zero for all behaviours, indicating empirical convergence. Focusing on results from the set of 1D functions, an ‘Expert’ provides improved convergence than standard Bayesian optimisation (‘Trusting’) throughout all iterations, with benefits diminishing throughout the later stages, where the standard automated approach recovers the ‘Expert’ average regret value, confirming previous observations regarding the importance of human input throughout earlier iterations, and conversely diminishing importance of expert opinion during `fine-tuning’ <span class="citation" data-cites="Kanarik2023">Kanarik et al. (<a href="#ref-Kanarik2023" role="doc-biblioref">2023</a>)</span>. Improved convergence of simple regret occurs in cases where the practitioner selects the ‘best’ solution from a set 75%, 50%, and to a lesser extent 25% of the time out of 4 available choices, similarly reflected in trends across average regret. The results demonstrated in <a href="#fig-res">Figure&nbsp;3</a> indicate the potential for our approach to improve the convergence of Bayesian optimisation even in cases where the practitioner is correct about a decision only partially. When the expert makes a random selection (<span class="math inline">\(p(\text{Best}) = 0.25\)</span>, for 4 alternate solutions), standard Bayesian optimisation convergence is recovered, indicating the effectiveness of the choices presented by asking a practitioner to select between distinct solutions, each of which individually has a high utility value. This is reflected throughout 1D, 2D and 5D functions. Only in the case where the practitioner actively selects the worst solution (i.e.&nbsp;they are misaligned), is performance worse. In higher-dimensions an adversarial practitioner performs worse, as they are performing inefficient space-filling in an increasingly larger volume before good solutions are found.</p>
+<p>The expectation of average regret tends towards zero for all behaviours, indicating empirical convergence. Focusing on results from the set of 1D functions, an ‘Expert’ provides improved convergence than standard Bayesian optimisation (‘Trusting’) throughout all iterations, with benefits diminishing throughout the later stages, where the standard automated approach recovers the ‘Expert’ average regret value, confirming previous observations regarding the importance of human input throughout earlier iterations, and conversely diminishing importance of expert opinion during `fine-tuning’ <span class="citation" data-cites="Kanarik2023">Kanarik et al. (<a href="#ref-Kanarik2023" role="doc-biblioref">2023</a>)</span>. Improved convergence of simple regret occurs in cases where the practitioner selects the ‘best’ solution from a set 75%, 50%, and to a lesser extent 25% of the time out of 4 available choices, similarly reflected in trends across average regret. The results demonstrated in <a href="#fig-res" class="quarto-xref">Figure&nbsp;3</a> indicate the potential for our approach to improve the convergence of Bayesian optimisation even in cases where the practitioner is correct about a decision only partially. When the expert makes a random selection (<span class="math inline">\(p(\text{Best}) = 0.25\)</span>, for 4 alternate solutions), standard Bayesian optimisation convergence is recovered, indicating the effectiveness of the choices presented by asking a practitioner to select between distinct solutions, each of which individually has a high utility value. This is reflected throughout 1D, 2D and 5D functions. Only in the case where the practitioner actively selects the worst solution (i.e.&nbsp;they are misaligned), is performance worse. In higher-dimensions an adversarial practitioner performs worse, as they are performing inefficient space-filling in an increasingly larger volume before good solutions are found.</p>
 <p>The methodology we present may also be interpreted as an approach for high-throughput/batch Bayesian optimisation, with an additional preference for solutions that are well-distributed throughout the search space. Our intention for future work is to benchmark it against other existing batch Bayesian optimisation methodologies <span class="citation" data-cites="local_pen">González et al. (<a href="#ref-local_pen" role="doc-biblioref">2015</a>)</span>, including those with similar multi-objective formulations (<span class="citation" data-cites="Bischl2014">Bischl et al. (<a href="#ref-Bischl2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="Habib2016">Habib, Singh, and Ray (<a href="#ref-Habib2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="robot">Maus et al. (<a href="#ref-robot" role="doc-biblioref">2022</a>)</span>). We will also investigate to what extent large-language models can perform the selection step.</p>
 </section>
 <section id="appendix-a-algorithm" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix-a-algorithm">Appendix A (Algorithm)</h2>
-<p><a href="#thm-alg">Algorithm&nbsp;1</a> demonstrates our approach.</p>
+<p><a href="#thm-alg" class="quarto-xref">Algorithm&nbsp;1</a> demonstrates our approach.</p>
 <div id="thm-alg" class="theorem">
-<p><span class="theorem-title"><strong>Algorithm 1 </strong></span><img src="algorithm.png" class="img-fluid" alt="Expert-Guided Bayesian Optimization"></p>
+<p><span class="theorem-title"><strong>Algorithm 1</strong></span> &nbsp;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="algorithm.png" class="img-fluid figure-img"></p>
+<figcaption>Expert-Guided Bayesian Optimization</figcaption>
+</figure>
+</div>
 </div>
 </section>
 <section id="appendix-b-optimisation-details" class="level2 unnumbered">
@@ -341,10 +426,14 @@ Results for 5D, and specific functions can be located within the Appendix.</p>
 </section>
 <section id="appendix-c.-regret-plots" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix-c.-regret-plots">Appendix C. (Regret Plots)</h2>
-<div id="fig-5D" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_aq_UCB_d_5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Regret expectation over 50 5D functions (<span class="math inline">\(d=5\)</span>), <span class="math inline">\(f \sim \mathcal{GP}(\mu \equiv 0, K_M (d,\nu = 0.3))\)</span> where <span class="math inline">\(K_M\)</span> is the Matern 5/2 kernel function. 4 alternate choices are presented to the practitioner, and the utility function <span class="math inline">\(\mathcal{U}(x)\)</span> used is the upper-confidence bound.</figcaption>
+<div id="fig-5D" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_aq_UCB_d_5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Regret expectation over 50 5D functions (<span class="math inline">\(d=5\)</span>), <span class="math inline">\(f \sim \mathcal{GP}(\mu \equiv 0, K_M (d,\nu = 0.3))\)</span> where <span class="math inline">\(K_M\)</span> is the Matern 5/2 kernel function. 4 alternate choices are presented to the practitioner, and the utility function <span class="math inline">\(\mathcal{U}(x)\)</span> used is the upper-confidence bound.
+</figcaption>
 </figure>
 </div>
 <p>We subsequently present the expectation of regret for a number of functions across all human behaviours. We present 4 alternate choices are presented to the hypothetical practitioner, and the utility function <span class="math inline">\(\mathcal{U}(x)\)</span> used is the upper-confidence bound. Each function is optimised 16 times, across a number of random initialisations, and average regret quantities are plotted. Optimisation details are presented in the previous Appendix section.</p>
@@ -352,70 +441,114 @@ Results for 5D, and specific functions can be located within the Appendix.</p>
 <summary>
 Click to expand additional regret plots
 </summary>
-<div id="fig-2D-Ackley" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Ackley2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: 2D Ackley Function</figcaption>
+<div id="fig-2D-Ackley" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Ackley2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: 2D Ackley Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-5D-Ackley" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Ackley5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: 5D Ackley Function</figcaption>
+<div id="fig-5D-Ackley" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Ackley5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: 5D Ackley Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-10D-Ackley" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Ackley10.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: 10D Ackley Function</figcaption>
+<div id="fig-10D-Ackley" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Ackley10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10D-Ackley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: 10D Ackley Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-2D-Griewank" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Griewank2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: 2D Griewank Function</figcaption>
+<div id="fig-2D-Griewank" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Griewank2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: 2D Griewank Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-5D-Griewank" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Griewank5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: 5D Griewank Function</figcaption>
+<div id="fig-5D-Griewank" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Griewank5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: 5D Griewank Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-10D-Griewank" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Griewank10.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: 10D Griewank Function</figcaption>
+<div id="fig-10D-Griewank" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Griewank10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10D-Griewank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: 10D Griewank Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-5D-Powell" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Powell5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;11: 5D Powell Function</figcaption>
+<div id="fig-5D-Powell" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5D-Powell-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Powell5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5D-Powell-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: 5D Powell Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-2D-Rastrigin" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Rastrigin2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;12: 2D Rastrigin Function</figcaption>
+<div id="fig-2D-Rastrigin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Rastrigin2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: 2D Rastrigin Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-5D-Rastrigin" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Rastrigin5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: 5D Rastrigin Function</figcaption>
+<div id="fig-5D-Rastrigin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Rastrigin5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: 5D Rastrigin Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-10D-Rastrigin" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Rastrigin10.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;14: 10D Rastrigin Function</figcaption>
+<div id="fig-10D-Rastrigin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Rastrigin10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10D-Rastrigin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: 10D Rastrigin Function
+</figcaption>
 </figure>
 </div>
-<div id="fig-10D-Rosenbrock" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="overall_regret_Rosenbrock10.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;15: 10D Rosenbrock Function</figcaption>
+<div id="fig-10D-Rosenbrock" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10D-Rosenbrock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="overall_regret_Rosenbrock10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10D-Rosenbrock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: 10D Rosenbrock Function
+</figcaption>
 </figure>
 </div>
 </details>
@@ -424,7 +557,7 @@ Click to expand additional regret plots
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Bischl2014" class="csl-entry" role="listitem">
 Bischl, Bernd, Simon Wessing, Nadja Bauer, Klaus Friedrichs, and Claus Weihs. 2014. <span>“<span class="nocase"><span>MOI</span>-<span>MBO</span>: Multiobjective Infill for Parallel Model-Based Optimization</span>.”</span> In <em>Lecture Notes in Computer Science</em>, 173–86. Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-09584-4_17">https://doi.org/10.1007/978-3-319-09584-4_17</a>.
 </div>
@@ -464,7 +597,7 @@ Ramachandran, Anil, Sunil Gupta, Santu Rana, Cheng Li, and Svetha Venkatesh. 202
 <div id="ref-zhu1997algorithm" class="csl-entry" role="listitem">
 Zhu, Ciyou, Richard H Byrd, Peihuang Lu, and Jorge Nocedal. 1997. <span>“<span class="nocase">Algorithm 778: L-BFGS-B: Fortran subroutines for large-scale bound-constrained optimization</span>.”</span> <em>ACM Transactions on Mathematical Software (TOMS)</em> 23 (4): 550–60.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2023,
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2023,
   author = {Savage, Tom and del Rio Chanona, Antonio},
   title = {Expert-Guided {Bayesian} {Optimisation} for
     {Human-in-the-loop} {Experimental} {Design} of {Known} {Systems}},
@@ -512,18 +645,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -555,11 +677,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -569,8 +730,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -582,7 +752,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -626,6 +919,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -651,6 +945,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -713,6 +1033,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://utteranc.es/client.js" repo="trsav/trsav.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+
 
 
 
