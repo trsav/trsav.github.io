@@ -16,7 +16,17 @@ comments:
         repo: trsav/trsav.github.io
 ---
 
+:::{.cleanbox}
 
+**Relevant articles published after this post**
+
+- [China deploys censors to create socialist AI](https://www.ft.com/content/10975044-f194-4513-857b-e17491d2a9e9)
+    - Large language models are being tested by officials to ensure their systems ‘embody core socialist values’
+
+- [The Chinese team behind DeepSeek V2 write about lagging on the Humanity-Moral subset of MMLU, due to its "American values"](https://x.com/JvNixon/status/1804267376839639490)
+    - _For example, when evaluated on MMLU, although DeepSeek-V2 achieves comparable or superior performance on the majority of testsets compared with its competitors like Mixtral 8x22B, it still lags behind on the Humanity-Moral subset, which is mainly associated with American values._
+
+:::
 1600 years ago, as Emperor of Rome and patron of Constantinople where he is buried, Theodosius II oversaw the central theological questions in the wake of the Council of Nicea and doctrine of Trinity: did Christ have distinct human and divine aspects? Was the human form of Christ the same form as the rest of us?
 Alongside a university to aid in answering these questions, and the city walls, Theodosius commissioned the construction of a vast cistern to provide fresh water for the city's inhabitants and palaces^[Pretentious opening but please indulge me because later on it goes downhill and I end up using the phrases 'world-view' and 'cut-through'.].
 
