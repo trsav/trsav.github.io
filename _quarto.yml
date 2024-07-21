@@ -8,8 +8,10 @@ website:
   navbar:
     collapse: false
     left:
-      - text: "Home"
-        file: index.qmd
+      # - text: "Home"
+      #   file: index.qmd
+      - text: "Portfolio"
+        file: portfolio.qmd
       - text: "About Me"
         file: about.qmd
     search: true
