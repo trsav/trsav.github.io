@@ -148,8 +148,10 @@ gp_string = {
 ```
 
 ::: {.center}
+
 ${gp_string[0]}
 :::
+
 ${gp_string[1]}
 
 
