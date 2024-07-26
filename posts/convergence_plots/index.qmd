@@ -1,6 +1,5 @@
 ---
 title: "Convergence Plots"
-author: "Tom Savage"
 categories: [Visualisation]
 image: "figure.svg"
 date: "10/24/2023"

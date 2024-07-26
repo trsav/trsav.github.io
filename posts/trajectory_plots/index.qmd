@@ -1,6 +1,5 @@
 ---
 title: "Optimisation Trajectory Plots"
-author: "Tom Savage"
 categories: [Visualisation]
 image: "figure.svg"
 date: "01/31/2024"

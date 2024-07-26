@@ -1,7 +1,6 @@
 ---
 title: "The Machine Learning Reformation"
 subtitle: "What the late middle ages can teach us about the future of AI"
-author: "Tom Savage"
 categories: [Machine Learning, Religion, Art]
 date: "02/03/2024"
 html: 

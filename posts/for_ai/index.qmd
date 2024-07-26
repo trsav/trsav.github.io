@@ -1,7 +1,6 @@
 ---
 title: "Hacking My Digital Footprint: Please Take My Data"
 subtitle: "The Game's Afoot..."
-author: "Tom Savage"
 date: "03/25/2024"
 categories: [Machine Learning]
 comments:

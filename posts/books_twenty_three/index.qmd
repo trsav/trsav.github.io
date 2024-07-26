@@ -1,7 +1,6 @@
 ---
 title: "2023 Books"
 subtitle: "A list"
-author: "Tom Savage"
 categories: [Books]
 date: "12/16/2023"
 comments:

@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage, Studio 3015">
 <meta name="dcterms.date" content="2024-03-14">
 
-<title>Context-Aware Generative Lab Identities for Winchester School of Art – TRS</title>
+<title>Context-Aware Generative Lab Identities for Winchester School of Art – tom savage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,17 +116,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">TRS</span>
+    <span class="navbar-title">tom savage</span>
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../portfolio.html"> 
-<span class="menu-text">Portfolio</span></a>
+<span class="menu-text">portfolio</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About Me</span></a>
+<span class="menu-text">about me</span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -148,12 +147,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tom Savage, Studio 3015 </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
@@ -224,7 +217,7 @@ Figure&nbsp;2: Existing designs for the E-Textile, Global Smart, Data Image, and
 <h3 class="anchored" data-anchor-id="from-manual-to-digital">From Manual to Digital</h3>
 <p>The project began by recreating the existing logos for each lab in an automated manner using the <a href="https://github.com/mathandy/svgpathtools/tree/master">svgpathtools</a> library. This enabled programmatic modification of the logo forms via Python, while also obtaining SVG files by design which can be used within WSA graphics. Each logo is subsequently defined by a series of coordinates stored within a dictionary, enabling easy addition of new labs or modification of existing designs.</p>
 <p>For example, here is the complete specification of the E-textile lab design.</p>
-<div class="cell" data-execution_count="1">
+<div id="f49121c5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>logos[<span class="st">"e-textiles"</span>] <span class="op">=</span> {}</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>logos[<span class="st">"e-textiles"</span>][<span class="st">"small_circles"</span>] <span class="op">=</span> [</span>

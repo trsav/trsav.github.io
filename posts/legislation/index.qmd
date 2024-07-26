@@ -1,7 +1,6 @@
 ---
 title: "Multi-agent AI for Drafting New Legislation"
 subtitle: "Lessons From the 10 Downing Street Hackathon & a new Turing Test(?)"
-author: "Tom Savage"
 categories: [Machine Learning, Legislation]
 date: "04/18/2024"
 comments:

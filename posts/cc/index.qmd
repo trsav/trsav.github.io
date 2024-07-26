@@ -1,7 +1,6 @@
 ---
 title: "CC Challenge Verification"
 subtitle: "Let him cook?"
-author: "Tom Savage"
 date: "05/06/2024"
 comments:
     utterances:

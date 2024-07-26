@@ -1,7 +1,6 @@
 ---
 title: "Generative Models as Mirrors and Idols; From Istanbul"
 subtitle: "The Inescapable, Neverending Race for Values"
-author: "Tom Savage"
 categories: [Travel, Machine Learning, Religion]
 date: "03/04/2024"
 html: 

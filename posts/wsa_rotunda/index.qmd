@@ -1,7 +1,6 @@
 ---
 title: "Context-Aware Generative Lab Identities for Winchester School of Art"
 subtitle: "_The art of life lies in a constant readjustment to our surroundings._ - Kakuzō Okakura"
-author: "Tom Savage, Studio 3015"
 date: "03/14/2024"
 format:
     html: 
