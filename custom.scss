@@ -6,6 +6,12 @@
     src: url("fonts/doves.ttf") format('truetype');
   }
 
+  @font-face {
+    font-family: 'code';
+    font-weight: 100;
+    font-style: normal;
+    src: url("fonts/fr.woff2") format('woff');
+  }
 
 // @font-face {
 //     font-family: 'mono';

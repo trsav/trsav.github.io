@@ -229,15 +229,20 @@ div[class="about-contents"] {
 div[class="csl-entry quarto-appendix-citeas"]{
   margin: 1em 0;
   padding: 1em;
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: 3px 3px 0px darkgrey;
+  border: 1px dashed black !important;
+  border-radius: 0px;
+}
+code[class="sourceCode python"]{
+  font-family: code;
 }
 
 pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
   margin: 1em 0;
   padding: 1em;
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: 3px 3px 0px darkgrey;
+  border: 1px dashed black !important;
+  border-radius: 0px;
+}
+
+div[class="sourceCode cell-code"]{
+  font-family: 'code ';
 }
