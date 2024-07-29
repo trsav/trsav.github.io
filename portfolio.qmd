@@ -3,29 +3,26 @@ title: "portfolio & highlights"
 
 subtitle: "2019-2024"
 html: 
-    self-contained: true
-    grid: 
-    margin-width: 450px
+    page-layout: full
 ---
 
 ::: {layout-ncol=3}
 
 ![[Machine Learning-Assisted Discovery of Flow Reactor Designs - _Accepted Nature Chemical Engineering_](https://arxiv.org/abs/2308.08841)](portfolio_images/nature_one.png)
 
+![[Multi-agent LLMs for Drafting New Legislation - _Ministry of Justice / 10 Downing Street_ ](https://sav.phd/posts/legislation/)](portfolio_images/legis.png)
 
 ![[Human-Algorithm Collaborative Bayesian Optimization for Engineering Systems - _Accepted Computers & Chemical Engineering_](https://arxiv.org/abs/2404.10949)](portfolio_images/overview_figure.png)
 
-
 ![[Collabo - A Python package for human-algorithm collaborative Bayesian optimization](https://github.com/trsav/collabo)](portfolio_images/collabo.png)
-
-![[Universal Digital Twin - Integration of national-scale energy systems and climate data - _Data-centric Engineering_](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EEBFDF0787319FC1A858BD3718F2B7A9/S2632673622000223a.pdf/universal_digital_twin_integration_of_nationalscale_energy_systems_and_climate_data.pdf)](portfolio_images/graphical_abstract.png)
 
 ![[Universal Digital Twin - The impact of heat pumps on social inequality - _Advances in Applied Energy_](https://www.sciencedirect.com/science/article/pii/S2666792421000718)](portfolio_images/graphical_abstract_hp.png)
 
 
-![[Multi-agent LLMs for Drafting New Legislation - _Ministry of Justice / 10 Downing Street_ ](https://sav.phd/posts/legislation/)](portfolio_images/legis.png)
-
 ![[Rage Machine - _Tate Britain_](https://sav.phd/posts/outsmarted/)](portfolio_images/rage_machine.png)
+
+![[Universal Digital Twin - Integration of national-scale energy systems and climate data - _Data-centric Engineering_](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EEBFDF0787319FC1A858BD3718F2B7A9/S2632673622000223a.pdf/universal_digital_twin_integration_of_nationalscale_energy_systems_and_climate_data.pdf)](portfolio_images/graphical_abstract.png)
+
 
 
 ![[Systems For... - _Winchester School of Art_](https://sav.phd/posts/systems_for/)](portfolio_images/grid.png)
