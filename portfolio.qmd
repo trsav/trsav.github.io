@@ -24,6 +24,8 @@ Optimization & Machine Learning for Scientific Discovery
 ![](portfolio_images/overview_figure.png)
 
 :::
+[Collabo - A Python package for human-algorithm collaborative Bayesian optimization](https://github.com/trsav/collabo)
+![](portfolio_images/collabo.png)
 :::
 
 
