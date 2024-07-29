@@ -3,6 +3,12 @@
     border: 3px solid rgb(255, 141, 141);
 }
 
+/* fontsize for all */
+body{
+    font-size: 1.1em;
+}
+
+
 .callout-tip{
     background-color: rgb(241, 255, 241);
     border: 3px solid rgb(156, 255, 141);
@@ -100,6 +106,14 @@ main[id="quarto-document-content"]{
     padding-bottom: 1em;
   }
 
+  h1{
+    margin-top: 1em !important;
+    color: black !important;
+  }
+  h2{
+    color: black !important}
+ 
+
   div[class="quarto-post image-right"] {
     margin: 0.1em 0;
     padding: 0em;
@@ -108,19 +122,20 @@ main[id="quarto-document-content"]{
 
 
   span[class="navbar-title"] {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: normal;
     color: black
   }
 
   span[class="menu-text"]{
     color: black;
+    font-size: 1.5em;
   }
   
   h5[class="quarto-listing-category-title"] {
     margin: 0.5em 0;
     font-weight: normal !important;
-    font-size: 1em !important;
+    font-size: 1.5em !important;
   }
 
 
@@ -153,7 +168,7 @@ main[id="quarto-document-content"]{
     text-decoration: underline;
   }
   div[class="category"]{
-  font-size: 0.75em !important;
+  font-size: 1em !important;
     margin: 0.2em 0;
     padding: 0em;
     border: 0px solid grey;
@@ -192,7 +207,7 @@ div[class="category"]:hover{
 
 div[class="category active"]{
     /* color: blue; */
-    font-size: 0.75em !important;
+    font-size: 1em !important;
     /* underline */
     text-decoration: underline;
 }
