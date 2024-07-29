@@ -1,12 +1,12 @@
 ---
 title: "portfolio & highlights"
-
 subtitle: "2019-2024"
 html: 
     page-layout: full
 ---
 
 ::: {layout-ncol=3}
+
 
 ![[Machine Learning-Assisted Discovery of Flow Reactor Designs - _Accepted Nature Chemical Engineering_](https://arxiv.org/abs/2308.08841)](portfolio_images/nature_one.png)
 
@@ -22,8 +22,6 @@ html:
 ![[Rage Machine - _Tate Britain_](https://sav.phd/posts/outsmarted/)](portfolio_images/rage_machine.png)
 
 ![[Universal Digital Twin - Integration of national-scale energy systems and climate data - _Data-centric Engineering_](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EEBFDF0787319FC1A858BD3718F2B7A9/S2632673622000223a.pdf/universal_digital_twin_integration_of_nationalscale_energy_systems_and_climate_data.pdf)](portfolio_images/graphical_abstract.png)
-
-
 
 ![[Systems For... - _Winchester School of Art_](https://sav.phd/posts/systems_for/)](portfolio_images/grid.png)
 

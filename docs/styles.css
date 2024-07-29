@@ -14,6 +14,7 @@ body{
     border: 3px solid rgb(156, 255, 141);
 }
 
+
 div[class="quarto-title-block default page-columns page-full"]{
   margin-bottom: 0em;
 }
@@ -261,4 +262,8 @@ pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
 
 div[class="sourceCode cell-code"]{
   font-family: 'code ';
+}
+
+#quarto-document-content .quarto-layout-panel div div figure > figcaption {
+  font-size: 1.1em;
 }
