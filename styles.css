@@ -253,6 +253,15 @@ code[class="sourceCode python"]{
   font-family: code;
 }
 
+code[class="sourceCode rust"]{
+  font-family: code;
+}
+
+code[class="sourceCode zsh"]{
+  font-family: code;
+}
+
+
 pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
   margin: 1em 0;
   padding: 1em;
