@@ -306,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[0.9999993984338057,</span> 0.9999988039652051, 0.9999976181857124, 0.9999952424415648, 0.9999904773199286]</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 93.28ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We get the correct answer in 93ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.</p>
-<div id="e309b0f1" class="cell" data-execution_count="1">
+<div id="8704e049" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show Python Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -374,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To benchmark code in Rust we can use Flamegraph to analyse where our gradient descent algorithm is spending most of its time. Flamegraph provides a visualization of the call stack over time, showing which functions are consuming the most CPU cycles.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo flamegraph</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="flamegraph.svg" class="img-fluid"></p>
-<p>These are interactive SVGs which are nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (<code>f</code>, <code>forward_difference</code>, and <code>line_search</code>), without much depth to the call stack.</p>
+<p>These are interactive SVGs which is nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (<code>f</code>, <code>forward_difference</code>, and <code>line_search</code>), without much depth to the call stack.</p>
 
 
 </section>

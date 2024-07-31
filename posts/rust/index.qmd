@@ -280,4 +280,4 @@ $ cargo flamegraph
 
 ![](flamegraph.svg)
 
-These are interactive SVGs which are nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (`f`, `forward_difference`, and `line_search`), without much depth to the call stack.
+These are interactive SVGs which is nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (`f`, `forward_difference`, and `line_search`), without much depth to the call stack.

@@ -251,16 +251,29 @@ div[class="csl-entry quarto-appendix-citeas"]{
 }
 code[class="sourceCode python"]{
   font-family: code;
+  font-size: 0.9em;
 }
 
 code[class="sourceCode rust"]{
   font-family: code;
+  font-size: 0.9em;
 }
 
 code[class="sourceCode zsh"]{
   font-family: code;
+  font-size: 0.9em;
 }
 
+/* any code with soureCode */
+code[class="sourceCode"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+div[class="sourceCode"]{
+  font-family: code;
+  font-size: 0.9em;
+}
 
 pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
   margin: 1em 0;
