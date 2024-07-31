@@ -139,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Implementing Gradient Descent in Vanilla Rust</h1>
-            <p class="subtitle lead">Probably not reccomended</p>
+            <p class="subtitle lead">Orders of magnitude faster, but probably not reccomended (yet)</p>
                       </div>
   </div>
     
@@ -169,6 +169,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="flamegraph_500_par.svg" class="img-fluid figure-img"></p>
+<figcaption>A sneak preview of what to expect.</figcaption>
+</figure>
+</div>
 <div class="cleanbox">
 <p>I don’t think this is really reccomended. Python is a lot more established for scientific programming. As a researcher you want to quickly prototype a method, or approach to solving a problem. Rust does not let you do this. The only reason I’ve done the following is because:</p>
 <ol type="1">
@@ -300,13 +306,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> elapsed <span class="op">=</span> now<span class="op">.</span>elapsed()<span class="op">;</span> <span class="co">// elapsed time</span></span>
 <span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="pp">println!</span>(<span class="st">"Elapsed: {:.2?}"</span><span class="op">,</span> elapsed)<span class="op">;</span> </span>
 <span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This doesn’t really use anything dissimilar to what I’ve previously mentioned, but it means we can evaluate how long it takes to run.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo run</span>
+<p>This doesn’t really use anything dissimilar to what I’ve previously mentioned, but it means we can evaluate how long it takes to run. Running in release mode removes some debugging overheads.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo run <span class="at">--release</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[0.9999993984338057,</span> 0.9999988039652051, 0.9999976181857124, 0.9999952424415648, 0.9999904773199286]</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 93.28ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We get the correct answer in 93ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.</p>
-<div id="8704e049" class="cell" data-execution_count="1">
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 13.61ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We get the correct answer in 13.6ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.</p>
+<div id="5d295824" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show Python Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -368,13 +374,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[0.9999993984338057,</span> 0.9999988039652051, 0.9999976181857124, 0.9999952424415648, 0.9999904773199286]</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 219.83 ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We get exactly the same answer, which is an indication that the code translation has worked, and we get this in 220 ms, about 2.5 times slower than Rust. This is sort of a given, as Rust is a compiled langauge, but it’s good to see.</p>
+<p>We get exactly the same answer, which is an indication that the code translation has worked, and we get this in 220 ms, <strong>about 16 times slower than Rust</strong>. This is sort of a given, as Rust is a compiled langauge, but it’s good to see.</p>
 <section id="flamegraph" class="level3">
 <h3 class="anchored" data-anchor-id="flamegraph">Flamegraph</h3>
 <p>To benchmark code in Rust we can use Flamegraph to analyse where our gradient descent algorithm is spending most of its time. Flamegraph provides a visualization of the call stack over time, showing which functions are consuming the most CPU cycles.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo flamegraph</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="flamegraph.svg" class="img-fluid"></p>
 <p>These are interactive SVGs which is nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (<code>f</code>, <code>forward_difference</code>, and <code>line_search</code>), without much depth to the call stack.</p>
+</section>
+<section id="performance-improvements" class="level3">
+<h3 class="anchored" data-anchor-id="performance-improvements">Performance Improvements</h3>
+<p>To locate a few more performance improvements we need to increase the size of our problem. Let’s start with 500 dimensions.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">mut</span> x <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">0.0</span><span class="op">;</span><span class="dv">500</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo flamegraph</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 25.68s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which gives us the corresponding flamegraph.</p>
+<p><img src="flamegraph_500.svg" class="img-fluid"></p>
+<p>We can see that we spend most of the time calculating the gradient (i.e.&nbsp;in <code>forward_difference</code>), and then by extension in function evaluations <code>f</code>.</p>
+<p>We can parallelise the calculation of each directional derivative using <a href="https://docs.rs/rayon/latest/rayon/">Rayon</a>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="pp">rayon::prelude::</span><span class="op">*;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> forward_difference(f<span class="op">:</span> <span class="kw">fn</span>(<span class="op">&amp;</span>[<span class="dt">f64</span>]) <span class="op">-&gt;</span> <span class="dt">f64</span><span class="op">,</span> x<span class="op">:</span> <span class="op">&amp;</span>[<span class="dt">f64</span>]) <span class="op">-&gt;</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">f64</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> H<span class="op">:</span> <span class="dt">f64</span> <span class="op">=</span> <span class="dv">1e-8</span><span class="op">;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> f_x <span class="op">=</span> f(x)<span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span><span class="op">..</span>x<span class="op">.</span>len())<span class="op">.</span>into_par_iter()<span class="op">.</span>map(<span class="op">|</span>i<span class="op">|</span> <span class="op">{</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="kw">mut</span> x_forward <span class="op">=</span> x<span class="op">.</span>to_vec()<span class="op">;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        x_forward[i] <span class="op">+=</span> H<span class="op">;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        (f(<span class="op">&amp;</span>x_forward) <span class="op">-</span> f_x) <span class="op">/</span> H</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span>)<span class="op">.</span>collect()</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The main aspect here is using <code>into_par_iter</code> to turn the iterable <code>0..x.len()</code> into a parrallelised version. Whilst we’re there we turned our <code>h</code> into a constant.</p>
+<p>Largely, everything else is the same. I’ve also used slices instead of vectors to save a bit of memory/writing operations. Just these basic changes result in the following:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cargo flamegraph</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 8.81s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A three time improvement on the non-parallelised version. The resulting flamegraph is as follows:</p>
+<p><img src="flamegraph_500_par.svg" class="img-fluid"></p>
+<p>Rayon is clearly doing a lot of work here behind the scenes! In practice this work will result in longer solution times for smaller problems, so there are tradeoffs at play. I won’t demonstrate these trade offs explicitly in this post but I have chosen 500 dimensions for a reason.</p>
+<p>Just for peace of mind (again) we’ll run the same problem in vanilla Python. And whilst it’s running, I’ll make some lunch.</p>
 
 
 </section>

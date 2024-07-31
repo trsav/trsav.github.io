@@ -1,6 +1,6 @@
 ---
 title: "Implementing Gradient Descent in Vanilla Rust"
-subtitle: "Probably not reccomended"
+subtitle: "Orders of magnitude faster, but probably not reccomended (yet)"
 date: "07/29/2024"
 comments:
     utterances:
@@ -12,6 +12,10 @@ html:
     css: styles.css
 ---
 
+
+![A sneak preview of what to expect.](flamegraph_500_par.svg)
+
+
 :::{.cleanbox}
 I don't think this is really reccomended. Python is a lot more established for scientific programming. 
 As a researcher you want to quickly prototype a method, or approach to solving a problem. Rust does not let you do this. 
@@ -21,6 +25,7 @@ The only reason I've done the following is because:
 2. It is a means to an end, to learn Rust's type and memory management system.
 
 And with that, we begin...
+
 :::
 
 I'll first start with the very basics, defining the function to be optimized, one of the best functions of all time...the Rosenbrock function.
@@ -189,16 +194,16 @@ fn main() {
 
 ```
 
-This doesn't really use anything dissimilar to what I've previously mentioned, but it means we can evaluate how long it takes to run. 
+This doesn't really use anything dissimilar to what I've previously mentioned, but it means we can evaluate how long it takes to run. Running in release mode removes some debugging overheads.
 
 ```zsh
-$ cargo run
+$ cargo run --release
 
 [0.9999993984338057, 0.9999988039652051, 0.9999976181857124, 0.9999952424415648, 0.9999904773199286]
-Elapsed: 93.28ms
+Elapsed: 13.61ms
 ```
 
-We get the correct answer in 93ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.
+We get the correct answer in 13.6ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.
 
 ```{python}
 #| code-fold: true
@@ -267,7 +272,7 @@ $ python main.py
 Elapsed: 219.83 ms
 ```
 
-We get exactly the same answer, which is an indication that the code translation has worked, and we get this in 220 ms, about 2.5 times slower than Rust. This is sort of a given, as Rust is a compiled langauge, but it's good to see. 
+We get exactly the same answer, which is an indication that the code translation has worked, and we get this in 220 ms, **about 16 times slower than Rust**. This is sort of a given, as Rust is a compiled langauge, but it's good to see. 
 
 
 ### Flamegraph
@@ -281,3 +286,69 @@ $ cargo flamegraph
 ![](flamegraph.svg)
 
 These are interactive SVGs which is nice. In this case, given the simplicity and short runtime of our gradient descent implementation, the Flamegraph might not be particularly informative. Most of the time is likely spent in the core computational functions (`f`, `forward_difference`, and `line_search`), without much depth to the call stack.
+
+
+### Performance Improvements 
+
+To locate a few more performance improvements we need to increase the size of our problem. Let's start with 500 dimensions.
+
+```rust
+let mut x = vec![0.0;500];
+```
+
+```zsh
+$ cargo flamegraph
+
+Elapsed: 25.68s
+```
+
+Which gives us the corresponding flamegraph.
+
+![](flamegraph_500.svg)
+
+We can see that we spend most of the time calculating the gradient (i.e. in `forward_difference`), and then by extension in function evaluations `f`. 
+
+We can parallelise the calculation of each directional derivative using [Rayon](https://docs.rs/rayon/latest/rayon/).
+
+
+```rust
+use rayon::prelude::*;
+
+fn forward_difference(f: fn(&[f64]) -> f64, x: &[f64]) -> Vec<f64> {
+    const H: f64 = 1e-8;
+    let f_x = f(x);
+    
+    (0..x.len()).into_par_iter().map(|i| {
+        let mut x_forward = x.to_vec();
+        x_forward[i] += H;
+        (f(&x_forward) - f_x) / H
+    }).collect()
+}
+```
+
+The main aspect here is using `into_par_iter` to turn the iterable `0..x.len()` into a parrallelised version. Whilst we're there we turned our `h` into a constant. 
+
+Largely, everything else is the same. I've also used slices instead of vectors to save a bit of memory/writing operations. Just these basic changes result in the following:
+
+```zsh
+$ cargo flamegraph
+
+Elapsed: 8.81s
+```
+
+A three time improvement on the non-parallelised version. The resulting flamegraph is as follows:
+
+![](flamegraph_500_par.svg)
+
+Rayon is clearly doing a lot of work here behind the scenes! In practice this work will result in longer solution times for smaller problems, so there are tradeoffs at play. I won't demonstrate these trade offs explicitly in this post but I have chosen 500 dimensions for a reason. 
+
+Just for peace of mind (again) we'll run the same problem in vanilla Python. For fairness I'll parallelise the forward difference function because this isn't too difficult to do.
+
+And whilst it's running, I'll make some lunch. 
+
+
+
+
+
+
+
