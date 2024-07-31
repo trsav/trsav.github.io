@@ -18,7 +18,7 @@ html:
 
 :::{.cleanbox}
 I don't think this is really reccomended. Python is a lot more established for scientific programming. 
-As a researcher you want to quickly prototype a method, or approach to solving a problem. Rust does not let you do this. 
+As a researcher you want to quickly prototype a method or approach to solving a problem. Rust does not let you do this. 
 The only reason I've done the following is because:
 
 1. I have implemented similar algorithms in almost every language I have ever learned.
@@ -28,6 +28,7 @@ And with that, we begin...
 
 :::
 
+The purpose of this is to implement gradient descent in Rust.
 I'll first start with the very basics, defining the function to be optimized, one of the best functions of all time...the Rosenbrock function.
 
 In Python this would be written as follows:
