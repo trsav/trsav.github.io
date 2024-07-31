@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-07-29">
 
-<title>Implementing Gradient Descent in Vanilla Rust – tom savage</title>
+<title>Implementing Gradient Descent in Rust – tom savage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Implementing Gradient Descent in Vanilla Rust</h1>
+      <h1 class="title">Implementing Gradient Descent in Rust</h1>
             <p class="subtitle lead">Orders of magnitude faster, but probably not reccomended (yet)</p>
                       </div>
   </div>
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[0.9999993984338057,</span> 0.9999988039652051, 0.9999976181857124, 0.9999952424415648, 0.9999904773199286]</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Elapsed:</span> 13.61ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We get the correct answer in 13.6ms. For peace of mind, I used Claude Sonnet 3.5 to translate the Rust code into standard Python and performed the same benchmark.</p>
-<div id="5d295824" class="cell" data-execution_count="1">
+<div id="ed903d74" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show Python Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -413,7 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A three time improvement on the non-parallelised version. The resulting flamegraph is as follows:</p>
 <p><img src="flamegraph_500_par.svg" class="img-fluid"></p>
 <p>Rayon is clearly doing a lot of work here behind the scenes! In practice this work will result in longer solution times for smaller problems, so there are tradeoffs at play. I won’t demonstrate these trade offs explicitly in this post but I have chosen 500 dimensions for a reason.</p>
-<p>Just for peace of mind (again) we’ll run the same problem in vanilla Python. And whilst it’s running, I’ll make some lunch.</p>
+<p>Just for peace of mind (again) we’ll run the same problem in vanilla Python. For fairness I’ll parallelise the forward difference function because this isn’t too difficult to do.</p>
+<p>And whilst it’s running, I’ll make some lunch.</p>
 
 
 </section>
