@@ -73,6 +73,9 @@ main[id="quarto-document-content"]{
     font-size: 0.1em;
 }
 
+a {
+    color: #ba0000;
+}
 
 .cleanbox {
   margin: 1em 0;
