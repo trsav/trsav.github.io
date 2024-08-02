@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/olympics/index.html",
       "/posts/rust/index.html",
       "/posts/cc/index.html",
       "/posts/systems_for/index.html",
