@@ -1,0 +1,46 @@
+Sport,Difficulty,Judging Requirement,Olympic Pinnacle
+Archery,0.5,0.3,0.2
+Artistic Gymnastics,0.3,1.5,0.1
+Artistic Swimming,0.5,1.0,0.1
+Athletics,0.5,0.0,0.1
+Badminton,0.5,0.2,0.2
+Basketball,0.5,0.3,0.5
+Basketball 3x3,0.5,0.3,0.3
+Beach Volleyball,0.5,0.2,0.2
+Boxing,0.5,1.0,0.2
+Breaking,0.7,1.5,0.5
+Canoe Slalom,0.5,0.3,0.1
+Canoe Sprint,0.5,0.2,0.1
+Cycling BMX Freestyle,0.5,1.5,0.2
+Cycling BMX Racing,0.5,0.3,0.2
+Cycling Mountain Bike,0.5,0.3,0.2
+Cycling Road,0.5,0.2,0.3
+Cycling Track,0.5,0.2,0.1
+Diving,0.3,1.5,0.1
+Equestrian,0.7,1.0,0.2
+Fencing,0.5,0.5,0.1
+Football,0.5,0.3,0.5
+Golf,0.5,0.2,0.5
+Handball,0.5,0.3,0.2
+Hockey,0.5,0.3,0.2
+Judo,0.5,0.7,0.1
+Marathon Swimming,0.3,0.2,0.2
+Modern Pentathlon,0.3,0.5,0.1
+Rhythmic Gymnastics,0.3,1.0,0.1
+Rowing,0.5,0.2,0.1
+Rugby Sevens,0.5,0.3,0.3
+Sailing,0.5,0.3,0.2
+Shooting,0.5,0.2,0.1
+Skateboarding,0.5,1.5,0.3
+Sport Climbing,0.5,1.0,0.2
+Surfing,0.3,1.5,0.3
+Swimming,0.5,0.0,0.1
+Table Tennis,0.5,0.2,0.2
+Taekwondo,0.5,1.0,0.1
+Tennis,0.5,0.2,0.5
+Trampoline,0.5,1.5,0.1
+Triathlon,0.3,0.2,0.2
+Volleyball,0.5,0.2,0.2
+Water Polo,0.5,0.3,0.2
+Weightlifting,0.3,0.2,0.1
+Wrestling,0.5,0.7,0.1
