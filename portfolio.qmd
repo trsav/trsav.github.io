@@ -8,11 +8,11 @@ html:
 ::: {layout-ncol=3}
 
 
-![[Machine Learning-Assisted Discovery of Flow Reactor Designs - _Accepted Nature Chemical Engineering_](https://arxiv.org/abs/2308.08841)](portfolio_images/nature_one.png)
+![[Machine Learning-Assisted Discovery of Flow Reactor Designs - _Nature Chemical Engineering_](https://doi.org/10.1038/s44286-024-00099-1)](portfolio_images/nature_one.png)
 
 ![[Multi-agent LLMs for Drafting New Legislation - _Ministry of Justice / 10 Downing Street_ ](https://sav.phd/posts/legislation/)](portfolio_images/legis.png)
 
-![[Human-Algorithm Collaborative Bayesian Optimization for Engineering Systems - _Accepted Computers & Chemical Engineering_](https://arxiv.org/abs/2404.10949)](portfolio_images/overview_figure.png)
+![[Human-Algorithm Collaborative Bayesian Optimization for Engineering Systems - _Computers & Chemical Engineering_](https://doi.org/10.1016/j.compchemeng.2024.108810)](portfolio_images/overview_figure.png)
 
 ![[Collabo - A Python package for human-algorithm collaborative Bayesian optimization](https://github.com/trsav/collabo)](portfolio_images/collabo.png)
 
