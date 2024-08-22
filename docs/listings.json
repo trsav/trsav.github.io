@@ -2,7 +2,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/process/index.html",
       "/posts/olympics/index.html",
       "/posts/rust/index.html",
       "/posts/cc/index.html",
