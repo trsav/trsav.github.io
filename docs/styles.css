@@ -270,6 +270,26 @@ code[class="sourceCode python"]{
   font-size: 0.9em;
 }
 
+code{
+  font-family: code;
+  font-size: 0.75em;
+}
+
+code[class="sourceCode YAML"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode toml"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode bash"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
 code[class="sourceCode rust"]{
   font-family: code;
   font-size: 0.9em;

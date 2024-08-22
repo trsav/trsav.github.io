@@ -1,0 +1,12 @@
+{
+  "hash": "0af258a54cbbb421a50f1d5f12ccaf70",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Chemical Processes as function approximators\"\nsubtitle: \"Metaphysical Chemical Processes\"\ndate: \"08/09/2024\"\ncomments:\n    utterances:\n        repo: trsav/trsav.github.io\nhtml: \n    self-contained: true\n    grid: \n    margin-width: 450px\n---\n\n::: {#d6013895 .cell execution_count=1}\n``` {.python .cell-code}\nx = 10\n```\n:::\n\n\nThat was some python that did this:\n\nI'll use it again here\n\n::: {#3c9ec976 .cell execution_count=2}\n``` {.python .cell-code}\na = x * 2 \nprint(a)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n20\n```\n:::\n:::\n\n\n# motivation about chinese room\n\n# briefly mention building a new process simulator \n\n# work through logic gates \n\n# simulate some basic computations\n\n# evolutionary operations on chemical process (possible because of simulator)\n\n# do a neural network function approximator approach\n\n# implications, can chemical processes think or be concious?\n## think of counter arguements. \n\n# can a chemical process model itself? Is this not what a human is?\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
