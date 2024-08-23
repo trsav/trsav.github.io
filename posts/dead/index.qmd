@@ -26,8 +26,7 @@ To view the original post, [click here](https://sav.phd/posts/dead/archived.html
 :::
 
 :::{.changeable_text}
-The dead internet theory states that sooner rather than later, genuine activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, it becomes less of a theory, with 'dead' content being generally characterised as **slop**.
-:::
+The dead internet theory states that sooner rather than later, genuine activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, it becomes less of a theory, with 'dead' content being generally characterised as **slop**:::
 
 :::{.changeable_text}
 In the beginning was the Word, and then the next Word and the next Word, and then after enough words, someone claimed that a large-language model could think, and the Word was God^[John 1:1, creatively embellished, some would say blasphemously.\x00].
@@ -72,7 +71,7 @@ Token to token, slop to slop, all good things must come to an end.
 :::
 
 :::{.extra}
-I .
+I . .
 :::
 
-Updated: Fri Aug 23 10:55:41 2024. Replaced Content with content. Added . to the end of the generated text.
+Updated: Fri Aug 23 12:50:12 2024. Replaced **slop**. with .. Added . to the end of the generated text.
