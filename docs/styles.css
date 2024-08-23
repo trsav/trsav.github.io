@@ -19,11 +19,15 @@ div[class="quarto-title-block default page-columns page-full"]{
   margin-bottom: 0em;
 }
 div[class="quarto-title-banner page-columns page-full"]{
+  background-color: white;
   margin-top: 1em;
   padding: 0em;
   margin-bottom: 0em;
 }
 
+nav{
+background-color: white !important;
+}
 div[class="quarto-container page-columns page-rows-contents page-layout-article page-navbar"]{
   padding-top: 0em;
   margin-bottom: 0em !important;
@@ -183,6 +187,10 @@ div[class="listing-subtitle"]{
     /* color: blue; */
     /* underline */
     text-decoration: underline;
+  }
+
+  nav[class="navbar navbar-expand"]{
+    color: white;
   }
   div[class="category"]{
   font-size: 1em !important;

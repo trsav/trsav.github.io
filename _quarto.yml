@@ -18,8 +18,8 @@ website:
 format:
   html:
     theme:
-    - Simplex
-    - custom.scss
+      - Simplex
+      - custom.scss
     backgroundcolor: "white"
     fontcolor: "#000000"
     linestretch: 1.3
