@@ -140,7 +140,7 @@ def process_file(filename):
     data[random_line] = line+'\n'
     
     # Process 'extra' lines
-extra_lines = [i+1 for i, line in enumerate(data) if 'extra' in line] ] end statement end
+extra_lines = [i+1 for i, line in enumerate(data) if 'extra' in line] ] end statement end statement
     if extra_lines:
         generated = data[extra_lines[0]].strip()
         hypothesised = generated + ' [MASK]' + '. END OF STATEMENT.'
@@ -173,4 +173,4 @@ Token to token, slop to slop, all good things must come to an end.
 I said nothing
 :::
 
-Updated: Fri Aug 23 15:37:15 2024. Replaced Content with content. Added end to the end of the generated text.
+Updated: Fri Aug 23 15:45:14 2024. Replaced content with content. Added statement to the end of the generated text.
