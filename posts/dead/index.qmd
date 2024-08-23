@@ -21,6 +21,8 @@ footnote-location: margin
 :::{.cleanbox}
 This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a  self-fulfilling obituary. Ashes to ashes, dust to dust, slop... to slop. 
 
+To view the original post, [click here](https://sav.phd/posts/dead/archived.html).
+
 :::
 
 :::{.changeable_text}
@@ -60,6 +62,8 @@ In London there is a Raspberry Pi running a cronjob. It has access to the source
 Twice a day, a random sentence from this post will be selected, and a random word will be omitted. The small, local language model will be them prompted to infer the missing word. This word will be replaced, my site re-rendered, the changes committed to the Git repository, and reflected here^[Stunning way to increase my Github contributions.\x00]. Additionally I will prompt the model to add a word a day to the bottom of this post.
 
 :::
+
+![Blog collapse.](recording.mp4)
 
 
 :::{.changeable_text}
