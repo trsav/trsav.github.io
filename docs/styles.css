@@ -28,6 +28,9 @@ div[class="quarto-title-banner page-columns page-full"]{
 nav{
 background-color: white !important;
 }
+p[class="subtitle lead"]{
+  color: black !important;
+}
 div[class="quarto-container page-columns page-rows-contents page-layout-article page-navbar"]{
   padding-top: 0em;
   margin-bottom: 0em !important;
