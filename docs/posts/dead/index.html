@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a self-fulfilling obituary. Ashes to ashes, dust to dust, slop… to slop.</p>
 </div>
 <div class="changeable_text">
-<p>The dead content theory states that sooner rather than later, internet activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, this becomes less of a theory, with ‘dead’ content being generally characterised as <strong>slop</strong></p>
+<p>The dead internet theory states that sooner rather than later, genuine activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, it becomes less of a theory, with ‘dead’ content being generally characterised as <strong>slop</strong>.</p>
 </div>
 <div class="changeable_text page-columns page-full">
 <p>In the beginning was the Word, and then the next Word and the next Word, and then after enough words, someone claimed that a large-language model could think, and the Word was God<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -237,7 +237,7 @@ View Script &amp; LLM Inference Code
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find lines with 'changeable_text'</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    changeable_lines <span class="op">=</span> []</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'''.changeable_text'''</span> <span class="kw">in</span> data[i] :</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'''FLAG'''</span> <span class="kw">in</span> data[i] :</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            changeable_lines.append(i<span class="op">+</span><span class="dv">1</span>)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> </span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
@@ -283,7 +283,7 @@ View Script &amp; LLM Inference Code
 <span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    data[random_line] <span class="op">=</span> line<span class="op">+</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span></span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process 'extra' lines</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>extra_lines <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(data) <span class="cf">if</span> <span class="st">'extra'</span> <span class="kw">in</span> line] ]</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    extra_lines <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(data) <span class="cf">if</span> <span class="st">'FLAG'</span> <span class="kw">in</span> line]</span>
 <span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> extra_lines:</span>
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        generated <span class="op">=</span> data[extra_lines[<span class="dv">0</span>]].strip()</span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        hypothesised <span class="op">=</span> generated <span class="op">+</span> <span class="st">' [MASK]'</span> <span class="op">+</span> <span class="st">'. END OF STATEMENT.'</span></span>
@@ -307,9 +307,9 @@ View Script &amp; LLM Inference Code
 <p>Token to token, slop to slop, all good things must come to an end.</p>
 </div>
 <div class="extra">
-<p>I said nothing</p>
+<p>I</p>
 </div>
-<p>Updated: Fri Aug 23 15:00:40 2024. Replaced it with this. Added ] to the end of the generated text.</p>
+<p>Updated: Fri Aug 23 10:55:41 2024. Replaced Content with content. Added to the end of the generated text.</p>
 
 
 

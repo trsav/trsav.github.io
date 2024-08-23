@@ -24,9 +24,9 @@ This post likely doesn't make any sense, I would reccomend reading the archived 
 This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a  self-fulfilling obituary. Ashes to ashes, dust to dust, slop... to slop. 
 :::
 
-:::{.changeable_text}
-The dead content theory states that sooner rather than later, user activity on the internet will be in the minority, and the majority of traffic will come from bots. content will be produced by bots, and it will be engaged with by other bots. Every day, this becomes less of a theory, with 'dead' content being generally characterised as ;
 
+:::{.changeable_text}
+The dead internet theory states that sooner rather than later, genuine activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, it becomes less of a theory, with 'dead' content being generally characterised as **slop**.
 :::
 
 :::{.changeable_text}
@@ -94,7 +94,7 @@ def process_file(filename):
     # Find lines with 'changeable_text'
     changeable_lines = []
     for i in range(len(data)):
-        if '''.changeable_text''' in data[i] :
+        if '''FLAG''' in data[i] :
             changeable_lines.append(i+1)
             break 
 
@@ -140,7 +140,7 @@ def process_file(filename):
     data[random_line] = line+'\n'
     
     # Process 'extra' lines
-extra_lines = [i+1 for i, line in enumerate(data) if 'extra' in line] ] end statement end statement
+    extra_lines = [i+1 for i, line in enumerate(data) if 'FLAG' in line]
     if extra_lines:
         generated = data[extra_lines[0]].strip()
         hypothesised = generated + ' [MASK]' + '. END OF STATEMENT.'
@@ -170,7 +170,7 @@ Token to token, slop to slop, all good things must come to an end.
 :::
 
 :::{.extra}
-I said nothing
+I
 :::
 
-Updated: Fri Aug 23 15:45:14 2024. Replaced content with content. Added statement to the end of the generated text.
+Updated: Fri Aug 23 10:55:41 2024. Replaced Content with content. Added to the end of the generated text.

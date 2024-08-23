@@ -92,7 +92,7 @@ def process_file(filename):
     # Find lines with 'changeable_text'
     changeable_lines = []
     for i in range(len(data)):
-        if '''.changeable_text''' in data[i] :
+        if '''FLAG''' in data[i] :
             changeable_lines.append(i+1)
             break 
 
@@ -138,7 +138,7 @@ def process_file(filename):
     data[random_line] = line+'\n'
     
     # Process 'extra' lines
-    extra_lines = [i+1 for i, line in enumerate(data) if 'extra' in line]
+    extra_lines = [i+1 for i, line in enumerate(data) if 'FLAG' in line]
     if extra_lines:
         generated = data[extra_lines[0]].strip()
         hypothesised = generated + ' [MASK]' + '. END OF STATEMENT.'
