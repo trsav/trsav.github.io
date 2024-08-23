@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -180,10 +214,101 @@ ul.task-list li input[type="checkbox"] {
 <div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Stunning way to increase my Github contributions.</p></div></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><video src="recording.mp4" class="img-fluid" controls=""><a href="recording.mp4">Video</a></video></p>
+<p><video src="recording.mp4" class="img-fluid" style="width:80.0%" controls=""><a href="recording.mp4">Video</a></video></p>
 <figcaption>Blog collapse.</figcaption>
 </figure>
 </div>
+<details>
+<summary>
+View Script &amp; LLM Inference Code
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> mini_llama_env/bin/activate</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> script.py</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../website</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"post continues to rot"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_file(filename):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Read file content</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find lines with 'changeable_text'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    changeable_lines <span class="op">=</span> []</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'''.changeable_text'''</span> <span class="kw">in</span> data[i] :</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            changeable_lines.append(i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    random_line <span class="op">=</span> np.random.choice(changeable_lines)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> data[random_line]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process footnote if present</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'^['</span> <span class="kw">in</span> text:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        footnote_index <span class="op">=</span> text.index(<span class="st">'^['</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        end_footnote <span class="op">=</span> text.index(<span class="st">'</span><span class="ch">\\</span><span class="st">x00]'</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        pre_footnote, post_footnote <span class="op">=</span> text.split(<span class="st">'^['</span>)[<span class="dv">0</span>], text.split(<span class="st">"</span><span class="ch">\\</span><span class="st">x00]"</span>)[<span class="dv">1</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        footnote <span class="op">=</span> text[footnote_index:end_footnote<span class="op">+</span><span class="dv">5</span>]</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        footnote_word_index <span class="op">=</span> text[:footnote_index].count(<span class="st">' '</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'FOOTNOTE WORD INDEX:'</span>, footnote_word_index)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        data[random_line] <span class="op">=</span> pre_footnote <span class="op">+</span> post_footnote</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Replace random word with [MASK]</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> data[random_line].split()</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    random_word_index <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="bu">len</span>(line))</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'REMOVED WORD'</span>, line[random_word_index])</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    rem_word_store <span class="op">=</span> line[random_word_index]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    line[random_word_index] <span class="op">=</span> <span class="st">'[MASK]'</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> <span class="st">' '</span>.join(line)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use BERT to fill [MASK]</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    unmasker <span class="op">=</span> pipeline(<span class="st">'fill-mask'</span>, model<span class="op">=</span><span class="st">'bert-base-uncased'</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> unmasker(line)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    res.append({<span class="st">'token_str'</span>: rem_word_store})</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    word_index <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> res[word_index][<span class="st">'token_str'</span>] <span class="kw">in</span> [<span class="st">'.'</span>, <span class="st">','</span>, <span class="st">'!'</span>, <span class="st">'?'</span>]:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        word_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    replacement_word <span class="op">=</span> res[word_index][<span class="st">'token_str'</span>]</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'REPLACEMENT WORD:'</span>, replacement_word)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> line.replace(<span class="st">'[MASK]'</span>, replacement_word)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reinsert footnote if it existed</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'footnote'</span> <span class="kw">in</span> <span class="bu">locals</span>():</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        line_words <span class="op">=</span> line.split()</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        line_words.insert(footnote_word_index, footnote)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        line <span class="op">=</span> <span class="st">' '</span>.join(line_words) <span class="op">+</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> line.replace(<span class="st">':::'</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">:::</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    data[random_line] <span class="op">=</span> line<span class="op">+</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process 'extra' lines</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    extra_lines <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(data) <span class="cf">if</span> <span class="st">'extra'</span> <span class="kw">in</span> line]</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> extra_lines:</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        generated <span class="op">=</span> data[extra_lines[<span class="dv">0</span>]].strip()</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        hypothesised <span class="op">=</span> generated <span class="op">+</span> <span class="st">' [MASK]'</span> <span class="op">+</span> <span class="st">'. END OF STATEMENT.'</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> unmasker(hypothesised)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'ADDED WORD:'</span>, res[<span class="dv">0</span>][<span class="st">'token_str'</span>])</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        data[extra_lines[<span class="dv">0</span>]] <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>generated<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>res[<span class="dv">0</span>][<span class="st">'token_str'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update timestamp</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    utc_str <span class="op">=</span> time.asctime(time.gmtime())</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'UTC:'</span>, utc_str)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    data[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="ss">f'''Updated: </span><span class="sc">{</span>utc_str<span class="sc">}</span><span class="ss">. Replaced </span><span class="sc">{</span>rem_word_store<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>replacement_word<span class="sc">}</span><span class="ss">. Added </span><span class="sc">{</span>res[<span class="dv">0</span>][<span class="st">'token_str'</span>]<span class="sc">}</span><span class="ss"> to the end of the generated text.'''</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write updated content back to file</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.writelines(data)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>process_file(<span class="st">'../website/posts/dead/index.qmd'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="changeable_text">
 <p>Token to token, slop to slop, all good things must come to an end.</p>
 </div>
