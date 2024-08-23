@@ -2,6 +2,8 @@
 title: ""
 listing:
   contents: posts
+  exclude:
+    author: "ARCHIVED*"
   fields: [date,title,author]
   sort: "date desc"
   type: default

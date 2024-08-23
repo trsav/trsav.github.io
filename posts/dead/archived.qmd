@@ -2,6 +2,7 @@
 title: "The Dead Blog Theory"
 subtitle: "An exercise in website collapse."
 date: "08/23/2024"
+author: "ARCHIVED"
 comments:
     utterances:
         repo: trsav/trsav.github.io
