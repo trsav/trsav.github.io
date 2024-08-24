@@ -15,6 +15,8 @@ website:
       - text: "about me"
         file: about.qmd
     search: true
+    site-url: https://sav.phd
+    description: "Tom Savage's Blog"
 format:
   html:
     theme:
