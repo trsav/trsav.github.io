@@ -6,6 +6,7 @@ website:
   title: "Tom Savage"
   favicon: favicon.ico
   site-url: https://sav.phd
+  margin-header: subscribe.html
   description: "Tom Savage's Blog"
   navbar:
     collapse: false
