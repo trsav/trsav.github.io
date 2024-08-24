@@ -3,16 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "tom savage"
+  title: "Tom Savage"
   favicon: favicon.ico
   navbar:
     collapse: false
     left:
       # - text: "Home"
       #   file: index.qmd
-      - text: "portfolio"
+      - text: "Portfolio"
         file: portfolio.qmd
-      - text: "about me"
+      - text: "About Me"
         file: about.qmd
     search: true
     site-url: https://sav.phd
