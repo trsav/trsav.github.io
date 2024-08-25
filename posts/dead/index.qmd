@@ -174,10 +174,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there
+I the one left out there somewhere
 :::
 
 :::
 
 
-Updated: Sun Aug 25 08:03:06 2024. Replaced activity with content. Added there to the end of the generated text.
+Updated: Sun Aug 25 20:03:13 2024. Replaced be with be. Added somewhere to the end of the generated text.
