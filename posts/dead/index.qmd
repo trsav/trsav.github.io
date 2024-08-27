@@ -26,7 +26,7 @@ This post is rotting, and will soon become AI slop. What follows is a love lette
 
 
 :::{.changeable_text}
-The dead internet theory states that sooner rather than later, genuine content on the internet will be in the minority, and the majority of traffic will come from bots. Content will be accessed by bots, and traffic will be engaged only by the bots. Every day, it becomes less of a theory, with 'dead' content being generally characterised as **slop**.
+The dead internet theory suggests that sooner rather than later, genuine content on the internet will be in the minority, and the majority of traffic will come from bots. Content will be accessed by bots, and traffic will be engaged only by the bots. Every day, it becomes less of a theory, with 'dead' content being generally characterised as **slop**.
 :::
 
 :::{.changeable_text}
@@ -174,10 +174,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there somewhere else entirely
+I the one left out there somewhere else entirely anyway
 :::
 
 :::
 
 
-Updated: Mon Aug 26 20:03:05 2024. Replaced with with only. Added entirely to the end of the generated text.
+Updated: Tue Aug 27 08:03:06 2024. Replaced states with suggests. Added anyway to the end of the generated text.
