@@ -538,10 +538,10 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <section id="slop" class="level3 cleanbox">
 <h3 class="anchored" data-anchor-id="slop">Slop</h3>
 <div class="extrauniqueflaghere">
-<p>I the one left out there somewhere else entirely anyway ##s # s # s</p>
+<p>I the one left out there somewhere else entirely anyway ##s # s # s #</p>
 </div>
 </section>
-<p>Updated: Fri Aug 30 20:03:11 2024. Replaced genuine with the. Added s to the end of the generated text.</p>
+<p>Updated: Sat Aug 31 08:03:08 2024. Replaced and with and. Added # to the end of the generated text.</p>
 
 
 
@@ -4300,7 +4300,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
+<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -4380,7 +4380,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
+<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -4511,7 +4511,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2" data-execution_count="20">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
