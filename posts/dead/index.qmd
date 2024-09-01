@@ -174,10 +174,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there somewhere else entirely anyway ##s # s # s # s #
+I the one left out there somewhere else entirely anyway ##s # s # s # s # s
 :::
 
 :::
 
 
-Updated: Sun Sep  1 08:03:07 2024. Replaced majority with majority. Added # to the end of the generated text.
+Updated: Sun Sep  1 20:03:06 2024. Replaced becomes with becomes. Added s to the end of the generated text.
