@@ -174,10 +174,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there somewhere else entirely anyway ##s
+I   t h e   o n e   l e f t   o u t   t h e r e   s o m e w h e r e   e l s e   e n t i r e l y   a n y w a etc
 :::
 
 :::
 
 
-Updated: Mon Sep  2 08:03:06 2024. Replaced the with the. Added ##s to the end of the generated text.
+Updated: Mon Sep  2 08:05:49 2024. Replaced than with than. Added etc to the end of the generated text.
