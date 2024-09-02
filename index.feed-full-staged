@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Tom Savage</title>
+<link>https://sav.phd/</link>
+<atom:link href="https://sav.phd/index.xml" rel="self" type="application/rss+xml"/>
+<description>Tom Savage&#39;s Blog</description>
+<generator>quarto-1.4.557</generator>
+<lastBuildDate>Thu, 22 Aug 2024 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/posts/dead/index.html}</title>
+  <link>https://sav.phd/posts/dead/</link>
+  <description>{B4F502887207:/posts/dead/index.html}</description>
+  <guid>https://sav.phd/posts/dead/</guid>
+  <pubDate>Thu, 22 Aug 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/olympics/index.html}</title>
+  <link>https://sav.phd/posts/olympics/</link>
+  <description>{B4F502887207:/posts/olympics/index.html}</description>
+  <guid>https://sav.phd/posts/olympics/</guid>
+  <pubDate>Sun, 04 Aug 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/rust/index.html}</title>
+  <link>https://sav.phd/posts/rust/</link>
+  <description>{B4F502887207:/posts/rust/index.html}</description>
+  <guid>https://sav.phd/posts/rust/</guid>
+  <pubDate>Sun, 28 Jul 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/cc/index.html}</title>
+  <link>https://sav.phd/posts/cc/</link>
+  <description>{B4F502887207:/posts/cc/index.html}</description>
+  <guid>https://sav.phd/posts/cc/</guid>
+  <pubDate>Sun, 05 May 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/systems_for/index.html}</title>
+  <link>https://sav.phd/posts/systems_for/</link>
+  <description>{B4F502887207:/posts/systems_for/index.html}</description>
+  <category>Machine Learning</category>
+  <category>Art</category>
+  <category>Visualisation</category>
+  <guid>https://sav.phd/posts/systems_for/</guid>
+  <pubDate>Sun, 21 Apr 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/legislation/index.html}</title>
+  <link>https://sav.phd/posts/legislation/</link>
+  <description>{B4F502887207:/posts/legislation/index.html}</description>
+  <category>Machine Learning</category>
+  <category>Legislation</category>
+  <guid>https://sav.phd/posts/legislation/</guid>
+  <pubDate>Wed, 17 Apr 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/outsmarted/index.html}</title>
+  <dc:creator>Tom Savage</dc:creator>
+  <link>https://sav.phd/posts/outsmarted/</link>
+  <description>{B4F502887207:/posts/outsmarted/index.html}</description>
+  <category>Machine Learning</category>
+  <category>Art</category>
+  <guid>https://sav.phd/posts/outsmarted/</guid>
+  <pubDate>Sun, 31 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/for_ai/index.html}</title>
+  <link>https://sav.phd/posts/for_ai/</link>
+  <description>{B4F502887207:/posts/for_ai/index.html}</description>
+  <category>Machine Learning</category>
+  <guid>https://sav.phd/posts/for_ai/</guid>
+  <pubDate>Mon, 25 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/wsa_rotunda/index.html}</title>
+  <link>https://sav.phd/posts/wsa_rotunda/</link>
+  <description>{B4F502887207:/posts/wsa_rotunda/index.html}</description>
+  <guid>https://sav.phd/posts/wsa_rotunda/</guid>
+  <pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/values/index.html}</title>
+  <link>https://sav.phd/posts/values/</link>
+  <description>{B4F502887207:/posts/values/index.html}</description>
+  <category>Travel</category>
+  <category>Machine Learning</category>
+  <category>Religion</category>
+  <guid>https://sav.phd/posts/values/</guid>
+  <pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/transubstantiation/index.html}</title>
+  <link>https://sav.phd/posts/transubstantiation/</link>
+  <description>{B4F502887207:/posts/transubstantiation/index.html}</description>
+  <category>Machine Learning</category>
+  <category>Religion</category>
+  <category>Art</category>
+  <guid>https://sav.phd/posts/transubstantiation/</guid>
+  <pubDate>Sat, 03 Feb 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/trajectory_plots/index.html}</title>
+  <link>https://sav.phd/posts/trajectory_plots/</link>
+  <description>{B4F502887207:/posts/trajectory_plots/index.html}</description>
+  <category>Visualisation</category>
+  <guid>https://sav.phd/posts/trajectory_plots/</guid>
+  <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://sav.phd/posts/trajectory_plots/figure.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/plots/index.html}</title>
+  <link>https://sav.phd/posts/plots/</link>
+  <description>{B4F502887207:/posts/plots/index.html}</description>
+  <category>Visualisation</category>
+  <guid>https://sav.phd/posts/plots/</guid>
+  <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://sav.phd/posts/plots/figure.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/oulipo/index.html}</title>
+  <dc:creator>Tom Savage</dc:creator>
+  <link>https://sav.phd/posts/oulipo/</link>
+  <description>{B4F502887207:/posts/oulipo/index.html}</description>
+  <category>Art</category>
+  <category>Machine Learning</category>
+  <guid>https://sav.phd/posts/oulipo/</guid>
+  <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/skoob_review/index.html}</title>
+  <link>https://sav.phd/posts/skoob_review/</link>
+  <description>{B4F502887207:/posts/skoob_review/index.html}</description>
+  <category>Books</category>
+  <guid>https://sav.phd/posts/skoob_review/</guid>
+  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/books_twenty_three/index.html}</title>
+  <link>https://sav.phd/posts/books_twenty_three/</link>
+  <description>{B4F502887207:/posts/books_twenty_three/index.html}</description>
+  <category>Books</category>
+  <guid>https://sav.phd/posts/books_twenty_three/</guid>
+  <pubDate>Sat, 16 Dec 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/noisy_bo/index.html}</title>
+  <link>https://sav.phd/posts/noisy_bo/</link>
+  <description>{B4F502887207:/posts/noisy_bo/index.html}</description>
+  <category>Optimisation</category>
+  <category>Machine Learning</category>
+  <guid>https://sav.phd/posts/noisy_bo/</guid>
+  <pubDate>Tue, 05 Dec 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/electronic_life/index.html}</title>
+  <dc:creator>Tom Savage</dc:creator>
+  <dc:creator>Sunil Manghani</dc:creator>
+  <dc:creator>Ed D&#39;Souza</dc:creator>
+  <link>https://sav.phd/posts/electronic_life/</link>
+  <description>{B4F502887207:/posts/electronic_life/index.html}</description>
+  <category>Visualisation</category>
+  <category>Art</category>
+  <category>Machine Learning</category>
+  <guid>https://sav.phd/posts/electronic_life/</guid>
+  <pubDate>Wed, 29 Nov 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/aiche/index.html}</title>
+  <link>https://sav.phd/posts/aiche/</link>
+  <description>{B4F502887207:/posts/aiche/index.html}</description>
+  <category>Conference</category>
+  <category>Chemical Engineering</category>
+  <guid>https://sav.phd/posts/aiche/</guid>
+  <pubDate>Sun, 12 Nov 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://sav.phd/posts/aiche/conf.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/human_in_the_loop/index.html}</title>
+  <dc:creator>Tom Savage</dc:creator>
+  <dc:creator>Antonio del Rio Chanona</dc:creator>
+  <link>https://sav.phd/posts/human_in_the_loop/</link>
+  <description>{B4F502887207:/posts/human_in_the_loop/index.html}</description>
+  <category>Optimisation</category>
+  <category>Machine Learning</category>
+  <guid>https://sav.phd/posts/human_in_the_loop/</guid>
+  <pubDate>Thu, 26 Oct 2023 23:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
