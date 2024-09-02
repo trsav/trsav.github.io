@@ -174,10 +174,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there said no
+I the one left out there said no more
 :::
 
 :::
 
 
-Updated: Mon Sep  2 08:09:14 2024. Replaced the with the. Added no to the end of the generated text.
+Updated: Mon Sep  2 20:03:07 2024. Replaced will with will. Added more to the end of the generated text.
