@@ -19,6 +19,10 @@ footnote-location: margin
 :::
 
 :::{.cleanbox}
+Extra note: I appreciate that model collapse in practice doesn't really occur, because of curated datasets and the effort that does into ensuring good training data. But indulge me.
+:::
+
+:::{.cleanbox}
 This post likely doesn't read well, or even make any sense. I would reccommend reading the archived version first for a full explanation. [Click here](https://sav.phd/posts/dead/archived.html).
 
 This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a  self-fulfilling obituary. Ashes to ashes, dust to dust, slop... to slop. 

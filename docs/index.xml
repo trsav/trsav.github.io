@@ -24,6 +24,9 @@
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="https://sav.phd/posts/dead/subway.jpeg" class="img-fluid"></p>
 </div></div><div class="cleanbox">
+<p>Extra note: I appreciate that model collapse in practice doesn’t really occur, because of curated datasets and the effort that does into ensuring good training data. But indulge me.</p>
+</div>
+<div class="cleanbox">
 <p>This post likely doesn’t read well, or even make any sense. I would reccommend reading the archived version first for a full explanation. <a href="https://sav.phd/posts/dead/archived.html">Click here</a>.</p>
 <p>This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a self-fulfilling obituary. Ashes to ashes, dust to dust, slop… to slop.</p>
 </div>
@@ -4300,7 +4303,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -4380,7 +4383,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -4511,7 +4514,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-execution_count="20" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2" data-execution_count="20">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
