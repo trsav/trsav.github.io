@@ -1,0 +1,338 @@
+.callout-important{
+    background-color: rgb(255, 241, 241);
+    border: 3px solid rgb(255, 141, 141);
+}
+
+/* fontsize for all */
+body{
+    font-size: 1.25em;
+}
+
+
+.callout-tip{
+    background-color: rgb(241, 255, 241);
+    border: 3px solid rgb(156, 255, 141);
+}
+
+
+div[class="quarto-title-block default page-columns page-full"]{
+  margin-bottom: 0em;
+}
+div[class="quarto-title-banner page-columns page-full"]{
+  background-color: white;
+  margin-top: 1em;
+  padding: 0em;
+  margin-bottom: 0em;
+}
+
+nav{
+background-color: white !important;
+}
+p[class="subtitle lead"]{
+  color: black !important;
+}
+div[class="quarto-container page-columns page-rows-contents page-layout-article page-navbar"]{
+  padding-top: 0em;
+  margin-bottom: 0em !important;
+}
+
+div[class="quarto-container page-columns page-rows-contents page-layout-full page-navbar"]{
+  margin-top: 1em;
+}
+
+.listing-date {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+div[class="quarto-title-meta-heading"]{
+  margin-top: 0em !important;
+  padding-top: 0em !important;
+}
+
+main[id="quarto-document-content"]{
+  margin-top: 0em !important;
+  padding-top: 0em !important;
+}
+
+.listing-date::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background-image: linear-gradient(to right, #000 50%, transparent 50%);
+  background-size: 8px 1px;
+  margin-left: 10px;
+}
+
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.justify {
+    text-align: justify !important
+  }
+
+.tiny {
+    font-size: 0.1em;
+}
+
+a {
+    color: #ba0000;
+}
+
+.cleanbox {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px dashed black;
+  border-radius: 0px;
+
+  /* box-shadow: 3px 3px 0px darkgrey; */
+  }
+  .codeblock {
+    margin: 1em 0;
+    padding: 0.1em;
+    border: 1px solid grey;
+    border-radius: 0px;
+    box-shadow: 3px 3px 0px darkgrey;
+  }
+
+
+  .codeblock::after {
+    content: 'basilik c';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: black;
+    padding: 5px; /* Adjust as needed for spacing */
+  }
+
+
+  .line {
+    border-bottom: 2px solid black;
+    padding-bottom: 1em;
+  }
+
+div[class="listing-subtitle"]{
+    margin-left: 2.75em;
+  }
+
+  h1{
+    margin-top: 1em !important;
+    color: black !important;
+  }
+  h2{
+    color: black !important}
+ 
+
+  div[class="quarto-post image-right"] {
+    padding: 0em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid white;
+  }
+
+
+  span[class="navbar-title"] {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: black
+  }
+
+  span[class="menu-text"]{
+    color: black;
+    font-size: 1em;
+  }
+
+  h3::first-letter {
+    float: left;
+    color: rgb(222, 0, 0);
+    font-size: 3.5em;
+    line-height: 0.9;
+    padding-right: 0.05em;
+    /* font-family: "Times New Roman", serif; */
+  }
+  
+  h5[class="quarto-listing-category-title"] {
+    margin: 0.5em 0;
+    font-weight: normal !important;
+    font-size: 1.5em !important;
+  }
+
+
+  /* main[class="content quarto-banner-title-block column-page-left"]{
+
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 0px;
+    box-shadow: 3px 3px 0px darkgrey;
+  } */
+
+
+  a[class="about-link"] {
+    border: 1px dashed black !important;
+    border-radius: 0px !important;
+    /* box-shadow: 3px 3px 0px darkgrey;
+    border-radius: 5px !important; */
+  }
+
+  h3[class="no-anchor listing-title"] {
+    font-size: 1em;
+    font-weight: normal;
+    color: black;
+  }
+
+  h3[class="no-anchor listing-title"]:hover{
+    /* color: blue; */
+    /* underline */
+    text-decoration: underline;
+  }
+
+  nav[class="navbar navbar-expand"]{
+    color: white;
+  }
+  div[class="category"]{
+  font-size: 1em !important;
+    margin: 0.2em 0;
+    padding: 0em;
+    border: 0px solid grey;
+    color: black;  
+}
+
+.quarto-content{
+  background-color: black !important;
+}
+
+.headroom.fixed-top.headroom--not-bottom{
+  border-color: white !important;
+}
+
+.navbar.navbar-expand-lg.navbar-dark{
+  border-color: white  ;
+
+}
+
+.headroom.headroom--not-bottom{
+  border-color: white !important;
+}
+
+
+
+div[class="category"]:hover{
+    /* color: blue; */
+    /* underline */
+    text-decoration: underline;
+}
+
+/* make height smaller */
+.navbar{
+    height: 2.5em;
+}
+
+div[class="category active"]{
+    /* color: blue; */
+    font-size: 1em !important;
+    /* underline */
+    text-decoration: underline;
+}
+
+.nav-link:hover{
+    /* color: blue !important; */
+    /* underline */
+    text-decoration: underline;}
+
+
+
+  a[class="about-link"]:hover {
+    border: 1px solid black !important;
+    color: black !important;
+}
+
+
+div[class="quarto-category"] {
+    margin: 1em 0;
+    padding: 0em;
+    border: 1px dashed black !important;
+    border-radius: 0px !important;
+    color: black !important;
+}
+
+div[class="quarto-category"]:hover {
+  border: 1px solid black !important;
+}
+
+div[class="about-contents"] {
+  border-left-color: grey !important;
+}
+
+/* this should inheret the cleanbox */
+div[class="csl-entry quarto-appendix-citeas"]{
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px dashed black !important;
+  border-radius: 0px;
+}
+code[class="sourceCode python"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code{
+  font-family: code;
+  font-size: 0.75em;
+}
+
+code[class="sourceCode YAML"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode toml"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode bash"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode rust"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+code[class="sourceCode zsh"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+/* any code with soureCode */
+code[class="sourceCode"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+div[class="sourceCode"]{
+  font-family: code;
+  font-size: 0.9em;
+}
+
+pre[class="sourceCode code-with-copy quarto-appendix-bibtex"] {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px dashed black !important;
+  border-radius: 0px;
+}
+
+div[class="sourceCode cell-code"]{
+  font-family: 'code ';
+}
+
+#quarto-document-content .quarto-layout-panel div div figure > figcaption {
+  font-size: 1.1em;
+}
