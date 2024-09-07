@@ -253,7 +253,7 @@ In addition, I save each plot and produce a GIF at the end.
     images[0].save('bo.gif',save_all=True,append_images=images[1:],duration=500,loop=0)
 ```
 
-The full code is here
+The full code is here, approximately 20% of the lines are for plotting!
 
 <details>
 
