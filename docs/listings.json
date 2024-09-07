@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bayesian_optimisation/index.html",
       "/posts/dead/index.html",
       "/posts/olympics/index.html",
       "/posts/rust/index.html",
