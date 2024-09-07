@@ -14,6 +14,8 @@ html:
 
 ![[Human-Algorithm Collaborative Bayesian Optimization for Engineering Systems - _Computers & Chemical Engineering_](https://doi.org/10.1016/j.compchemeng.2024.108810)](portfolio_images/overview_figure.png)
 
+![[TinyBO - Bayesian optimization in 80 lines of code](https://sav.phd/posts/bayesian_optimisation/)](portfolio_images/explanation.jpg)
+
 ![[Collabo - A Python package for human-algorithm collaborative Bayesian optimization](https://github.com/trsav/collabo)](portfolio_images/collabo.png)
 
 ![[Universal Digital Twin - The impact of heat pumps on social inequality - _Advances in Applied Energy_](https://www.sciencedirect.com/science/article/pii/S2666792421000718)](portfolio_images/graphical_abstract_hp.png)
