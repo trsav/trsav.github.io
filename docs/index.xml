@@ -28,7 +28,7 @@
 </div>
 <p>There is a Bayesian optimisation gold-rush, and everyone is selling shovels. Bayesian optimisation is core to the concept of self-driving labs, automated drug-discovery, and many other modern research topics. It’s well motivated, and a very useful tool. Start ups are being founded and <a href="https://www.merckgroup.com/en/news/opensource-ai-experimentation-planner-06-12-2023.html">pharmaceutical</a> and <a href="https://github.com/experimental-design/bofire">chemicals</a> companies are curating teams that focus fundamentally on Bayesian optimisation in one way or another. As a result, there are now a huge number of libraries ranging from black-box APIs and no-code solutions to statistically accurate and fine-grained representations. Each of which becoming more bloated as different functionalities are appended.</p>
 <p>With all of these options, each with their own special definition of a <code>dataset</code>, or a <code>kernel</code>, or an <code>acquisition_function</code>, or otherwise, it becomes difficult to see the wood for the trees. Someone in my group recently asked me if it was reasonably possible to implement Bayesian optimisation, and I more often than not get asked what library or package I use.</p>
-<p>It is obviously important that BO tools become widely available, particularly to those that don’t know how to code, or don’t have the time such as chemists or industrial engineers. But the trade-off is that students, and practitioners are potentially using something that they don’t understand, and investors are being hoodwinked into purchasing something that seems more complex than it is.</p>
+<p>It is obviously important that BO tools become widely available, particularly to those that don’t know how to code, or don’t have the time such as chemists or industrial engineers. But the trade-off is that students, and practitioners are potentially using something that they don’t understand, and investors may be hoodwinked into investing in something that seems more complex than it is. I’ve personally always been motivated by finding interesting and surprising solutions to problems using the sharpest, hardest tool available.</p>
 <p>My mission in this post is to demonstrate that, whilst Bayesian optimisation entails a lot of moving parts, <em>implementing</em> it from scratch really shouldn’t take too long.</p>
 <p>To make my point, I am going to code everything required for Bayesian optimisation, <em>including visualisation</em>… in under 100 lines of standard Python and Numpy. This will include a custom metaheuristic-based optimisation algorithm, Gaussian processes from scratch with trainable hyperparameters, an acquisition function, and an experimental design loop.</p>
 <p>First, I’ll give myself some groundrules:</p>
@@ -324,10 +324,10 @@ font-style: inherit;">-</span> np.dot(dot_prod,k_row.T).item()</span></code></pr
 <p>My algorithm is self-documented but I will describe it below. I’ve found it to be simple and effective. I wouldn’t even describe it as a metaheuristic. Actually, I will.</p>
 <p>Every time you refresh this page my algorithm will be named after a different completely arbitrary animal!</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="126" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 125;"><span id="cb5-126">animals <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="127" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 126;"><span id="cb5-127">animals <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [</span>
-<span id="cb5-127">    <span class="st" style="color: #20794D;
+<span id="cb5-128">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lion"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -348,7 +348,7 @@ background-color: null;
 font-style: inherit;">"Penguin"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-128">    <span class="st" style="color: #20794D;
+<span id="cb5-129">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Kangaroo"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -369,7 +369,7 @@ background-color: null;
 font-style: inherit;">"Dolphin"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-129">    <span class="st" style="color: #20794D;
+<span id="cb5-130">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Octopus"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -390,7 +390,7 @@ background-color: null;
 font-style: inherit;">"Sloth"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-130">    <span class="st" style="color: #20794D;
+<span id="cb5-131">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Platypus"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -411,7 +411,7 @@ background-color: null;
 font-style: inherit;">"Chameleon"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-131">    <span class="st" style="color: #20794D;
+<span id="cb5-132">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Toucan"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -430,12 +430,12 @@ background-color: null;
 font-style: inherit;">,</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lemur"</span></span>
-<span id="cb5-132">]</span>
-<span id="cb5-133"></span>
-<span id="cb5-134">descriptive_words <span class="op" style="color: #5E5E5E;
+<span id="cb5-133">]</span>
+<span id="cb5-134"></span>
+<span id="cb5-135">descriptive_words <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [</span>
-<span id="cb5-135">    <span class="st" style="color: #20794D;
+<span id="cb5-136">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Swarming"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -456,7 +456,7 @@ background-color: null;
 font-style: inherit;">"Swimming"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-136">    <span class="st" style="color: #20794D;
+<span id="cb5-137">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Flying"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -477,7 +477,7 @@ background-color: null;
 font-style: inherit;">"Diving"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-137">    <span class="st" style="color: #20794D;
+<span id="cb5-138">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Soaring"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -498,7 +498,7 @@ background-color: null;
 font-style: inherit;">"Hopping"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-138">    <span class="st" style="color: #20794D;
+<span id="cb5-139">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Sprinting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -519,7 +519,7 @@ background-color: null;
 font-style: inherit;">"Charging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-139">    <span class="st" style="color: #20794D;
+<span id="cb5-140">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Darting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -540,7 +540,7 @@ background-color: null;
 font-style: inherit;">"Scampering"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-140">    <span class="st" style="color: #20794D;
+<span id="cb5-141">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Waddling"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -561,7 +561,7 @@ background-color: null;
 font-style: inherit;">"Swooping"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-141">    <span class="st" style="color: #20794D;
+<span id="cb5-142">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lunging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -582,7 +582,7 @@ background-color: null;
 font-style: inherit;">"Circling"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-142">    <span class="st" style="color: #20794D;
+<span id="cb5-143">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Nesting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -603,7 +603,7 @@ background-color: null;
 font-style: inherit;">"Swinging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-143">    <span class="st" style="color: #20794D;
+<span id="cb5-144">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lounging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -624,7 +624,7 @@ background-color: null;
 font-style: inherit;">"Hibernating"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-144">    <span class="st" style="color: #20794D;
+<span id="cb5-145">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Camouflaging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -643,7 +643,7 @@ background-color: null;
 font-style: inherit;">,</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Stampeding"</span></span>
-<span id="cb5-145">]</span></code></pre></div>
+<span id="cb5-146">]</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -2877,7 +2877,7 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Making the rest of the analysis in this post, in effect, invalid.</p></div></div><div>
 
 </div>
-<div id="eb0f58a3" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="2">
+<div id="eb0f58a3" class="cell quarto-layout-panel" data-execution_count="2" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-3-output-1.png" class="img-fluid" width="641"></p>
@@ -3048,7 +3048,7 @@ font-style: inherit;">'Rank'</span></span>
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 </details>
-<div id="9ada640f" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="3">
+<div id="9ada640f" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-4-output-1.png" class="img-fluid" width="662"></p>
@@ -3487,7 +3487,7 @@ font-style: inherit;">0.5</span>)</span>
 <span id="cb2-64">plt.tight_layout()</span>
 <span id="cb2-65">plt.show()</span></code></pre></div>
 </details>
-<div id="c2b84862" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="4">
+<div id="c2b84862" class="cell quarto-layout-panel" data-execution_count="4" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-5-output-1.png" class="img-fluid" width="657"></p>
@@ -6593,7 +6593,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -6673,7 +6673,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -6804,7 +6804,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-execution_count="20" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-execution_count="20">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">

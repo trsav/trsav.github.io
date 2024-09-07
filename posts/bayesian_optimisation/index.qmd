@@ -26,7 +26,8 @@ As a result, there are now a huge number of libraries ranging from black-box API
 
 With all of these options, each with their own special definition of a ```dataset```, or a ```kernel```, or an ```acquisition_function```, or otherwise, it becomes difficult to see the wood for the trees. Someone in my group recently asked me if it was reasonably possible to implement Bayesian optimisation, and I more often than not get asked what library or package I use.
 
-It is obviously important that BO tools become widely available, particularly to those that don't know how to code, or don't have the time such as chemists or industrial engineers. But the trade-off is that students, and practitioners are potentially using something that they don't understand, and investors are being hoodwinked into purchasing something that seems more complex than it is.
+It is obviously important that BO tools become widely available, particularly to those that don't know how to code, or don't have the time such as chemists or industrial engineers. But the trade-off is that students, and practitioners are potentially using something that they don't understand, and investors may be hoodwinked into investing in something that seems more complex than it is.
+I've personally always been motivated by finding interesting and surprising solutions to problems using the sharpest, hardest tool available.
 
 My mission in this post is to demonstrate that, whilst Bayesian optimisation entails a lot of moving parts, *implementing* it from scratch really shouldn't take too long.
 
