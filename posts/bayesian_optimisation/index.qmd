@@ -22,12 +22,11 @@ There is a Bayesian optimisation gold-rush, and everyone is selling shovels.
 Bayesian optimisation is core to the concept of self-driving labs, automated drug-discovery, and many other modern research topics. 
 It's well motivated, and a very useful tool. 
 Start ups are being founded and [pharmaceutical](https://www.merckgroup.com/en/news/opensource-ai-experimentation-planner-06-12-2023.html) and [chemicals](https://github.com/experimental-design/bofire) companies are curating teams that focus fundamentally on Bayesian optimisation in one way or another.
-As a result, there are now a huge number of libraries ranging from black-box APIs and no-code solutions to statistically accurate and fine-grained representations. Each of which becoming more bloated as different functionalities are appended.
+As a result, there is now a growing number of libraries, ranging from black-box APIs and no-code solutions to statistically accurate fine-grained representations; each becoming more bloated as new functionalities or usecases are appended.
 
 With all of these options, each with their own special definition of a ```dataset```, or a ```kernel```, or an ```acquisition_function```, or otherwise, it becomes difficult to see the wood for the trees. Someone in my group recently asked me if it was reasonably possible to implement Bayesian optimisation, and I more often than not get asked what library or package I use.
 
 It is obviously important that BO tools become widely available, particularly to those that don't know how to code, or don't have the time such as chemists or industrial engineers. But the trade-off is that students, and practitioners are potentially using something that they don't understand, and investors may be hoodwinked into investing in something that seems more complex than it is.
-I've personally always been motivated by finding interesting and surprising solutions to problems using the sharpest, hardest tool available.
 
 My mission in this post is to demonstrate that, whilst Bayesian optimisation entails a lot of moving parts, *implementing* it from scratch really shouldn't take too long.
 
@@ -51,8 +50,8 @@ To begin with I'll implement a Gaussian process from scratch.
 
 ### Gaussian processes
 
-First I'll need a kernel function. 
-I'll go for the Matern 5/2. I'm not choosing it because it's differentiable^[This is an attractive property of Gaussian processes that is ultimately distracting when optimising as a result of their nonconvexity, as I'll cover later.], but rather because I think samples from the prior look most like functions I'm interested in.
+Now I'll need a kernel function that defines how related two points are in input space.
+I'll go for the Matern 5/2. I'm not choosing it because it's differentiable^[This is an attractive property of Gaussian processes that is ultimately distracting when optimising as a result of their nonconvexity, as I'll cover later.], but rather because I think samples from the prior will look most like functions I'm interested in.
 
 ```python
 def k(x1,x2,p): # squared exponential kernel
@@ -80,7 +79,7 @@ def nll(p, x, y): # negative log likelihood
     return -0.5 * (np.log(la.det(K)) + (y - p[2]).T @ la.solve(K, y - p[2]) + len(x) * np.log(2 * np.pi))
 ```
 
-Now everything needed has been defined, I'll create my Gaussian process class. I will simplify the training procedure by making it occur on instanciation. The only other thing that is needed is the ability to call it, returning the mean and variance of the posterior distribution at x.
+Now everything needed has been defined, I'll create my Gaussian process class. I will simplify the training procedure by making it train on instanciation. The only other thing that is needed is the ability to call it, returning the mean and variance of the posterior distribution at x.
 
 ```python
 class GP: # Gaussian process class
@@ -207,7 +206,7 @@ But to really prove that this works, I'm going to even choose an interesting tes
 
 ### Plotting
 
-First, I'll need a test function. One of my personal favourite ways of doing this is to sample one from a GP prior:
+To plot my package to see it it is working, I'll need a test function. One of my personal favourite ways of doing this is to sample one from a GP prior:
 
 ```python
 x_gp = np.linspace(bounds[0,0],bounds[0,1],100).reshape(-1, 1)
