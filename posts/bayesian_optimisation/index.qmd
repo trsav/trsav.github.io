@@ -54,7 +54,7 @@ Now I'll need a kernel function that defines how related two points are in input
 I'll go for the Matern 5/2. I'm not choosing it because it's differentiable^[This is an attractive property of Gaussian processes that is ultimately distracting when optimising as a result of their nonconvexity, as I'll cover later.], but rather because I think samples from the prior will look most like functions I'm interested in.
 
 ```python
-def k(x1,x2,p): # squared exponential kernel
+def k(x1,x2,p): # matern 5/2 kernel
     sigma,l = p[0],p[1] # hyperparameters
     d = np.sqrt(np.dot(x1-x2,x1-x2))
     return sigma**2 * (1 + np.sqrt(5)*d/l + 5*d**2/(3*l**2)) * np.exp(-np.sqrt(5)*d/l)
