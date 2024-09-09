@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - files/cv.pdf
+    - portfolio_images/
 
 website:
   title: "Tom Savage"
