@@ -65,9 +65,11 @@ He almost certainly sat in the Main Square and observed Mikuláš' mechanism.
 After studying observations made by his mentor Tycho Brahe, and previous geocentric models such as that within the _Orloj_, he was inspired to derive the mathematical laws of planetary motion and in turn elliptical orbits.
 This correct discovery, as a result of previous inductive reasoning would not have occurred if it were not for Mikuláš obtaining the correct answer using the 'wrong' methodology. 
 Kepler's work demonstrates how deductive reasoning can challenge and refine knowledge initially gained through inductive methods. 
+
 ::: {.column-margin}
 ![Kepler <a href="https://commons.wikimedia.org/wiki/File:JKepler.jpg">August Köhler [1]</a>, Public domain, via Wikimedia Commons](kepler.jpeg)
 :::
+
 The Earth-centric model, built on countless observations and embodied in artefacts like the Prague Astronomical Clock, was ultimately superseded by a heliocentric model that more accurately described celestial mechanics. 
 This historical example demonstrates how the interactions between both inductive and deductive approaches drives scientific progress, each complementing and challenging the other.
 

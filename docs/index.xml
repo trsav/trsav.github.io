@@ -56,10 +56,19 @@ Figure&nbsp;1: Prague Astronomical Clock, originally designed by Mikuláš of Ka
 </figcaption>
 </figure>
 </div>
-<p>Two centuries later, Johannes Kepler lived in Prague, and had a provable interest in astronomical clocks <span class="citation" data-cites="kepler">(Marini 2022)</span>. He almost certainly sat in the Main Square and observed Mikuláš’ mechanism. After studying observations made by his mentor Tycho Brahe, and previous geocentric models such as that within the <em>Orloj</em>, he was inspired to derive the mathematical laws of planetary motion and in turn elliptical orbits. This correct discovery, as a result of previous inductive reasoning would not have occurred if it were not for Mikuláš obtaining the correct answer using the ‘wrong’ methodology. Kepler’s work demonstrates how deductive reasoning can challenge and refine knowledge initially gained through inductive methods. ::: {.column-margin} <img src="https://sav.phd/posts/manifesto/kepler.jpeg" class="img-fluid" alt="Kepler August Köhler [1], Public domain, via Wikimedia Commons"> ::: The Earth-centric model, built on countless observations and embodied in artefacts like the Prague Astronomical Clock, was ultimately superseded by a heliocentric model that more accurately described celestial mechanics. This historical example demonstrates how the interactions between both inductive and deductive approaches drives scientific progress, each complementing and challenging the other.</p>
+<p>Two centuries later, Johannes Kepler lived in Prague, and had a provable interest in astronomical clocks <span class="citation" data-cites="kepler">(Marini 2022)</span>. He almost certainly sat in the Main Square and observed Mikuláš’ mechanism. After studying observations made by his mentor Tycho Brahe, and previous geocentric models such as that within the <em>Orloj</em>, he was inspired to derive the mathematical laws of planetary motion and in turn elliptical orbits. This correct discovery, as a result of previous inductive reasoning would not have occurred if it were not for Mikuláš obtaining the correct answer using the ‘wrong’ methodology. Kepler’s work demonstrates how deductive reasoning can challenge and refine knowledge initially gained through inductive methods.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-kepler" class="csl-entry">
 Marini, Deniele L. R. 2022. <span>“The Planetary Machine by Johannes Kepler.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2208.04815">https://doi.org/10.48550/ARXIV.2208.04815</a>.
-</div></div><p>This contrast between Plato’s deductive reasoning and Aristotle’s inductive approach highlights the two fundamental pathways to gaining knowledge that have shaped discovery throughout history. These two rationalist and empiricist philosophies continue to lead, in turn, to the motivation of both frequentist and Bayesian approaches to statistics, and importantly the validity of physical and data-driven models. Much like the preceeding body of academic literature leading up to this thesis, I will exploit both rationalist and empiricist perspectives to discovery including modern inductive tools such as machine learning alongside those derived through deductive reasoning such as CFD. The remainder of this section will demonstrate specific examples of how inductive and deductive reasoning shape approaches to physical and data-driven modelling, and how knowledge can be gained through optimisation, eventually leading towards scientific discovery.</p>
+</div><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/manifesto/kepler.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Kepler <a href="https://commons.wikimedia.org/wiki/File:JKepler.jpg">August Köhler [1]</a>, Public domain, via Wikimedia Commons</figcaption>
+</figure>
+</div>
+</div></div>
+<p>The Earth-centric model, built on countless observations and embodied in artefacts like the Prague Astronomical Clock, was ultimately superseded by a heliocentric model that more accurately described celestial mechanics. This historical example demonstrates how the interactions between both inductive and deductive approaches drives scientific progress, each complementing and challenging the other.</p>
+<p>This contrast between Plato’s deductive reasoning and Aristotle’s inductive approach highlights the two fundamental pathways to gaining knowledge that have shaped discovery throughout history. These two rationalist and empiricist philosophies continue to lead, in turn, to the motivation of both frequentist and Bayesian approaches to statistics, and importantly the validity of physical and data-driven models. Much like the preceeding body of academic literature leading up to this thesis, I will exploit both rationalist and empiricist perspectives to discovery including modern inductive tools such as machine learning alongside those derived through deductive reasoning such as CFD. The remainder of this section will demonstrate specific examples of how inductive and deductive reasoning shape approaches to physical and data-driven modelling, and how knowledge can be gained through optimisation, eventually leading towards scientific discovery.</p>
 
 
 
@@ -6873,7 +6882,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-execution_count="20">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="20" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
