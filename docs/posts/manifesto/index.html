@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-07">
+<meta name="author" content="Tom Savage">
+<meta name="dcterms.date" content="2024-10-09">
 
-<title>Tom Savage - Skoob, Bloomsbury - Bookshop Review</title>
+<title>Tom Savage - Machine Learning and Discovery</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -104,22 +125,25 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Skoob, Bloomsbury - Bookshop Review</h1>
-            <p class="subtitle lead">Published in <em>The Felix</em> January 2024</p>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Books</div>
-              </div>
-                  </div>
+      <h1 class="title">Machine Learning and Discovery</h1>
+            <p class="subtitle lead">A Manifesto</p>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Savage </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 7, 2024</p>
+        <p class="date">October 9, 2024</p>
       </div>
     </div>
     
@@ -140,18 +164,46 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><a href="https://skoob.com">Skoob</a> is a second-hand bookshop that has been operating since 1979 at locations throughout London, before moving to the Grade II listed Brunswick Centre in Bloomsbury in 2007. Skoob has generous opening hours of 10:30am – 7:30pm (apart from on Sundays) and is open 7 days a week.</p>
-<p>Outside, the shop maintains an unremarkable glass and concrete look. It is engulfed by a modernist concrete development and flanked by a big Waitrose. However, walking downstairs from the discrete entrance you are greeted by a rich burgundy floor surrounding a bespoke Skoob logo mosaic. Looking up, there are books everywhere. Where there is a flat wall, there is a bookshelf. Often, books are stacked horizontally in what normally would serve as breathing room between rows, with those on lower shelves spilling out onto the floor. The utilitarian shelves seem to bear the weight of the Brunswick Centre above. The aisles of Waitrose seem a world away.</p>
+<div class="cleanbox">
+<p>This post is a modified version of the opening to the background of my PhD thesis.</p>
+<p>It was published the day after Geoffrey Hinton and John Hopfield were awarded the Nobel Prize in Physics, and the day that David Baker and Demis Hassabis were awarded the Nobel Prize in Chemistry.</p>
+</div>
+<!-- This chapter will provide a background for the technical content that is used and referred to in the remainder of this thesis. 
+This chapter will broadly focus on discussing methods for modelling and optimisation from the perspective of scientific discovery and the pursuit of knowledge, eventually motivating a unification of optimisation and discovery.  -->
+<blockquote class="blockquote">
+<p><em>There is yet one leverage point that is even higher than changing a paradigm. That is to keep oneself unattached in the arena of paradigms, to stay flexible, to realize that no paradigm is “true”, that every one, including the one that sweetly shapes your own worldview, is a tremendously limited understanding of an immense and amazing universe that is far beyond human comprehension.</em> - Donella Meadows from her book <em>Thinking in Systems: A Primer</em>.</p>
+</blockquote>
+<p>This is a personal manifesto for discovery, and an attempt to contextualise modelling, optimisation, and the great leap towards discovery and <em>AI for Science</em>.</p>
+<p>It is important to first define what we mean by the act of ‘gaining knowledge’ as it will enable a greater understanding of different modelling and optimisation methodologies with a larger contextual picture in mind. Within the context of process engineering, engineers often seek to learn about the behaviour of existing complex systems to improve monitoring, control, or operation. Engineers also aim to identify new processes that may lead to improved efficiencies or reduced environmental impacts. These two fundamental pursuits, understanding existing systems, and extrapolating this information to discover new systems are not only relevant for process engineers, but across all of science and engineering.</p>
+<p>Discovery and optimisation are themselves deeply linked, but we first must ask ourselves what constitutes a discovery. Very rarely do new chemical reactors burst into existence.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skoob.webp" class="img-fluid figure-img"></p>
-<figcaption>Skoob, taken December 2023</figcaption>
+<p><img src="reactor.png" class="img-fluid figure-img"></p>
+<figcaption>Chemical reactor from <a href="https://www.nature.com/articles/s44286-024-00099-1"><em>Machine learning-assisted discovery of flow reactor designs - Nature Chemical Engineering.</em></a></figcaption>
 </figure>
 </div>
-</div></div><p>The shop is laid out like a large old key. Turning left, the central spine branches off into a series of small nooks, some with a single chair, some without. The only sound is a light hum emitted from the foil insulated air conditioning pipe that runs along the low ceiling and through the top shelves, forcing books horizontally to make way for the fixture. Operationally, this ensures that Skoob is a completely unnoticeable temperature and volume. Alongside the complete lack of natural light, time stands still. Turning right, the circular bow of the key contains the small staff area and till with shelves that loop around encircling the custodians. Categories of books in Skoob are broad and largely academic. A successful trip would be to come with a given a period, place, or politic in mind</p>
-<p>Skoob forces you to bend and stretch to find worthwhile books (a lot of which are not). The small spaces and full-length shelves, no two of which are the same, make it a physical challenge akin to a marathon as opposed to a sprint, making the task all the more rewarding. Upon purchase, and after travelling back upstairs you are thrust back into a more organised, less interesting world. Whilst Skoob could reasonably be described as chaotic and quite hard work, it is the perfect environment to discover something completely new.</p>
+</div></div><p>Discoveries must be gently coaxed, teased into reality. I will argue that it is neither deductive or inductive, or even the combination of these approaches that is the driving force behind innovation, but rather the tension between them. When this tension is built up to such an extent, and the solutions from optimisation problems cease to look like what you started with, deductive models break down, and no existing observations are available, then, we have discovered.</p>
+<p>The act of gaining knowledge most commonly involves learning through observations, or by building up or combining smaller ‘truths’. Socrates’s student Plato asserted that knowledge is infallible, and ‘real’ <span class="citation" data-cites="Bostock1991">(<a href="#ref-Bostock1991" role="doc-biblioref">Bostock 1991</a>)</span>. The implication being that basic facts or truths could be combined, resulting in larger, previously unknown ‘truths’. This represents a key mindset behind the development of modern mathematics, theoretical physics, and mechanistic models such as those used within Computational Fluid Dynamics (CFD). On the other hand, Plato’s student Aristotle generally took the view that we can only assert something as true if we have <em>observed</em> it. By instead focusing on empirical observation and the systematic study of the <em>existing physical world</em>, Aristotle laid the foundations for inductive reasoning. The tension between inductive and deductive reasoning not only persists throughout history, but I would argue is itself the driving force behind many scientific discoveries and advances.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-Bostock1991" class="csl-entry" role="listitem">
+Bostock, David. 1991. <span>“The Theory That Perception Is Knowledge.”</span> In <em>Plato’s Theaetetus</em>, 40–83. Oxford University Press. <a href="https://doi.org/10.1093/acprof:oso/9780198239307.003.0002">https://doi.org/10.1093/acprof:oso/9780198239307.003.0002</a>.
+</div></div><p>The Prague astronomical clock, or <em>Orloj</em>, was created in by clock maker Mikuláš of Kadaň in the year 1410 based on meticulous empirical observations. The clock itself accurately plots the sun and moon around the earth in a geocentric motion. Despite using the wrong reference frame, the clock was deemed so accurate and impressive that a later clock maker was blinded by Prague authorities to ensure he could not make another. <a href="#fig-clock" class="quarto-xref">Figure&nbsp;1</a> shows the <em>Orloj</em>.</p>
+<div id="fig-clock" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="astronomical.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Prague Astronomical Clock, originally designed by Mikuláš of Kadaň. Image by Tom Savage, 2024.
+</figcaption>
+</figure>
+</div>
+<p>Two centuries later, Johannes Kepler lived in Prague, and had a provable interest in astronomical clocks <span class="citation" data-cites="kepler">(<a href="#ref-kepler" role="doc-biblioref">Marini 2022</a>)</span>. He almost certainly sat in the Main Square and observed Mikuláš’ mechanism. After studying observations made by his mentor Tycho Brahe, and previous geocentric models such as that within the <em>Orloj</em>, he was inspired to derive the mathematical laws of planetary motion and in turn elliptical orbits. This correct discovery, as a result of previous inductive reasoning would not have occurred if it were not for Mikuláš obtaining the correct answer using the ‘wrong’ methodology. Kepler’s work demonstrates how deductive reasoning can challenge and refine knowledge initially gained through inductive methods. ::: {.column-margin} <img src="kepler.jpeg" class="img-fluid" alt="Kepler August Köhler [1], Public domain, via Wikimedia Commons"> ::: The Earth-centric model, built on countless observations and embodied in artefacts like the Prague Astronomical Clock, was ultimately superseded by a heliocentric model that more accurately described celestial mechanics. This historical example demonstrates how the interactions between both inductive and deductive approaches drives scientific progress, each complementing and challenging the other.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-kepler" class="csl-entry" role="listitem">
+Marini, Deniele L. R. 2022. <span>“The Planetary Machine by Johannes Kepler.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2208.04815">https://doi.org/10.48550/ARXIV.2208.04815</a>.
+</div></div><p>This contrast between Plato’s deductive reasoning and Aristotle’s inductive approach highlights the two fundamental pathways to gaining knowledge that have shaped discovery throughout history. These two rationalist and empiricist philosophies continue to lead, in turn, to the motivation of both frequentist and Bayesian approaches to statistics, and importantly the validity of physical and data-driven models. Much like the preceeding body of academic literature leading up to this thesis, I will exploit both rationalist and empiricist perspectives to discovery including modern inductive tools such as machine learning alongside those derived through deductive reasoning such as CFD. The remainder of this section will demonstrate specific examples of how inductive and deductive reasoning shape approaches to physical and data-driven modelling, and how knowledge can be gained through optimisation, eventually leading towards scientific discovery.</p>
+
 
 
 

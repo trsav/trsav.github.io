@@ -14,10 +14,10 @@ comments:
 html: 
     grid: 
       margin-width: 600px
-fig-cap-location: margin
-reference-location: margin
-citation-location: margin
-footnote-location: margin
+# fig-cap-location: margin
+# reference-location: margin
+# citation-location: margin
+# footnote-location: margin
 citation: 
   url: https://sav.phd/posts/outsmarted
 google-scholar: true

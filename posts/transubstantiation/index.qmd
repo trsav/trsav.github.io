@@ -3,12 +3,14 @@ title: "The Machine Learning Reformation"
 subtitle: "What the late middle ages can teach us about the future of AI"
 categories: [Machine Learning, Religion, Art]
 date: "02/03/2024"
+pdf:
 html: 
     self-contained: true
     grid: 
     margin-width: 450px
 bibliography: ref.bib
 citation-location: margin
+# footnote-location: inline
 comments:
     utterances:
         repo: trsav/trsav.github.io
