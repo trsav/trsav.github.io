@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Savage">
-<meta name="dcterms.date" content="2024-01-31">
+<meta name="dcterms.date" content="2023-11-12">
 
-<title>Tom Savage - Scatter Plots</title>
+<title>Tom Savage - AIChE 2023 &amp; Polar Gaussian Processes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -104,11 +124,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -139,9 +189,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Scatter Plots</h1>
+      <h1 class="title">AIChE 2023 &amp; Polar Gaussian Processes</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Visualisation</div>
+                <div class="quarto-category">Conference</div>
+                <div class="quarto-category">Chemical Engineering</div>
               </div>
                   </div>
   </div>
@@ -159,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 31, 2024</p>
+        <p class="date">November 12, 2023</p>
       </div>
     </div>
     
@@ -170,235 +221,163 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>Here I will outline my personal preferences for best plotting practices for 2D scatter plots using <a href="https://matplotlib.org">Matplotlib</a>. I will be initialising the plot as demonstrated in my <a href="https://sav.phd/posts/convergence_plots/">previous post</a>.</p>
-<p>To start with I will simulate a thousand data points that may have come from a dimensionality reduction technique such as <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/wb/035mswds69j2l_sw8yg6tdjw0000gr/T/ipykernel_66542/585749580.py:4: RuntimeWarning: covariance is not symmetric positive-semidefinite.
-  X = np.random.multivariate_normal(mean,cov,n)</code></pre>
-</div>
-</div>
-<p>This is as simple and basic as a plot can be in Matplotlib.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="410"></p>
+<p><img src="yhf.webp" class="img-fluid figure-img"></p>
+<figcaption>Yankee Hotel Foxtrot - Wilco</figcaption>
 </figure>
 </div>
+<p><img src="selfie.webp" class="img-fluid"></p>
+</div></div><p>This <a href="https://www.aiche.org/conferences/aiche-annual-meeting/2023">AIChE</a> was in Orlando. However, due to a delay at US customs during a layover at Chicago O’Hare I was prescribed the unfortunate detour of an evening in downtown Chicago.</p>
+<p>I begrudgingly recreated the cover of one of my <a href="https://en.wikipedia.org/wiki/Yankee_Hotel_Foxtrot">favourite albums</a> as well as ate deep dish pizza and the like… However after arriving in Orlando I presented three talks:</p>
+<div class="line">
+
 </div>
-</div>
-<p>First of all we need to size and scale the plot appropriately.</p>
-<p>By default, <strong>the aspect-ratio of the axis will not be equal</strong>. If the axis have similar units or meaning this can provide misleading interpretation of the data. We will fix this first.</p>
+<p>​</p>
+<p><strong>A Data-Driven Framework for the Design of Reactor Simulations: Exploiting Multiple Continuous Fidelities</strong>: <em>Data Driven Optimisation</em></p>
+<p>In this talk I outlined the problem formulation and methodology for the optimisation of coiled-tube reactor geometry.</p>
+<p>Additive manufacturing has enabled the creation of reactors with non-traditional geometries, so to take advantage of this we parameterise the wall and path of a coiled tube reactor and formulate a large, expensive derivative free/black box optimisation problem.</p>
+<p>Because the closed loop procedure of meshing and simulating a given geometry is so expensive we formulate it as a multi-fidelity Bayesian optimisation problem with two independent continuous fidelities.</p>
 <div class="cleanbox">
-<p><strong>Always</strong> set the aspect ratio to be equal if both quantities are comparable in meaning and magnitude using <code>ax.set_aspect('equal')</code></p>
-</div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="263"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We will now add appropriate labels, with a legible fontsize to our axis, using LaTeX where appropriate.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$x_2$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>With so many data points, adding some opacity can help the reader interpret the density. Note that reducting the opacity affects the fill and the edge of each point differently.</p>
-<p>At this point I will set the color to black, considering we have no separable classes (yet).</p>
-<div class="cleanbox">
-<p><strong>Always</strong> consider removing the edge of each scatter-point if decreasing the opacity to make the plot look cleaner.</p>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,linewidth<span class="op">=</span><span class="dv">0</span>,alpha<span class="op">=</span><span class="fl">0.2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
+<div class="columns">
+<div class="column" style="width:5%;">
+
+</div><div class="column" style="width:90%;">
+<p><img src="results.webp" class="img-fluid"> <strong>TL;DR</strong> we use the insights generated via optimisation to design two new flow reactors. We experimentally validate these and demonstrate <em>improved plug-flow behaviour at low Reynolds numbers under steady-flow conditions.</em></p>
+</div><div class="column" style="width:5%;">
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+</div>
+<p><a href="https://arxiv.org/abs/2308.08841">For the full read take a look at the preprint.</a> <span class="citation" data-cites="savage">(<a href="#ref-savage" role="doc-biblioref">Savage et al. 2023</a>)</span> Thanks to my co-authors: Nausheen, who recently won the <a href="https://x.com/IMechE/status/1721527911012835747?s=20">IMechE Process Industries Division Most Distinguished Developing Career Achievement Prize</a>, and <a href="https://www.ncl.ac.uk/engineering/staff/profile/jonathanmcdonough.html">Jonathan</a> who without which the 3D printing and validation wouldn’t have been possible, as well as Prof Omar Matar and Dr Antonio del Rio Chanona.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>With edges</figcaption>
+<p><img src="me.webp" class="img-fluid figure-img"></p>
+<figcaption>Me presenting the talk. Spot the 3D printed reactor on the table.</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption><strong>Without</strong> edges</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Alternatively, the marker size may be changed to a smaller value and the opacity set to 1. This provides a less clear image of the <strong>distribution</strong> of points, but a clearer view of the specific locations of data.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">3</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
+</div></div><details>
+<summary>
+<strong>Extra polar Gaussian process content and shoutout to GPJax</strong>
+</summary>
+<p>​</p>
+<p>As part of this work I parameterised the walls of a coiled tube reactor using a series of polar Gaussian Processes, allowing me to shift and warp the wall whilst ensuring it remains closed and continuous (AKA no leaks!). As part of this I ended up <a href="https://github.com/JaxGaussianProcesses/GPJax/pull/339">contributing to the open-source GPJax library</a> which has been my library of choice for Gaussian processes for the last year.</p>
+<p>Polar Gaussian processes work by applying a kernel function that operates using modulo-arithmatic. This ensures that as opposed to a data point at <span class="math inline">\(\theta=0\)</span> and <span class="math inline">\(\theta=2\pi\)</span> having zero correlation, they infact have perfect correlation. In short, the correlation between data ‘wraps around’ to the beginning.</p>
+<p>If we define a standard covariance function such as the Matern function, and simply plot samples from a respective Gaussian process on a polar axis, the results are clearly not continuous in the polar domain.</p>
+<div class="cell" data-fig-width="50%" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matern(t1,t2):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  d <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>(t1<span class="op">-</span>t2)<span class="op">**</span><span class="dv">2</span><span class="op">;</span> p <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="dv">1</span><span class="op">+</span>(np.sqrt(<span class="dv">3</span>)<span class="op">*</span>d)<span class="op">/</span>p) <span class="op">*</span> np.exp(<span class="op">-</span>(np.sqrt(<span class="dv">3</span>)<span class="op">*</span>d)<span class="op">/</span>p)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_samples(k):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  theta <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,n)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  covariance_matrix <span class="op">=</span> np.array([[k(theta[i],theta[j]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  mean_function <span class="op">=</span> np.array([<span class="dv">1</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  ax.set_rticks([])<span class="op">;</span> ax.set_rlim(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  cols <span class="op">=</span> [<span class="st">'tab:blue'</span>,<span class="st">'tab:green'</span>,<span class="st">'tab:red'</span>,<span class="st">'tab:orange'</span>]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    prior_sample <span class="op">=</span> np.random.multivariate_normal(mean_function,covariance_matrix)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    ax.plot(theta,prior_sample,c<span class="op">=</span>cols[i])</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plot_samples(matern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="450" height="439" class="figure-img"></p>
+<figcaption>Samples from a non-polar Gaussian Process</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Despite these plots containing the same data, they are visually different and tell different stories to the reader. As always…</p>
-<div class="cleanbox">
-<p>It is important to consider what message you wish to convey, and how visual elements such as opacity, and marker size support this message.</p>
+<p>The samples are not closed because our kernel function believes that <span class="math inline">\(2\pi\)</span> and <span class="math inline">\(0\)</span> are very ‘far away’, when in fact they are perfectly correlated. A polar kernel function should reflect this fact:</p>
+<div class="cell" data-fig-width="50%" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polar(t1,t2):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  tau <span class="op">=</span> np.pi</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># angular distance</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  d <span class="op">=</span> <span class="bu">abs</span>(((t1<span class="op">-</span>t2<span class="op">+</span>np.pi) <span class="op">%</span> (<span class="dv">2</span><span class="op">*</span>np.pi)) <span class="op">-</span> np.pi)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="dv">1</span> <span class="op">+</span> tau <span class="op">*</span> d <span class="op">/</span> np.pi) <span class="op">*</span> np.clip(<span class="dv">1</span> <span class="op">-</span> d <span class="op">/</span> np.pi, <span class="dv">0</span>, np.inf) <span class="op">**</span> tau</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plot_samples(polar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="450" height="439" class="figure-img"></p>
+<figcaption>Samples from a polar Gaussian Process</figcaption>
+</figure>
 </div>
-<p>If the specific location of data is critically important, the ‘+’ symbol may be used. When scaling up the size of this marker appropriately, make sure to reduce the linewidth to ensure that the symbol isn’t too thick.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">50</span>,linewidth<span class="op">=</span><span class="fl">0.75</span>,marker<span class="op">=</span><span class="st">'+'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div>
+</div>
+<p>As we can see, samples from this Gaussian process are continuous in the polar domain! We can then condition as we normally would on data.</p>
+In the case of defining the cross-section, we choose to exactly interpolate between 6 equally spaced points. The resulting posterior mean function then defines the cross-section.
+</details>
+<div class="line">
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>​</p>
+<p><strong>Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations</strong>: <em>Data Science for Complex Fluids and Complex Flows</em></p>
+<p>In this talk I discussed the flows that we induced through the optimisation of plug-flow performance.</p>
+<p>Despite only specifying that we wanted the residence time distribution to be as tight and symmetric as possible, we found out that our optimised designs specifically induced Dean vortices at low Reynolds numbers.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="dean_example.webp" class="img-fluid"> <img src="dean_example_2.webp" class="img-fluid"> Early formation of Dean vortices induced in our optimal design.</p>
+</div></div><div class="cleanbox">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Standard Linewidth</figcaption>
+<p><img src="summary.webp" class="img-fluid figure-img" style="width:99.0%"></p>
+<figcaption>Summary slide for the presentation <em>Multi-Fidelity Data-Driven Design and Analysis of Reactor and Tube Simulations</em> at AIChE 2023.</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Reduced Linewidth</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>It may be helpful in this situation to ensure the grid is turned on, but remember to ensure it is <strong>behind</strong> other elements by using <code>ax.set_axisbelow(True)</code>.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-15-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we have different classes that we want to highlight? For now I will plot these clusters in the <code>tab:</code> colour pallette.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> clusters[i]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.75</span>,linewidth<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-17-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However, we now need to label our clusters. Adding a legend inside the plot will make it cluttered.</p>
-<p>Therefore we can add the legend outside the plot itself, on the right, above or below.</p>
-<p>Because there are a reasonable number of labels, I will place the legend just above the plot in a single row, ensuring that the rounded frame is turned off.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'upper center'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="fl">1.15</span>),</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>          ncol<span class="op">=</span><span class="dv">5</span>,frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How to make the plot accessible to people who have colour-blindness? We may use different markers…</p>
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However clearly the plot becomes illegible. I think in the scenario where colours are not desired (or their use should be minimised) the best option is to use multiple subplots, and opacity as follows:</p>
-<div>
+<ul>
+<li><strong>Designing Robust Energy Policies for Low-Carbon Technology Adoption</strong>: <em>Design, Analysis, and Optimization of Sustainable Energy Systems and Supply Chains I</em></li>
+</ul>
+<p>This talk was highlighting work completed with Dr Gbemi Olueye at the Imperial College Centre for Environmental Policy.</p>
+<p>There are a number of really great energy policy optimisation problems that include aspects such as the relationship between technology uptake and cost (via a learning rate). Due to obvious reasons broadly concerned with ‘the future’ it is important to account for uncertainty.</p>
+<p>Large scale uncertainties concerning ‘the future’ (which I differentiate from smaller ‘stochastic’ uncertainties) are often specified by upper and lower bounds. To deal with these we formulate and solve a robust optimisation problem using a parallelised cutting planes approach. This enables us to:</p>
+<ol type="1">
+<li>Maintain the original nonlinear energy policy problem</li>
+<li>Solve the problem (approximately) robustly really fast, enabling us to experiment with uncertainty.</li>
+</ol>
+<p>It’s this experimentation that is enabled by the methodology that enables us to provide trade-off graphs to policy makers <em>as the solution itself</em>. Something that I argue should always be done for this class of problem, given the political mandate we as engineers and scientists do not have.</p>
+<p><a href="https://doi.org/10.48550/arxiv.2304.10203">For a full overview, click here for the preprint.</a> <span class="citation" data-cites="savage2">(<a href="#ref-savage2" role="doc-biblioref">Savage, Chanona, and Oluleye 2023</a>)</span></p>
+<div class="line">
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-execution_count="20">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Whilst we have increased the overall number of plots, this is an accessible alternative to using colours, and follows <a href="https://en.wikipedia.org/wiki/Small_multiple">Edward Tufte’s philosophy of Small Multiples</a>.</p>
+<p>​</p>
+<p>That is about it for Orlando. It was great to catch up with some old colleagues from Cambridge, and some new ones. See you next year in San Diego!</p>
+<p><img src="all.webp" class="img-fluid" style="width:100.0%"></p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-savage" class="csl-entry" role="listitem">
+Savage, Tom, Nausheen Basha, Jonathan McDonough, Omar K Matar, and Ehecatl Antonio del Rio Chanona. 2023. <span>“Machine Learning-Assisted Discovery of Novel Reactor Designs.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2308.08841">https://doi.org/10.48550/ARXIV.2308.08841</a>.
+</div>
+<div id="ref-savage2" class="csl-entry" role="listitem">
+Savage, Tom, Antonio del Rio Chanona, and Gbemi Oluleye. 2023. <span>“Robust Market Potential Assessment: Designing Optimal Policies for Low-Carbon Technology Adoption in an Increasingly Uncertain World.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2304.10203">https://doi.org/10.48550/ARXIV.2304.10203</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

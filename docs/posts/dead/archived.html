@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage">
-<meta name="dcterms.date" content="2024-01-31">
+<meta name="author" content="ARCHIVED">
+<meta name="dcterms.date" content="2024-08-23">
 
-<title>Tom Savage - Scatter Plots</title>
+<title>Tom Savage - The Dead Blog Theory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -139,11 +139,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Scatter Plots</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Visualisation</div>
-              </div>
-                  </div>
+      <h1 class="title">The Dead Blog Theory</h1>
+            <p class="subtitle lead">An exercise in website collapse.</p>
+                      </div>
   </div>
     
   
@@ -152,14 +150,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Tom Savage </p>
+               <p>ARCHIVED </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 31, 2024</p>
+        <p class="date">August 23, 2024</p>
       </div>
     </div>
     
@@ -170,231 +168,158 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>Here I will outline my personal preferences for best plotting practices for 2D scatter plots using <a href="https://matplotlib.org">Matplotlib</a>. I will be initialising the plot as demonstrated in my <a href="https://sav.phd/posts/convergence_plots/">previous post</a>.</p>
-<p>To start with I will simulate a thousand data points that may have come from a dimensionality reduction technique such as <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/wb/035mswds69j2l_sw8yg6tdjw0000gr/T/ipykernel_66542/585749580.py:4: RuntimeWarning: covariance is not symmetric positive-semidefinite.
-  X = np.random.multivariate_normal(mean,cov,n)</code></pre>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="subway.jpeg" class="img-fluid"></p>
+</div></div><div class="cleanbox">
+<p>Extra note: I appreciate that model collapse in practice doesn’t really occur, because of curated datasets and the effort that does into ensuring good training data. But indulge me.</p>
 </div>
-</div>
-<p>This is as simple and basic as a plot can be in Matplotlib.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="410"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>First of all we need to size and scale the plot appropriately.</p>
-<p>By default, <strong>the aspect-ratio of the axis will not be equal</strong>. If the axis have similar units or meaning this can provide misleading interpretation of the data. We will fix this first.</p>
 <div class="cleanbox">
-<p><strong>Always</strong> set the aspect ratio to be equal if both quantities are comparable in meaning and magnitude using <code>ax.set_aspect('equal')</code></p>
+<p>This post is rotting, and will soon become AI slop. What follows is a love letter to an internet that will never exist again, it is a self-fulfilling obituary. Ashes to ashes, dust to dust, slop… to slop.</p>
 </div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
+<div class="changeable_text">
+<p>The dead internet theory states that sooner rather than later, genuine activity on the internet will be in the minority, and the majority of traffic will come from bots. Content will be produced by bots, and it will be engaged with by other bots. Every day, it becomes less of a theory, with ‘dead’ content being generally characterised as <strong>slop</strong>.</p>
+</div>
+<div class="changeable_text page-columns page-full">
+<p>In the beginning was the Word, and then the next Word and the next Word, and then after enough words, someone claimed that a large-language model could think, and the Word was God<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;John 1:1, creatively embellished, some would say blasphemously.</p></div></div></div>
+<div class="changeable_text">
+<p>Content traditionally produced by marketers, copywrighters, and journalists is slowly being replaced with generative content from LLMs. But what happens when the next-generation of LLMs are being trained on this pseudo-data from the internet?</p>
+</div>
+<div class="changeable_text page-columns page-full">
+<p>The equivalent of the dead internet theory for LLMs, <em>model-collapse</em> illustrates a scenario where datasets become so poisoned that it becomes impossible to ever train a new LLM effectively<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Why <a href="https://www.reuters.com/technology/sam-altmans-openai-signs-content-agreement-with-news-corp-2024-05-22/">AI companies enter into multi-million pound contracts with news organisations</a> with a wealth of verifiably human, proofread and well written content.</p></div></div></div>
+<div class="changeable_text page-columns page-full">
+<p>Like pre-trinity test low background radiation steel<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, pre-large-language model content will become sought after. Humanity will see a return to the handwritten word, literature originating before chatGPT will be considered sacred, evidence of genuine human achievement.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;<a href="https://en.wikipedia.org/wiki/Low-background_steel">Often stolen from WW2 shipwrecks for particle detectors.</a></p></div></div></div>
+<p>And here, we, go…<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;<img src="joker.jpg" class="img-fluid"></p></div></div><div class="changeable_text page-columns page-full">
+<p>In London there is a Raspberry Pi running a cronjob. It has access to the source code to this very post and is also loaded with a small local BERT-based model<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Specifically, <a href="https://huggingface.co/google-bert/bert-base-uncased">google-bert/bert-base-uncased</a></p></div></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="263"></p>
+<p><img src="pi.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Proof of life</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<p>We will now add appropriate labels, with a legible fontsize to our axis, using LaTeX where appropriate.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$x_2$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
+<div class="changeable_text page-columns page-full">
+<p>Twice a day, a random sentence from this post will be selected, and a random word will be omitted. The small, local language model will be them prompted to infer the missing word. This word will be replaced, my site re-rendered, the changes committed to the Git repository, and reflected here<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Additionally I will prompt the model to add a word a day to the bottom of this post.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Stunning way to increase my Github contributions.</p></div></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
+<p><video src="recording.mp4" class="img-fluid" style="width:80.0%" controls=""><a href="recording.mp4">Video</a></video></p>
+<figcaption>Blog collapse.</figcaption>
 </figure>
 </div>
+<details>
+<summary>
+View Script &amp; LLM Inference Code
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> mini_llama_env/bin/activate</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> script.py</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../website</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"post continues to rot"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_file(filename):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Read file content</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find lines with 'changeable_text'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    changeable_lines <span class="op">=</span> []</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data)):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'''FLAG'''</span> <span class="kw">in</span> data[i] :</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            changeable_lines.append(i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    random_line <span class="op">=</span> np.random.choice(changeable_lines)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> data[random_line]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process footnote if present</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'^['</span> <span class="kw">in</span> text:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        footnote_index <span class="op">=</span> text.index(<span class="st">'^['</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        end_footnote <span class="op">=</span> text.index(<span class="st">'</span><span class="ch">\\</span><span class="st">x00]'</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        pre_footnote, post_footnote <span class="op">=</span> text.split(<span class="st">'^['</span>)[<span class="dv">0</span>], text.split(<span class="st">"</span><span class="ch">\\</span><span class="st">x00]"</span>)[<span class="dv">1</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        footnote <span class="op">=</span> text[footnote_index:end_footnote<span class="op">+</span><span class="dv">5</span>]</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        footnote_word_index <span class="op">=</span> text[:footnote_index].count(<span class="st">' '</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'FOOTNOTE WORD INDEX:'</span>, footnote_word_index)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        data[random_line] <span class="op">=</span> pre_footnote <span class="op">+</span> post_footnote</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Replace random word with [MASK]</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> data[random_line].split()</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    random_word_index <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="bu">len</span>(line))</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'REMOVED WORD'</span>, line[random_word_index])</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    rem_word_store <span class="op">=</span> line[random_word_index]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    line[random_word_index] <span class="op">=</span> <span class="st">'[MASK]'</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> <span class="st">' '</span>.join(line)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use BERT to fill [MASK]</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    unmasker <span class="op">=</span> pipeline(<span class="st">'fill-mask'</span>, model<span class="op">=</span><span class="st">'bert-base-uncased'</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> unmasker(line)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    res.append({<span class="st">'token_str'</span>: rem_word_store})</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    word_index <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> res[word_index][<span class="st">'token_str'</span>] <span class="kw">in</span> [<span class="st">'.'</span>, <span class="st">','</span>, <span class="st">'!'</span>, <span class="st">'?'</span>]:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        word_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    replacement_word <span class="op">=</span> res[word_index][<span class="st">'token_str'</span>]</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'REPLACEMENT WORD:'</span>, replacement_word)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> line.replace(<span class="st">'[MASK]'</span>, replacement_word)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reinsert footnote if it existed</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'footnote'</span> <span class="kw">in</span> <span class="bu">locals</span>():</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        line_words <span class="op">=</span> line.split()</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        line_words.insert(footnote_word_index, footnote)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        line <span class="op">=</span> <span class="st">' '</span>.join(line_words) <span class="op">+</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> line.replace(<span class="st">':::'</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">:::</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    data[random_line] <span class="op">=</span> line<span class="op">+</span><span class="st">'</span><span class="ch">\n</span><span class="st">'</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process 'extra' lines</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    extra_lines <span class="op">=</span> [i<span class="op">+</span><span class="dv">1</span> <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(data) <span class="cf">if</span> <span class="st">'FLAG'</span> <span class="kw">in</span> line]</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> extra_lines:</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        generated <span class="op">=</span> data[extra_lines[<span class="dv">0</span>]].strip()</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        hypothesised <span class="op">=</span> generated <span class="op">+</span> <span class="st">' [MASK]'</span> <span class="op">+</span> <span class="st">'. END OF STATEMENT.'</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> unmasker(hypothesised)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'ADDED WORD:'</span>, res[<span class="dv">0</span>][<span class="st">'token_str'</span>])</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        data[extra_lines[<span class="dv">0</span>]] <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>generated<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>res[<span class="dv">0</span>][<span class="st">'token_str'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update timestamp</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    utc_str <span class="op">=</span> time.asctime(time.gmtime())</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'UTC:'</span>, utc_str)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    data[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="ss">f'''Updated: </span><span class="sc">{</span>utc_str<span class="sc">}</span><span class="ss">. Replaced </span><span class="sc">{</span>rem_word_store<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>replacement_word<span class="sc">}</span><span class="ss">. Added </span><span class="sc">{</span>res[<span class="dv">0</span>][<span class="st">'token_str'</span>]<span class="sc">}</span><span class="ss"> to the end of the generated text.'''</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write updated content back to file</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.writelines(data)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>process_file(<span class="st">'../website/posts/dead/index.qmd'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="changeable_text">
+<p>Token to token, slop to slop, all good things must come to an end.</p>
 </div>
+<div class="extra">
+<p>I .</p>
 </div>
-<p>With so many data points, adding some opacity can help the reader interpret the density. Note that reducting the opacity affects the fill and the edge of each point differently.</p>
-<p>At this point I will set the color to black, considering we have no separable classes (yet).</p>
-<div class="cleanbox">
-<p><strong>Always</strong> consider removing the edge of each scatter-point if decreasing the opacity to make the plot look cleaner.</p>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,linewidth<span class="op">=</span><span class="dv">0</span>,alpha<span class="op">=</span><span class="fl">0.2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
+<p>Updated: Fri Aug 23 10:55:41 2024. Replaced Content with content. Added . to the end of the generated text.</p>
 
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>With edges</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption><strong>Without</strong> edges</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Alternatively, the marker size may be changed to a smaller value and the opacity set to 1. This provides a less clear image of the <strong>distribution</strong> of points, but a clearer view of the specific locations of data.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">3</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Despite these plots containing the same data, they are visually different and tell different stories to the reader. As always…</p>
-<div class="cleanbox">
-<p>It is important to consider what message you wish to convey, and how visual elements such as opacity, and marker size support this message.</p>
-</div>
-<p>If the specific location of data is critically important, the ‘+’ symbol may be used. When scaling up the size of this marker appropriately, make sure to reduce the linewidth to ensure that the symbol isn’t too thick.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">50</span>,linewidth<span class="op">=</span><span class="fl">0.75</span>,marker<span class="op">=</span><span class="st">'+'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Standard Linewidth</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Reduced Linewidth</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>It may be helpful in this situation to ensure the grid is turned on, but remember to ensure it is <strong>behind</strong> other elements by using <code>ax.set_axisbelow(True)</code>.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-15-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we have different classes that we want to highlight? For now I will plot these clusters in the <code>tab:</code> colour pallette.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> clusters[i]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.75</span>,linewidth<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-17-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However, we now need to label our clusters. Adding a legend inside the plot will make it cluttered.</p>
-<p>Therefore we can add the legend outside the plot itself, on the right, above or below.</p>
-<p>Because there are a reasonable number of labels, I will place the legend just above the plot in a single row, ensuring that the rounded frame is turned off.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'upper center'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="fl">1.15</span>),</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>          ncol<span class="op">=</span><span class="dv">5</span>,frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How to make the plot accessible to people who have colour-blindness? We may use different markers…</p>
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However clearly the plot becomes illegible. I think in the scenario where colours are not desired (or their use should be minimised) the best option is to use multiple subplots, and opacity as follows:</p>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-execution_count="20">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Whilst we have increased the overall number of plots, this is an accessible alternative to using colours, and follows <a href="https://en.wikipedia.org/wiki/Small_multiple">Edward Tufte’s philosophy of Small Multiples</a>.</p>
 
 
 
