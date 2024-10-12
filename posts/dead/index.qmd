@@ -30,7 +30,7 @@ This post is rotting, and will soon become AI slop. What follows is a love lette
 
 
 :::{.changeable_text}
-The dead content theory states that sooner rather than later the content on the internet will be in the minority, and the majority of traffic will be when the content cannot be accessed by bot ; traffic will be accessed only by the bots. Every time it becomes less of a problem with dead content - generally malicious content ;
+The dead content theory states that sooner rather than later the content on the internet will be in the background and the majority of traffic will be when the content cannot be accessed by bot ; traffic will be accessed only by the bots. Every time it becomes less of a problem with dead content - generally malicious content ;
 :::
 
 :::{.changeable_text}
@@ -178,10 +178,10 @@ Token to token, slop to slop, all good things must come to an end.
 ### Slop
 
 :::{.extrauniqueflaghere}
-I the one left out there said no more words then left him speechless again . 1 pm est and then he left again again . 1
+I the one left out there said no more words then left him speechless again . 1 pm est and then he left again again . 1 pm
 :::
 
 :::
 
 
-Updated: Fri Oct 11 20:03:07 2024. Replaced states with states. Added 1 to the end of the generated text.
+Updated: Sat Oct 12 08:03:06 2024. Replaced minority, with background. Added pm to the end of the generated text.
