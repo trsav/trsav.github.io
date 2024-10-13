@@ -2897,10 +2897,10 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <section id="slop" class="level3 cleanbox">
 <h3 class="anchored" data-anchor-id="slop">Slop</h3>
 <div class="extrauniqueflaghere">
-<p>I the one left out there said no more words then left him speechless again . 1 pm est and then he left again again . 1 pm est</p>
+<p>I the one left out there said no more words then left him speechless again . 1 pm est and then he left again again . 1 pm est est</p>
 </div>
 </section>
-<p>Updated: Sat Oct 12 20:03:06 2024. Replaced ; with ;. Added est to the end of the generated text.</p>
+<p>Updated: Sun Oct 13 08:03:06 2024. Replaced in with in. Added est to the end of the generated text.</p>
 
 
 
@@ -2943,7 +2943,7 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Making the rest of the analysis in this post, in effect, invalid.</p></div></div><div>
 
 </div>
-<div id="eb0f58a3" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="2">
+<div id="eb0f58a3" class="cell quarto-layout-panel" data-execution_count="2" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-3-output-1.png" class="img-fluid" width="641"></p>
@@ -3114,7 +3114,7 @@ font-style: inherit;">'Rank'</span></span>
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 </details>
-<div id="9ada640f" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="3">
+<div id="9ada640f" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-4-output-1.png" class="img-fluid" width="662"></p>
@@ -3553,7 +3553,7 @@ font-style: inherit;">0.5</span>)</span>
 <span id="cb2-64">plt.tight_layout()</span>
 <span id="cb2-65">plt.show()</span></code></pre></div>
 </details>
-<div id="c2b84862" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="4">
+<div id="c2b84862" class="cell quarto-layout-panel" data-execution_count="4" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-5-output-1.png" class="img-fluid" width="657"></p>
@@ -6671,7 +6671,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="8">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -6751,7 +6751,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -6882,7 +6882,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="20" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-execution_count="20">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
