@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/rattatouille/index.html",
       "/posts/manifesto/index.html",
       "/posts/bayesian_optimisation/index.html",
       "/posts/dead/index.html",

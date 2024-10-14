@@ -1,0 +1,58 @@
+---
+title: "On Voices."
+subtitle: "Tate Britain & Peckham Soup Kitchen"
+date: "10/13/2024"
+author: "ARCHIVED"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
+html: 
+    self-contained: true
+    grid: 
+    margin-width: 450px
+reference-location: margin
+citation-location: margin
+footnote-location: margin
+---
+
+::: column-margin
+
+### Listen to the soundscape while reading this post.
+
+{{< audio file="output_trimmed.mp3" caption="A Snippet of Tate Britain x Peckham Soup Kitchen soundscape.">}}
+:::
+
+<!-- What were we doing  -->
+
+On the 3rd October 2024, we launched our research studio [Electronic Life](https://electroniclife.ai).
+The studio operates collaboratively through what we call **rigorous creativity** to advance AI applications.
+
+Our latest project has been working with [Peckham Soup Kitchen](https://www.peckhamsoupkitchen.org) and the Tate Britain.
+Over the course of 12 weeks we worked with young people associated with PSK in workshops at the Tate after the gallery was closed to the public. 
+We discussed and explored representations, machine learning, art, and music.
+One aspect that we quickly settled on was the idea that AI could amplify these personalities and opinions, particularly in a space like the Tate. 
+
+Participants were told outright by security that 'there was no workshop tonight', and we were hounded out of spaces we had every right to be in more than once, only making it more important in our eyes.
+
+::: column-margin
+![](gallery.jpg)
+:::
+It became clear that the discussions, critiques, and commentary were thought provoking, funny, and direct in a way that often they are not.
+After discussions about the provenence of data, we sent the participants around the gallery to simply record themselves and their opinions.
+
+Our original intention was to use machine learning to learn opinions or pattern match for styles of critique, building up to an interactive 'avatar' that would persist throughout the gallery.
+However the quality of the data was so good, that we felt it would be doing a diservice to these young people.
+
+In effect, it was the act of collecting data, discussing the implications, and the possibility of an AI avatar that propelled the participants to talk so candidly. 
+
+### Methodology
+
+<br>
+
+We first used OpenAI's Whisper model to obtain word-level timestamped transcriptions of over 6 hours of recordings. 
+Using these transcripts, we augmented the conversions by stochastically presenting sentences as spoken by a text-to-speech model. 
+These models speak with authority, and are often American, lending an alternative reading of participants comments. 
+
+
+
+
