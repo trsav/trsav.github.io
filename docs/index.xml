@@ -2994,7 +2994,7 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Making the rest of the analysis in this post, in effect, invalid.</p></div></div><div>
 
 </div>
-<div id="eb0f58a3" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="2">
+<div id="eb0f58a3" class="cell quarto-layout-panel" data-execution_count="2" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-3-output-1.png" class="img-fluid" width="641"></p>
@@ -3165,7 +3165,7 @@ font-style: inherit;">'Rank'</span></span>
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 </details>
-<div id="9ada640f" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="3">
+<div id="9ada640f" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-4-output-1.png" class="img-fluid" width="662"></p>
@@ -3604,7 +3604,7 @@ font-style: inherit;">0.5</span>)</span>
 <span id="cb2-64">plt.tight_layout()</span>
 <span id="cb2-65">plt.show()</span></code></pre></div>
 </details>
-<div id="c2b84862" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="4">
+<div id="c2b84862" class="cell quarto-layout-panel" data-execution_count="4" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-5-output-1.png" class="img-fluid" width="657"></p>
@@ -6936,7 +6936,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="20" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -6982,7 +6982,6 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 </item>
 <item>
   <title>The Potential Literature Horseshoe</title>
-  <dc:creator>Tom Savage</dc:creator>
   <link>https://sav.phd/posts/oulipo/</link>
   <description><![CDATA[ 
 
@@ -6991,7 +6990,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 
 
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="42" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb1-42">defines <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="37" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 36;"><span id="cb1-37">defines <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7002,7 +7001,7 @@ background-color: null;
 font-style: inherit;">'specified'</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb1-43">structure <span class="op" style="color: #5E5E5E;
+<span id="cb1-38">structure <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7015,7 +7014,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'composition'</span>]</span>
-<span id="cb1-44">may <span class="op" style="color: #5E5E5E;
+<span id="cb1-39">may <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7032,7 +7031,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'may well'</span>]</span>
-<span id="cb1-45">language <span class="op" style="color: #5E5E5E;
+<span id="cb1-40">language <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7051,7 +7050,7 @@ background-color: null;
 font-style: inherit;">'writing'</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb1-46">books <span class="op" style="color: #5E5E5E;
+<span id="cb1-41">books <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7062,7 +7061,7 @@ background-color: null;
 font-style: inherit;">'600 year old Sir Gawain and the Green Knight'</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb1-47">purely <span class="op" style="color: #5E5E5E;
+<span id="cb1-42">purely <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7071,7 +7070,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'solely'</span>]</span>
-<span id="cb1-48">millennia <span class="op" style="color: #5E5E5E;
+<span id="cb1-43">millennia <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7088,7 +7087,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'centuries'</span>]</span>
-<span id="cb1-49">produce <span class="op" style="color: #5E5E5E;
+<span id="cb1-44">produce <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7101,7 +7100,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'create'</span>]</span>
-<span id="cb1-50">techniques <span class="op" style="color: #5E5E5E;
+<span id="cb1-45">techniques <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7110,7 +7109,7 @@ background-color: null;
 font-style: inherit;">,</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'methods'</span>]</span>
-<span id="cb1-51">writers <span class="op" style="color: #5E5E5E;
+<span id="cb1-46">writers <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
@@ -7204,7 +7203,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <p>If you refresh this page, the article will be randomised. There are <img src="https://latex.codecogs.com/png.latex?2.66%20%5Ctimes%2010%5E%7B19%7D"> potential combinations of images and text, resulting in approximately Twenty Billion Billion articles, equivalent to the number of insects on earth. <em>Vingt Milliards de Milliards</em>.</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="63" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 62;"><span id="cb2-63">rnd <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="58" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 57;"><span id="cb2-58">rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -7223,36 +7222,36 @@ background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)</span>
-<span id="cb2-64">s_string <span class="op" style="color: #5E5E5E;
+<span id="cb2-59">s_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb2-65">  <span class="cf" style="color: #003B4F;
+<span id="cb2-60">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb2-66">    <span class="cf" style="color: #003B4F;
+<span id="cb2-61">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="logo.png" width=70% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-67">  }</span>
-<span id="cb2-68">  <span class="cf" style="color: #003B4F;
+<span id="cb2-62">  }</span>
+<span id="cb2-63">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> {</span>
-<span id="cb2-69">    <span class="cf" style="color: #003B4F;
+<span id="cb2-64">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="other_logo.png" width=60% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-70">  }</span>
-<span id="cb2-71">}</span></code></pre></div>
+<span id="cb2-65">  }</span>
+<span id="cb2-66">}</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -7276,7 +7275,7 @@ font-style: inherit;">`&lt;img src="other_logo.png" width=60% title="Basile Mori
 <p>Basile Morin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></p>
 </div></div><p>Ouvroir de Littérature Potentielle or <em>Oulipo</em> has been <span><span id="ojs-element-id-8"></span></span> as “the search for new structures, which may be used by writers in any way they see fit” <span class="citation" data-cites="motte1998oulipo">(Motte 1998, p2–3)</span>. For <span><span id="ojs-element-id-9"></span>,</span> authors have been guided by language constraints resulting in <span><span id="ojs-element-id-10"></span></span> <span><span id="ojs-element-id-11"></span>s;</span> From the alliterative verse of the <span><span id="ojs-element-id-12"></span>,</span> to the syllabic rigidity of Japanese haikus. By formalising a number of individual vocations, the original Oulipo <span><span id="ojs-element-id-13"></span></span> in the early 1960s were embarking on the revitalisation of <span><span id="ojs-element-id-14"></span></span> generation in search of discovering something deeper, sound familiar?</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="87" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 86;"><span id="cb3-87">rndl <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="82" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb3-82">rndl <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -7295,67 +7294,67 @@ background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)</span>
-<span id="cb3-88">l_string <span class="op" style="color: #5E5E5E;
+<span id="cb3-83">l_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb3-89">  <span class="cf" style="color: #003B4F;
+<span id="cb3-84">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb3-90">    <span class="cf" style="color: #003B4F;
+<span id="cb3-85">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-91">  }</span>
-<span id="cb3-92">  <span class="cf" style="color: #003B4F;
+<span id="cb3-86">  }</span>
+<span id="cb3-87">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> {</span>
-<span id="cb3-93">    <span class="cf" style="color: #003B4F;
+<span id="cb3-88">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-94">  }</span>
-<span id="cb3-95">}</span>
-<span id="cb3-96"></span>
-<span id="cb3-97">o_string <span class="op" style="color: #5E5E5E;
+<span id="cb3-89">  }</span>
+<span id="cb3-90">}</span>
+<span id="cb3-91"></span>
+<span id="cb3-92">o_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb3-98">  <span class="cf" style="color: #003B4F;
+<span id="cb3-93">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb3-99">    <span class="cf" style="color: #003B4F;
+<span id="cb3-94">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-100">  }</span>
-<span id="cb3-101">  <span class="cf" style="color: #003B4F;
+<span id="cb3-95">  }</span>
+<span id="cb3-96">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> {</span>
-<span id="cb3-102">    <span class="cf" style="color: #003B4F;
+<span id="cb3-97">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-103">  }</span>
-<span id="cb3-104">}</span></code></pre></div>
+<span id="cb3-98">  }</span>
+<span id="cb3-99">}</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -7384,7 +7383,7 @@ font-style: inherit;">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not 
 </blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Clinamen (/klaɪˈneɪmən/;) is the Latin name Lucretius gave to the unpredictable swerve of atoms, in order to defend the atomistic doctrine of Epicurus. […] it has come more generally to mean an inclination or a bias. <a href="https://en.wikipedia.org/wiki/Clinamen">Source</a></p></div></div></div>
 <p>In applying <em>combinatory literature</em>, Oulipo <span><span id="ojs-element-id-20"></span>,</span> most notably Raymond Queneau in his 1961 work <em>Cent Mille Milliards de Poemes</em> (Hundred Thousand Billion Poems), have highlighted the impossible complexity of language. Elegantly embracing this complexity, Queneau simply presents the complete set of lines within a sonnet in the form of cut out strips, any combination of which <span><span id="ojs-element-id-21"></span></span> be constructed by the reader. In describing the combinatorial nature of <em>Cent Mille Milliards de Poemes</em>, Berge presents the following figure…</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="119" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 118;"><span id="cb4-119">rnd_nn <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="114" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 113;"><span id="cb4-114">rnd_nn <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -7403,36 +7402,36 @@ background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)</span>
-<span id="cb4-120">nn_string <span class="op" style="color: #5E5E5E;
+<span id="cb4-115">nn_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb4-121">  <span class="cf" style="color: #003B4F;
+<span id="cb4-116">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb4-122">    <span class="cf" style="color: #003B4F;
+<span id="cb4-117">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="nn.png" width=70%&gt;`</span></span>
-<span id="cb4-123">  }</span>
-<span id="cb4-124">  <span class="cf" style="color: #003B4F;
+<span id="cb4-118">  }</span>
+<span id="cb4-119">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> {</span>
-<span id="cb4-125">    <span class="cf" style="color: #003B4F;
+<span id="cb4-120">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="nn2.png" width=100%&gt;`</span></span>
-<span id="cb4-126">  }</span>
-<span id="cb4-127">}</span></code></pre></div>
+<span id="cb4-121">  }</span>
+<span id="cb4-122">}</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-4-1" data-nodetype="declaration">
@@ -7453,7 +7452,7 @@ font-style: inherit;">`&lt;img src="nn2.png" width=100%&gt;`</span></span>
 </div>
 <p>Verses act equivalently to neural network layers, and phrases correspond to discrete nodes… could we be seeing the early sparks of the use of neural networks for language modelling?<sup>2</sup> Of course, what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera… but it is interesting to consider the thematic similarities of complexity, <span><span id="ojs-element-id-22"></span>,</span> and distillation (or lack thereof) of <span><span id="ojs-element-id-23"></span></span> that both members of Oulipo and machine learning researchers have successfully applied.</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;The modern use of neural networks to model language can <em>probably</em> be attributed to <a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al, 2003</a>, 42 years later.</p></div></div><div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="139" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 138;"><span id="cb5-139">rnd_gp <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="134" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 133;"><span id="cb5-134">rnd_gp <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -7472,17 +7471,17 @@ background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)</span>
-<span id="cb5-140">gp_string <span class="op" style="color: #5E5E5E;
+<span id="cb5-135">gp_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb5-141">  <span class="cf" style="color: #003B4F;
+<span id="cb5-136">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb5-142">    <span class="cf" style="color: #003B4F;
+<span id="cb5-137">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> [<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7495,11 +7494,11 @@ background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;em&gt;Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. &lt;a href="https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-143">  }</span>
-<span id="cb5-144">  <span class="cf" style="color: #003B4F;
+<span id="cb5-138">  }</span>
+<span id="cb5-139">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> {</span>
-<span id="cb5-145">    <span class="cf" style="color: #003B4F;
+<span id="cb5-140">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> [<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -7512,8 +7511,8 @@ background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;em&gt;Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.&lt;a href="https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-146">  }</span>
-<span id="cb5-147">}</span></code></pre></div>
+<span id="cb5-141">  }</span>
+<span id="cb5-142">}</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -7537,7 +7536,7 @@ font-style: inherit;">`&lt;em&gt;Raymond Queneau with the group Les Frères Jacq
 <p>Unlike the output from an LLM, a haiku can be instantly recognised and verified as coming from its defining 5-7-5 syllabic writing <span><span id="ojs-element-id-30"></span>.</span> When the <span><span id="ojs-element-id-31"></span></span> itself is visible in the output, the focus is turned <span><span id="ojs-element-id-32"></span></span> to what Berge refers to as the <em>clinamen</em>. It is here that the meaning is gained.</p>
 <p>The difference between LLMs and a well-established language <span><span id="ojs-element-id-33"></span></span> such as a haiku is one of complexity, and the <span><span id="ojs-element-id-34"></span></span> that results. By extending a series of basic transformations and rules towards LLMs, a horseshoe effect is achieved. The sheer quantity of rules within an LLM reflects a <em>removal</em> of linguistic constraints, order is returned from chaos, and the resulting underlying <span><span id="ojs-element-id-35"></span></span> is obscured.<sup>3</sup></p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Though for now (Jan 2024) LLMs produce hallucinations, incorrect facts and statements which in turn partially disclose the underlying structure of the neural network.</p></div></div><div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="167" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 166;"><span id="cb6-167">rnd_d <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="162" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb6-162">rnd_d <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -7556,25 +7555,25 @@ background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span>
-<span id="cb6-168">dep_string <span class="op" style="color: #5E5E5E;
+<span id="cb6-163">dep_string <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
-<span id="cb6-169">  <span class="cf" style="color: #003B4F;
+<span id="cb6-164">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">if</span> (rnd_d <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>) {</span>
-<span id="cb6-170">    <span class="cf" style="color: #003B4F;
+<span id="cb6-165">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="dep.png" width=60%"&gt;`</span></span>
-<span id="cb6-171">  }</span>
-<span id="cb6-172">  <span class="cf" style="color: #003B4F;
+<span id="cb6-166">  }</span>
+<span id="cb6-167">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -7583,15 +7582,15 @@ background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>) {</span>
-<span id="cb6-173">    <span class="cf" style="color: #003B4F;
+<span id="cb6-168">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="dep2.png" width=60%&gt;`</span></span>
-<span id="cb6-174">  }</span>
-<span id="cb6-175">  <span class="cf" style="color: #003B4F;
+<span id="cb6-169">  }</span>
+<span id="cb6-170">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">else</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -7600,15 +7599,15 @@ background-color: null;
 font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>) {</span>
-<span id="cb6-176">    <span class="cf" style="color: #003B4F;
+<span id="cb6-171">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`&lt;img src="dep3.png" width=60%&gt;`</span></span>
-<span id="cb6-177">  }</span>
-<span id="cb6-178">}</span></code></pre></div>
+<span id="cb6-172">  }</span>
+<span id="cb6-173">}</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="declaration">
@@ -7648,16 +7647,16 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{savage2024,
-  author = {Savage, Tom},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2024,
+  author = {},
   title = {The {Potential} {Literature} {Horseshoe}},
   date = {2024-01-09},
   url = {https://sav.phd/posts/oulipo},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-savage2024" class="csl-entry quarto-appendix-citeas">
-Savage, Tom. 2024. <span>“The Potential Literature Horseshoe.”</span>
-January 9, 2024. <a href="https://sav.phd/posts/oulipo">https://sav.phd/posts/oulipo</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2024" class="csl-entry quarto-appendix-citeas">
+<span>“The Potential Literature Horseshoe.”</span> 2024. January 9,
+2024. <a href="https://sav.phd/posts/oulipo">https://sav.phd/posts/oulipo</a>.
 </div></div></section></div> ]]></description>
   <category>Art</category>
   <category>Machine Learning</category>

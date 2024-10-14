@@ -8,19 +8,6 @@ comments:
 crossref:
   thm-title: Algorithm  
   thm-prefix: Algorithm 
-author:
-  - name: Tom Savage
-    orcid: 0000-0001-8715-8369
-    email: t.savage@imperial.ac.uk
-    affiliation: 
-      - name: Imperial College London
-        city: London
-        url: www.imperial.ac.uk/people/t.savage
-      - name: The Alan Turing Institute
-        city: London
-        url: https://www.turing.ac.uk/people/enrichment-students/tom-savage
-  - name: Antonio del Rio Chanona
-# appendix-cite-as: bibtex	
 number-sections: true
 keywords:
   - Bayesian Optimisation

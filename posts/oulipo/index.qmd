@@ -1,11 +1,6 @@
 ---
 title: "The Potential Literature Horseshoe"
 subtitle: "The First Large Language Model or: Has Machine Learning Solved Oulipo?"
-author:
-  - name: Tom Savage
-    url: https://sav.phd
-    affiliation: The Alan Turing Institute
-    affiliation-url: https://www.turing.ac.uk
 categories: [Art, Machine Learning]
 comments:
     utterances:
