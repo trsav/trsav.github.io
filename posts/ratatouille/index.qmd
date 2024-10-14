@@ -1,7 +1,6 @@
 ---
 title: "On Ratatouille"
 date: "10/13/2024"
-author: "Tom Savage"
 categories: [Film,Religion]
 comments:
     utterances:

@@ -13,7 +13,6 @@
 <lastBuildDate>Sat, 12 Oct 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>On Ratatouille</title>
-  <dc:creator>Tom Savage</dc:creator>
   <link>https://sav.phd/posts/ratatouille/</link>
   <description><![CDATA[ 
 
@@ -6936,7 +6935,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="20" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
