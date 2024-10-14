@@ -13,7 +13,7 @@ citation-location: margin
 footnote-location: margin
 ---
 
-Remy the rat is a culinary genius because he watches a cooking show on TV, read a best selling recipe book, and sometimes eats two things at the same time. 
+Remy the rat is a culinary genius because he watches a cooking show on TV, read a best-selling recipe book, and sometimes eats two things at the same time. 
 He consistently takes life advice by talking^[He speaks english, which humans hear in a higher pitch. As the only difference in Ratatouille between humans and rats is size and frequency (hz) of communication, I will consider them one-and-the-same for the remainder of this article.] to a hallucinated dead chef, and generally ignores the majority of social constructs across both rat and human domains.
 No one did it quite like him.
 
@@ -34,7 +34,7 @@ Mayfly-atouille would probably fit within a Tiktok.
 :::
 
 Of course, that would be ridiculous. Remy is one of a kind not only among other rats but among humans themselves.
-It is clear that by the end of the film, all of the other rats in the colony carry some semblence of the spirit of Chef Gusteau with them.
+It is clear that by the end of the film, all of the other rats in the colony carry some semblance of the spirit of Chef Gusteau with them.
 They do not steal, they maintain cleanliness, and though Remy has preached the culinary gospel to the masses and has entered the kingdom of Gust...
 
 <br>
@@ -73,9 +73,9 @@ There is no reason that dead Gusteau should suddenly stop appearing in the imagi
 
 Disregarding the thousands of potential heirs to the _La Ratatouille_ empire specifically, these competing factions of culinarily inspired animals would inevitably vie for legitimacy in an increasingly crowded market. 
 I imagine Remy's dunce brother Emile would be the first to claim the bloodline potentially leading to a series of culinary-rat-pontiffs that become increasingly disliked.
-Lollard rats from the countryside may scoff when they hear news of a new Parisian loft bistro being opened, shrines to locations such as the farmhouse Remy originally lived in will be built, and academics will conviene to discuss the implications of the trinity and the true nature of Gusteau.
+Lollard rats from the countryside may scoff when they hear news of a new Parisian loft bistro being opened, shrines to locations such as the farmhouse Remy originally lived in will be built, and academics will convene to discuss the implications of the trinity and the true nature of Gusteau.
 
-It is clear that the prophesy of Remy, and resulting idylic moment in time, will be short lived. 
+It is clear that the prophecy of Remy, and resulting idyllic moment in time, will be short lived. 
 _La Ratatouille_ is built on much more worrisome foundations than it may seem. 
 In preaching the good-news of Gusteau but maintaining his own personal vice-like grip on animal-bistros without a clear succession plan for either the ideology or business itself, Remy will soon learn that _anyone can cook_.
 
