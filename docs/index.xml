@@ -13,6 +13,7 @@
 <lastBuildDate>Sat, 12 Oct 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>On Ratatouille</title>
+  <dc:creator>Tom Savage</dc:creator>
   <link>https://sav.phd/posts/ratatouille/</link>
   <description><![CDATA[ 
 
@@ -51,12 +52,13 @@
 
 
  ]]></description>
+  <category>Film</category>
+  <category>Religion</category>
   <guid>https://sav.phd/posts/ratatouille/</guid>
   <pubDate>Sat, 12 Oct 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Machine Learning and Discovery</title>
-  <dc:creator>Tom Savage</dc:creator>
   <link>https://sav.phd/posts/manifesto/</link>
   <description><![CDATA[ 
 
@@ -117,6 +119,9 @@ Marini, Deniele L. R. 2022. <span>“The Planetary Machine by Johannes Kepler.�
 
 
  ]]></description>
+  <category>Optimisation</category>
+  <category>Machine Learning</category>
+  <category>Chemical Engineering</category>
   <guid>https://sav.phd/posts/manifesto/</guid>
   <pubDate>Tue, 08 Oct 2024 23:00:00 GMT</pubDate>
 </item>
@@ -433,10 +438,10 @@ font-style: inherit;">-</span> np.dot(dot_prod,k_row.T).item()</span></code></pr
 <p>My algorithm is self-documented but I will describe it below. I’ve found it to be simple and effective. I wouldn’t even describe it as a metaheuristic. Actually, I will.</p>
 <p>Every time you refresh this page my algorithm will be named after a different completely arbitrary animal!</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="126" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 125;"><span id="cb5-126">animals <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="127" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 126;"><span id="cb5-127">animals <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [</span>
-<span id="cb5-127">    <span class="st" style="color: #20794D;
+<span id="cb5-128">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lion"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -457,7 +462,7 @@ background-color: null;
 font-style: inherit;">"Penguin"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-128">    <span class="st" style="color: #20794D;
+<span id="cb5-129">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Kangaroo"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -478,7 +483,7 @@ background-color: null;
 font-style: inherit;">"Dolphin"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-129">    <span class="st" style="color: #20794D;
+<span id="cb5-130">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Octopus"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -499,7 +504,7 @@ background-color: null;
 font-style: inherit;">"Sloth"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-130">    <span class="st" style="color: #20794D;
+<span id="cb5-131">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Platypus"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -520,7 +525,7 @@ background-color: null;
 font-style: inherit;">"Chameleon"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-131">    <span class="st" style="color: #20794D;
+<span id="cb5-132">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Toucan"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -539,12 +544,12 @@ background-color: null;
 font-style: inherit;">,</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lemur"</span></span>
-<span id="cb5-132">]</span>
-<span id="cb5-133"></span>
-<span id="cb5-134">descriptive_words <span class="op" style="color: #5E5E5E;
+<span id="cb5-133">]</span>
+<span id="cb5-134"></span>
+<span id="cb5-135">descriptive_words <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [</span>
-<span id="cb5-135">    <span class="st" style="color: #20794D;
+<span id="cb5-136">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Swarming"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -565,7 +570,7 @@ background-color: null;
 font-style: inherit;">"Swimming"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-136">    <span class="st" style="color: #20794D;
+<span id="cb5-137">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Flying"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -586,7 +591,7 @@ background-color: null;
 font-style: inherit;">"Diving"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-137">    <span class="st" style="color: #20794D;
+<span id="cb5-138">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Soaring"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -607,7 +612,7 @@ background-color: null;
 font-style: inherit;">"Hopping"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-138">    <span class="st" style="color: #20794D;
+<span id="cb5-139">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Sprinting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -628,7 +633,7 @@ background-color: null;
 font-style: inherit;">"Charging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-139">    <span class="st" style="color: #20794D;
+<span id="cb5-140">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Darting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -649,7 +654,7 @@ background-color: null;
 font-style: inherit;">"Scampering"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-140">    <span class="st" style="color: #20794D;
+<span id="cb5-141">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Waddling"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -670,7 +675,7 @@ background-color: null;
 font-style: inherit;">"Swooping"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-141">    <span class="st" style="color: #20794D;
+<span id="cb5-142">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lunging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -691,7 +696,7 @@ background-color: null;
 font-style: inherit;">"Circling"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-142">    <span class="st" style="color: #20794D;
+<span id="cb5-143">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Nesting"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -712,7 +717,7 @@ background-color: null;
 font-style: inherit;">"Swinging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-143">    <span class="st" style="color: #20794D;
+<span id="cb5-144">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lounging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -733,7 +738,7 @@ background-color: null;
 font-style: inherit;">"Hibernating"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb5-144">    <span class="st" style="color: #20794D;
+<span id="cb5-145">    <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Camouflaging"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -752,7 +757,7 @@ background-color: null;
 font-style: inherit;">,</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Stampeding"</span></span>
-<span id="cb5-145">]</span></code></pre></div>
+<span id="cb5-146">]</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -2407,6 +2412,8 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 
 
  ]]></description>
+  <category>Optimisation</category>
+  <category>Machine Learning</category>
   <guid>https://sav.phd/posts/bayesian_optimisation/</guid>
   <pubDate>Fri, 06 Sep 2024 23:00:00 GMT</pubDate>
 </item>
@@ -2949,6 +2956,7 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 
 
  ]]></description>
+  <category>Machine Learning</category>
   <guid>https://sav.phd/posts/dead/</guid>
   <pubDate>Thu, 22 Aug 2024 23:00:00 GMT</pubDate>
 </item>
@@ -3609,6 +3617,7 @@ font-style: inherit;">0.5</span>)</span>
 <div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;My ignorance is showing here because I don’t know how trampolining is judged</p></div></div>
 
  ]]></description>
+  <category>Sports</category>
   <guid>https://sav.phd/posts/olympics/</guid>
   <pubDate>Sun, 04 Aug 2024 23:00:00 GMT</pubDate>
 </item>
@@ -5058,6 +5067,7 @@ font-style: inherit;">Elapsed:</span> 8.81s</span></code></pre></div>
 </section>
 
  ]]></description>
+  <category>Optimisation</category>
   <guid>https://sav.phd/posts/rust/</guid>
   <pubDate>Sun, 28 Jul 2024 23:00:00 GMT</pubDate>
 </item>
@@ -6600,6 +6610,7 @@ font-style: inherit;">2</span>)</span></code></pre></div>
 
  ]]></description>
   <category>Visualisation</category>
+  <category>Optimisation</category>
   <guid>https://sav.phd/posts/trajectory_plots/</guid>
   <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
   <media:content url="https://sav.phd/posts/trajectory_plots/figure.svg" medium="image" type="image/svg+xml"/>
@@ -6925,7 +6936,7 @@ font-style: inherit;">False</span>)</span></code></pre></div>
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2" data-execution_count="20">
+<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">

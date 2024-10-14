@@ -1,6 +1,7 @@
 ---
 title: "Tiny Bayesian Optimisation"
 subtitle: "High-performance BO in under 100 lines."
+categories: [Optimisation, Machine Learning]
 date: "09/07/2024"
 comments:
     utterances:

@@ -1,6 +1,6 @@
 ---
 title: "Optimisation Trajectory Plots"
-categories: [Visualisation]
+categories: [Visualisation, Optimisation]
 image: "figure.svg"
 date: "01/31/2024"
 callout-appearance: minimal

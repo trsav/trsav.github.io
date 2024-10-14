@@ -1,6 +1,7 @@
 ---
 title: "A personal ranking of Olympic sports"
 subtitle: "Unqualified, subjective, and completely useless"
+categories: [Sports]
 date: "08/05/2024"
 comments:
     utterances:

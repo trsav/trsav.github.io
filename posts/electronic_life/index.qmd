@@ -1,10 +1,6 @@
 ---
 title: "Electronic Life"
 subtitle: "Late @ Tate Britain"
-author: 
- - name: "Tom Savage"
- - name: "Sunil Manghani"
- - name: "Ed D'Souza"
 categories: [Visualisation,Art, Machine Learning]
 date: "11/29/2023"
 callout-appearance: minimal

@@ -2,6 +2,7 @@
 title: "Implementing Gradient Descent in Rust"
 subtitle: "Orders of magnitude faster, but probably not reccomended (yet)"
 date: "07/29/2024"
+categories: [Optimisation]
 comments:
     utterances:
         repo: trsav/trsav.github.io

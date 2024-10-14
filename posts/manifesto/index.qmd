@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning and Discovery"
 subtitle: "A Manifesto"
-author: "Tom Savage"
+categories: [Optimisation, Machine Learning, Chemical Engineering]
 date: "10/09/2024"
 comments:
     utterances:
