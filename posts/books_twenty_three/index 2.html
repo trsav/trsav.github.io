@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage">
-<meta name="dcterms.date" content="2024-01-31">
+<meta name="dcterms.date" content="2023-12-16">
 
-<title>Tom Savage - Scatter Plots</title>
+<title>Tom Savage - 2023 Books</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -139,9 +104,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Scatter Plots</h1>
+      <h1 class="title">2023 Books</h1>
+            <p class="subtitle lead">A list</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Visualisation</div>
+                <div class="quarto-category">Books</div>
               </div>
                   </div>
   </div>
@@ -149,17 +115,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tom Savage </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 31, 2024</p>
+        <p class="date">December 16, 2023</p>
       </div>
     </div>
     
@@ -178,223 +138,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Here I will outline my personal preferences for best plotting practices for 2D scatter plots using <a href="https://matplotlib.org">Matplotlib</a>. I will be initialising the plot as demonstrated in my <a href="https://sav.phd/posts/convergence_plots/">previous post</a>.</p>
-<p>To start with I will simulate a thousand data points that may have come from a dimensionality reduction technique such as <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/wb/035mswds69j2l_sw8yg6tdjw0000gr/T/ipykernel_66542/585749580.py:4: RuntimeWarning: covariance is not symmetric positive-semidefinite.
-  X = np.random.multivariate_normal(mean,cov,n)</code></pre>
-</div>
-</div>
-<p>This is as simple and basic as a plot can be in Matplotlib.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="410"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>First of all we need to size and scale the plot appropriately.</p>
-<p>By default, <strong>the aspect-ratio of the axis will not be equal</strong>. If the axis have similar units or meaning this can provide misleading interpretation of the data. We will fix this first.</p>
 <div class="cleanbox">
-<p><strong>Always</strong> set the aspect ratio to be equal if both quantities are comparable in meaning and magnitude using <code>ax.set_aspect('equal')</code></p>
+<ul>
+<li>1000 Years of Joys and Sorrows - <em>Ai Weiwei</em></li>
+<li>Lucky Kunst - <em>Gregor Muir</em></li>
+<li>The Restless Republic - <em>Anna Keay</em></li>
+<li>Gazza Agonistes - <em>Ian Hamilton</em> (<a href="https://sav.phd/posts/gazza_agonistes/">REVIEW</a>)</li>
+<li>Athens - <em>Bruce Clark</em></li>
+<li>Oedipus at Kolonos - <em>Sophocles</em></li>
+<li>1599 - <em>James Shapiro</em></li>
+<li>Super-Infinite - <em>Katherine Rundell</em></li>
+<li>The Escape Artist - <em>Jonathan Freedland</em></li>
+<li>The Books of Jacob - <em>Olga Tokarczuk</em></li>
+<li>Going to Church in Medieval England - <em>Nicholas Orme</em></li>
+<li>Death and the Penguin - <em>Andrey Kurkov</em></li>
+<li>Killing Thatcher - <em>Rory Carroll</em> (<a href="https://sav.phd/posts/thatcher_review">REVIEW</a>)</li>
+<li>Politics on the Edge - <em>Rory Stewart</em></li>
+<li>Drive your Plow over the Bones of the Dead - <em>Olga Tokarczuk</em></li>
+<li>K-PUNK - <em>Mark Fisher</em></li>
+</ul>
 </div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="263"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We will now add appropriate labels, with a legible fontsize to our axis, using LaTeX where appropriate.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$x_2$'</span>,fontsize<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>With so many data points, adding some opacity can help the reader interpret the density. Note that reducting the opacity affects the fill and the edge of each point differently.</p>
-<p>At this point I will set the color to black, considering we have no separable classes (yet).</p>
-<div class="cleanbox">
-<p><strong>Always</strong> consider removing the edge of each scatter-point if decreasing the opacity to make the plot look cleaner.</p>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,linewidth<span class="op">=</span><span class="dv">0</span>,alpha<span class="op">=</span><span class="fl">0.2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>With edges</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption><strong>Without</strong> edges</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Alternatively, the marker size may be changed to a smaller value and the opacity set to 1. This provides a less clear image of the <strong>distribution</strong> of points, but a clearer view of the specific locations of data.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">3</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Despite these plots containing the same data, they are visually different and tell different stories to the reader. As always…</p>
-<div class="cleanbox">
-<p>It is important to consider what message you wish to convey, and how visual elements such as opacity, and marker size support this message.</p>
-</div>
-<p>If the specific location of data is critically important, the ‘+’ symbol may be used. When scaling up the size of this marker appropriately, make sure to reduce the linewidth to ensure that the symbol isn’t too thick.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'k'</span>,s<span class="op">=</span><span class="dv">50</span>,linewidth<span class="op">=</span><span class="fl">0.75</span>,marker<span class="op">=</span><span class="st">'+'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Standard Linewidth</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Reduced Linewidth</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>It may be helpful in this situation to ensure the grid is turned on, but remember to ensure it is <strong>behind</strong> other elements by using <code>ax.set_axisbelow(True)</code>.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-15-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we have different classes that we want to highlight? For now I will plot these clusters in the <code>tab:</code> colour pallette.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> clusters[i]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    ax.scatter(X[:,<span class="dv">0</span>],X[:,<span class="dv">1</span>],s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.75</span>,linewidth<span class="op">=</span><span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-17-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However, we now need to label our clusters. Adding a legend inside the plot will make it cluttered.</p>
-<p>Therefore we can add the legend outside the plot itself, on the right, above or below.</p>
-<p>Because there are a reasonable number of labels, I will place the legend just above the plot in a single row, ensuring that the rounded frame is turned off.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'upper center'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="fl">1.15</span>),</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>          ncol<span class="op">=</span><span class="dv">5</span>,frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How to make the plot accessible to people who have colour-blindness? We may use different markers…</p>
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-20-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However clearly the plot becomes illegible. I think in the scenario where colours are not desired (or their use should be minimised) the best option is to use multiple subplots, and opacity as follows:</p>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-nrow="2" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-21-output-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Whilst we have increased the overall number of plots, this is an accessible alternative to using colours, and follows <a href="https://en.wikipedia.org/wiki/Small_multiple">Edward Tufte’s philosophy of Small Multiples</a>.</p>
 
 
 
