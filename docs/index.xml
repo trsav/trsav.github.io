@@ -5,29 +5,667 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Tom Savage</title>
+<title>tom savage</title>
 <link>https://sav.phd/</link>
 <atom:link href="https://sav.phd/index.xml" rel="self" type="application/rss+xml"/>
-<description>Tom Savage&#39;s Blog</description>
+<description>the lot</description>
 <generator>quarto-1.4.557</generator>
-<lastBuildDate>Wed, 16 Oct 2024 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 29 Jan 2025 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>THIS BLOG HAS MOVED TO SUBSTACK</title>
-  <link>https://sav.phd/posts/substack/</link>
+  <title>That! The Haiku and the Sonnet</title>
+  <link>https://sav.phd/posts/haiku/</link>
   <description><![CDATA[ 
 
 
 
 
 
-<p>This blog has now moved to substack.</p>
-<p>It can be found at <a href="https://trsav.substack.com">https://trsav.substack.com</a> or <a href="https://blog.sav.phd">https://blog.sav.phd</a>.</p>
-<p>After 6 months (April 2025) it will be hosted at this current domain (<a href="https://sav.phd">https://sav.phd</a>).</p>
+<p>Cheap reasoning models (e.g.&nbsp;Deepseek r1 [mentioned for engagement purposes]), with chain-of-thought output make it extremely tempting to personify LLMs or their outputs. Similarly, certain models such as Claude (in all its forms) have gained a cult-of-personality type following, where users are more likely to use it for its <em>feel</em> (gained through preferential fine-tuning, a muted colour scheme, a hand drawn logo, or all of the above). Unknown to them, an increasingly large number of users are assigning <em>meaning</em> to the result of a computation. When I refer to <em>meaning</em> in this article I don’t refer to it in the sense of whether something is poetic or accurate or profound, but in a way rather more related to the word meaning <em>ful</em>. Related in some sense to something deeper, that we empathise with.</p>
+<p>AGI <strong>is</strong> an unquantifiable threshold, and whether an LLM reaches this will be decided based on a collective <em>reading</em> of the outputs that are produced. That is why the model cannot be separated from the surrounding infrastructure. The colour scheme, the point of interaction, the UI, even the very act of ‘chatting’ all contribute in some sense to our own reading, and whether we choose to recognise an <em>other</em>.</p>
+<p>For the purposes of this post, which I am writing in Tokyo Station, I will un-pick the Western endeavour to seek a deeper meaning and state that the outputs from an LLM are <em>meaningless</em>. I mean this in the sense that inferred tokens originates from a <em>soul-less</em> computer. We may <em>impose</em> a meaning on them, but in their most abstracted form, they are the result of computations.</p>
+<p>Drawing a literary comparison, the skill in reading a haiku is to <em>not</em> read any meaning into it, but to let it wash over you. Should the same be said for an LLM (that truly does have no meaning in the first place)? Should we let output tokens wash over us <em>like a haiku in accordance to Zen</em>? We turn to Roland Barthes’ reading of <em>haiku</em> in <em>Empire of Signs</em> :</p>
+<blockquote class="blockquote">
+<p>Here meaning is only a flash, a slash of light: <em>When the light of sense goes out, but with a flash that has revealed the invisible world</em> , Shakespeare wrote; but the haiku’s flash illumines, reveals nothing; it is the flash of a photograph one takes very carefully (in the Japanese manner) but having neglected to load the camera with film. Or again: haiku reproduces the designating gesture of the child pointing at whatever it is (the haiku shows no partiality for the subject), merely saying: <em>that!</em> with a movement so immediate (so stripped of any mediation: that of knowledge, of nomination, or even of possession) that what is designated is the very inanity of any classification of the object: <em>nothing special</em> , says the haiku, in accordance with the spirit of Zen …</p>
+</blockquote>
+<p>This passage shares so much with how we <em>really</em> know LLMs to work (which is different from how we <em>wish</em> LLMs worked, which is to <em>think)</em> , tokens appearing in an instant from the void. But at the same time highlights just how disparate our readings of LLMs are when compared to something like a haiku (again, to be expected because we assign a value towards an <em>other</em> , but it is important to consider that this importance is ‘created’ in order to process the meaninglessness of an LLM).</p>
+<p>This is further amplified by how we interact with LLMs. When people refer to models such as Anthropic’s Claude, they refer not just to the set of weights, or the data centre, but to the personality contained (again, we pretend that this is the case) within the output, which is defined by the overall experience. The UI, the colour scheme, the typeface, even the act of ‘chatting’ is to impose a dialogue with an <em>other.</em> These aspects combined make it irresistible to place meaning where there is none. Either AGI will refer to a holistic experience, or we must treat how we interact with LLMs fundamentally differently.</p>
+<p>How do we get around this imposition of our own values onto something meaningless, in effect, to un-interpret the haiku and let it wash over us. Referring back to Barthes, we learn of different approaches, hundreds of years old:</p>
+<blockquote class="blockquote">
+<p>[…] the haiku has the purity, the sphericality, and the very emptiness of a note of music; perhaps that is why it is spoken twice, in echo; to speak this exquisite language only once would be to attach a meaning to surprise, to effect, to the suddenness of perfection; to speak it many times would postulate that meaning is to be discovered in it, would simulate profundity; between the two, neither singular nor profound, the echo merely draws a line under the nullity of meaning.</p>
+</blockquote>
+<p>Performing LLM inference multiple times (different temperature values?) may help us to de-personify outputs, enabling us to appreciate the content (but <em>not</em> assign meaning to it). However, very quickly we enter into the space of what I will call the Muji paradox (highlighted to me by Sunil).</p>
+<p>Muji: in English ‘no-brand’ is the antithesis of a brand. It embodies the same values found within a haiku though in a commercial sense, not a literary one. The complete lack of meaning. It is important to note though that from a Western perspective, it has failed. Paradoxically, we have associated an aesthetic with it, a quality, and a set of values, in exactly the same way we have done for LLMs.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/haiku/1.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>An alternative to doing nothing at all, would be to do everything at once. As an example of this, Japanese television exists, and often consists of a dizzying array of fonts and colours. It becomes so overwhelming that you are forced to assign no meaning to the text at all, it simply <em>exists</em>. Read nothing into how it is presented, because it will change. Japanese television in a sense embodies the idea of Zen equally as well as Muji does.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/haiku/2.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>I propose that to provoke an alternate reading of LLMs, in opposition to the Western AGI-seeking viewpoint, that inevitably converges towards chatting with an <em>other,</em> we treat creative outputs more like haikus. As Barthes’ says, <em>like the flash of a photograph one takes very carefully but having neglected to load the camera with film.</em> This may mean taking the Muji route and attempting to strip any aesthetic, or imposition of values from an LLM (obviously it is not in the interest of an AI company to do this). OpenAI probably has the ‘blandest’ aesthetic, but like Muji, even this has become meaning- <em>full</em>. An alternative would be, like reading a haiku, to present tokens multiple times, similar to <a href="https://en.wikipedia.org/wiki/A_Hundred_Thousand_Billion_Poems">Raymond Queneau’s ‘A Hundred Thousand Billion Poems’</a>. Interacting with an LLM may feel closer to watching a Japanese TV show. So overwhelming in alternative tokens, typeface, colour, conflicting aesthetics, even <em>mode of interaction (</em> RE: chatting <em>),</em> that we are forced to strip any emotion we might infer.</p>
+<p>Maybe that’s why we’re struggling to process AI and art, and why the concept of AGI is so messy and intangible. Because we’re imposing a meaning on something that clearly has none (or even worse, imposing a meaning on something that we’ve already imposed a meaning to in the case of Claude). If we embrace this more Buddhist perspective, it may unlock an alternate reading, complimentary to our own AGI-centric one, mirroring the individual dividing lines of the West/East, <em>the Haiku and the Sonnet.</em></p>
 
 
 
  ]]></description>
-  <guid>https://sav.phd/posts/substack/</guid>
+  <guid>https://sav.phd/posts/haiku/</guid>
+  <pubDate>Wed, 29 Jan 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Has an LLM Cultural Victory Already Been Achieved?</title>
+  <link>https://sav.phd/posts/llm/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="center">
+<p><img src="https://sav.phd/posts/llm/1.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>There has been huge talk recently regarding the performance-to-cost ratio of Deepseek’s LLM products, particularly their new reasoning model causing OpenAI’s reasoning-based moat to partially evaporate. Companies like Perplexity, Cursor &amp; Co (including most YC startups these days) have been quick to integrate these with good reason, most likely saving themselves some money in the process. Most likely, Deepseek have generated a large amount of synthetic data from state-of-the-art models such as o1, or by cleverly prompting non-reasoning models such as 4o or their own V3. As an accepted practice, this is the core idea behind recursive improvement, so no harm done. And if OpenAI and others have priced their API correctly, then they’re also set to gain. Everyone’s a winner (spoilers, they are not), and we’ll only see more of this in the future.</p>
+<p>I personally have been benchmarking LLMs to make decisions within Bayesian optimisation loops, in a bid to eke out some in-silico performance (for functions that behave reasonably). Every time I reach a natural conclusion to benchmarking where the next best model is too expensive to run on my test suite, someone pushes the Pareto front a little bit more in the direction of ‘time to stop writing that preprint and get some more results’. The impact of these models will be never be as small as it is now.</p>
+<p>A obvious point that people still seem to find surprising is that Deepseek censor inputs and outputs to align with the views of the Chinese government, specifically (again, rather obviously) events surrounding Tiananmen Square. Given Deepseek’s servers will be in China, it’s an aspect of communication that the Government has enforced for practically as long as the internet has existed.</p>
+<p>I consider this very much a <em>non-story</em>. What I find <strong>more</strong> interesting are what underlying <em>values</em> the LLM has. These go deeper than specific phrases or keywords and enter into the murky realm of thoughts and feelings.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/llm/2.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>A not very interesting discussion that has not much to do with machine learning at all.</figcaption>
+</figure>
+</div>
+</div>
+<p><a href="https://blog.sav.phd/p/generative-models-as-mirrors-and">I’ve written previously about values and LLMs</a>, and how datasets not only contain a representation of language as a structure, but the values of those who have written or collated the text. In effect, we shouldn’t be surprised when models from other countries appear misaligned to our own, Western, benchmarks, <strong>if they have been trained on distinct datasets</strong>. Even with learned translation, we shouldn’t be surprised if we don’t find them particularly revealing, especially as we approach concepts such as ‘intelligence’. Likewise, as we in the West share more common values with current SOTA LLMs than those elsewhere, we shouldn’t be surprised if they are found less appealing or useful in other countries. This is a hidden upside to the development of LLMs, they are implicitly more accessible, beneficial and provide more productivity to those with similar values.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/llm/3.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>A slightly more nuanced comment. Some hints that there is more at play than just basic censorship.</figcaption>
+</figure>
+</div>
+</div>
+<p>So what work has already been done in this field? The preprint <a href="https://arxiv.org/abs/2411.06032">“<strong>LLM-GLOBE: A Benchmark Evaluating the Cultural Values Embedded in LLM Output</strong>”</a> presents a methodology based from a framework devised in 2004. Outputs from LLMs are ranked using an automated ‘jury’ across a number of criteria including “Institutional Collectivism” and “Future Orientation” etc… It’s a logical extension to the original methodology, and I won’t argue against this work or the proceeding work on GLOBE (for now). What I care about are the results. So after all that, we have a brand new suite that measures exactly what we’re interested in. Not censorship, or language, but <em>values</em>. Time to reveal the results…</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/llm/4.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>Oh. They look strikingly similar. So Chinese LLMs (Qwen) and English LLMs (GPT-4) really do have the same values? The authors claim that Chinese LLMs score (quantitatively) significantly higher on cultural rankings, though another conclusion is that LLMs are <em>‘…not perfect representations of the cultural values of development contexts…’.</em> In my eyes these are slightly conflicting. So what is happening here?</p>
+<p>I suspect that datasets have a lot to do with it. As is common and now an encouraged direction, LLMs are being trained with synthetic datasets derived from other LLMs on the Pareto front of cost-to-performance, depending on how much you value volume over quality. The implication is that unless you go and collect a large amount of ‘virgin’ data (arguably this is now impossible), you are building on the foundations that previous LLMs have constructed, and implicitly, the values contained within them. Similar to how all modern compilers stem from the original A-0 compiler by Grace Hopper.</p>
+<p>For a company like Deepseek, this poses an interesting question. If you value money, pursue what people will buy at breakneck speed. Use all the foundational work available to you and built a product that is so cheap and so effective that market forces takes over. <em>Then</em> you can worry about values. But for now, assuming that geopolitical forces at play are using LLMs like pawns on a chessboard, models like Deepseek are built on Western foundations. While OpenAI may take a temporary minor financial hit because of a potentially reduced market share, the game was set in motion a few years ago now, and it will be difficult to untangle.</p>
+<p>There is a way out for Deepseek and its hypothetically value-driven creators. The model is cheap and good enough that large synthetic datasets will be created from it. By shifting the dial in favour of your own beliefs, or augmenting your model with your own value-driven data, it may be possible to shift the dial against Western values. There are glimmers of this seen in the tweet above which I will re-present.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/llm/3.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>A slightly more nuanced comment. Some hints that there is more at play than just basic censorship.</figcaption>
+</figure>
+</div>
+</div>
+<p>However, the game is being played continuously, not turn-by-turn. By announcing huge amounts of funding for data centres such as <a href="https://www.bbc.co.uk/news/articles/cy4m84d2xz2o">Stargate</a>, the West is aggressively attempting to not only win this race over the values of future LLMs, but remove the need for it. The sheer volume of compute is a hedge against other LLMs and a mitigation strategy against having to use the best data available on the open (geopolitical) market, by way of self improvement and reinforcement learning in a controlled setting. So has cultural victory been achieved? Can other nations untangle the roots that have grown? It will be a huge effort.</p>
+<section id="appendix---empire-of-signs---roland-barthes" class="level3">
+<h3 class="anchored" data-anchor-id="appendix---empire-of-signs---roland-barthes">APPENDIX - EMPIRE OF SIGNS - ROLAND BARTHES</h3>
+<p>Recently I read Empire of Signs by Roland Barthes on the recommendation of Sunil Manghani, ahead of a trip to visit a friend in Japan. Barthes describes a fictional Japan, used as a device to counter Western ideologies and values. As follows:</p>
+<p>Barthes broadly outlines a vision of Japan, and more generally the East, as a place where the sum of the parts don’t make a whole, but signify the act of the summation itself, the inbetween-ness of the parts. He makes this point by commenting on the writing system (composition of smaller signs), food (which itself exists in divisions that can only be divided further by chopsticks, never violently cut or <em>destroyed</em>), and through the act of giving gifts, wherein the packaging and <em>act</em> of giving a gift outweighs the contents. There is no centre, no answer, no true meaning to life in Barthes’ created world, it exists in the in-between spaces. Barthes describes the act of writing a Haiku like taking a single picture, without any film (or a memory card) in the camera.</p>
+<p>We in the West want to impose a <em>meaning</em> to our models and their outputs, maybe stemming from our core belief of individualism, seeking to look inwards and attempting to assign a meaning or search for a soul. For those in Barthes Japan, the act of using an LLM, or the tokens themselves may have more importance. The instant that language is generated, but not the language itself, the process. I haven’t properly thought about the implications of this, but it leans into the creative process I am sure, and how LLMs can truly contribute outside of finding a creative solution. I’m sure Sunil and myself will discuss further, but speculatively, maybe the solution for the East and those without Western ideologies is to think beyond our established idea of ‘chatting’, implicitly with another <em>being</em>, a thing, a <strong>whole.</strong> We might not find it interesting or useful, but others might, and that’s OK.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://sav.phd/posts/llm/</guid>
+  <pubDate>Wed, 22 Jan 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Optimal Bookshelf Organisation</title>
+  <link>https://sav.phd/posts/books/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="center">
+<p><img src="https://sav.phd/posts/books/1.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>How someone organises, or chooses not to organise a bookshelf can say a lot about them. I personally don’t think there is any sense in enforcing a specific order. My strategy can be summarised as ‘vibes based’. There is joy in being able to know roughly where a book is and pick it out mid conversation. It makes me feel like I’m some sort of magician or an old librarian, holding the secret mental key that will unscramble order from chaos.</p>
+<p>But, if you don’t believe in this serendipity, you might be inclined to choose <em>something</em> to base the order on. Given we are pretty good at remembering the title of a book, maybe alphabetical order is good. Actually, authors should be grouped together, so let’s make them alphabetical. What about we do that and then also group some categories of similar books together (S/O Dewey). The most intelligent of us out there may choose to forego any sense of useful meaning, and satirically choose to base the order on the colour of the cover, subverting the old book judging adage.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/books/2.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><a href="https://x.com/trussliz/status/1838101872969687143">No Comment</a></figcaption>
+</figure>
+</div>
+</div>
+<p>These approaches have been discussed at length <a href="https://www.clutter.com/blog/posts/how-to-organize-book-collection/">here</a> <a href="https://www.penguin.co.uk/articles/2022/01/bookshelf-organising-tips-books-home-library">here</a> <a href="https://www.neathousesweethome.com/aesthetic-ways-to-organize-bookshelves/">here</a> <a href="https://bookriot.com/how-to-organize-bookshelves/">here</a> and <a href="https://www.oprahdaily.com/life/g35578167/how-to-organize-bookshelves/">here</a>, you get the idea. The reason they’re up for debate is because none of them are truly <em>optimal.</em> None take advantage of all the available information… <strong>Until now.</strong> Later on in this post I will describe an optimal strategy to sorting a book collection that I’ve also made open source, but first we must collect some data.</p>
+<p>Digitising all the books I own is a task low down on my todo list (compared to finishing my PhD). So to aid in this, I created a Command Line Interface (CLI) tool to help me. It’s available <a href="https://github.com/trsav/bookshelf/tree/main">here</a> and I’ve creatively named it <code>optimal-bookshelf</code>. It allows you to add books to a persistent locally-stored virtual library by searching for a title using open book APIs (i.e.&nbsp;Google Books), after which a more thorough search is performed and the specific edition can be selected. Ideally most of the information is correct at this point, but you then have the option to edit specific data such as the ISBN. I tailored this tool as I was digitising my collection, so it should be as efficient as possible on the Pareto curve of information vs time.</p>
+<p>This enabled me to create an accurate digital representation of all the books I own, down to the specific edition, in a relatively short amount of time.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/books/3.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>But what to do with this wealth of information? Well, for now it is largely text-based. To do anything that will concern a notion optimality, we need <em>numbers</em>. It follows that we can summarise <strong>all</strong> the information that we have generated, and result in a numerical representation by creating <em>embeddings</em> of our virtualised book-twins. By tokenising the information, embeddings represent text as dense vectors in a high-dimensional space using models trained specifically for this purpose. These embedding models are designed to capture semantic relationships between words and phrases, allowing us to perform mathematical operations that measure how similar different pieces of text are to each other. In the <code>optimal-bookshelf</code> CLI, embeddings are created using OpenAI’s<code>text-embedding-3-large</code> model and can easily be generated using the <code>$ bookshelf embed</code> command.</p>
+<p>If I make the assumption that I want books near each other to be semantically related (i.e.&nbsp;have a low Euclidian distance in embedding space), and that every book must appear on my bookshelf exactly once, I can equivalently formulate this task as an optimisation problem, minimising the total distance travelled by traversing from embedding to embedding. In this case I don’t mind that this trip isn’t a loop (because my bookshelf is a ‘line’ and not a circle, but this can be revisited later), resulting in a formulation of the classic integer programming <strong>no-return <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Special_cases">Travelling Salesmen Problem</a></strong>. Solving this will result in a sequence of books that embodies the lowest total semantic difference between neighbouring books. It makes the <em>most sense,</em> in ways that are not just affiliated with the title or the author, or even the genre, but the fundamental <em>concept</em> of that book <em>.</em> Having generated embeddings, solving this problem is easy in <code>optimal-bookshelf</code>. Just run the command <code>bookshelf tsp.</code></p>
+<p>For visualisation purposes, you can also solve a TSP over embeddings that have first been reduced to two dimensions. The easiest and generally most effective way to do this in situations where the meaning isn’t too important (<a href="https://arxiv.org/pdf/2002.06910#:~:text=Despite%20their%20usefulness%2C%20t%2DSNE,non%2Dexperts%20in%20dimensionality%20reduction.">alert they can be misleading</a>) is to use <a href="https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf">t-SNE</a>. Running <code>bookshelf tsp -v</code>(for visual) first uses t-SNE to reduce the dimension of the embeddings, and then solves the reduced dimension TSP (as the TSP relies on a distance matrix it scales with number of points and not dimensionality) resulting in the following:</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/books/4.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>It’s really interesting to follow the path and see themes emerging based on author or publication date, or even if the book is read, unread, or in progress, though I’m choosing to keep secret and just label the titles. It all acts like a constellation of my reading interests and habits, similar to the manually created constellation of artists at the Tate Liverpool.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/books/5.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><a href="https://www.tate.org.uk/visit/tate-liverpool/display/constellations">Tate Liverpool Constellations</a></figcaption>
+</figure>
+</div>
+</div>
+<p>I think an interesting extension would be to specify a certain number of shelves, then solve the TSP for a corresponding number of lines equal to the available shelves. In theory I have the number of pages in each book available, so I could add a physical packing constraint here to ensure all the books fit. For full transparency, here’s my current optimal shelf based on this semantic TSP. Spot the various threads that emerge…</p>
+<pre><code>1. GRAVITY'S RAINBOW
+2. THE MASTERS
+3. THE BOOKS OF JACOB
+4. FLIGHTS
+5. DRIVE YOUR PLOW OVER THE BONES OF THE DEAD.
+6. THE PLAGUE
+7. PANDAEMONIUM 1660–1886
+8. UTOPIA
+9. POLITICS ON THE EDGE
+10. THE RESTLESS REPUBLIC: BRITAIN WITHOUT A CROWN
+11. 1599: A YEAR IN THE LIFE OF WILLIAM SHAKESPEARE
+12. WILLIAM SHAKESPEARE POETRY
+13. OEDIPUS AT KOLONOS
+14. THE ODYSSEY: TRANSLATED BY EMILY WILSON
+15. THE ILIAD: TRANSLATED BY EMILY WILSON
+16. THE DIVINE COMEDY
+17. DON QUIXOTE
+18. THE THREE MUSKETEERS
+19. THE COUNT OF MONTE CRISTO
+20. CRIME AND PUNISHMENT
+21. THE KARAMAZOV BROTHERS
+22. THE IDIOT
+23. HUMAN, ALL TOO HUMAN &amp; BEYOND GOOD AND EVIL
+24. THE EMANCIPATION PROCLAMATION
+25. THINK AND GROW RICH
+26. TALKING TO STRANGERS
+27. ESCAPE FROM MODEL LAND
+28. VALUES
+29. DOMINION
+30. JERUSALEM
+31. THE WORLD OF STONEHENGE
+32. GOING TO CHURCH IN MEDIEVAL ENGLAND
+33. THE RUIN OF ALL WITCHES
+34. MIDNIGHT IN CHERNOBYL
+35. ABYSS: THE CUBAN MISSILE CRISIS 1962
+36. SECRET WARS
+37. DIVIDED HOUSES: THE HUNDRED YEARS WAR III
+38. TRIAL BY BATTLE: THE HUNDRED YEARS WAR I
+39. TRIAL BY FIRE: THE HUNDRED YEARS WAR II
+40. HIGH PERFORMANCE ROWING
+41. WRITING ABOUT SPORT
+42. GAZZA AGONISTES
+43. THE LAST LEONARDO
+44. THE CREATIVE ACT
+45. ON ART AND LIFE
+46. STORY OF ART
+47. THE PENGUIN BOOK OF CLASSICAL MYTHS
+48. VENI, VIDI, VICI
+49. THE TWELVE CAESARS
+50. THE HISTORY OF THE DECLINE AND FALL OF THE ROMAN EMPIRE: ABRIDGED EDITION
+51. PAX
+52. ASTERIX: ASTERIX AND THE WHITE IRIS
+53. SUPER-INFINITE
+54. SYSTEMS FOR...
+55. MOBILE MANIA
+56. THE ICON CATALOGUE UK GARAGE VOL. 1
+57. LONDON FEEDS ITSELF
+58. LONDON FIELDS
+59. DAMASCUS STATION
+60. MOSCOW X
+61. A PERFECT SPY
+62. THE SPY AND THE TRAITOR
+63. BEHIND THE ENIGMA
+64. THE MERCENARY RIVER
+65. THE LADYBIRD BOOK OF THE HANGOVER
+66. STIG OF THE DUMP
+67. THE TALES OF BEEDLE THE BARD
+68. HARRY POTTER AND THE HALF-BLOOD PRINCE
+69. JOURNEY TO THE CENTRE OF THE EARTH
+70. DR JEKYLL AND MR HYDE
+71. TREASURE ISLAND
+72. TOM SAWYER &amp; HUCKLEBERRY FINN
+73. THE ADVENTURES AND MEMOIRS OF SHERLOCK HOLMES
+74. THE RETURN OF SHERLOCK HOLMES
+75. MACHINES OF LOVING GRACE
+76. PROCESS DYNAMICS AND CONTROL
+77. GAUSSIAN PROCESSES FOR MACHINE LEARNING
+78. BAYESIAN OPTIMIZATION
+79. NUMERICAL OPTIMIZATION
+80. ROBUST OPTIMIZATION
+81. FOUNDATIONS OF APPLIED MATHEMATICS, VOLUME 2
+82. FOUNDATIONS OF APPLIED MATHEMATICS, VOLUME I
+83. HOW TO PROVE IT
+84. INTRODUCING LOGIC
+85. INTRODUCING QUANTUM THEORY
+86. INTRODUCING CHAOS
+87. INTRODUCING FRACTALS
+88. INTRODUCING INFINITY
+89. OUR MATHEMATICAL UNIVERSE
+90. COLLINS DICTIONARY OF MATHEMATICS
+91. FOUR COLORS SUFFICE
+92. RINGWORLD
+93. THE LORD OF THE RINGS
+94. THE HOBBIT
+95. CLOUD ATLAS
+96. A SUPPOSEDLY FUN THING I'LL NEVER DO AGAIN
+97. INFINITE JEST
+98. AMERICAN PSYCHO
+99. BRING UP THE BODIES
+100. THE NATION KILLERS
+101. BURY MY HEART AT WOUNDED KNEE
+102. STALINGRAD
+103. WAR AND PEACE
+104. NAPOLEON IN EGYPT
+105. GREECE
+106. ATHENS
+107. DEMOCRACY'S BEGINNING
+108. THE BATTLE FOR THE ARAB SPRING
+109. MIKE CONTRE-ATTAQUE!
+110. KISSINGER
+111. THE ESCAPE ARTIST
+112. 1000 YEARS OF JOYS AND SORROWS
+113. LUCKY KUNST
+114. MURDER ON THE DARTS BOARD
+115. GONE FISHING
+116. THE SATSUMA COMPLEX
+117. THAT'S YOUR LOT
+118. MARCH OF THE LEMMINGS
+119. HOUSE ARREST
+120. COMING HOME
+121. NO TURNING BACK
+122. KILLING THATCHER: THE IRA, THE MANHUNT AND THE LONG WAR ON THE CROWN
+123. SAY NOTHING: A TRUE STORY OF MURDER AND MEMORY IN NORTHERN IRELAND
+124. FALL
+125. ONE TWO THREE FOUR: THE BEATLES IN TIME
+126. K-PUNK
+127. DEATH AND THE PENGUIN
+128. MURDLE
+129. THE HARD-BOILED WONDERLAND AND THE END OF THE WORLD
+130. ON THE ROAD
+131. A MOVEABLE FEAST
+132. FLAUBERT'S PARROT
+133. NINETEEN EIGHTY-FOUR
+134. TENDER IS THE NIGHT
+135. THE UNBEARABLE LIGHTNESS OF BEING
+136. SLAUGHTERHOUSE-FIVE
+137. CATCH-22
+138. WE ALWAYS TREAT WOMEN TOO WELL</code></pre>
+<p>I think another next logical step would be to build in a recommendation tool based on the vector embeddings and maybe even the resulting TSP solutions. This would potentially result in a bi-level integer program (hard) depending on what you deem most important (add a book that would fit most optimally within a current collection of books, or add a book that would result in the most added distance to the resulting optimal semantic tour?), but with a small enough number candidates this could be solved without approximation. We will see.</p>
+<p>Was it worth it? Perhaps the lesson in all of this is that fulfilment lies not in choosing between chaos and order, but in finding systems that embrace both—straddling each paradigm, allowing us to be both the organised librarian and to take a book for a walk.</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/books/6.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Paul Klee.</figcaption>
+</figure>
+</div>
+</div>
+<p>As I’ve quoted before, Donella Meadows states in her book <em>Thinking in Systems: A Primer:</em></p>
+<blockquote class="blockquote">
+<p>There is yet one leverage point that is even higher than changing a paradigm. That is to keep oneself unattached in the arena of paradigms, to stay flexible, to realize that no paradigm is “true”, that every one, including the one that sweetly shapes your own worldview, is a tremendously limited understanding of an immense and amazing universe that is far beyond human comprehension.</p>
+</blockquote>
+<p>All code for this post can be found here: <a href="https://github.com/trsav/bookshelf" class="uri">https://github.com/trsav/bookshelf</a></p>
+
+
+
+ ]]></description>
+  <guid>https://sav.phd/posts/books/</guid>
+  <pubDate>Thu, 28 Nov 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>On Gromit &amp; Wallace</title>
+  <link>https://sav.phd/posts/gromit/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I have not been given access to a preview screening of the upcoming Wallace and Gromit feature <em><a href="https://www.bbc.co.uk/mediacentre/articles/2024/wallace-and-gromit-vengeance-most-fowl">A Vengeance Most Fowl</a>.</em> However, I can still tell you what will happen.</p>
+<p>Wallace will act in his own short-sighted interests. He will avoid conflict at any cost, to the detriment of his long suffering slave dog Gromit. Useful idiot Wallace will then be exploited by forces very much within his control and Gromit will in turn, for some reason, save the day. Having experienced a range of emotions that Wallace could not even consider yet alone acknowledge, Gromit will then sit down with his newspaper, and return to the way things were. Largely being offered cheese.</p>
+<p>To live the life of Gromit is to be moulded, to be <em>morphed,</em> both by Wallace and his divine Creators, and, lacking a means of communication, be denied the ability to return the favour. Voiceless Gromit is a bottomless vessel of emotional tolerance. He knows he has experienced pain before, and knows he will experience it again. Often confronting the viewer directly, he is quiet sign of resistance against all that serve to shape him.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/gromit/1.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>The Plight of Plasticine Gromit is one that is destined to be told and retold for years to come. Gromit, and to a lesser extent Wallace, has transcended light entertainment and entered the realm of the folk-tale, there is no doubt that he now exists as part of a contemporary mythology. The retellings have begun; Wallace’s original orator Peter Sallis is dead, and now Ben Whitehead has taken up the mantle. Implicitly, these characters are destined to live on beyond even Nick Park’s passing. We are custodians of these models and bear their weight of their stories, it is our responsibility to ensure they are told ad infinitum. We shape them, and they mould us.</p>
+<p>Just as the Gods in epics such as The Iliad occasionally appear in physical form on the battlefield to remind their subjects who is pulling the strings, the fingerprints of Aardman employees linger as a reminder of an omniscient puppet master. However, despite playing a God-like role in the lives of Gromit and Wallace, we are no longer in control.</p>
+<p>Greek God Apollo granted human priestess Cassandra the gift of prophecy, but upon rejecting his advances - cursed her, ensuring that Cassandra’s prophecies were forever true but never believed. We as creator have bestowed upon Gromit emotional maturity and an understanding of the human condition, he speaks the truth in all of us. Just as Cassandra’s truth was destined to be spoken but never heeded by other humans, Gromit’s silent wisdom is destined to be witnessed but never fully grasped by slave master Wallace. Like Apollo’s gift, Gromit’s message has transcended beyond our control. Apollo, the God who could see all futures, could not change Cassandra’s use of his gift; we, who can mould Gromit’s form, cannot control our depiction of him. If Gromit could speak he would probably say something like:</p>
+<blockquote class="blockquote">
+<p>Nick Park, Nick Park!<br>
+God of all ways, but only Death’s to me,<br>
+Once and again, O thou, Destroyer named,<br>
+Thou hast destroyed me, thou, my love of old!</p>
+</blockquote>
+<div class="center">
+<p><img src="https://sav.phd/posts/gromit/2.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>Given this, we often find ourselves coming to expect that Gromit will strike a more introspective tone than other figures in Gromit and Wallace. As an entity his personal mythology is more emblematic to Sisyphus and his eternal punishment of rolling a boulder up a hill as opposed to heroic Hercules triumphing over rogue bakers, or a pair of mechanical trousers piloted by a penguin.</p>
+<p>However, in this contemporary myth of stoicism, Gromit does not play the role of Sisyphus. <strong>Gromit is the boulder.</strong> We as custodians bear the weight of bringing him into existence, we are doomed to tell the tragedy of Gromit, to raise him up, and to pull him down. Gromit and I will never summit, and we are burdened with that responsibility. In this analogy, Wallace serves as the mountain itself, static, unwavering in complacency. Wallace provides no respite for us, nor Gromit. We are doomed to force Gromit to try and try again, and yet go nowhere at all. Laika was given the tragic reward of burning up into a preconceived infinite lightness, eternal fame and glory. We rewarded Gromit’s trip into space with some cheese (which he doesn’t seem to personally enjoy that much).</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/gromit/3.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p><em>“Here I sit, I can do no other”</em> once proclaimed Gromit, or so it goes. This puritanical stoicism in the face of eternal damnation that he shows is evidence that Gromit <em>is the main character. Gromit and Wallace.</em> Though, we must also consider the role that Wallace plays within this myth. He is a glutton at best. Motivated by cheese, and famously in-bread. He is meek and self-serving, a pushover. Dante reserved the vestibule of hell to these people with no ambitions, good nor bad. <em>Abandon all hope, ye who enter here.</em> They were destined for eternal stagnation. There are those characters in the mythology that do have ulterior motives, i.e.&nbsp;the penguin, but Wallace is unbefitting of even a negative analysis. He is nothing. He exists purely as blank canvas on which Gromit can project both his pleasure and pain.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/gromit/4.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>How can Gromit transcend beyond his invented suffering, if we have lost control of the strings? How will this folk-tale evolve? One scenario is for Gromit to be considered, in the future, to be assumed to be based on a real dog. Hopefully in that case this very blog will be lost and cease to serve as a reminder that he’s completely made up. The weight of our burden as creators and custodians would be transformed into historical documentation.</p>
+<p>Papers will be written and debates will be held over “The Historical Gromit” - analysing evidence for his actual existence, debating the accuracy of various tellings, arguing over the true location of his home. The fingerprints in the clay would be studied not as signs of divine creation but as proof of historical authenticity. Academics would argue over whether “A Grand Day Out” represents an actual journey to a lost moon made of cheese, or is merely allegorical.</p>
+<p>The ultimate victory over Gromit’s current metaphysical Sisyphean existence will not be in being pushed to the top of the mountain by us humans, but in future generations assuming we were never pushing a boulder at all - merely documenting a profound historical truth about a dog who carried the weight of human wisdom in silence.</p>
+<p>There is a cruel twist to this fate. Like Wallace, we will miss the point of the tale entirely - and yet like Gromit, we now must bear this misunderstanding with stoic grace. From Gromit to Wallace.</p>
+<p>CANIS VIVIT.</p>
+
+
+
+ ]]></description>
+  <guid>https://sav.phd/posts/gromit/</guid>
+  <pubDate>Tue, 26 Nov 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>‘No Bat Death’ as a Policy for Industrial Growth and National Security.</title>
+  <link>https://sav.phd/posts/bat/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/bat/1.webp" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><a href="https://x.com/Dan4Barnet/status/1855680730765943060/photo/1">No bat death is acceptable.</a></figcaption>
+</figure>
+</div>
+</div>
+<p>Recently, <a href="https://x.com/Dan4Barnet/status/1855680716169740375">Dan Tomlinson MP</a> chose to highlight the investigations (<a href="https://www.ft.com/content/fd5e34dc-e006-491b-93b2-576e3adf45f8">here</a> and <a href="https://www.theguardian.com/uk-news/2024/nov/07/cost-of-shed-to-protect-bat-colony-near-hs2-has-topped-100m-chair-says">here</a>) into the enormous cost of the Great Bat Tunnel (GBatunnel) of 2024. Others have irked, however I personally consider the tunnel a unique feat of mammalian cooperation and will look back fondly at the moment that both bat and human met each other exactly in the middle, having started from their respective ends of the 1km section of track.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/bat/2.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>Many commentators have chosen to use the bat tunnel as a case study. It is a single example (of 8,276 in the case of HS2) of how a tangled web of stakeholders can grind large infrastructure projects to a halt and increase costs, all while inflation ticks away in the background. We must also spare a thought for those bats who are also feeling the pinch in these uncertain times. The price of small pieces of fruit have skyrocketed, and of course bat-employers (presumably cave related, i.e.&nbsp;maintenance or otherwise) have been directed not to increase weekly bug allowances to avoid a bug-price spiral. Not only this, but us humans have selfishly decided to increase transport capacity between two of our largest cities, in an attempt to stimulate a generation of economic growth.</p>
+<p>Ironically if I <em>were</em> fortunate enough to be a bat, well protected as they are, I would go on strike, avoiding any significant crossings or journeys in entirety making the batunnel useless (apparently the bats have disappeared from the batunnel stretch, presumably on strike as I outline). Regardless, the batunnel now exists, and I speak for all British taxpayers in wishing any future bats a safe and enjoyable crossing should they wish to fly over this particular bit of train track.</p>
+<p>However, <strong>Natural England have set a dangerous precedent.</strong> By taking a hardline policy in favour of bat-lives, to the tune of £100 million, they have exposed their hand.</p>
+<p>In this post I will outline three proposals to exploit this <em>no-bat-death</em> precedent that will solve not only the planning system but also infrastructure, growth as well as issues of national security. The majority of these rely on obtaining a number of rare bats. I think this is a solvable issue (supposedly they’re not actually that rare) and I would probably ask a consultant to do this for me from the offset.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/bat/3.webp" class="img-fluid" style="width:60.0%"></p>
+</div>
+<section id="every-planning-proposal-or-amendment-must-be-accompanied-by-a-murdered-bechsteins-bat." class="level3">
+<h3 class="anchored" data-anchor-id="every-planning-proposal-or-amendment-must-be-accompanied-by-a-murdered-bechsteins-bat."><strong>Every planning proposal or amendment must be accompanied by a murdered Bechstein’s bat.</strong></h3>
+<p>This is a local solution to the bat tunnels dilemma specifically and more broadly the planning system. Natural England would be made to weigh up the cost of a single bat dying, and the resulting small amount of conscious blood on their hands, against the potential of multiple bats experiencing the long and drawn out suffering of being hit by a 200mph train, due to <em>their</em> inaction.</p>
+<p>Given their policy that <em>no</em> bat must die, they will not be pleased either way. The resulting paradox will most likely force them to reconsider their position, or potentially suffer indefinite operational gridlock. Assuming that Natural England will bend to the prospect of bat martyrdom (<a href="https://blog.sav.phd/p/ratatouille">animal martyrdom is something I have spoken about at length in a previous post</a>), they must seriously consider whether a proposal is worthwhile submitting in the first place. This I think has potential for other animal related planning proposals (unless there are one or two animals left like a white rhino or something, in which case this policy is entirely destructive). For example, if you come to me wanting to build a tunnel for hedgehogs, I’ll only consider it if you run over a hedgehog to show me you’re serious. Otherwise, all those hedgehog lives will be on you.</p>
+</section>
+<section id="a-bechsteins-bat-is-held-in-captivity-at-the-centre-of-every-site-of-national-interest." class="level3">
+<h3 class="anchored" data-anchor-id="a-bechsteins-bat-is-held-in-captivity-at-the-centre-of-every-site-of-national-interest.">A Bechstein’s Bat is held in captivity at the centre of every site of National interest.</h3>
+<p>For many years defence hawks have advocated for an increased proportion of GDP to be spent on Defence &amp; National Security. A simple proposal to ensure this money is allocated (the precedent of the bat tunnel demonstrates this) is to first introduce and then highlight the presence of Bechstein’s bats at these sites. Natural England will then, naturally, begin proceedings to protect these bats at any cost.</p>
+<p>These bats could also be used in both a defensive and offensive manner. For example, if creatively enough located, ideally at the very centre of these sites or even underground, there will be significant enough impetus on Natural England to increase security and lobby for increased defence spending. <strong>No bat must die.</strong> Here the assumption is that Natural England will treat bats in captivity equally to those that exist in the wild. The alternative is to manually introduce Bechstein’s bats into the wild near these sites of strategic national interest. I would probably begin with scattering them throughout the coastline of the UK, with a few at the major ports just to be sure. The balance is how to do so in a way that they are still considered endangered. Defensively, the very existence of Natural England and their unflinching commitment to bat wellbeing will act as a strong deterrent to other countries, given their explicitly stated and previously enforced red lines.</p>
+<p>Similarly, bats could be offensively transported alongside soldiers in the standing army to war zones across the world. Natural England would then presumably take it upon themselves to form an auxiliary corps responsible for protecting these bats at any cost in the face of enemy aggression. A downside of this strategy is that hostage-bats may be used in a similar manner by the enemy in order obtain certain demands, though I will assume that given their namesake, Natural England are only concerned with the welfare of Anglo-Saxon bats. In this case, a bat proxy-war may break out between the respective wildlife organisations of each country, hell-bent on saving their own bat’s lives at any cost. We must also consider the ideal that Natural England cares equally about Anglo-Saxon bats based abroad as it does those flying peacefully at home, with all the comforts of a standard batunnel. This further raises questions into Natural England’s policy regarding migratory birds which I will not get into.</p>
+</section>
+<section id="a-bechsteins-bat-at-the-bank-of-england-is-fed-a-daily-bug-allowance-inversely-proportional-to-inflation." class="level3">
+<h3 class="anchored" data-anchor-id="a-bechsteins-bat-at-the-bank-of-england-is-fed-a-daily-bug-allowance-inversely-proportional-to-inflation.">A Bechstein’s Bat at the Bank of England is fed a daily bug allowance inversely proportional to inflation.</h3>
+<p>It goes without saying that this bat must not die, at any cost. The economists at the Bank of England must carefully use the dials and levers available to them to ensure that inflation is kept low. While this is what they presumably get up to anyway, the additional presence of a Bechstein bat, and the resulting pressure from Natural England will ensure that they stick to their targets.</p>
+<p>This policy raises the interesting potential scenario wherein Natural England themselves may be required to voluntarily free up their own funding, martyring themselves in the name of the Bank of England Bat. Employees and concerned campaigners will reach a Buddhist style Nirvana of bat well-being, free of their own cause. Maybe the real infrastructure was the bats we saved along the way.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://sav.phd/posts/bat/</guid>
+  <pubDate>Mon, 11 Nov 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>On So Solid Crew &amp; Raymond Queneau</title>
+  <link>https://sav.phd/posts/so_solid/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Sonnets, Haikus, and Palindromes are all forms of literary constraints. It is by constraining the structure of what is linguistically possible through the application of rules, that words gain an outsized meaning. There is a sense of purpose and specificity in each word that results in richer parts, and an even greater whole.</p>
+<p>In 1960/2001, a French/British group of largely men met in Normandy/Battersea to discuss the implications of literary constraints, and the potential for <em>new</em> literary structures to create meaning. The Oulipo movement/So Solid Crew pioneered constrained works such as <em>Exercices de Style/21 Seconds</em> where 99/10 versions of the same scene are recounted each in a different style/by a different MC.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://sav.phd/posts/so_solid/1.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://sav.phd/posts/so_solid/2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>The Oulipo movement has always maintained strong ties to mathematics. Simple rules such as replacing or omitting letters can be extended to <a href="http://markwolff.name/wp/research/mathewss-algorithm/">entire algorithms</a>. Similarly, <em>So Solid Crew</em> themselves turned to maths, calculating the 21 allocated seconds for each MC by dividing their three and a half minute song by 10 MCs and rounding to the nearest integer. History doesn’t repeat itself, but it often rhymes.</p>
+<p>A popular critique of 21 Seconds is that <em><a href="https://www.theguardian.com/music/2002/oct/05/artsfeatures.popandrock">“none of the crew use their time to say anything remotely insightful”</a>.</em> Quite obviously, the purpose of So Solid Crew’s lyrics are not to provide insight to the listener. Otherwise they would have featured someone like Martin Lewis. But alas they did not. They gave themselves 21 seconds each, and they simply spent their time discussing this decision.</p>
+<div class="cleanbox">
+<p>I got 21 seconds to pass the mic</p>
+<p>I got 21 seconds to say what I gotta say</p>
+<p>You won’t like me anyway</p>
+<p>But I won’t hesitate</p>
+</div>
+<p>This introspective discussion is what separates So Solid Crew from other proponents of potential literature and Oulipo. The Crew spend almost their entire time discussing the very structure that they themselves have imposed. In doing so, they have meticulously weaved an ouroboros of structure and meaning, both existing in unison, neither without the other.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/so_solid/3.png" class="img-fluid" style="width:30.0%"></p>
+</div>
+<p>In the style of Claude Lévi-Strauss, given this self-referential meta-structure that the <em>Crew</em> have imposed on themselves, we should in theory be able to invert the formula. In direct contrast there should exist music blissfully un-self-aware, unconstrained but meaningless.</p>
+<p>Jacob Collier (b. 1994) is a virtuoso. He was born with the ability to play seemingly any instrument. As a result, he is entirely unconstrained in what he can sonically produce. He can command audiences to sing complex harmonics with just his hands and converse with Jazz artists through the medium of diminished chords, resolving just before the next unskippable ad kicks in.</p>
+<p>And yet, I have never met anyone that actually enjoys his music. It is directionless. The lack of any semblance of constraint or difficulty is Collier’s blessing and ultimate curse. He is at least aware of this, claiming asylum under the band of artists with <a href="https://www.theguardian.com/music/2022/nov/26/jacob-collier-stormzy-djesse-interview">’</a> <em><a href="https://www.theguardian.com/music/2022/nov/26/jacob-collier-stormzy-djesse-interview">creative infinity syndrome</a></em><a href="https://www.theguardian.com/music/2022/nov/26/jacob-collier-stormzy-djesse-interview">’</a>. I’m sure at one point <em>So Solid Crew</em> were in the same category. But in the face of this, Megaman, Lisa et. al, were unwavering in their commitment that <em>less-is-more</em>. Not only did they implement this philosophy to great effect, but they told their audience exactly what they were doing. The wizard’s curtain of creativity was being thrown away all together. Short-form video like TikTok is a close candidate for a new cultural structure that will forever seem normal. Maybe Jacob Collier could do us all a favour and restrict the length of his songs to 21 seconds.</p>
+<div class="center">
+<p><img src="https://sav.phd/posts/so_solid/4.png" class="img-fluid" style="width:80.0%"></p>
+</div>
+<p>The Oulipo movement was partially founded to discover new literary structures, to progress the search towards <em>potential</em> literature. However, the majority of these structures have not flown the cultural nest. But to Raymond Queneau and others that doesn’t seem to matter, and neither does it seem to matter to Megaman or Lisa. It was, and still is, the very <em>act</em> of subverting the rules of engagement that reminds people of the meaning in the words we read and the music we hear. <em>So Solid Crew</em> made this point in a more direct way than most, and for that alone, they are here to stay. <em>Romeo Done.</em></p>
+
+
+
+ ]]></description>
+  <guid>https://sav.phd/posts/so_solid/</guid>
+  <pubDate>Mon, 21 Oct 2024 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Metaphysical Chemical Processes</title>
+  <link>https://sav.phd/posts/metaphysical/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The Chinese room thought experiment provides an argument for why computers will never be able to truly ‘think’.<sup>1</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Josef Moural, “The Chinese Room Argument,” in John Searle, ed.&nbsp;Barry Smith (Cambridge: Cambridge University Press, 2003), 214-260.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Margaret A. Boden, The Philosophy of Artificial Intelligence (Oxford: Oxford University Press, Inc., 1990).</p></div><div id="fn3"><p><sup>3</sup>&nbsp;I also like the implication that if the Chinese room is correct, then either the human brain with it’s electrical and chemical signals is somewhat ‘special’ and has some additional latent features that invoke consciousness/intuition/thought, <em>or</em> consciousness/intuition is actually just a bit of an illusion and there’s nothing to distinguish us from a bloke idly following instructions without understanding what they mean. Both equally fun.</p></div></div><p>In effect it states that a machine can be <em>seen</em> to be providing intelligent dialogue or conversation in Chinese, but inside ‘the room’ there is simply someone with a rule book that is large enough to enumerate all the potential answers, and the rules to generate and combine them (in effect, the <em>structure</em> of Chinese). This person doesn’t truly know or think about what they are doing. Whether or not this is a realistic analogy is not something I am going to attempt to answer. To me, the Chinese room, with its counter and counter-counter-arguments<sup>2</sup> , is relatively convincing<sup>3</sup> .</p>
+<p>But for the purposes of this post, I’m not convinced, I think it’s completely and utterly wrong and a bit daft.<sup>4</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Mind games.</p></div></div><p>Here’s a quote that I enjoy from the <a href="https://plato.stanford.edu/entries/chinese-room/">Stanford Encyclopaedia of Philosophy</a> with an interesting extension to the thought experiment.</p>
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>[…] He [Searle] suggests a variation on the brain simulator scenario: suppose that in the room the man has a huge set of valves and water pipes, in the same arrangement as the neurons in a native Chinese speaker’s brain. The program now tells the man which valves to open in response to input. Searle claims that it is obvious that there would be no understanding of Chinese. (Note however that the basis for this claim is no longer simply that Searle himself wouldn’t understand Chinese – it seems clear that now he is just facilitating the causal operation of the system and so we rely on our Leibnizian intuition that water-works don’t understand (see also Maudlin 1989<sup>5</sup> ).) Searle concludes that a simulation of brain activity is not the real thing.</p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Tim Maudlin, “Computation and Consciousness,” The Journal of Philosophy 86, no. 8 (1989): 407-432.</p></div></div></div>
+<p>It’s a good point, water-works can’t think, can they? If a brain can think, and a brain can be modelled like a series of pipes, then why can’t a series of pipes think? If I were to replace a single pipe with an actual real neuron, the signal of which controlled a valve to the next pipe, then would my water-works<sup>6</sup> be able to think? If I just start replacing all the pipes in my works with equivalent neurons, <em>at what point does consciousness kick in?</em></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;spoiler alert, or… chemical processes.</p></div><div id="fn7"><p><sup>7</sup>&nbsp;Eric Schwitzgebel, “If Materialism is True, the United States is Probably Conscious,” Philosophical Studies 172, no. 7 (October 2014): 1697-1721.</p></div><div id="fn8"><p><sup>8</sup>&nbsp;This is almost certainly true when you look at Joe Biden; the US still <em>works</em> even if the man in charge is barely with us.</p></div></div><p>There’s a nice paper that touches on that last point justifying the idea that large organisations, or <em>countries</em> such as the United States can (or rather are) conscious<sup>7</sup> .<sup>8</sup></p>
+<p>With that in mind, I’ll get to the point. Can we design a chemical process to think?<sup>9</sup> The fact I’ll be dealing with simulated chemical processes adds a layer of complication because we’re back to asking whether computers can think. But lets assume I’m going to end up building it.<sup>10</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Normal people will and have used neural networks to attempt this task, choosing to (originally) directly model the interactions between neurons. I’m going to choose to model the water-works, because, funny.</p></div><div id="fn10"><p><sup>10</sup>&nbsp;I might spin this off into a deep-tech unicorn.</p></div></div><section id="the-plan" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-plan">The Plan</h3>
+<p>How am I going to go about this task? I could cheat and try to model a <em>neural network</em> using a chemical process. After all, neural networks have been proven to be universal function approximators<sup>11</sup> . I think this is a bit of a boring and sort of cheating. Additionally, attempting to directly find a chemical process that can reason is more interesting than finding a neural network that can reason, because I could feasibly go and build the chemical process in the real world<sup>12</sup> . The system it would live in is the same as us (i.e.&nbsp;not within the confines of a computer). However, in the ‘lets try to get a neural network to think’-space inherently it still just exists on a computer and you’re back to square one<sup>13</sup> . You’d have to make the neural network into some physical representation (like a brain)<sup>14</sup> . There are a host of assumptions here, namely to do with physicality, scale and permanence, but we really must move on.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Apparently to the detriment of machine learning as a field, something about making people focus on the wrong aspects of research.</p></div><div id="fn12"><p><sup>12</sup>&nbsp;I could also build the chemical process that approximates a neural network but as I say, boring.</p></div><div id="fn13"><p><sup>13</sup>&nbsp;Or at least a less interesting metaphysical representation.</p></div><div id="fn14"><p><sup>14</sup>&nbsp;This is somewhat similar to the <a href="https://www.aria.org.uk/nature-computes-better-seeds/">ARIA project</a><em><a href="https://www.aria.org.uk/nature-computes-better-seeds/">Nature Computes Better</a></em><a href="https://www.aria.org.uk/nature-computes-better-seeds/"></a></p></div></div><p>Quite obviously, the first reasonable step to building a chemical process that can think, is to build a chemical process simulator.</p>
+<p>Existing process simulators are bloated, use outdated GUIs and are not built with machine learning / data-driven workflows in mind. So I built my own. It’s currently written in Python but it might not be one day<sup>15</sup> . I’ve called it <code>&lt;process&gt;</code>, which you <strong>have</strong> to write as a code block.</p>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;LLM-based code-translation will solve this for me.</p></div><div id="fn16"><p><sup>16</sup>&nbsp;I can’t stress how much better and more useful this is over SFILES workflows which are outdated and stuck in an era where NLP worked on sentences and LLMs that could parse millions of tokens at a time didn’t exist. How are you seriously meant to learn a representation of something as intricate as a chemical process with an abstraction like <code>(raw)(hex)(r)[&lt;(pp)&lt;(raw)](mix)&lt;...</code>. Unless you train an LLM from scratch on SFILES (spoiler: you can’t because there is no where near enough data) they’re completely useless to use as a representation, because SFILEs are 1. not in LLM datasets (cannot truly use with pretrained LLMs) and 2. pretrained LLMs will struggle to one-shot learn what SFILES is because they’re not easily understandable, parseable or readable. LLMs are a learned representation of language, if you’re going to try and use them for chemical processes, or want a useable process representation then express them using language. SFILES rant over.</p></div><div id="fn17"><p><sup>17</sup>&nbsp;Insert OntoCAPE rant.</p></div><div id="fn18"><p><sup>18</sup>&nbsp;Apart from the silly long previous rant.</p></div><div id="fn19"><p><sup>19</sup>&nbsp;I only use TOML over YAML because it’s called <em>Tom’s Own Markup Language</em> and that is my name. These are the arbitrary decisions I have and will continue to make throughout this post.</p></div></div><p>In <code>&lt;process&gt;</code>, processes are fully represented within a TOML file. The files are detailed enough to provide a complete representation of a process<sup>16</sup> . The representation is also not too detailed where there would be extraneous effort to define it, reducing bloat<sup>17</sup> . If you’re far enough into process design that you want to model a process in significant detail then ‘rigorous’ tools such as Aspen or gProms are what you want anyway. <code>&lt;process&gt;</code> is not for rigorous design, it sits somewhere between SFILES<sup>18</sup> , and Aspen in terms of complexity. It’s main advantage over SFILES is that chemical processes can be simulated <strong>directly</strong> from an interpretable text-based .<code>toml</code> file<sup>19</sup> .</p>
+<p><code>&lt;process&gt;</code> is effectively a compiler for chemical processes, compiling a readable text-based format into an object that can be simulated and analysed.</p>
+<p>Here’s an example of the basic components of a <code>process.toml</code> file.</p>
+<pre><code>[[species]]
+name = "water"
+molecular_weight = 18.01528 # kg/kmol
+cp_poly_coeffs = [276370.0, -2090.1, 8.125, -0.014116, 9.3701e-6]
+enthalpy_of_formation = -285830.0 # kJ/kmol
+
+...
+
+[[species]]
+name = "nitro_benzene"
+molecular_weight = 123.109
+cp_poly_coeffs = [295300.0,-80.7,1.705]
+enthalpy_of_formation = 12500.0
+
+[[streams]]
+name = "benzene_inlet"
+molar_flowrate = 0.5 # kmol
+molar_ratios = {benzene = 1}
+temperature = 298 # K 
+pressure = 101325 # Pa
+
+...
+
+[[streams]]
+name = "benzene_recycle"
+molar_flowrate = 0
+molar_ratios = {benzene = 1}
+temperature = 298
+pressure = 101325
+
+[[separator]]
+name = "separator_one"
+inlet = ["final_product"]
+outlet = ["tops", "waste_water"]
+spec = [{nitro_benzene= 0.95},{water= 0.95}]
+
+...
+
+[[mixer]]
+name = "reactant_mixer"
+inlet = ["benzene_inlet", "nitric_acid_inlet","recycle","benzene_recycle"]
+outlet = ["reactor_reactants"]
+
+[[reactor]]
+name = "reactor_one"
+inlet = ["reactor_reactants"]
+outlet = ["reactor_products"]
+reactant_stoichiometry = {benzene=1, nitric_acid=1}
+product_stoichiometry = {water = 1, nitro_benzene =1}
+conversion = {benzene=0.9}
+
+[[splitter]]
+name = "splitter_one"
+inlet = ["reactor_products_cooled"]
+outlet = ["final_product", "recycle"]
+split_ratio = [0.8, 0.2]
+
+[[heat_exchanger]]
+name = "product_cooler"
+inlet = ["reactor_products"]
+outlet = ["reactor_products_cooled"]
+outlet_temperature = 298</code></pre>
+<p>By design, it’s relatively self-explanatory. You define molecular species, all the streams, their connections, etc. Unit operations each have specific attributes which must be defined such as the split ratio of a splitter.</p>
+<p>You don’t have to specify everything<sup>20</sup> , <code>&lt;process&gt;</code> will attempt to simulate unit operations with specified inlet streams until the entire process converges.</p>
+<div class="no-row-height column-margin column-container"><div id="fn20"><p><sup>20</sup>&nbsp;If you could then this would be a pointless tool.</p></div></div><p>Degrees-of-freedom are currently quite uncompromising. There is no way to fix a stream, and every variable can be changed. There is no need for a specific ‘recycle’ block or stream due to the way a process is converged. At the expense of bloat, you have to pay slightly more attention to what is being defined, which is not the worst trade off.</p>
+<p>Anyway, I might write this up a bit longer at some point depending if I flesh it out a bit. For now, onwards… I can visualise a process as follows:</p>
+<pre><code>process_file = "nitrobenzene_process.toml"
+process = parse_process(process_file)
+process.plot("outputs/process.png")</code></pre>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sav.phd/posts/metaphysical/1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>A visualised process.</figcaption>
+</figure>
+</div>
+</div>
+<p>And simulate it as so:</p>
+<pre><code>process.simulate(tol=1e-7)
+process.plot_convergence("outputs/convergence.png")
+
+
+Stream Tolerance -&gt; 2.20e+00 -&gt; 5.29e-01 -&gt; 1.12e-01 -&gt;...-&gt; 9.47e-07 -&gt; 3.83e-07 -&gt; 1.54e-07
+Converged in 30 iterations.</code></pre>
+<div class="center">
+<p><img src="https://sav.phd/posts/metaphysical/2.png" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>The overall mass and energy balance can be validated<sup>21</sup> , and I can also print off the steady-state of the converged process.</p>
+<div class="no-row-height column-margin column-container"><div id="fn21"><p><sup>21</sup>&nbsp;This is done by analysing streams to see if they come from, or go to a unit operation. If not, they are designated process inlet or outlets and quantities summed.</p></div></div><pre><code>print(process, '\n')
+print(process.confirm_energy_balance(), '\n')
+print(process.confirm_mass_balance())
+
+
+Process(name='nitrobenzene_process', unit_operations={'reactant_mixer': Mixer(name='reactant_mixer', inlet=[(0.50 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '1.00'}, (0.50 kmol/hr, 312.00 K, 101325.00 Pa) {'nitric_acid': '1.00'}, (0.26 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}, (0.04 kmol/hr, 298.00 K, 101325.00 Pa) {'nitric_acid': '0.17', 'water': '0.28', 'nitro_benzene': '0.10', 'benzene': '0.45'}], outlet=[(1.31 kmol/hr, 300.92 K, 101325.00 Pa) {'benzene': '0.41', 'nitric_acid': '0.39', 'water': '0.10', 'nitro_benzene': '0.10'}], process=...), 'splitter_one': Splitter(name='splitter_one', inlet=[(1.31 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], outlet=[(1.04 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}, (0.26 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], process=..., split_ratio=[0.8, 0.2]), 'reactor_one': Reactor(name='reactor_one', inlet=[(1.31 kmol/hr, 300.92 K, 101325.00 Pa) {'benzene': '0.41', 'nitric_acid': '0.39', 'water': '0.10', 'nitro_benzene': '0.10'}], outlet=[(1.31 kmol/hr, 367.04 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], process=..., reactant_stoichiometry={'benzene': 1, 'nitric_acid': 1}, product_stoichiometry={'water': 1, 'nitro_benzene': 1}, conversion={'benzene': 0.9}, heat_of_reaction=153180.0), 'product_cooler': HeatExchanger(name='product_cooler', inlet=[(1.31 kmol/hr, 367.04 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], outlet=[(1.31 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], process=..., outlet_temperature=298, delta_temperature=None), 'separator_one': Separator(name='separator_one', inlet=[(1.04 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}], outlet=[(0.52 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'nitro_benzene': '0.88', 'water': '0.05'}, (0.53 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'nitro_benzene': '0.05', 'water': '0.89'}], process=..., spec=[{'nitro_benzene': 0.95}, {'water': 0.95}]), 'separator_two': Separator(name='separator_two', inlet=[(0.52 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'nitro_benzene': '0.88', 'water': '0.05'}], outlet=[(0.47 kmol/hr, 298.00 K, 101325.00 Pa) {'nitric_acid': '0.02', 'water': '0.03', 'nitro_benzene': '0.96', 'benzene': '0.00'}, (0.04 kmol/hr, 298.00 K, 101325.00 Pa) {'nitric_acid': '0.17', 'water': '0.28', 'nitro_benzene': '0.10', 'benzene': '0.45'}], process=..., spec=[{'nitro_benzene': 0.99}, {'benzene': 0.95}])}, streams={'benzene_inlet': (0.50 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '1.00'}, 'nitric_acid_inlet': (0.50 kmol/hr, 312.00 K, 101325.00 Pa) {'nitric_acid': '1.00'}, 'reactor_products': (1.31 kmol/hr, 367.04 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}, 'reactor_products_cooled': (1.31 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}, 'reactor_reactants': (1.31 kmol/hr, 300.92 K, 101325.00 Pa) {'benzene': '0.41', 'nitric_acid': '0.39', 'water': '0.10', 'nitro_benzene': '0.10'}, 'final_product': (1.04 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}, 'tops': (0.52 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'nitro_benzene': '0.88', 'water': '0.05'}, 'waste_water': (0.53 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'nitro_benzene': '0.05', 'water': '0.89'}, 'pure_product': (0.47 kmol/hr, 298.00 K, 101325.00 Pa) {'nitric_acid': '0.02', 'water': '0.03', 'nitro_benzene': '0.96', 'benzene': '0.00'}, 'benzene_recycle': (0.04 kmol/hr, 298.00 K, 101325.00 Pa) {'nitric_acid': '0.17', 'water': '0.28', 'nitro_benzene': '0.10', 'benzene': '0.45'}, 'recycle': (0.26 kmol/hr, 298.00 K, 101325.00 Pa) {'benzene': '0.04', 'nitric_acid': '0.03', 'water': '0.47', 'nitro_benzene': '0.46'}}, species={'water': water (18.01528 kg/kmol), 'benzene': benzene (78.11 kg/kmol), 'nitric_acid': nitric_acid (63.013 kg/kmol), 'nitro_benzene': nitro_benzene (123.109 kg/kmol)}, print=True, simulated_at=datetime.datetime(2024, 8, 18, 15, 26, 8, 154480, tzinfo=datetime.timezone.utc)) 
+
+Enthalpy in: 37412.944 kJ,  Reaction Enthalpy: 73175.159 kJ, Enthalpy Added: -38052.065 kJ, Enthalpy out: 72536.082 kJ
+Difference: -0.043281 kJ (-0.000116%)
+False 
+
+Mass in: 70.561 kg, Mass out: 70.562 kg
+Difference: -0.000613 kg (-0.000869%)
+True</code></pre>
+<p>I can simulate heat exchangers, splitting streams, mixing streams, basic separations, non-adiabatic reactions with stoichiometric ratios, components with specific heat capacities as a function of temperature… this should be enough for now.</p>
+</section>
+<section id="what-was-that-about-anyway" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="what-was-that-about-anyway">What was that about? Anyway…</h3>
+<p>The goal here is to build an input-output machine, that on the surface acts like the ‘room’ in the Chinese room, and more precisely, the waterworks within the room as proposed by Searle in his brain simulator scenario. To make this easier, when I say ‘think’, I mean I’m going to approximate a function, because as I previously mention, I don’t believe in the Chinese room argument.</p>
+<p>I will go about doing this through <strong>direct simulation</strong>, where the chemical process is directly used to model a function via something analogous to symbolic regression or evolutionary programming^[Alternative methods would be to either:</p>
+<p>1. Build up the basic building blocks of computation, i.e.&nbsp;AND, OR, gates etc… Then by extension demonstrate how a computer can be constructed, and therefore a universal function approximator (2 layers of abstraction below thinking). Or…</p>
+<p>2. Build up the basic building blocks of a neural network, which, as a universal function approximator, completes the ability to approximate functions (1 layer of abstraction below thinking).</p>
+<p>But as previously mentioned, I want the chemical process to be as close as possible to the function approximation task at hand.] .</p>
+<p>Therefore, the mathematical problem I will solve will be a least-squares (machine learning) task over chemical processes:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cmin_%7B%5Cmathcal%7BP%7D%7D%20%5Csum_%7Bi=1%7D%5EN%20%7C%7C%5Cmathcal%7BP%7D(x_i)%20-%20y_i%7C%7C%5E2_2"></p>
+<p>where a chemical process 𝒫 is defined by a set of unit operations 𝒪, connecting streams 𝒮, yappa yappa blah blah blah… Basically, you choose what the input x represents in your process, and what the output y represents. Simulate the chemical process for a given x and evaluate the output. Do this for all values of x in the dataset and you can evaluate how well the process approximates the function.</p>
+<p>That being said, I am going to solve this optimisation problem using evolutionary programming, a benefit of using <code>&lt;process&gt;</code>. Firstly, I’ll demonstrate a way of evaluating the objective function.</p>
+<p>To begin with I will define a very basic process with a single component as an inlet stream, a single component as an outlet stream, and a mixer that doesn’t do anything.</p>
+<pre><code>[[species]]
+name = "water"
+molecular_weight = 18.01528 # kg/kmol
+cp_poly_coeffs = [276370.0, -2090.1, 8.125, -0.014116, 9.3701e-6]
+enthalpy_of_formation = -285830.0 # kJ/kmol
+
+[[streams]]
+name = "inlet"
+molar_flowrate = 0.5 # kmol
+molar_ratios = {water = 1}
+temperature = 298 # K 
+pressure = 101325 # Pa
+
+[[streams]]
+name = "outlet"
+
+[[mixer]]
+name = "mixer"
+inlet = ["inlet"]
+outlet = ["outlet"]</code></pre>
+<div class="center">
+<p><img src="https://sav.phd/posts/metaphysical/3.png" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>For now, assuming temperature of both the inlet stream and outlet stream represent my functional input and output respectively, I can simulate the process and evaluate the objective function as follows:</p>
+<pre><code>y_test = []
+for i in range(n):
+    process.streams['inlet'].temperature = x[i]
+    process.simulate(tol=1e-7)
+    y_test.append(process.streams['outlet'].temperature)</code></pre>
+<div class="center">
+<p><img src="https://sav.phd/posts/metaphysical/4.png" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>Can you see where we’re going yet? I can take advantage of multiprocessing to evaluate the objective function in parallel. This is a strength of <code>&lt;process&gt;</code>, and is a good demonstration of designing something like a process simulator with machine learning use cases in mind.</p>
+<p>I’ll assume that physical units can be scaled later on. Now I can hypothesise that there is a heat exchanger between the streams, with a given temperature decrease to get a different ‘loss’ between our data and the process output.</p>
+<pre><code>[[heat_exchanger]]
+name = "product_cooler"
+inlet = ["inlet"]
+outlet = ["outlet"]
+delta_temperature = -3 # K</code></pre>
+<div class="center">
+<p><img src="https://sav.phd/posts/metaphysical/5.png" class="img-fluid" style="width:60.0%"></p>
+</div>
+<p>I’ll stop here, we get the idea. We can change the type of unit operation, their internal parameters, and their order to try and approximate a function. Now we have the ability to:</p>
+<ol type="1">
+<li><p>Evaluate how well our process can approximate a function;</p></li>
+<li><p>Mutate the process<sup>22</sup> .</p></li>
+</ol>
+<div class="no-row-height column-margin column-container"><div id="fn22"><p><sup>22</sup>&nbsp;Once again, by building a lightweight process simulator we have gained the ability to easily modify the process structure enabling us to solve an optimisation problem over different structures, something that takes PhD lengths of time to do in Aspen or gProms.</p></div><div id="fn23"><p><sup>23</sup>&nbsp;Presented in an unnecessarily complex amount of detail, remember?</p></div></div><p>We can build a basic evolutionary programming framework to solve the optimisation problem above<sup>23</sup> , acting like a sort of growing neural network, with feedback.</p>
+<p>But that will have to wait…. for next time!</p>
+
+
+</section>
+
+
+ ]]></description>
+  <guid>https://sav.phd/posts/metaphysical/</guid>
   <pubDate>Wed, 16 Oct 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
@@ -3012,7 +3650,7 @@ font-style: inherit;">'../website/posts/dead/index.qmd'</span>)</span></code></p
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Making the rest of the analysis in this post, in effect, invalid.</p></div></div><div>
 
 </div>
-<div id="eb0f58a3" class="cell quarto-layout-panel" data-execution_count="2" data-layout-ncol="1">
+<div id="eb0f58a3" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-3-output-1.png" class="img-fluid" width="641"></p>
@@ -3183,7 +3821,7 @@ font-style: inherit;">'Rank'</span></span>
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 </details>
-<div id="9ada640f" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="1">
+<div id="9ada640f" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-4-output-1.png" class="img-fluid" width="662"></p>
@@ -3622,7 +4260,7 @@ font-style: inherit;">0.5</span>)</span>
 <span id="cb2-64">plt.tight_layout()</span>
 <span id="cb2-65">plt.show()</span></code></pre></div>
 </details>
-<div id="c2b84862" class="cell quarto-layout-panel" data-execution_count="4" data-layout-ncol="1">
+<div id="c2b84862" class="cell quarto-layout-panel" data-layout-ncol="1" data-execution_count="4">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p><img src="https://sav.phd/posts/olympics/index_files/figure-html/cell-5-output-1.png" class="img-fluid" width="657"></p>
@@ -5967,1785 +6605,6 @@ And corresponding output: -->
   <category>Religion</category>
   <guid>https://sav.phd/posts/values/</guid>
   <pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>The Machine Learning Reformation</title>
-  <link>https://sav.phd/posts/transubstantiation/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Attending mass was a mandatory requirement in medieval England and formed a central foundation for many aspects of parish life. The highlight of mass was the elevation of the host, physically transformed into the body of Christ. This act could only be performed by the parish priest and was consumed only by those priviledged few within the chancel <span class="citation" data-cites="CTCIME2021">(Orme 2021)</span>.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-CTCIME2021" class="csl-entry">
-Orme, Nicholas. 2021. In <em>Going to Church in Medieval England</em>, 48–84. Yale University Press.
-</div></div><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/transubstantiation/mass.webp" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Medieval Mass <a href="https://www.newliturgicalmovement.org/2023/05/the-mass-is-faith-and-faith-is-mass.html">Source</a></figcaption>
-</figure>
-</div>
-<p>Observing the genuine body of Christ was of the utmost importance for the laity. However, physical (chancel screens) and mental (understanding Latin) barriers stood between them and the clergy. In time, groups such as the <a href="https://en.wikipedia.org/wiki/Lollardy">Lollards</a>, lead by John Wycliffe rejected transubstantiation and its importance, setting the course for the democratisation of Christianity in England. However, these barriers served as a reminder of the heirarchy the Catholic Church had created, until the reformation in 1547.</p>
-<p>Sam Altman, Elon Musk, and many others continue to insist that artificial general intelligence (AGI) will be achieved in the next few years. If and when AGI is announced, divisions will open up, Microsoft will contractually lose access to OpenAI’s latest models <span class="citation" data-cites="mic">(OpenAI 2024)</span>, there will be calls of heresy and false prophets, and the accompanying video will almost certainly be presented by someone on an unfathomable compensation package.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-mic" class="csl-entry">
-OpenAI. 2024. <a href="https://openai.com/our-structure">https://openai.com/our-structure</a>.
-</div></div><div class="center">
-<p><img src="https://sav.phd/posts/transubstantiation/sam.png" class="img-fluid" style="width:50.0%"></p>
-</div>
-<p>There will be those, armed with heavily quantized open-source LLMs running locally on Macbooks, akin to Gutenberg Bibles, that will insist that AGI is not real. AGI was never the goal for the majority of people. AI has the ability to change the way that engineers, writers, and artists work, and the democratisation of open-source LLMs, serves to benefit the lives of everyone<sup>1</sup> equally.</p>
-<p>The current power struggles within machine learning are fought on inherently Christian lines. From the French Yann ‘John Calvin’ LeCun’s open-source ideology and scepticism in the real presence of AGI, to Sam Altman’s claim to primacy and inevitable monopoly on the transubstantiation of a super-<em>us</em>.</p>
-<p>A key assumption is that if AGI occurs, it will be useful. This will be the nail in the coffin that will seal the fate of the Macbook Lollards in the end. But what happens if it is not?</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/transubstantiation/ot.webp" class="img-fluid figure-img"></p>
-<figcaption>An Oak Tree - Michael Craig-Martin <a href="https://www.michaelcraigmartin.co.uk/artworks/11-an-oak-tree/">Source</a></figcaption>
-</figure>
-</div>
-</div></div><p>In more recent years Michael Craig-Martin affirmed the medieval world view of transubstantiation with <a href="https://www.michaelcraigmartin.co.uk/artworks/11-an-oak-tree/"><em>An Oak Tree</em></a>. Capturing the sense of belief that was felt by medieval Christians by enforcing that a glass of water placed high on a glass shelf was in fact a genuine oak tree. To believe that that glass of water is an oak tree, is to make a leap of faith.</p>
-<p>As Tom Holland <span class="citation" data-cites="DOM">(Holland 2019)</span> would point out, we have made, and continue to make these leaps of faith on a daily basis. The concept of human rights for example is one that we simply choose to believe, in the view that it will make the world a better place<sup>2</sup>.</p>
-<div class="no-row-height column-margin column-container"><div id="ref-DOM" class="csl-entry">
-Holland, Tom. 2019. In <em>Dominion: The Making of the Western Mind</em>. Basic Books.
-</div></div><p><em>An Oak Tree</em> invites us to take this leap, and embrace it, unapologetically confronting us with its presence. Despite January 1st being an arbitrary day, it <em>feels</em> like a new beginning because we all collectively <em>believe</em> it’s a new beginning.</p>
-<div class="center">
-<p><img src="https://sav.phd/posts/transubstantiation/laptop.jpg" class="img-fluid" style="width:60.0%"></p>
-</div>
-<p>As AI approaches levels of human intelligence, some will choose to make the leap of faith and some will not. We should relish and enjoy the spectacle of AGI, as medieval parishioners would have done at mass every Sunday.</p>
-<p>However, we must not lose sight of the ability of machine learning to change our lives in more tangible ways.</p>
-<p><em>It will not be an AI that replaces your job, but someone with the ability to <strong>use</strong> AI.</em></p>
-
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>With enough compute↩︎</p></li>
-<li id="fn2"><p>Itself a goal that we deem somewhat important.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <category>Machine Learning</category>
-  <category>Religion</category>
-  <category>Art</category>
-  <guid>https://sav.phd/posts/transubstantiation/</guid>
-  <pubDate>Sat, 03 Feb 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Optimisation Trajectory Plots</title>
-  <link>https://sav.phd/posts/trajectory_plots/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Here I will outline my personal preferences for best plotting practices for optimisation trajectory plots using <a href="https://matplotlib.org">Matplotlib</a>. I will be initialising the plot as demonstrated in my previous posts <a href="https://sav.phd/posts/convergence_plots/">here</a> and <a href="https://sav.phd/posts/plots/">here</a>.</p>
-<p>I won’t outline a single solution here, but rather a number of options and best practices.</p>
-<p>I’ll start by plotting the following objective function:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cmin_%7Bx_1,x_2%7D%20%5Cquad%20100(x_2-x_1%5E2)%5E2%20+%20(x_1-1)%5E2%20"></p>
-<p>…and in Python, using MLX.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> mlx.core <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> mx</span>
-<span id="cb1-2"></span>
-<span id="cb1-3"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">def</span> f(x1,x2):</span>
-<span id="cb1-4">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(x2<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>(x1<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>))<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> (x1<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span></span></code></pre></div>
-</div>
-<p>For now we will use the bounds -3 and 3 for both <img src="https://latex.codecogs.com/png.latex?x_1"> and <img src="https://latex.codecogs.com/png.latex?x_2">. We can apply MLX’s <code>vmap</code> functionality to really quickly evaluate an entire grid of points in parallel.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">f_grid <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.vmap(mx.vmap(f,in_axes<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">None</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>)),in_axes<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">None</span>))</span>
-<span id="cb2-2">n <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span> </span>
-<span id="cb2-3">lb <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span> ub <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span></span>
-<span id="cb2-4">x1 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.array([<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2.0</span>])</span>
-<span id="cb2-5">x1 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.linspace(start<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>lb,stop<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ub,num<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb2-6">x2 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.linspace(start<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>lb,stop<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ub,num<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb2-7"></span>
-<span id="cb2-8">y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> f_grid(x1,x2).T</span></code></pre></div>
-</div>
-<p>Just for peace-of-mind, lets compare the time it takes to evaluate the function on a 100 X 100 grid the standard way:</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> timeit </span>
-<span id="cb3-2"></span>
-<span id="cb3-3"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">def</span> normal_mat(x1,x2):</span>
-<span id="cb3-4">    y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.zeros((n,n))</span>
-<span id="cb3-5">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">in</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">range</span>(n):</span>
-<span id="cb3-6">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">for</span> j <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">in</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">range</span>(n):</span>
-<span id="cb3-7">            y[i,j] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> f(x1[i],x2[j])</span>
-<span id="cb3-8">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> y.T</span>
-<span id="cb3-9"></span>
-<span id="cb3-10">numpy_time <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> timeit.timeit(<span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">lambda</span>: normal_mat(np.array(x1),np.array(x2)),number<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>)</span>
-<span id="cb3-11">mlx_time <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> timeit.timeit(<span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">lambda</span>: f_grid(x1,x2),number<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>)</span>
-<span id="cb3-12"></span>
-<span id="cb3-13"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Numpy (s): '</span>,numpy_time,<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">' '</span>,<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'MLX (s): '</span>,mlx_time,<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'</span>)</span>
-<span id="cb3-14"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(np.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">round</span>(numpy_time<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>mlx_time,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>),<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">' times faster.'</span>,)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Numpy (s):  0.20080224995035678   MLX (s):  0.0006692500319331884 
-
-300.0407  times faster.</code></pre>
-</div>
-</div>
-<p>We begin by plotting these evaluations the default way…</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">X1,X2 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.meshgrid(x1,x2)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb5-2">plt.contourf(X1,X2,y,levels<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-6-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="570" height="415"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>As with <a href="https://sav.phd/posts/plots/">2D scatter plots</a>, we will set up the plot using Matplotlib’s object orientated syntax, set the aspect ratio to be equal using <code>ax.set_aspect('equal')</code>, and add labels of an appropriate size.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">fig,ax <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,figsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>))<span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#| </span></span>
-<span id="cb6-2">ax.set_xlabel(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'$x_1$'</span>,fontsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>)</span>
-<span id="cb6-3">ax.set_ylabel(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'$x_2$'</span>,fontsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>)</span>
-<span id="cb6-4">ax.set_aspect(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'equal'</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-8-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="443" height="439"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Importantly, we need a colorbar in order to interpret values of the function. By doing it in the following way we have more control over its position and options.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> mpl_toolkits.axes_grid1 <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> make_axes_locatable</span>
-<span id="cb7-2"></span>
-<span id="cb7-3">fun <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ax.contourf(X1,X2,y,levels<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>)</span>
-<span id="cb7-4">divider <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> make_axes_locatable(ax)</span>
-<span id="cb7-5">cax <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> divider.append_axes(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'right'</span>, size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'5%'</span>, pad<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.1</span>)</span>
-<span id="cb7-6">fig.colorbar(fun, cax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>cax, orientation<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'vertical'</span>).set_label(label<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Objective Function Value'</span>,size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-10-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="508" height="414"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Since we will be plotting an optimisation trajectory on top of this, we should use a softer, more subtle colourmap. My personal favourite is <code>Spectral</code> (but I’m going to reverse it by appending <code>_r</code>).</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">fun <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ax.contourf(X1,X2,y,levels<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>,cmap<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Spectral_r'</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-12-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="508" height="414"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>This function has very steep sides, with a shallow u-shaped valley. It would be better to plot the logarithm of the objective function. We can do this by defining where we want the levels to be using <code>geomspace</code> which creates logarithmically spaced values between the minimum and maximum values of the objective function.</p>
-<p>I also change the ticks of the colourbar to match the levels of the contour plot.</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">levs <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.geomspace(np.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">min</span>(np.array(y)), np.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">max</span>(np.array(y)), num<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>)</span>
-<span id="cb9-2">fun <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ax.contourf(X1,X2,y,levs,cmap<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Spectral_r'</span>,locator<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ticker.LogLocator())</span>
-<span id="cb9-3"></span>
-<span id="cb9-4">ticks <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">round</span>(levs,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb9-5">cbar <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> fig.colorbar(fun, cax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>cax, orientation<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'vertical'</span>)</span>
-<span id="cb9-6">cbar.set_label(label<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Objective Function Value'</span>,size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>)</span>
-<span id="cb9-7">cbar.set_ticks(ticks)</span>
-<span id="cb9-8">cbar.set_ticklabels(ticks)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="13">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-14-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="519" height="414"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Considering we will be plotting a trajectory on top of this background it makes sense to make it a little more subtle. We can do this by reducing the alpha value of the colourmap.</p>
-<p>To maintain some distinction between level-sets, we can plot some faded, thin contour lines in addition to the filled contour.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">fun <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ax.contourf(X1,X2,y,levs,cmap<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Spectral_r'</span>,locator<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ticker.LogLocator(),alpha<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.4</span>)</span>
-<span id="cb10-2">ax.contour(X1,X2,y,levs,colors<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,linewidths<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>,alpha<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-16-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="519" height="414"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>OK now to solve an optimisation problem, I will write probably the shortest first-order optimisation algorithm possible in MLX.</p>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.array([<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2.0</span>,<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2.0</span>])</span>
-<span id="cb11-2">grad <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> mx.grad(f,argnums<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>))</span>
-<span id="cb11-3">x_store <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.array(x)</span>
-<span id="cb11-4"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">in</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">500</span>):</span>
-<span id="cb11-5">    x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.0002</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>mx.array(grad(x[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],x[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>]))</span>
-<span id="cb11-6">    x_store <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.vstack((x_store,np.array(x)))<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-<p>Now I will plot the trajectory on top of the objective function, alongside highlighting the initial solution, and the final solution.</p>
-<p>I’ll leave these black just to avoid any clashes with the background colourmap.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">ax.plot(x_store[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],x_store[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],lw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,c<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>)</span>
-<span id="cb12-2">ax.scatter(x_store[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],x_store[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],s<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>,c<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,marker<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'.'</span>,zorder<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>,lw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb12-3">ax.scatter(x_store[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],x_store[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],s<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>,c<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,marker<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'+'</span>,zorder<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>,lw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/trajectory_plots/index_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="519" height="438"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>I think there’s many more things you could do here, such as highlighting step sizes etc… but I’ll leave it there for now.</p>
-
-
-
- ]]></description>
-  <category>Visualisation</category>
-  <category>Optimisation</category>
-  <guid>https://sav.phd/posts/trajectory_plots/</guid>
-  <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://sav.phd/posts/trajectory_plots/figure.svg" medium="image" type="image/svg+xml"/>
-</item>
-<item>
-  <title>Scatter Plots</title>
-  <link>https://sav.phd/posts/plots/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Here I will outline my personal preferences for best plotting practices for 2D scatter plots using <a href="https://matplotlib.org">Matplotlib</a>. I will be initialising the plot as demonstrated in my <a href="https://sav.phd/posts/convergence_plots/">previous post</a>.</p>
-<p>To start with I will simulate a thousand data points that may have come from a dimensionality reduction technique such as <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a>.</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/wb/035mswds69j2l_sw8yg6tdjw0000gr/T/ipykernel_66542/585749580.py:4: RuntimeWarning: covariance is not symmetric positive-semidefinite.
-  X = np.random.multivariate_normal(mean,cov,n)</code></pre>
-</div>
-</div>
-<p>This is as simple and basic as a plot can be in Matplotlib.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">fig,ax <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb2-2">ax.scatter(X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="410"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>First of all we need to size and scale the plot appropriately.</p>
-<p>By default, <strong>the aspect-ratio of the axis will not be equal</strong>. If the axis have similar units or meaning this can provide misleading interpretation of the data. We will fix this first.</p>
-<div class="cleanbox">
-<p><strong>Always</strong> set the aspect ratio to be equal if both quantities are comparable in meaning and magnitude using <code>ax.set_aspect('equal')</code></p>
-</div>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="568" height="263"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We will now add appropriate labels, with a legible fontsize to our axis, using LaTeX where appropriate.</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">ax.set_xlabel(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'$x_1$'</span>,fontsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>)</span>
-<span id="cb3-2">ax.set_ylabel(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'$x_2$'</span>,fontsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>With so many data points, adding some opacity can help the reader interpret the density. Note that reducting the opacity affects the fill and the edge of each point differently.</p>
-<p>At this point I will set the color to black, considering we have no separable classes (yet).</p>
-<div class="cleanbox">
-<p><strong>Always</strong> consider removing the edge of each scatter-point if decreasing the opacity to make the plot look cleaner.</p>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">ax.scatter(X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],color<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,linewidth<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,alpha<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.2</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="8" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-9-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>With edges</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-9-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption><strong>Without</strong> edges</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Alternatively, the marker size may be changed to a smaller value and the opacity set to 1. This provides a less clear image of the <strong>distribution</strong> of points, but a clearer view of the specific locations of data.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">ax.scatter(X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],color<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,s<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Despite these plots containing the same data, they are visually different and tell different stories to the reader. As always…</p>
-<div class="cleanbox">
-<p>It is important to consider what message you wish to convey, and how visual elements such as opacity, and marker size support this message.</p>
-</div>
-<p>If the specific location of data is critically important, the ‘+’ symbol may be used. When scaling up the size of this marker appropriately, make sure to reduce the linewidth to ensure that the symbol isn’t too thick.</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">ax.scatter(X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],color<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'k'</span>,s<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>,linewidth<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>,marker<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'+'</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-13-output-1.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Standard Linewidth</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-13-output-2.png" width="597" height="292" class="figure-img"></p>
-<figcaption>Reduced Linewidth</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>It may be helpful in this situation to ensure the grid is turned on, but remember to ensure it is <strong>behind</strong> other elements by using <code>ax.set_axisbelow(True)</code>.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">ax.grid(alpha<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>)</span>
-<span id="cb7-2">ax.set_axisbelow(<span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-15-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we have different classes that we want to highlight? For now I will plot these clusters in the <code>tab:</code> colour pallette.</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">in</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>):</span>
-<span id="cb8-2">    X <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> clusters[i]</span>
-<span id="cb8-3">    ax.scatter(X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>],X[:,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>],s<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>,alpha<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>,linewidth<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-17-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="597" height="292"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However, we now need to label our clusters. Adding a legend inside the plot will make it cluttered.</p>
-<p>Therefore we can add the legend outside the plot itself, on the right, above or below.</p>
-<p>Because there are a reasonable number of labels, I will place the legend just above the plot in a single row, ensuring that the rounded frame is turned off.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">ax.legend(loc<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'upper center'</span>, bbox_to_anchor<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1.15</span>),</span>
-<span id="cb9-2">          ncol<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>,frameon<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How to make the plot accessible to people who have colour-blindness? We may use different markers…</p>
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-20-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="612" height="308"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>However clearly the plot becomes illegible. I think in the scenario where colours are not desired (or their use should be minimised) the best option is to use multiple subplots, and opacity as follows:</p>
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-execution_count="20" data-layout-nrow="2" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-21-output-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-21-output-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/plots/index_files/figure-html/cell-21-output-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Whilst we have increased the overall number of plots, this is an accessible alternative to using colours, and follows <a href="https://en.wikipedia.org/wiki/Small_multiple">Edward Tufte’s philosophy of Small Multiples</a>.</p>
-
-
-
- ]]></description>
-  <category>Visualisation</category>
-  <guid>https://sav.phd/posts/plots/</guid>
-  <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://sav.phd/posts/plots/figure.svg" medium="image" type="image/svg+xml"/>
-</item>
-<item>
-  <title>The Potential Literature Horseshoe</title>
-  <link>https://sav.phd/posts/oulipo/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="37" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 36;"><span id="cb1-37">defines <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'defined'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'specified'</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-38">structure <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'structure'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'form'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'composition'</span>]</span>
-<span id="cb1-39">may <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'may'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'could'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'might'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'may well'</span>]</span>
-<span id="cb1-40">language <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'language'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'literature'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'text'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'writing'</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-41">books <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'3000 year old Beowolf'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'600 year old Sir Gawain and the Green Knight'</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-42">purely <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'purely'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'solely'</span>]</span>
-<span id="cb1-43">millennia <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'millennia'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'hundreds of years'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'thousands of years'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'centuries'</span>]</span>
-<span id="cb1-44">produce <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'produce'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'construct'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'create'</span>]</span>
-<span id="cb1-45">techniques <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'techniques'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'methods'</span>]</span>
-<span id="cb1-46">writers <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'writers'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'linguists'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'proponents'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'members'</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-9" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-10" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cleanbox">
-<p>If you refresh this page, the article will be randomised. There are <img src="https://latex.codecogs.com/png.latex?2.66%20%5Ctimes%2010%5E%7B19%7D"> potential combinations of images and text, resulting in approximately Twenty Billion Billion articles, equivalent to the number of insects on earth. <em>Vingt Milliards de Milliards</em>.</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="58" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 57;"><span id="cb2-58">rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">floor</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb2-59">s_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb2-60">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb2-61">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="logo.png" width=70% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-62">  }</span>
-<span id="cb2-63">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> {</span>
-<span id="cb2-64">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="other_logo.png" width=60% title="Basile Morin, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"&gt;`</span></span>
-<span id="cb2-65">  }</span>
-<span id="cb2-66">}</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="center">
-<p><span><span id="ojs-element-id-1"></span></span></p>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Basile Morin, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></p>
-</div></div><p>Ouvroir de Littérature Potentielle or <em>Oulipo</em> has been <span><span id="ojs-element-id-8"></span></span> as “the search for new structures, which may be used by writers in any way they see fit” <span class="citation" data-cites="motte1998oulipo">(Motte 1998, p2–3)</span>. For <span><span id="ojs-element-id-9"></span>,</span> authors have been guided by language constraints resulting in <span><span id="ojs-element-id-10"></span></span> <span><span id="ojs-element-id-11"></span>s;</span> From the alliterative verse of the <span><span id="ojs-element-id-12"></span>,</span> to the syllabic rigidity of Japanese haikus. By formalising a number of individual vocations, the original Oulipo <span><span id="ojs-element-id-13"></span></span> in the early 1960s were embarking on the revitalisation of <span><span id="ojs-element-id-14"></span></span> generation in search of discovering something deeper, sound familiar?</p>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="82" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb3-82">rndl <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">floor</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb3-83">l_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb3-84">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb3-85">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-86">  }</span>
-<span id="cb3-87">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> {</span>
-<span id="cb3-88">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-89">  }</span>
-<span id="cb3-90">}</span>
-<span id="cb3-91"></span>
-<span id="cb3-92">o_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb3-93">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb3-94">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`replacing every noun with the seventh next noun in the dictionary (S+7 rule)`</span></span>
-<span id="cb3-95">  }</span>
-<span id="cb3-96">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> {</span>
-<span id="cb3-97">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;a href="https://en.wikipedia.org/wiki/A_Void"&gt;not using the letter e&lt;/a&gt;`</span></span>
-<span id="cb3-98">  }</span>
-<span id="cb3-99">}</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<p>In order to define/identify new <span><span id="ojs-element-id-15"></span>s,</span> <span><span id="ojs-element-id-16"></span></span> in France turned to automated transformation <span><span id="ojs-element-id-17"></span>.</span> These often instantiated as rules or constraints, such as <span><span id="ojs-element-id-2"></span>,</span> <span><span id="ojs-element-id-3"></span>,</span> or <a href="https://en.wikipedia.org/wiki/Eunoia_(book)">only using a single vowel letter</a>. As the originators of Oulipo explored ways to manipulate language and text in search of new <span><span id="ojs-element-id-18"></span>s,</span> they turned to mathematics for inspiration, thus leading to the final vocation; the transposition of mathematics to words. Naturally the extension was made to computers, and the combinatorial nature of <span><span id="ojs-element-id-19"></span></span> generation was quickly highlighted, as mathematician Claude Berge writes <span class="citation" data-cites="motte1998oulipo">(Motte 1998, p152)</span> :</p>
-<div class="no-row-height column-margin column-container"></div><div class="page-columns page-full"><blockquote class="blockquote">
-<p>[…] we believe, that the aid of a computer, far from <em>replacing</em> the creative act of the artist, permits the latter rather to liberate himself from the combinatory search, allowing him also the best chance of concentrating on this “clinamen”<sup>1</sup> which, alone, can make of the text a true work of art.</p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Clinamen (/klaɪˈneɪmən/;) is the Latin name Lucretius gave to the unpredictable swerve of atoms, in order to defend the atomistic doctrine of Epicurus. […] it has come more generally to mean an inclination or a bias. <a href="https://en.wikipedia.org/wiki/Clinamen">Source</a></p></div></div></div>
-<p>In applying <em>combinatory literature</em>, Oulipo <span><span id="ojs-element-id-20"></span>,</span> most notably Raymond Queneau in his 1961 work <em>Cent Mille Milliards de Poemes</em> (Hundred Thousand Billion Poems), have highlighted the impossible complexity of language. Elegantly embracing this complexity, Queneau simply presents the complete set of lines within a sonnet in the form of cut out strips, any combination of which <span><span id="ojs-element-id-21"></span></span> be constructed by the reader. In describing the combinatorial nature of <em>Cent Mille Milliards de Poemes</em>, Berge presents the following figure…</p>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="114" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 113;"><span id="cb4-114">rnd_nn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">floor</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb4-115">nn_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb4-116">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb4-117">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="nn.png" width=70%&gt;`</span></span>
-<span id="cb4-118">  }</span>
-<span id="cb4-119">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> {</span>
-<span id="cb4-120">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="nn2.png" width=100%&gt;`</span></span>
-<span id="cb4-121">  }</span>
-<span id="cb4-122">}</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="center">
-<p><span><span id="ojs-element-id-4"></span></span></p>
-</div>
-<p>Verses act equivalently to neural network layers, and phrases correspond to discrete nodes… could we be seeing the early sparks of the use of neural networks for language modelling?<sup>2</sup> Of course, what is missing is the mathematical transformations from layer to layer, token embeddings, attention etcetera… but it is interesting to consider the thematic similarities of complexity, <span><span id="ojs-element-id-22"></span>,</span> and distillation (or lack thereof) of <span><span id="ojs-element-id-23"></span></span> that both members of Oulipo and machine learning researchers have successfully applied.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;The modern use of neural networks to model language can <em>probably</em> be attributed to <a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al, 2003</a>, 42 years later.</p></div></div><div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="134" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 133;"><span id="cb5-134">rnd_gp <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">floor</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb5-135">gp_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb5-136">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb5-137">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> [<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="oulipo.jpeg" width=60%&gt;`</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;em&gt;Oulipo Group à Boulogne, avenue de la Reine, on September 23, 1975, in the garden of François Le Lionnais’s house. At the center Raymond Queneau and François Le Lionnais, on his side, with a nespaper in the hands. On the very left Italo Calvino. &lt;a href="https://www.arshake.com/en/oulipo-ouvroir-de-litterature-potentielle/"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-138">  }</span>
-<span id="cb5-139">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> {</span>
-<span id="cb5-140">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> [<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="raymond.jpeg" width=60%&gt;`</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;em&gt;Raymond Queneau with the group Les Frères Jacques in 1954, Getty Images/Keystone.&lt;a href="https://ici.radio-canada.ca/ohdio/premiere/emissions/aujourd-hui-l-histoire/segments/entrevue/351266/oulipo-richard-boivin"&gt;Source&lt;/a&gt;.&lt;/em&gt;`</span>]</span>
-<span id="cb5-141">  }</span>
-<span id="cb5-142">}</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-5-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-5-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="center">
-<p><span><span id="ojs-element-id-5"></span></span></p>
-</div>
-<p><span><span id="ojs-element-id-6"></span></span></p>
-<p>Given that a modern day large language model such as <a href="https://openai.com/research/gpt-4">GPT-4</a> <span><span id="ojs-element-id-24"></span></span> reasonably be described as a very large set of well <span><span id="ojs-element-id-25"></span></span> mathematical rules, could this ever <span><span id="ojs-element-id-26"></span></span> a valid literary <span><span id="ojs-element-id-27"></span>?</span> How are LLMs distinct from more basic rules such as S+7? In addition, multi-model models can now see and hear as well as read. <a href="https://nips.cc/media/neurips-2022/Slides/55867.pdf">According to David Chalmers</a> these additional senses <span><span id="ojs-element-id-28"></span></span> result in fish-level consciousness in the next ten years. Consciousness aside, at the very least LLMs will <em>appear</em> smarter than a human by then. What are the implications for Potential Literature when a set of rules and resulting <span><span id="ojs-element-id-29"></span></span> can think for itself?</p>
-<p>Unlike the output from an LLM, a haiku can be instantly recognised and verified as coming from its defining 5-7-5 syllabic writing <span><span id="ojs-element-id-30"></span>.</span> When the <span><span id="ojs-element-id-31"></span></span> itself is visible in the output, the focus is turned <span><span id="ojs-element-id-32"></span></span> to what Berge refers to as the <em>clinamen</em>. It is here that the meaning is gained.</p>
-<p>The difference between LLMs and a well-established language <span><span id="ojs-element-id-33"></span></span> such as a haiku is one of complexity, and the <span><span id="ojs-element-id-34"></span></span> that results. By extending a series of basic transformations and rules towards LLMs, a horseshoe effect is achieved. The sheer quantity of rules within an LLM reflects a <em>removal</em> of linguistic constraints, order is returned from chaos, and the resulting underlying <span><span id="ojs-element-id-35"></span></span> is obscured.<sup>3</sup></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Though for now (Jan 2024) LLMs produce hallucinations, incorrect facts and statements which in turn partially disclose the underlying structure of the neural network.</p></div></div><div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="162" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb6-162">rnd_d <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">floor</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>)</span>
-<span id="cb6-163">dep_string <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-164">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd_d <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>) {</span>
-<span id="cb6-165">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="dep.png" width=60%"&gt;`</span></span>
-<span id="cb6-166">  }</span>
-<span id="cb6-167">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd_d <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>) {</span>
-<span id="cb6-168">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="dep2.png" width=60%&gt;`</span></span>
-<span id="cb6-169">  }</span>
-<span id="cb6-170">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> (rnd_d <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) {</span>
-<span id="cb6-171">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;img src="dep3.png" width=60%&gt;`</span></span>
-<span id="cb6-172">  }</span>
-<span id="cb6-173">}</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-6-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-6-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="center">
-<p><span><span id="ojs-element-id-7"></span></span></p>
-</div>
-<p>Herein lies a paradox for the use of language models as a direct tool for creativity, as a platform for a distinct linguistic structure. A language model is trained to <span><span id="ojs-element-id-36"></span></span> text that is indistinguishable from the text within its training distribution. However, as soon as it achieves this task, the underlying structure becomes obscured as complete ‘order’ is achieved, and the impact is lost. The relationship between the rules and their resulting linguistic <span><span id="ojs-element-id-37"></span></span> is distinctly one-way, it is <em>nearly</em><sup>4</sup> impossible to reason whether the content has been generated from a neural network, yet alone infer the parameters, or even recognise the architecture. Would a haiku still be a haiku if you couldn’t immediately infer its syllabic structure?</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;This <em>nearly</em> contains a level of nuance, as identifying whether an output has been generated by an LLM is an open research area (See <a href="https://arxiv.org/abs/2306.04634"><em>On the Reliability of Watermarks for Large Language Models</em></a> and <a href="https://arxiv.org/abs/2301.10226"><em>A Watermark for Large Language Models</em></a>). However, the point remains. To the average reader, without the use of cryptographic tools, modern LLM output (as of Jan 2024) remains practically indistinguishable from human-level text.</p></div></div><p>To answer the question posted in the title: <em>Has Machine Learning Solved Oulipo?</em> The answer, is no. The beauty of Potential Literature is that by enforcing literary constraints and therefore defining new <span><span id="ojs-element-id-38"></span>s,</span> we not only place the emphasis <span><span id="ojs-element-id-39"></span></span> on the meaning, but also enable the reader to interpret <span><span id="ojs-element-id-40"></span></span> in new ways through a sense of disorder. As a set of rules and constraints, an LLM succeeding in its objective only serves to obscure the resulting linguistic structure in a bid to ‘seem human’, regaining order from chaos.</p>
-<p>It is clear that these two vocations in the field of Potential Literature: defining rules and constraints for <span><span id="ojs-element-id-41"></span>,</span> as well as identifying new language structures, are inherently linked. However, these two objectives conflict when rule set is as flexible as it is within an LLM.</p>
-<p>As Italo Calvino wrote in late 1967, in a remarkable foreshadowing <span class="citation" data-cites="motte1998oulipo">(Motte 1998, Cybernetics and Ghosts (1967) p13-14)</span>:</p>
-<div class="no-row-height column-margin column-container"><div id="ref-motte1998oulipo" class="csl-entry">
-Motte, W. F. 1998. <em>Oulipo: A Primer of Potential Literature</em>. Dalkey Archive Paperbacks. Dalkey Archive Press.
-</div></div><blockquote class="blockquote">
-<p>The true literature machine will be one that itself feels the need to produce disorder, as a reaction against its preceding production of order: a machine that will produce avant-garde work to free its circuits when they are choked by too long a production of classicism. […]. To gratify critics who look for similarities between things literary and things historical, sociological, or economic, the machine could correlate its changes of style to the variations in certain statistical indices of production, or income, or military expenditure, or the distribution of decision-making powers. <strong>That indeed will be the literature that corresponds perfectly to a theoretical hypothesis: it will, at last, be <em>the</em> literature.</strong></p>
-</blockquote>
-<p>Calvino, I’m sure would argue, that we have the alignment of LLMs all wrong to <span><span id="ojs-element-id-42"></span></span> <em>truly</em> novel literature, and how would Raymond Queneau respond to the combinatorial possibilities of large-language models?</p>
-<p><em>Cent Mille Milliards de Poemes</em> can be seen as analogous to a partially trained neural network <em>itself</em>, as a mathematical object. There is beauty in the disorder of the relationship between tokens, and the rules that can be combined to <span><span id="ojs-element-id-43"></span></span> language. However as soon as an output is produced and the combinatorics collapses, the <span><span id="ojs-element-id-44"></span></span> is obscured, and like a phantom the meaning disappears.</p>
-
-
-<div class="ojs-auto-generated hidden">
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c19zdHJpbmd9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtsX3N0cmluZ308L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke29fc3RyaW5nfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bm5fc3RyaW5nfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Z3Bfc3RyaW5nWzBdfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7Z3Bfc3RyaW5nWzFdfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZGVwX3N0cmluZ308L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTcifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlZmluZXNbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogZGVmaW5lcy5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTgifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke21pbGxlbm5pYVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBtaWxsZW5uaWEubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC05In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtkZWZpbmVzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIGRlZmluZXMubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xMCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTExIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtib29rc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBib29rcy5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEyIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHt3cml0ZXJzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHdyaXRlcnMubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xMyJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bGFuZ3VhZ2VbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogbGFuZ3VhZ2UubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xNCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTE1In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHt3cml0ZXJzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHdyaXRlcnMubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7dGVjaG5pcXVlc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiB0ZWNobmlxdWVzLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMTcifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0cnVjdHVyZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBzdHJ1Y3R1cmUubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xOCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bGFuZ3VhZ2VbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogbGFuZ3VhZ2UubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xOSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7d3JpdGVyc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiB3cml0ZXJzLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMjAifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke21heVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBtYXkubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yMSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIyIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtsYW5ndWFnZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBsYW5ndWFnZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIzIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHttYXlbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogbWF5Lmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMjQifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlZmluZXNbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogZGVmaW5lcy5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTI1In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtwcm9kdWNlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHByb2R1Y2UubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTI3In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHttYXlbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogbWF5Lmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMjgifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0cnVjdHVyZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBzdHJ1Y3R1cmUubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0yOSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMwIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHJ1Y3R1cmVbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogc3RydWN0dXJlLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMzEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3B1cmVseVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBwdXJlbHkubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3RydWN0dXJlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHN0cnVjdHVyZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMzIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtsYW5ndWFnZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBsYW5ndWFnZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTM0In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHJ1Y3R1cmVbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogc3RydWN0dXJlLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMzUifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3Byb2R1Y2VbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogcHJvZHVjZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTM2In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHJ1Y3R1cmVbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogc3RydWN0dXJlLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMzcifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0cnVjdHVyZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBzdHJ1Y3R1cmUubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zOCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7cHVyZWx5W01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHB1cmVseS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTM5In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtsYW5ndWFnZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBsYW5ndWFnZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQwIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtsYW5ndWFnZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBsYW5ndWFnZS5sZW5ndGgpXX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQxIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtwcm9kdWNlW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHByb2R1Y2UubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC00MiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7cHJvZHVjZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBwcm9kdWNlLmxlbmd0aCldfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNDMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0cnVjdHVyZVtNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiBzdHJ1Y3R1cmUubGVuZ3RoKV19PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC00NCJ9XX0=
-</script>
-</div>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2024,
-  author = {},
-  title = {The {Potential} {Literature} {Horseshoe}},
-  date = {2024-01-09},
-  url = {https://sav.phd/posts/oulipo},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2024" class="csl-entry quarto-appendix-citeas">
-<span>“The Potential Literature Horseshoe.”</span> 2024. January 9,
-2024. <a href="https://sav.phd/posts/oulipo">https://sav.phd/posts/oulipo</a>.
-</div></div></section></div> ]]></description>
-  <category>Art</category>
-  <category>Machine Learning</category>
-  <guid>https://sav.phd/posts/oulipo/</guid>
-  <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Skoob, Bloomsbury - Bookshop Review</title>
-  <link>https://sav.phd/posts/skoob_review/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><a href="https://skoob.com">Skoob</a> is a second-hand bookshop that has been operating since 1979 at locations throughout London, before moving to the Grade II listed Brunswick Centre in Bloomsbury in 2007. Skoob has generous opening hours of 10:30am – 7:30pm (apart from on Sundays) and is open 7 days a week.</p>
-<p>Outside, the shop maintains an unremarkable glass and concrete look. It is engulfed by a modernist concrete development and flanked by a big Waitrose. However, walking downstairs from the discrete entrance you are greeted by a rich burgundy floor surrounding a bespoke Skoob logo mosaic. Looking up, there are books everywhere. Where there is a flat wall, there is a bookshelf. Often, books are stacked horizontally in what normally would serve as breathing room between rows, with those on lower shelves spilling out onto the floor. The utilitarian shelves seem to bear the weight of the Brunswick Centre above. The aisles of Waitrose seem a world away.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sav.phd/posts/skoob_review/skoob.webp" class="img-fluid figure-img"></p>
-<figcaption>Skoob, taken December 2023</figcaption>
-</figure>
-</div>
-</div></div><p>The shop is laid out like a large old key. Turning left, the central spine branches off into a series of small nooks, some with a single chair, some without. The only sound is a light hum emitted from the foil insulated air conditioning pipe that runs along the low ceiling and through the top shelves, forcing books horizontally to make way for the fixture. Operationally, this ensures that Skoob is a completely unnoticeable temperature and volume. Alongside the complete lack of natural light, time stands still. Turning right, the circular bow of the key contains the small staff area and till with shelves that loop around encircling the custodians. Categories of books in Skoob are broad and largely academic. A successful trip would be to come with a given a period, place, or politic in mind</p>
-<p>Skoob forces you to bend and stretch to find worthwhile books (a lot of which are not). The small spaces and full-length shelves, no two of which are the same, make it a physical challenge akin to a marathon as opposed to a sprint, making the task all the more rewarding. Upon purchase, and after travelling back upstairs you are thrust back into a more organised, less interesting world. Whilst Skoob could reasonably be described as chaotic and quite hard work, it is the perfect environment to discover something completely new.</p>
-
-
-
- ]]></description>
-  <category>Books</category>
-  <guid>https://sav.phd/posts/skoob_review/</guid>
-  <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>2023 Books</title>
-  <link>https://sav.phd/posts/books_twenty_three/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="cleanbox">
-<ul>
-<li>1000 Years of Joys and Sorrows - <em>Ai Weiwei</em></li>
-<li>Lucky Kunst - <em>Gregor Muir</em></li>
-<li>The Restless Republic - <em>Anna Keay</em></li>
-<li>Gazza Agonistes - <em>Ian Hamilton</em> (<a href="https://sav.phd/posts/gazza_agonistes/">REVIEW</a>)</li>
-<li>Athens - <em>Bruce Clark</em></li>
-<li>Oedipus at Kolonos - <em>Sophocles</em></li>
-<li>1599 - <em>James Shapiro</em></li>
-<li>Super-Infinite - <em>Katherine Rundell</em></li>
-<li>The Escape Artist - <em>Jonathan Freedland</em></li>
-<li>The Books of Jacob - <em>Olga Tokarczuk</em></li>
-<li>Going to Church in Medieval England - <em>Nicholas Orme</em></li>
-<li>Death and the Penguin - <em>Andrey Kurkov</em></li>
-<li>Killing Thatcher - <em>Rory Carroll</em> (<a href="https://sav.phd/posts/thatcher_review">REVIEW</a>)</li>
-<li>Politics on the Edge - <em>Rory Stewart</em></li>
-<li>Drive your Plow over the Bones of the Dead - <em>Olga Tokarczuk</em></li>
-<li>K-PUNK - <em>Mark Fisher</em></li>
-</ul>
-</div>
-
-
-
- ]]></description>
-  <category>Books</category>
-  <guid>https://sav.phd/posts/books_twenty_three/</guid>
-  <pubDate>Sat, 16 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

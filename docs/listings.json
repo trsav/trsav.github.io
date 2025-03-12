@@ -2,7 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/substack/index.html",
+      "/posts/haiku/index.html",
+      "/posts/llm/index.html",
+      "/posts/books/index.html",
+      "/posts/gromit/index.html",
+      "/posts/bat/index.html",
+      "/posts/so_solid/index.html",
+      "/posts/metaphysical/index.html",
       "/posts/ratatouille/index.html",
       "/posts/manifesto/index.html",
       "/posts/bayesian_optimisation/index.html",

@@ -1,0 +1,51 @@
+---
+title: "That! The Haiku and the Sonnet"
+date: "1/29/2025"
+comments:
+    utterances:
+        repo: trsav/trsav.github.io
+html: 
+    self-contained: true
+    grid: 
+    margin-width: 450px
+reference-location: margin
+citation-location: margin
+footnote-location: margin
+---
+
+
+Cheap reasoning models (e.g. Deepseek r1 [mentioned for engagement purposes]), with chain-of-thought output make it extremely tempting to personify LLMs or their outputs. Similarly, certain models such as Claude (in all its forms) have gained a cult-of-personality type following, where users are more likely to use it for its _feel_ (gained through preferential fine-tuning, a muted colour scheme, a hand drawn logo, or all of the above). Unknown to them, an increasingly large number of users are assigning _meaning_ to the result of a computation. When I refer to _meaning_ in this article I don't refer to it in the sense of whether something is poetic or accurate or profound, but in a way rather more related to the word meaning _ful_. Related in some sense to something deeper, that we empathise with. 
+
+AGI **is** an unquantifiable threshold, and whether an LLM reaches this will be decided based on a collective _reading_ of the outputs that are produced. That is why the model cannot be separated from the surrounding infrastructure. The colour scheme, the point of interaction, the UI, even the very act of 'chatting' all contribute in some sense to our own reading, and whether we choose to recognise an _other_.
+
+For the purposes of this post, which I am writing in Tokyo Station, I will un-pick the Western endeavour to seek a deeper meaning and state that the outputs from an LLM are _meaningless_. I mean this in the sense that inferred tokens originates from a _soul-less_ computer. We may _impose_ a meaning on them, but in their most abstracted form, they are the result of computations.
+
+Drawing a literary comparison, the skill in reading a haiku is to _not_ read any meaning into it, but to let it wash over you. Should the same be said for an LLM (that truly does have no meaning in the first place)? Should we let output tokens wash over us _like a haiku in accordance to Zen_? We turn to Roland Barthes' reading of _haiku_ in _Empire of Signs_ :
+
+> Here meaning is only a flash, a slash of light: _When the light of sense goes out, but with a flash that has revealed the invisible world_ , Shakespeare wrote; but the haiku's flash illumines, reveals nothing; it is the flash of a photograph one takes very carefully (in the Japanese manner) but having neglected to load the camera with film. Or again: haiku reproduces the designating gesture of the child pointing at whatever it is (the haiku shows no partiality for the subject), merely saying: _that!_ with a movement so immediate (so stripped of any mediation: that of knowledge, of nomination, or even of possession) that what is designated is the very inanity of any classification of the object: _nothing special_ , says the haiku, in accordance with the spirit of Zen …
+
+This passage shares so much with how we _really_ know LLMs to work (which is different from how we _wish_ LLMs worked, which is to _think)_ , tokens appearing in an instant from the void. But at the same time highlights just how disparate our readings of LLMs are when compared to something like a haiku (again, to be expected because we assign a value towards an _other_ , but it is important to consider that this importance is 'created' in order to process the meaninglessness of an LLM).
+
+This is further amplified by how we interact with LLMs. When people refer to models such as Anthropic's Claude, they refer not just to the set of weights, or the data centre, but to the personality contained (again, we pretend that this is the case) within the output, which is defined by the overall experience. The UI, the colour scheme, the typeface, even the act of 'chatting' is to impose a dialogue with an _other._ These aspects combined make it irresistible to place meaning where there is none. Either AGI will refer to a holistic experience, or we must treat how we interact with LLMs fundamentally differently. 
+
+How do we get around this imposition of our own values onto something meaningless, in effect, to un-interpret the haiku and let it wash over us. Referring back to Barthes, we learn of different approaches, hundreds of years old:
+
+> […] the haiku has the purity, the sphericality, and the very emptiness of a note of music; perhaps that is why it is spoken twice, in echo; to speak this exquisite language only once would be to attach a meaning to surprise, to effect, to the suddenness of perfection; to speak it many times would postulate that meaning is to be discovered in it, would simulate profundity; between the two, neither singular nor profound, the echo merely draws a line under the nullity of meaning.
+
+Performing LLM inference multiple times (different temperature values?) may help us to de-personify outputs, enabling us to appreciate the content (but _not_ assign meaning to it). However, very quickly we enter into the space of what I will call the Muji paradox (highlighted to me by Sunil).
+
+Muji: in English 'no-brand' is the antithesis of a brand. It embodies the same values found within a haiku though in a commercial sense, not a literary one. The complete lack of meaning. It is important to note though that from a Western perspective, it has failed. Paradoxically, we have associated an aesthetic with it, a quality, and a set of values, in exactly the same way we have done for LLMs. 
+
+:::{.center}
+![](1.webp){width=60%}
+:::
+
+An alternative to doing nothing at all, would be to do everything at once. As an example of this, Japanese television exists, and often consists of a dizzying array of fonts and colours. It becomes so overwhelming that you are forced to assign no meaning to the text at all, it simply _exists_. Read nothing into how it is presented, because it will change. Japanese television in a sense embodies the idea of Zen equally as well as Muji does. 
+
+:::{.center}
+![](2.webp){width=60%}
+:::
+
+I propose that to provoke an alternate reading of LLMs, in opposition to the Western AGI-seeking viewpoint, that inevitably converges towards chatting with an _other,_ we treat creative outputs more like haikus. As Barthes' says, _like the flash of a photograph one takes very carefully but having neglected to load the camera with film._ This may mean taking the Muji route and attempting to strip any aesthetic, or imposition of values from an LLM (obviously it is not in the interest of an AI company to do this). OpenAI probably has the 'blandest' aesthetic, but like Muji, even this has become meaning- _full_. An alternative would be, like reading a haiku, to present tokens multiple times, similar to [Raymond Queneau's 'A Hundred Thousand Billion Poems'](https://en.wikipedia.org/wiki/A_Hundred_Thousand_Billion_Poems). Interacting with an LLM may feel closer to watching a Japanese TV show. So overwhelming in alternative tokens, typeface, colour, conflicting aesthetics, even _mode of interaction (_ RE: chatting _),_ that we are forced to strip any emotion we might infer. 
+
+Maybe that's why we're struggling to process AI and art, and why the concept of AGI is so messy and intangible. Because we're imposing a meaning on something that clearly has none (or even worse, imposing a meaning on something that we've already imposed a meaning to in the case of Claude). If we embrace this more Buddhist perspective, it may unlock an alternate reading, complimentary to our own AGI-centric one, mirroring the individual dividing lines of the West/East, _the Haiku and the Sonnet._
