@@ -1,7 +1,7 @@
 /*-- scss:rules --*/
 @font-face {
     font-family: 'mono';
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
     src: url("fonts/f3255fc02e564813-s.p.ttf") format('truetype');
   }
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'code';
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
   src: url("fonts/fr.woff2") format('woff');
 }
@@ -43,5 +43,13 @@ $data-bs-theme: light;
 /*-- scss:rules --*/
 h1 {
     color: $font-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
