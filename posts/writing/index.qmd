@@ -10,6 +10,11 @@ citation-location: margin
 footnote-location: margin
 ---
 
+::: {.center}
+
+![](output_image.png){width=100%}
+
+:::
 
 I started this blog two years ago because I wanted to discover my own personal writing style, or figure out if I even liked writing in the first place. 
 At the time I remember hearing^[This could have been fully hallucinated but that doesn't matter] that the only way to get better is to write more^[Something that I always used to say about getting better at darts during my stint as President of the University of Manchester Darts Society, again probably unfounded].
@@ -171,5 +176,3 @@ Bruce Clark's Athens accompanied me on a trip there where I made a point of read
 Finally, I'll describe the two pieces that I have enjoyed writing the most. The first, [an analysis of Wallace and Gromit from the perspective of Ancient Greek mythologies](https://sav.phd/posts/gromit/) and [an analysis of Ratatouille that frames the animated rat a false prophet](https://sav.phd/posts/ratatouille/). Both are self-indulgent, but both highlight how often fun it is to think a bit deeper about why we live life the way we do, to look around and appreciate those with similar and different beliefs in a lighthearted manner. This ability for self-reflection is a feature in itself that shouldn't be taken for granted. One that can provide humility and confidence in equal measure.
 
 That's it for now. I think these are strong enough experiences for me to live and benefit from them, but I appreciate that people could and _should_ change^[As a belief, meta.]. I hope the half-life of this post is about a decade. As I say at the beginning, I believe values should be _heavy_ and hard to shift or sway. Maybe in ten years I'll write another version, or a reflection, but for now this is me. 
-
-
