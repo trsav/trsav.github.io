@@ -2,23 +2,15 @@ project:
   type: website
   output-dir: docs
   resources:
-    - files/cv.pdf
     - posts/soundscape/output_trimmed.mp3
 
 website:
-  title: "tom savage"
+  title: "trsav"
   favicon: favicon.ico
   site-url: https://sav.phd
-  description: "the lot"
+  description: ""
   navbar:
     collapse: false
-    # left:
-      # - text: "Home"
-      #   file: index.qmd
-      # - text: "Portfolio"
-      #   file: portfolio.qmd
-      # - text: "About Me"
-      #   file: about.qmd
     search: true
 format:
   html:

@@ -1,48 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sav.phd/portfolio.html</loc>
-    <lastmod>2025-03-27T14:49:57.106Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/index.html</loc>
     <lastmod>2025-03-27T14:49:57.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/process/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.207Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/manifesto/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.193Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/legislation/index.html</loc>
     <lastmod>2025-03-27T14:49:57.192Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/so_solid/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.217Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/posts/outsmarted/index.html</loc>
     <lastmod>2025-03-27T14:49:57.204Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/bat/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/aiche/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.129Z</lastmod>
+    <loc>https://sav.phd/posts/noisy_bo/index.html</loc>
+    <lastmod>2025-03-27T14:49:57.195Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/metaphysical/index.html</loc>
     <lastmod>2025-03-27T14:49:57.195Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/skoob_review/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.212Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/haiku/index.html</loc>
@@ -53,28 +29,12 @@
     <lastmod>2025-03-27T14:49:57.246Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/soundscape/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.217Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/books_twenty_three/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/wsa_rotunda/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.279Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/posts/olympics/index.html</loc>
     <lastmod>2025-03-27T14:49:57.196Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/ratatouille/index.html</loc>
     <lastmod>2025-03-27T14:49:57.209Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/electronic_life/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.152Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/dead/index.html</loc>
@@ -89,28 +49,12 @@
     <lastmod>2025-03-27T14:49:57.197Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/human_in_the_loop/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.170Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/posts/llm/index.html</loc>
     <lastmod>2025-03-27T14:49:57.193Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/gazza_agonistes/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.167Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/posts/transubstantiation/index.html</loc>
     <lastmod>2025-03-27T14:49:57.244Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/trajectory_plots/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.244Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/rust/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.212Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/books/index.html</loc>
@@ -121,43 +65,19 @@
     <lastmod>2025-03-27T14:49:57.138Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/convergence_plots/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.142Z</lastmod>
-  </url>
-  <url>
     <loc>https://sav.phd/posts/gromit/index.html</loc>
     <lastmod>2025-03-27T14:49:57.168Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/noisy_bo/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.195Z</lastmod>
+    <loc>https://sav.phd/posts/bat/index.html</loc>
+    <lastmod>2025-03-27T14:49:57.133Z</lastmod>
   </url>
   <url>
-    <loc>https://sav.phd/posts/thatcher_review/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.243Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/cc/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/for_ai/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.162Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/systems_for/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.237Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/posts/plots/index.html</loc>
-    <lastmod>2025-03-27T14:49:57.206Z</lastmod>
+    <loc>https://sav.phd/posts/so_solid/index.html</loc>
+    <lastmod>2025-03-27T14:49:57.217Z</lastmod>
   </url>
   <url>
     <loc>https://sav.phd/posts/writing/index.html</loc>
     <lastmod>2025-03-27T21:25:09.827Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sav.phd/about.html</loc>
-    <lastmod>2025-03-24T14:34:36.796Z</lastmod>
   </url>
 </urlset>
