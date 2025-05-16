@@ -2,14 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.47">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage">
 <meta name="dcterms.date" content="2023-10-24">
 
-<title>Convergence Plots – TRS</title>
+<title>trsav - Convergence Plots</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,22 +115,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">TRS</span>
+    <span class="navbar-title">trsav</span>
     </a>
   </div>
-          <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About Me</span></a>
-  </li>  
-</ul>
-          <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-end">
 </div>
-            <div id="quarto-search" class="" title="Search"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -149,12 +138,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tom Savage </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
@@ -184,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Always</strong> use the LaTeX extension to render figures by including <code>plt.rcParams['text.usetex'] = True'</code> at the top of your script.</p>
 </div>
 <p>Here I have simulated some convergence data where we have 4 different benchmarks, each containing 16 separate repeat runs.</p>
-<div id="2a491600" class="cell" data-execution_count="3">
+<div id="a370cdb4" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -201,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Never</strong> initialise a plot using the pyplot interface <code>plt.figure...</code>.</p>
 </div>
-<div id="42ac1ebf" class="cell" data-execution_count="4">
+<div id="6c24c69c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -215,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Always</strong> ensure that the <code>linewidth=...</code> option is set appropriately, and more importantly <em>consistently</em>.</p>
 </div>
-<div id="0f8ef119" class="cell" data-execution_count="5">
+<div id="ffc37885" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>),layout<span class="op">=</span><span class="st">"constrained"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
@@ -239,11 +222,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Always</strong> choose a legible font size and text for axis labels, using LaTeX where appropriate.</p>
 </div>
-<div id="315951eb" class="cell" data-execution_count="6">
+<div id="6de4c4bf" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'Iteration, $\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'Regret, $r_\tau$'</span>,fontsize<span class="op">=</span><span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4a1406d5" class="cell" data-execution_count="7">
+<div id="bafa4dd8" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -257,13 +240,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Always</strong> select appropriate tick values for your context, adjusting the fontsize as necessary.</p>
 </div>
-<div id="b7109a74" class="cell" data-execution_count="8">
+<div id="f0164f86" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">100</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y_ticks <span class="op">=</span> [<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x_ticks,x_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(y_ticks,y_ticks,fontsize <span class="op">=</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f5df7d32" class="cell" data-execution_count="9">
+<div id="970583ff" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -281,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Never</strong> overwhelm the reader with information and labels. Some information is fine to include within the caption, as the caption and the image are considered complimentary and dependent.</p>
 </div>
-<div id="7ca9dbf7" class="cell" data-execution_count="10">
+<div id="e607d5b1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="ss">f'Benchmark </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,benchmarks<span class="op">+</span><span class="dv">1</span>)]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(data[b,:,:],axis<span class="op">=</span><span class="dv">0</span>)</span>
@@ -290,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ax.fill_between(iterations,mean<span class="op">-</span>std,mean<span class="op">+</span>std,alpha<span class="op">=</span><span class="fl">0.2</span>,color<span class="op">=</span>cols[b])</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>,fontsize<span class="op">=</span><span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="600f5299" class="cell" data-execution_count="11">
+<div id="9c805fed" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -307,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>I always use and reccomend the <code>tab:</code> set of colours in Matplotlib. <a href="https://www.tableau.com/blog/colors-upgrade-tableau-10-56782?cq_cmp=20663578515&amp;cq_net=x&amp;cq_plac=&amp;gad=1&amp;gclid=CjwKCAjwv-2pBhB-EiwAtsQZFASF7RdmIYty2ptKDi0fGPfaiCmmLLR_PkaBN_eQtTVl7eTnyKl_qhoCULYQAvD_BwE&amp;gclsrc=aw.ds">A number of people have put significant effort into choosing these</a> so you don’t have to. Here is a list of examples that you can copy and paste.</p>
 <p>These colours are softer than the default colours and are more aesthetically pleasing.</p>
-<div id="9934e14a" class="cell" data-execution_count="12">
+<div id="9c2ab6db" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'tab:blue'</span>,<span class="st">'tab:orange'</span>,<span class="st">'tab:green'</span>,<span class="st">'tab:red'</span>,<span class="op">\</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'tab:purple'</span>,<span class="st">'tab:brown'</span>,<span class="st">'tab:pink'</span>,<span class="st">'tab:gray'</span>,<span class="st">'tab:olive'</span>,<span class="st">'tab:cyan'</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(benchmarks):</span>
@@ -319,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Always</strong> use the <code>tab:</code> set of colours over the default colours.</p>
 </div>
-<div id="0ad42e22" class="cell" data-execution_count="13">
+<div id="1c64f4e9" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -329,13 +312,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now we can adjust the axis limits to ensure that the data is placed appropriately. In this case, the regret values are fine but the iterations should start at 0 and end at 100.</p>
-<div id="1aaacc83" class="cell" data-execution_count="14">
+<div id="e955149b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>,<span class="dv">100</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cleanbox">
 <p><strong>Always</strong> adjust the axis limits appropriately. The x-axis particularly may be too large.</p>
 </div>
-<div id="6bf2699a" class="cell" data-execution_count="15">
+<div id="247c296b" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -345,13 +328,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Finally, it is important to consider whether a <code>grid</code> is appropriate. In this case I will for demonstration, but it may be distracting. I will adjust the transparency to make it less pronounced.</p>
-<div id="87e90a73" class="cell" data-execution_count="16">
+<div id="f2190e8b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cleanbox">
 <p><strong>Always</strong> consider using <code>ax.grid()</code> if the individual values of the data are important.</p>
 </div>
-<div id="d027f0b3" class="cell" data-execution_count="17">
+<div id="a564caf6" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -361,14 +344,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If you choose not to use a grid, then I always prefer if the right and top axis are removed, resulting in a cleaner plot.</p>
-<div id="4320a812" class="cell" data-execution_count="18">
+<div id="3ca4c69d" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cleanbox">
 <p><strong>Always</strong> remove the right and top axis if you choose not to use a grid.</p>
 </div>
-<div id="d939bf90" class="cell" data-execution_count="19">
+<div id="0ff2eedd" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -381,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cleanbox">
 <p><strong>Always</strong> save your figure as <code>.svg</code> or <code>.pdf</code>.</p>
 </div>
-<div id="33182585" class="cell" data-execution_count="20">
+<div id="07675091" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'results.svg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, <a href="https://matplotlib.org/stable/"><strong>read the documentation!</strong></a>.</p>
@@ -424,7 +407,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -456,29 +450,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/sav\.phd");
@@ -486,7 +458,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

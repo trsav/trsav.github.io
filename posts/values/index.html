@@ -2,14 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.47">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Savage">
 <meta name="dcterms.date" content="2024-03-04">
 
-<title>Generative Models as Mirrors and Idols; From Istanbul – TRS</title>
+<title>trsav - Generative Models as Mirrors and Idols; From Istanbul</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,22 +81,12 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">TRS</span>
+    <span class="navbar-title">trsav</span>
     </a>
   </div>
-          <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About Me</span></a>
-  </li>  
-</ul>
-          <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-end">
 </div>
-            <div id="quarto-search" class="" title="Search"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -118,12 +107,6 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tom Savage </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
@@ -139,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     </div>
 <!-- main -->
@@ -149,6 +132,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<div class="cleanbox">
+<p><strong>Relevant articles published after this post</strong></p>
+<ul>
+<li><a href="https://www.ft.com/content/10975044-f194-4513-857b-e17491d2a9e9">China deploys censors to create socialist AI</a>
+<ul>
+<li>Large language models are being tested by officials to ensure their systems ‘embody core socialist values’</li>
+</ul></li>
+<li><a href="https://x.com/JvNixon/status/1804267376839639490">The Chinese team behind DeepSeek V2 write about lagging on the Humanity-Moral subset of MMLU, due to its “American values”</a>
+<ul>
+<li><em>For example, when evaluated on MMLU, although DeepSeek-V2 achieves comparable or superior performance on the majority of testsets compared with its competitors like Mixtral 8x22B, it still lags behind on the Humanity-Moral subset, which is mainly associated with American values.</em></li>
+</ul></li>
+</ul>
+</div>
 <p>1600 years ago, as Emperor of Rome and patron of Constantinople where he is buried, Theodosius II oversaw the central theological questions in the wake of the Council of Nicea and doctrine of Trinity: did Christ have distinct human and divine aspects? Was the human form of Christ the same form as the rest of us? Alongside a university to aid in answering these questions, and the city walls, Theodosius commissioned the construction of a vast cistern to provide fresh water for the city’s inhabitants and palaces<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Pretentious opening but please indulge me because later on it goes downhill and I end up using the phrases ‘world-view’ and ‘cut-through’.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Not all of it obviously.</p></div><div id="fn3"><p><sup>3</sup>&nbsp;Please pretend I’m still there for the entirety of the following, otherwise it doesn’t work.</p></div></div><p>It is in a glass-bound spotlit coffee shop above this cistern that I write this post<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, complete with visitors centre and free WiFi<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Below me, 32 nine-meter high marble columns support myself and others, our coffees, my bottle of water. We are mercilessly paying homage to Theodosious’ original intentions to provide refreshment here - what once served a purpose continues to do so under a different context. Theodosius’ grave is now lost, most likely beneath the Fatih Mosque where Islamic minorets now anchor the heavens to the city and vice versa. The Christian pasts of the Romans and Byzantines have coalesced with the more recent history of the Ottoman empire, places like this a constant reminder of the slow march of time which seems to have begun earlier and progressed faster here than in any other city.</p>
 
@@ -225,7 +221,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -257,29 +264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/sav\.phd");
@@ -287,7 +272,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
